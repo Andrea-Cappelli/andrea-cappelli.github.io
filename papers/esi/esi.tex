@@ -1,0 +1,986 @@
+\documentclass[a4paper,12pt]{article}
+%\usepackage{mathptm}
+\usepackage{amsfonts}
+%\usepackage{smart}
+%\usepackage{float}
+%\usepackage{latexsym}
+%%%%%%%%%%%%%%%%%%%%%%%% Equation counting %%%%%%%%%%%%%%%%
+%\link{equation}{section}\toheight1
+\newcommand{\clth}{\setcounter{thm}{0}}
+\newcommand{\sectionnew}[1]{\section{#1}\clth}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\catcode`\@=11
+\def\numberbysection{\@addtoreset{equation}{section}
+        \def\theequation{\thesection.\arabic{equation}}}
+
+\newtheorem{thm}{Theorem}[section]
+\newcommand{\beq}{\begin{equation}}
+\newcommand{\eeq}{\end{equation}}
+\newcommand{\beqa}{\begin{eqnarray}}
+\newcommand{\eeqa}{\end{eqnarray}}
+\newcommand{\nn}{\nonumber \\}
+\newtheorem{prop}[thm]{Proposition}
+\newcommand {\np}[1]{ {\mathrm{:}}{#1}{\mathrm{:}} } %norm.pr
+\newcommand {\sg}[1]{ {\mathrm{sgn}}({#1}) }
+\newcommand {\I}[1]{ {\mathrm{Im}}\, {#1} }
+\def\eop{\hbox{\vrule width 6pt height 6pt depth 0pt}}
+\def \a {\underline{\alpha}}
+\def \k {\kappa}
+\def \l {\underline{\lambda}}
+\def \L {\underline{\Lambda}}
+\def \La {\underline{\Lambda}^{(\alpha)}}
+\def \Lb {\underline{\Lambda}^{(\beta)} }
+\def \s {\sigma}
+\def \r {\rho}
+\def \e {\underline{\mathrm{e}}}
+\def \Q {\underline{Q}}
+\def \q {\underline{\mathrm{q}}}
+\def \ex {\mathrm{e}}
+\def \ep {\varepsilon}
+\def \h {\frac{1}{2}}
+\def \z {\zeta}
+\def \b {\underline{\beta}}
+\def \W {W_{1+\infty}\ }
+\def \A {{\mathcal A} }
+%def \S {{\mathcal S}_{ds}\,}
+\def \d {\delta}
+\def \g {\underline{\gamma}}
+\def \D {\Delta}
+\def \o {\underline{\omega}}
+\def \la {\langle}
+\def \ra {\rangle}
+\def \V {{\mathcal V}}
+\def \w {{\mathcal W}}
+\def \T {{\mathcal T}}
+\def \t {\tau}
+\def \th {\theta}
+\def \B {{\mathcal B}}
+\def \O {{\mathcal O}}
+\def \H {{\mathcal H}}
+\def \Lc {{\mathcal L}}
+\def \Rset {{\mathbb R}}
+\def \Cset {{\mathbb C}}
+\def \Z {{\mathbb Z}}
+\def \N {{\mathbb N}}
+\def \G   {\Gamma}
+\def \dd {\mathrm{d}}
+\def \mod {\, \mathrm{mod}\, }
+\def\U1{{\widehat{u(1)}}}
+\def \PF {\mathrm{PF}}
+\def \IP {\mathrm{IP} }
+\def \ch {\mathrm{Ch} }
+
+\def \PFC {${\mathcal{P}\mathcal{F}_k}$}
+
+
+%\voffset -1cm
+%\hoffset -0.5cm
+%\topmargin 0.0cm
+%\headheight 18pt
+%\headsep 1.0cm
+\textwidth 14cm
+\textheight 20cm
+%\oddsidemargin -0.5cm
+%\evensidemargin -0.5cm
+\def\thefootnote{\fnsymbol{footnote}}
+
+
+\numberbysection
+%\input proof.tex
+
+\begin{document}
+
+%- preprint front page --------------------------
+
+\begin{titlepage}
+\begin{center}
+{\LARGE\bf Coset Construction of}
+
+\vspace{.4cm}
+
+{\LARGE\bf Parafermionic Hall States\footnote{
+To appear in the proceedings of the 
+International Seminar ``Supersymmetries and Quantum
+Symmetries'', SQS'99, July 1999, Dubna, and of
+the ``6th Wigner Symposium'', Istambul, August 1999.}
+}
+
+\vspace{.6cm}
+
+A. Cappelli\ ,
+\qquad L. S. Georgiev\footnote{
+On leave of absence from Institute for Nuclear
+Research and Nuclear Energy, Tsarigradsko Chaussee 72,
+BG-1784 Sofia, Bulgaria}
+
+\vspace{.1cm}
+
+\normalsize\textit{ I.N.F.N. and Dipartimento di Fisica,}
+
+\normalsize\textit{ Largo E. Fermi 2, I-50125 Firenze, Italy}
+
+\vspace{.3cm}
+
+I. T. Todorov
+
+\vspace{.1cm}
+
+\normalsize\textit{ Institute for Nuclear Research and Nuclear Energy,}
+\\
+\normalsize\textit{ Tsarigradsko Chaussee 72, BG-1784 Sofia, Bulgaria}
+\end{center}
+
+\vspace{.8cm}
+
+
+
+\begin{abstract}
+Fractional quantum Hall fluids with fillings $2 < \nu <3$
+have been recently proposed which 
+generalize the Pfaffian state ($\nu=2+1/2$) into a hierarchy of
+states with parafermionic excitations. 
+We describe here the corresponding  $\Z_k$-parafermion conformal 
+field theory by means of the coset construction 
+$\widehat{su(k)_1}\oplus\widehat{su(k)_1}/\widehat{su(k)_2}$.
+This extends our earlier derivation of the Pfaffian state
+from a ``parent'' state with abelian affine symmetry plus a 
+projection of degrees of freedom.
+The numerator of the coset
+is actually a rational conformal field theory made out of
+$(2k-2)$ scalar fields and a specific extended symmetry.
+The coset construction projects out some neutral Hall edge excitations 
+while preserving the filling fraction; it also respects the $\Z_k$ parity rule 
+coupling neutral and charged excitations in the parent abelian theory.
+\end{abstract}
+
+\end{titlepage}
+
+% -----------------------------------------------
+
+
+\begin{center}
+{\LARGE\bf Coset Construction of}
+
+\vspace{.4cm}
+
+{\LARGE\bf Parafermionic Hall States}
+
+\vspace{.6cm}
+
+A. Cappelli\footnote{E-mail: andrea.cappelli@fi.infn.it} \ ,
+\qquad L. S. Georgiev\footnote{E-mail: georgiev@fi.infn.it.
+On leave of absence from Institute for Nuclear
+Research and Nuclear Energy, Tsarigradsko Chaussee 72,
+BG-1784 Sofia, Bulgaria}
+
+\vspace{.1cm}
+
+\normalsize\textit{ I.N.F.N. and Dipartimento di Fisica,}
+
+\normalsize\textit{ Largo E. Fermi 2, I-50125 Firenze, Italy}
+
+\vspace{.3cm}
+
+I. T. Todorov\footnote{E-mail: todorov@inrne.bas.bg}
+
+\vspace{.1cm}
+
+\normalsize\textit{ Institute for Nuclear Research and Nuclear Energy,}
+\\
+\normalsize\textit{ Tsarigradsko Chaussee 72, BG-1784 Sofia, Bulgaria}
+\end{center}
+
+\vspace{.3cm}
+
+
+
+\begin{abstract}
+Fractional quantum Hall fluids with fillings $2 < \nu <3$
+have been recently proposed which 
+generalize the Pfaffian state ($\nu=2+1/2$) into a hierarchy of
+states with parafermionic excitations. 
+We describe here the corresponding  $\Z_k$-parafermion conformal 
+field theory by means of the coset construction 
+$\widehat{su(k)_1}\oplus\widehat{su(k)_1}/\widehat{su(k)_2}$.
+This extends our earlier derivation of the Pfaffian state
+from a ``parent'' state with abelian affine symmetry plus a 
+projection of degrees of freedom.
+The numerator of the coset
+is actually a rational conformal field theory made out of
+$(2k-2)$ scalar fields and a specific extended symmetry.
+The coset construction projects out some neutral Hall edge excitations 
+while preserving the filling fraction; it also respects the $\Z_k$ parity rule 
+coupling neutral and charged excitations in the parent abelian theory.
+\end{abstract}
+
+%-1------------------------------------------
+
+\section{Introduction}
+
+Conformal field theories have been successfully applied to
+describe the universal properties of quantum Hall states \cite{prange},
+such as symmetries, quantum numbers and low-energy dynamics of 
+edge excitations  \cite{wen}.
+The simplest Laughlin states with filling fraction $\nu=1,1/3,1/5,\dots$
+are well understood in terms of  abelian conformal theories
+with central charge $c=1$; most of our understanding
+of edge excitations, including their fractional statistics
+ and dynamics, has been drawn from these examples.
+Furthermore, recent experiments have confirmed 
+the predictions of the abelian conformal theories \cite{expe}.
+
+The theoretical studies have now addressed more involved
+Hall states, such as that occurring at $\nu=5/2$. 
+This {\it plateau} in the second Landau level has no analogue in
+the first level (i.e. at $\nu=1/2$); thus, it should be
+caused by some new dynamical mechanism.
+In Ref.\cite{pfaf}, it was proposed that the electrons form {\it pairs},
+in a way similar to BCS pairs in superconductors;
+these bosonic pairs can then form a
+Laughlin fluid with even denominator filling fraction.
+The ($p$-wave) pairing of (spin-polarized) electrons 
+is represented in the ground-state wave function 
+by the Pfaffian term ${\rm Pf}\left( 1/(z_i -z_j )\right)$,
+which involves all possible pairs of electron coordinates.
+(Other pairings were also proposed with different relative
+angular momentum and spin polarization of electrons.)
+
+There is a well-established relation between the Hall
+states and conformal field theory, which says that
+the analytic part of electron wave functions should correspond to
+correlators of conformal fields.
+Following Ref.\cite{pfaf}, the Pfaffian term can be reproduced by
+the correlator of Majorana fermions in the $c=1/2$ conformal field theory,
+i.e. the critical Ising model,
+plus the usual $c=1$ boson theory accounting for the charge of excitations.
+
+An interesting feature of the Pfaffian Hall state is that it possesses
+excitations with {\it non-abelian} fractional statistics:
+namely, the adiabatic transport of one excitation
+around another is described by a multi-dimensional unitary
+transformation acting on a multiplet of degenerate wave-functions,
+rather than by the multiplication by a sign  (fermi statistics)
+or a phase (abelian fractional statistics).
+The non-abelian statistics is easily understood in the Ising conformal theory:
+the spin field $\sigma$ possesses the operator-product expansion
+$\sigma \cdot \sigma \sim {\rm Id} + \psi$, with two terms in the
+right hand side; therefore, multi-spin correlators expand into several
+terms (the conformal blocks), which transform among themselves
+under monodromy.
+
+Numerical analyses have shown that the Pfaffian
+state has a rather good overlap with the exact ground state
+at $\nu=5/2$ \cite{killhr}\footnote{
+In contrast with the previous expectations
+favoring the Haldane-Rezayi paired state.};
+therefore, there is an exciting possibility that
+new phenomena such as pairing and non-abelian statistics
+could be experimentally observed 
+at sufficiently low temperatures and $2 <\nu <3$.
+
+Read and Rezayi have recently proposed \cite{rr} a generalization of
+the Pfaffian to a hierarchy of states in the second
+Landau level, which are described by the $\Z_k$-parafermion
+conformal theories \cite{zf}. They occur at filling fractions,
+\beq\label{0.1}
+\nu \equiv 2 + \nu_k(M) = 2+ \frac{k}{kM+2}, \quad k=2,3,\ldots
+\quad M=1,3,5,\dots \ .
+\eeq
+(The Pfaffian state corresponds to the value $k=2$ (and $M=1$) in this series.)
+The same authors found that the parafermionic states have good 
+overlap with the numerical exact ground states at $\nu=13/5, 8/3$, i.e.
+for $M=1$ and $k=3,4$ \cite{rr}.
+Furthermore, Hall plateaux at these filling values have been 
+experimentally observed \cite{exper} by cooling the sample
+at extremely low temperatures.
+As shown in Ref.\cite{rr}, the $\Z_k$-parafermion Hall states 
+describe an interesting dynamics: the
+Hall fluid is made by clusters of $k$ electrons (e.g. pairs for $k=2$) 
+and there are excitations with non-abelian statistics; other 
+properties were discussed in Ref.\cite{gura}.
+
+The problem we are addressing is to relate this (universal)
+Hall dynamics to the conformal field theory data of $\Z_k$ parafermions.
+For example, we would like to find conformal theory motivations
+for the quantum numbers of these Hall states and for the
+mechanism of clustering which actually yields the 
+parafermions\footnote{
+On the other hand, the non-abelian statistics can be
+easily understood from the operator-product expansion
+of parafermion fields.}.
+
+Our general idea is to describe the non-abelian Hall states and
+the associated conformal theories by introducing a {\it parent} abelian theory
+(with the same filling fraction) and a projection leading to
+the non-abelian theory.
+The reason is that the Hall physics is well understood
+in the abelian theories, such as the Laughlin fluids; 
+furthermore, the projection may have a
+physical interpretation, which could be useful to explain
+pairing and non-abelian statistics.
+
+We recall that an abelian theory is a rational
+conformal field theory based on the $\U1^n$-current algebra,
+spanned by $n$ abelian currents $J^i(z)$, extended by
+vertex operators $Y(\l,z)=\np{\exp(i\phi(\l,z))}$ whose charges
+$\l$ form an $n$-dimensional lattice $\G$.
+This lattice, satisfying some physical conditions summarized in Section 2, 
+has been called {\it chiral quantum Hall lattice} in Ref.\cite{fro}.
+The non-equivalent quasi-holes in the Hall fluid correspond to the irreducible
+representations of the extended algebra and are labeled by
+the charges $\l\in\G^*/\G$ where $\G^*$ is the dual
+lattice.
+%\footnote{We recall that $\G^*/ \G$ is a finite abelian group
+%of order $(\det\G)$ whose multiplication represents the fusion rules.}.
+For example, the $\widehat{su(k)_1}$ theory is the extension
+of $\U1^{k-1}$ theory with the $A_{k-1}$ root lattice. 
+A complete classification of (low-dimension) chiral Hall lattices
+has been obtained in Ref.\cite{fro}.
+
+In Ref. \cite{cgt}, we have already shown that the Pfaffian state
+can be described in terms of an abelian lattice theory 
+by projecting out some neutral degrees of freedom.
+A crucial step in this process is the decoupling of charged and
+neutral sectors of the theory ((iso)spin-charge separation), which
+cannot be done globally but give raise to a selection rule
+(the {\it parity rule}). 
+In addition, the projection should preserve the locality of
+physical excitations, such as the electrons \cite{cgt}.
+
+Here, we would like to briefly describe the generalization
+of this approach to the Read-Rezayi states\footnote{
+See Ref.\cite{cgt2} for a detailed account of this work.}.
+We show that the $\Z_k$ parafermions can be
+obtained by coset construction \cite{gko} from a specific 
+abelian Hall state, whose lattice is {\it maximally symmetric}
+in the sense of Ref.\cite{fro}, where it has been denoted by
+$(M+2 \; | \; {}^{\L_1}A_{k-1} \ {}^{\L_1}A_{k-1})$.
+The associated extended symmetry includes the
+$\U1\oplus\widehat{su(k)_1}\oplus \widehat{su(k)_1}$ affine algebra.
+The $\Z_k$-parafermion theory $PF_k$ is obtained as follows:
+\beqa\label{1.4}
+&&\PF_k=
+\frac{\widehat{su(k)_1}\oplus \widehat{su(k)_1}}{\widehat{su(k)_2}},
+\nn
+&& c_{\PF_k}=c_{\widehat{su(k)_1}} + c_{\widehat{su(k)_1}} -
+c_{\widehat{su(k)_2}} =\frac{2(k-1)}{(k+2)}  .
+\eeqa
+The two $su(k)$ symmetries of the parent state can be 
+associated to {\it layer} and {\it iso-spin} quantum numbers \cite{cgt2}.
+After the projection, there remain a $Z_k$ charge, 
+which is the parafermion ``number'';
+the $\Z_k$ parity rule relates this number (modulo $k$) to
+the fractional charge of the quasi-holes of the resulting 
+parafermion Hall fluid.
+The coset construction allows us to construct all
+super-selection sectors corresponding to the topologically non-equivalent
+quasi-holes (the irreducible representations),
+compute their characters  and
+write the  partition functions for the Read--Rezayi states.
+
+Other projective constructions of non-abelian Hall states can be found in
+the Refs.\cite{schout}, including the different coset construction
+$PF_k = \widehat{su(2)_k}/\U1$.
+
+
+%-2---------------------------------------
+
+\sectionnew{Parent abelian theory for the para\-fermion state}
+
+%-2.1-------------------------------------
+
+\subsection{Maximally symmetric $(2k-1)$-dimensional lattice}
+
+In this Section, we describe the abelian theory
+$\U1\oplus su(k)_1 \oplus su(k)_1$ with central charge
+$c=2k-1$, which reproduces the same
+filling fraction (\ref{0.1}) of the parafermion theory; 
+the corresponding chiral Hall lattice $\G$ is an odd integral lattice
+containing the electron charge vector $\q$ of square length
+(twice the electron dimension):
+\beq\label{0.2}
+|\q|^2\equiv (\q|\q)=M+2 \; (=2\D_{\mathrm{el}}).
+\eeq
+In any chiral Hall lattice, one defines the {\it charge} vector $\Q$ of the 
+dual lattice $\G^*$, which sets the {\it electric charge} 
+of any lattice point and satisfies the following defining conditions: 
+(i) it is {\it primitive} (i.e., not a multiple of any other vector
+$\q^*\in\G^*_{2k-1}$); (ii) it is related to $\nu_k$ in (\ref{0.1})
+and $\q$ by:
+\beq\label{0.3}
+|\Q|^2=\nu_k, \quad (\Q|\q)=1;
+\eeq
+(iii) it obeys the {\it charge--statistics relation} for fermion excitations:
+\beq\label{0.3b}
+(-1)^{(\Q|\q)}=(-1)^{|\q|^2} \qquad {\rm for \ any} \ \q\in\G.
+\eeq
+
+A convenient basis $\{\q,\a_i,\b_j\}$ for $\G$ is given by the electron
+charge vector $\q$ (satisfying (\ref{0.2}) (\ref{0.3})) and the root vectors
+$\a_1,\ldots ,\a_{k-1},\b_1,\ldots,\b_{k-1}$ of $su(k)\oplus su(k)$ with
+standard inner products:
+$(\a_i|\a_i)=(\b_i|\b_i)=2$, $(\a_i|\a_j)=(\b_i|\b_j)=-1$,
+for $i\neq j=1,\dots ,k-1$.
+The {\it symmetry algebra} $su(k)\oplus su(k)$ is assumed to be
+{\it electrically neutral}, i.e. 
+$(\Q|\a_i)=(\Q|\b_i)=0$, $i=1,\ldots,k-1$;
+therefore, $\Q =(1,0 \dots 0)$ in the dual basis.
+It then follows that the electron charge vector $ \q $
+decomposes as follows:
+\beq\label{1.3}
+\q=\frac{1}{\nu_k}\Q +\o, \quad (\Q|\o)=0, \quad
+ (\a_i|\o)=\d_{i1}=-(\b_i|\o), \quad |\o|^2=2\frac{k-1}{k};
+\eeq
+thus, $\o$ is an $su(k)\oplus su(k)$  weight.
+(The sign convention in the relation $(\b_1|\q)=(\b_1|\o)=-1$
+differs from the one in \cite{cgt} and is chosen to fit
+the standard coset projection -- see Section 3.)
+
+The Gram matrix in this basis takes the form:
+\beq
+G_\G =\left[
+\begin{array}{c|c|c}
+M+2 &  1 \; 0  \cdots  \ 0 & -1 \;  0  \cdots \ 0\cr \hline
+\begin{array}{c}
+1 \cr 0 \cr \vdots \cr 0
+\end{array} &  C_{k-1} & 0 \cr \hline
+\begin{array}{c}
+- 1\cr 0 \cr \vdots \cr 0
+\end{array} &  0 & C_{k-1}
+\end{array} \right]\ ,
+\eeq
+with $C_{k-1}$ the Cartan matrix of the $A_{k-1}$ algebra.
+
+In our previous analysis of the Pfaffian state ($k=2$) \cite{cgt},
+we actually considered {\it two} parent abelian
+states; the corresponding lattices were the maximally symmetric one
+described above and the
+the two-dimensional lattice $\tilde{\G}$ of the ($331$) paired
+Hall state, with Gram matrix $G_{\tilde{\G}}={3 \ \ 1\choose 1\ \ 3}$.
+The former lattice contains the latter and one can devise a two-step
+projection connecting all the three theories:
+this is indeed the coset construction (\ref{1.4}) for $k=2$ \cite{cgt2}.
+In the general $k$ case, $\tilde{\G}$ extends to 
+a $k$-dimensional lattice, which leads to another parent theory for the
+parafermions; this is, however, completely independent of $\G$,
+and its projection to the parafermions is not known. 
+
+The unitary representations of the chiral algebra $\A(\G)$ 
+describe the edge excitations of the Hall fluid;
+they are labeled by the points of the dual lattice
+$\G^*$. This is manifestly not decomposable into orthogonal
+sublattices of charge and neutral excitation.
+Nevertheless, this decomposition (physically meaning the isospin-charge
+separation) can be achieved at the expenses of enlarging the lattice
+and introducing a selection rule (the $\Z_k$ {\it parity rule}).
+We introduce the decomposable sublattice 
+$L\subset \G$ of index $k$ spanned by the vectors:
+\beq\label{Lbasis}
+\{ \e:= k(\q-\o)=(kM+2)\Q,\; \a_i,\;\b_j \}.
+\eeq
+It splits
+into 3 mutually orthogonal sublattices:
+\beq\label{1.5}
+L=(kM+2)\Z\Q \oplus A_{k-1}\oplus A_{k-1} \ .
+\eeq
+We have
+\beqa\label{1.6}
+L\subset \G\subset \G^* \subset L^*, &\quad&
+\G=\{ \g=\l+l\q \; ; \; \l\in L, \; 0\leq l \leq k-1 \}, \nn
+&& L^*/\G^* \simeq \G/L \simeq \Z_k;
+\eeqa
+indeed, the determinants of the Gram matrices of $L$ and $\G$
+(which give the number of sectors of the corresponding RCFT) are:
+\beq\label{1.7}
+|L|=(kM+2)^2 |\Q|^2 |C_{k-1}|^2=(kM+2)k^3 =k^2 |\G|.
+\eeq
+The isospin-charge separation of excitations is achieved
+in the decomposable dual lattice $L^*$, whose physical points
+(corresponding to those of $\G^*$) obey a selection rule $mod \ k$.
+This factorized description of the excitations in the abelian theory
+is crucial for allowing the projection of neutral degrees 
+of freedom leading to the parafermion theory (see Section 3).
+
+%-2.2---------------------------------
+
+\subsection{Unitary representations of the chiral algebra $\A(\G)$ }
+
+The irreducible unitary representations of the
+chiral algebra $\A(L)$ can be expressed as
+$\Z_k$-invariant products of fundamental representations of
+$\widehat{su(k)_1}\oplus \widehat{su(k)_1}$  times chiral vertex
+operators carrying charge $(n/k)\Q$ ($n\in\Z/(k(kM+2)\Z)$);
+these representations are labeled by the elements of the abelian group
+$L^*/L$. We shall choose a vector $\l\in L^*$ in each coset in $L^*/L$
+of the form:
+\beq\label{1.8}
+\l=\frac{l}{k}\Q +\L_\mu^{(\alpha)} -\L_\nu^{(\beta)},
+\quad \mu,\nu=0,1,\ldots, k-1, \quad 2|l|\leq k(kM+2).
+\eeq
+Here  $\L_\mu^{(\alpha)} $ ($\L_\nu^{(\beta)}$) are the fundamental
+weights (including 0) of the first (respectively the second) $su(k)$
+factor. The conformal dimension of the representation $\l$ is:
+\beq\label{1.9}
+\D(\l)=\h |\l|^2 = \frac{l^2}{2k(kM+2)} + \frac{\mu(k-\mu)+\nu(k-\nu)}{2k}.
+\eeq
+\begin{prop}
+A vector $\l$ of $L^*$ belongs to the sublattice $\G^*$ iff
+$(\l|\q)\in \Z$. For $\l$ given by (\ref{1.8}), this is equivalent
+to the relation:
+\beq\label{1.10}
+l+k(\o|\L_\mu^{(\alpha)}-\L_\nu^{(\beta)}) \in k\Z \quad \Leftrightarrow
+\quad l-\mu-\nu=0 \ \ \mod k.
+\eeq
+\end{prop}
+{\bf Proof.}
+Since $\q\in \G$, if $\l\in\G^*$ the inner product $(\l|\q)$ should be
+integer. For $\l\in L^*$ the converse is also true in view of (\ref{1.3}) and
+(\ref{1.5}). Eq. (\ref{1.10}) is then a consequence of (\ref{0.3})
+(\ref{1.3}) and (\ref{1.5}) and of the definition of fundamental weights
+as a dual basis for $ \{ \a_i \} $ and $ \{ \b_i \} $:
+$(\a_i|\L_j^{(\alpha)})=\d_{ij} =(\b_i|\L_j^{(\beta)})$ ,
+$ i,j=1,\ldots,k-1$.
+As a result, the inner products $(\L_i|\L_j)$ (for $\L$ belonging
+to the weight space of the same $su(k)$ factor, $\alpha$ or $\beta$)
+are expressed in terms of the inverse $A_{k-1}$ Cartan matrix.
+
+Eq. (\ref{1.10}) provides the explicit form of the $\Z_k$ parity rule which
+tells us when an excitation in the bigger lattice $L^*$ actually
+belongs to the sublattice $\G^*$ of physical excitations of the 
+Hall fluid.
+
+We shall label the irreducible representations
+ of $\A(\G )$  ( i.e., the elements
+of $\G^* /\G$ )  by a pair $(m,\nu)$ where $m$ measures the minimal
+charge of each irreducible representation 
+so that $2|m| \leq (kM + 2) $, while $\nu \mod k$
+characterizes the neutral part. To each pair $(m,\nu)$
+there corresponds a set of $k$ weight vectors of type (\ref{1.8}), which
+satisfy (\ref{1.10}):
+\beqa\label{2.13}
+(m,\nu) \leftrightarrow \l_l(m,\nu) &=& \frac{m + l(kM+ 2)}{k}\Q
++ \La_{m + l - \nu} - \Lb_{l+\nu} \  ,\nn
+&& (\L_\mu \equiv \L_{\mu \mod  k},  l \mod k).
+ \eeqa
+The length squares of these vectors differ by integers \cite{cgt2}.
+
+Using the representation of each vector $\g\in \G$ as a sum
+of a $\l\in L$ and a {\it gluing vector} \cite{fro} $l \q\in \G$
+(see (\ref{1.6})) we can write the representation space
+$\H^\G_{\g^*}$ of $\A(\G)$ ($\g^*\in\G^* /\G$)
+as direct sums of representation spaces of $\A(L)$,
+\beq\label{spaces}
+ \H^\G_{\g^*} = \bigoplus_{l=0}^{k-1} \H^L_{\g^*+l\q}.
+\eeq
+This form of $\H^\G_{\g^*}$ allows to write its characters
+as a sum of characters of $\A(L)$ modules.
+Denote by $\chi_\nu(\t)$ the (restricted)  $\widehat{su(k)_1}$ characters
+\cite{kt},
+\beq\label{1.16}
+\chi_\nu(\t,A_{k-1})=\frac{1}{(\eta(\t))^{k-1}}
+\sum_{\g\in A_{k-1}} q^{\h|\L_\nu +\g|^2}, \quad q=\ex^{2\pi i \t},
+\quad \nu=0,1,\ldots, k-1,
+\eeq
+($\eta$ is the Dedekind $\eta$-function). Taking the standard
+notation (also used in \cite{cgt}) for the 1-dimensional lattice characters,
+\beq\label{1.17}
+K_l(\t,\zeta;m)=\frac{1}{\eta(\t)} \sum_{n\in\Z}
+q^{\frac{m}{2}(n+\frac{l}{m})^2} \ex^{2\pi i \zeta (n+\frac{l}{m})},
+\eeq
+we can write the characters $\chi_{\l}(\t,\zeta)$
+of the representation $\l$ (\ref{1.8}) in terms of the labels
+(\ref{2.13})
+as a sum of factorized $L$-characters,
+\beq\label{1.18}
+\chi_{m \nu}^\G(\t,\zeta)= 
+\sum_{s=0}^{k-1} K_{m +s(kM+2)}\left(\t,k\zeta;k(kM+2)\right)
+\chi_{m+s-\nu}^{(\alpha)}(\t)   \chi_{s+\nu}^{(\beta)}(\t),
+\eeq
+with $m$ mod $(kM+2)$ and $\nu$ $ \mod k $.
+The resulting set of $k(kM+2)$ functions is covariant under (weak)
+modular transformations generated by
+$T^2: (\t,\zeta)\rightarrow (\t+2,\zeta)$ and
+$S:(\t,\z) \rightarrow (-1/\t,\zeta/\t)$, which are the modular
+properties suitable for quantum Hall systems \cite{cz}.
+
+
+%-3-------------------------------------------
+
+\sectionnew{The $\Z_k$-parafermion coset and its representations}
+
+In this Section, we describe the coset construction (\ref{1.4});
+this can be done in each of the $k$ sectors (\ref{spaces}) of the abelian
+theory according to the $\Z_k$ parity rule.
+
+%-3.1---------------------------------------
+
+\subsection{$\Z_k$ selection rule for triples of su(k) weights.
+Conformal dimensions of coset representations}
+
+The $\PF_k$ coset module (\ref{1.4}) is labeled, in principle, by a triple
+$(\L_{\alpha},\L_{\beta};\L)$; the pair $(\L_{\alpha},\L_{\beta})$ of
+fundamental su(k) weights and the level 2 weight $\L$ fix an irreducible
+unitary representation
+of the numerator and of the denominator current algebra, respectively.
+The tensor product of irreducible $\widehat{su(k)_1}$-modules corresponding
+to the numerator in the right hand side of Eq. (\ref{1.4}) splits into a
+direct sum of $\PF_k$ and $\widehat{su(k)_2}$-modules:
+\beq\label{3.1}
+\H^{(1)}_{\L_{\alpha}} \otimes  \H^{(1)}_{\L_{\beta}} = \bigoplus\limits_{\L}
+\H(\L_{\alpha},\L_{\beta};\L)\otimes \H^{(2)}_{\L} \qquad
+\left( \alpha,\beta=0,\ldots,k-1, \; \L_0=0\right).
+\eeq
+Not all triples $(\L_{\alpha},\L_{\beta};\L)$  are admissible (i.e.,
+correspond to non-empty coset modules) and different
+{\it admissible triples} may refer to {\it equivalent representations}.
+The following statement is a
+specialization of results on field identification (based on the use of simple
+currents) obtained in Ref.\cite{schw}.
+\begin{prop}
+Admissible triples are characterized by the conservation of the $\Z_k$
+charge (the $k$-ality):
+\beq\label{3.2}
+[\L]=\sum_{i=1}^{k-1} i \ \lambda_i \quad
+\mathrm{for} \quad \L=  \sum_{i=1}^{k-1}  \lambda_i \L_i ;
+\eeq
+more precisely, the triple $(\L_{\alpha},\L_{\beta};\L)$  is
+admissible iff:
+\beq\label{3.3}
+ [\L_{\alpha}]+[\L_{\beta}]=[\L] \ \ \mod k , \qquad
+\mathrm{i.e.,} \quad \alpha +\beta =[\L] \ \ \mod k.
+\eeq
+There are thus $k {k+1 \choose 2}$ admissible triples of the form
+$(\L_{\alpha},\L_{\beta};\L_{\alpha +\kappa}+\L_{\beta -\kappa})$
+where all indices are taken $\mod k$. They split into $ {k+1 \choose 2}$
+families of equivalent triples of the form:
+\beq\label{3.4}
+(\L_{\alpha+\s},\L_{\beta+\s};\L_{\alpha +\kappa+\s}+\L_{\beta -\kappa+\s}) ,
+\quad \s=0,\ldots, k-1.
+\eeq
+As a result, the number $N(\PF_k)$ of parafermionic coset sectors coincides
+with the number of unitary irreducible representation  $N(\widehat{su(k)_2})$ of the level 2 current algebra:
+$ N(\PF_k)=N(\widehat{su(k)_2})=   {k+1 \choose 2}$.
+\end{prop}
+We can define a representative for each family in Eq.(\ref{3.4})
+by choosing a value for $\s$: we set
+$\beta+\s=0 \mod k$, thus normalizing the
+second fundamental weight to zero. 
+Therefore, the equivalent classes of triples are labeled by
+the level 2 weight, say $\L_\mu+\L_\nu$, $\mu\leq \nu$; we have:
+\beq\label{3.6}
+(\L_{\mu+\nu \mod k}, 0;\L_\mu+\L_\nu ) \quad \Longleftrightarrow
+\L_\mu+\L_\nu \quad (\mu\leq \nu).
+\eeq
+Ultimately, these labels characterize the parafermion representations.
+We end up with the following characterization of $\PF_k$ coset modules which
+appears to be new \cite{cgt2}.
+\begin{prop}
+The parafermionic coset modules are in one to one correspondence with
+sums $\left(\L_\mu+\L_\nu \right)$ of $su(k)$ fundamental weights
+($0\leq \mu \leq \nu \leq k-1$). Their conformal weights are given by:
+\beqa\label{3.7}
+\D^{(k)}_{\mu\nu}&=&\h \left| \L_\mu +\L_\nu \right|^2 -
+\D_2\left( \L_\mu +\L_\nu \right) \nn
+& = &
+\frac{\mu(k-\nu)}{k}+\frac{(\nu-\mu)(k+\mu-\nu)}{2k(k+2)}
+\quad \mathrm{for} \quad \left(0\leq\mu\leq\nu<k \right),
+\eeqa
+where $\D_2(\L)$ is the dimension of the representation of the level 2
+weight $\L$ of $\widehat{su(k)_2}$. The decomposition of a product of level-$1$
+characters corresponding to the tensor product expansion (\ref{3.1}) has the
+form:
+\beq\label{3.8}
+\chi^{(1)}(\L_{\alpha})   \chi^{(1)}(\L_{\beta}) =
+\sum_{\gamma} \ch\left(\L_{\alpha-\beta +\gamma} + \L_{k-\gamma}\right)
+\chi^{(2)} \left(\L_{\alpha-\beta +\gamma} + \L_{k-\gamma}\right) \ ,
+\eeq
+where $\ch(\L)$ is the coset character and $\gamma$ takes
+$\IP(k/2)+1$ values corresponding to distinct sums
+of pairs of weights ($\IP(x)$ stands for the integer part of the real number
+$x$).
+\end{prop}
+{\bf Proof.}
+Eq. (\ref{3.7}) can be verified by using the identity
+$ \D_1(\L_\mu) + \D_1(\L_{k-\nu}) -   \D_2(\L_{\mu+k-\nu})  =
+\D^{(k)}_{\mu\nu} $
+and observing that the triple $(\L_\mu,\L_{k-\nu};\L_{\mu+k-\nu})$
+is equivalent to  $(\L_{\mu+\nu},0;\L_{\mu}+\L_{\nu})$.
+The triples appearing in Eq. (\ref{3.8}) (as arguments of the pair of
+$\chi^{(1)}$ and $\chi^{(2)}$) are, clearly, admissible. It is
+straightforward to verify that the difference of conformal  weights
+of the two sides is an integer.
+The number of terms in the expansion (\ref{3.8}) is independent
+of $\alpha$  and $\beta$. For the vacuum representation we have:
+\[
+\chi^{(1)}(\L_0)   \chi^{(1)}(\L_0) =  \ch(2\L_0) \chi^{(2)}(2\L_0)+
+\sum_{\gamma=1}^{\IP(\frac{k}{2})}  \ch\left(\L_{\gamma} + \L_{k-\gamma}\right)
+\chi^{(2)} \left(\L_{\gamma} + \L_{k-\gamma}\right) \ ,
+\]
+where $\D^{(k)}_{\gamma, k-\gamma}+ \D_2(\L_\gamma +\L_{k-\gamma})=\gamma$
+for $\gamma\leq k-\gamma$. \eop
+
+%-3.2-----------------------------------------
+
+\subsection{Parafermionic Hall fluids. The parafermion $\Z_k$ charge}
+
+
+The chiral algebra $\A_k$ of the $\Z_k$-parafermion Hall fluids, 
+which reproduces the filling factor (\ref{0.1}), is determined from:
+\beq\label{3.11}
+\A_k \otimes \A(\widehat{su(k)_2})=\A(\G).
+\eeq
+This is obtained by a standard coset projection from the lattice
+theory of Section 2. In particular, the lattice
+characters (\ref{1.18}) are projected into:
+\beq\label{3.12}
+   \chi_{m \nu } (\tau, \z) = \sum_{s \mod  k} K_{m+ s(kM+2)}
+(\tau , k\z; k(kM+2)) \ch(\tau, \L_{s+m-\nu} +\L_{s+\nu} ) .
+\eeq
+
+The coset projection only preserves a single $\Z_k$ symmetry of 
+the original product $\Z_k \times \Z_k$ of the
+centres of the two $SU(k)$ groups; it is the difference:
+\beq\label{3.13}
+[\L_{\alpha +\s}]- [\L_{\beta +\s}]= (\alpha - \beta) \quad \mod k \ , 
+\eeq
+which defines the $\Z_k$ charge (or ``number'') of parafermions.
+
+Moreover, the $\Z_k$ parity rule of the parafermion Hall fluids
+is inherited from the parent abelian fluids, namely Eq.(\ref{1.8}): 
+it states that the physical Hall excitations possess
+parafermion number (\ref{3.13}) 
+equal ($mod \ k$) to the number of ``fractional units'' of electric charge 
+$l \in \Z_{kM+2}$ in Eq.(\ref{1.8}):
+\beq\label{p-rule}
+\alpha -\beta =l \quad {\rm mod}\ k\ .
+\eeq
+
+The coset representation $2\L_\nu$, corresponding to $\mu=\nu$,
+are the {\it ``parafermionic currents"} of Fateev and Zamolodchikov
+\cite{zf}. They all have quantum dimension 1 and obey $\Z_k$ fusion rules:
+\beq\label{3.14}
+2\L_{\mu} \times 2\L_{\nu}  \sim   2\L_{(\mu+\nu) \mod k} .
+\eeq
+The (non-local) parafermionic currents give rise
+to an ``anyonic" chiral algebra, say, \PFC
+whose bosonic (integer dimension fields') subalgebra can be
+ identified with the coset chiral algebra $\PF_k$ (\ref{1.4}). 
+The parafermionic algebra \PFC admits $k$ unitary irreducible representations, 
+labeled by an integer  $\r \mod  k$, with conformal weights,
+\beq\label{3.15}
+\D_\r = \frac{\r(k-\r)}{2k(k+2)}, \quad \r= 0,1,...,k-1.
+\eeq
+Each of these splits into $(k-\r)$ unitary irreducible representation 
+of the bosonic subalgebra
+$\PF_k$ whose conformal weights exceed (\ref{3.15}) by an integer multiple
+of $1/k$.  Comparing (\ref{3.15}) with (\ref{3.7})
+we see that $\r$ can be identified  with $(\nu-\mu)$. For each $\r$
+in the range  (\ref{3.15}) there are  exactly $(k-\r)$ pairs $(\mu,\nu)$
+satisfying $0\leq \mu\leq\nu\leq k$, $\r=\nu-\mu$; they generate all
+different conformal weights (\ref{3.7}). According to \cite{schil} the
+characters of the resulting coset modules are given by
+$\ch(\tau,\L_\mu+\L_\nu)= \ch_{\r l}(\tau)$, where:
+\beq\label{3.16}
+\ch_{\r l}(\tau)=q^{\D_\r-\frac{c_k-1}{24}}
+\sum\limits_{\underline{n}\in \N_l}
+\frac{q^{\underline{n}\cdot C^{-1}\cdot (\underline{n}- \L_{\r} ) }}
+{ (q)_{n_1}\cdots (q)_{n_{k-1}}},
+\quad l\geq \r.
+\eeq
+In this equation, $\D_\r$ is the  $\PF_k$ weight (\ref{3.15}), $(c_k -1)$
+is the parafermion central charge (cf. (\ref{1.4})),
+$ (q)_n=\prod_{j=1}^n (1-q^j)$,
+$\N_l=\left\{ \underline{n}=(n_1,\ldots,n_{k-1})\right.$; 
+$n_i \in \Z_+ ;$
+$ \left. n_1+2n_2+\cdots + (k-1)n_{k-1}=l \mod k\right\}$, and
+$C^{-1}$ is the inverse of the $su(k)$ Cartan matrix.
+
+The expression (\ref{3.16}) corresponds to a $\PF_k$ irreducible
+component of the representation $\r$ of the non-local parafermionic
+algebra \PFC. For fixed $\r$,
+the values of $l$ yielding inequivalent $\PF_k$ modules are:
+\beq\label{3.21}
+l = \r, \r +1,\ldots,k-1 \; (\mathrm{for} \; \r =0,1, \ldots, k-1).
+\eeq
+The pair $(\r,l)$ is related to $(\mu,\nu)$ of (\ref{3.7}) by:
+\beq\label{3.22}
+\r = \nu - \mu , \quad l=\nu  \; \mathrm{or} \; \mu = l-\r, \nu =l
+\Rightarrow 2l-\r \equiv m \mod  k.
+\eeq
+The {\it topological order} $N_k$  of 
+the $\Z_k$-parafermion Hall fluid
+is equal \cite{cz} to the number of independent characters (\ref{3.12})
+of the corresponding conformal theory; 
+it is given by the product of the range of m, i.e. ($kM + 2$), 
+times the number ${ k+1 \choose 2}$ of $\Z_k$-parafermion
+sectors and divided by $k$, due to the parity rule (\ref{p-rule}):
+\beq\label{3.23}
+N_k = \frac{1}{k}(kM + 2) { k +1 \choose 2} = \frac{k+1}{2}(kM + 2 ) \ .
+\eeq
+We thus recover the value obtained in Ref.\cite{rr} by other means.
+
+
+%-4---------------------------------------
+
+\sectionnew{The $k=3$ case}
+
+Here we spell out our construction in the case of $k=3$
+(the analysis of the Pfaffian state ($k=2)$ can be found in the 
+Refs.\cite{cgt} \cite{cgt2}).
+Consider the lattice model of Section 2 for
+$k=3$, $M=1$: the  coset (\ref{1.4}) coincides in this case with
+the $\Z_3$ Potts model (with $c_\PF=4/5$). We shall label its 6 sectors
+by an integer $\lambda$,  $-2 \leq \lambda \leq 3$,  related to the pair
+$(\mu,\nu)$  ($0\leq \mu,\nu \leq 2$) of Eq. (\ref{3.7}) as follows:
+$1=(1,0)=(0,1)$, $ \; -1=(2,0)=(0,2)$, $\; 2=(1,1)$, $\; -2=(2,2)$,
+$\; (\pm) 3=(1,2)=(2,1)$. 
+The conformal dimensions $\D_\lambda$ are given by:
+\beq\label{3.5'}
+\D_0=0, \quad \D_{\pm 1}=\frac{1}{15}, \quad \D_{\pm 2}=\frac{2}{3},
+\quad  \D_{\pm 3}=\frac{2}{5}.
+\eeq
+The 6 coset characters (\ref{3.16}) for $k=3$ can be written as,
+\beqa\label{4.9}
+\!\!\!\!\! ch_{2l}(\t)&=&\ch_{0,l}(\t) = q^{-\frac{1}{30}}
+\sum_{n_1+2n_2=l \mod 3,\ \ (n_i\geq 0)}
+\frac{q^{\frac{2}{3}\left(n_1^2+n_2n_2+n_2^2 \right)}}{(q)_{n_1}(q)_{n_2}},
+\quad l=0,\pm 1 (\mod 3) \ ,\nn
+\!\!\!\!\! ch_{2l-1}(\t)&=& \ch_{l+1,l+1}(\t) = 
+q^{\frac{1}{30}} \sum_{n_1+2n_2=0 \mod 3}
+\frac{q^{\frac{2}{3}\left(n_1^2+n_2n_2+n_2^2 \right) - 
+\frac{2n_{l+1}+n_{2-l}}{3}}}{(q)_{n_1}(q)_{n_2}}, \quad l=0, 1\ , \nn
+\!\!\!\!\! ch_{3}(\t)&=&\ch_{1,2}(\t) = 
+q^{\frac{1}{30}} \sum_{n_1+2n_2=2 \mod 3}
+\frac{q^{\frac{1}{3}\left[2n_1(n_1-1)+2 n_1 n_2 + n_2(2n_2-1) \right]}}
+{(q)_{n_1}(q)_{n_2}}.
+\eeqa
+Their modular transformations will be omitted here and can be found
+in Ref.\cite{cgt2}.
+ 
+The $\Z_3$ parafermion Hall fluid with chiral algebra $\A_3$ defined by
+(\ref{3.11}), filling factor $3/5$  and central charge $c=9/5$
+has topological order 10 (according to (\ref{3.23}) ) and characters:
+\beqa\label{3.8'}
+\chi_{m \mu}(\t,\z)&=&\sum_{l=-1}^1 K_{m+5l} (\t,3\z;15) ch_{m+3\mu+2l}(\t)
+\qquad (ch_\lambda(\t)=ch_{\lambda+6}(\t) ), \nn
+&& m=0,\pm 1, \pm 2, \quad \mu=0,1.
+\eeqa
+Note that the charge ($K$) and neutral ($ch$) parts on the Hall fluid
+characters in Eq.(\ref{3.8'}) combine according to the 
+$\Z_3$ parity rule (\ref{p-rule}).
+ 
+The minimal charges $Q_{m \mu}$ and minimal conformal
+dimensions $\D_{m \mu}$ in the sectors (\ref{3.8'}) are:
+\beqa\label{4.13}
+ Q_{m \mu}=\frac{m}{5}, \quad &&\D_{m 0} =\frac{1}{10}{|m|+1 \choose 2},
+%\quad \left( \D_{20}= \frac{3}{10}=3\D_{10} \right) 
+\nn
+&& \D_{01}=\frac{2}{5}=2\D_{2 1}, \quad \D_{11}=\frac{7}{10}.
+\eeqa
+
+The full characters (\ref{3.8'}) of the parafermion Hall fluid
+transform linearly under the $S$ modular inversion $\tau \to -1/\tau$;
+the associated matrix is:
+\beq\label{3.10'}
+S_{m\mu,m'\mu'}=\frac{\sqrt{3-\d}}{5}
+(-1)^{\mu\mu' +m\mu'+m'\mu} \ex^{i\frac{\pi}{5} m m'}
+\d^{P_{\mu+m+\mu'+m'}} \ ,
+\eeq
+with $m,m'=0,\pm1,\pm 2$,  $\mu,\mu'=0,1$,
+$\delta=2 \cos (\pi/5)$ the golden ratio and
+$P_{\lambda} = \left( 1-(-1)^{\lambda}\right)/2$.
+In particular, the quantum dimension $d_{q}$ of the representation
+$(m,\mu)$ is:
+\beq\label{3.11'}
+d_q(m,\mu)=
+\left\{ \begin{array}{rll} 1 & \mathrm{for} \; \mu+m & \mathrm{even} , \\
+\d & \mathrm{for} \; \mu+m & \mathrm{odd}\ . \end{array} \right.
+\eeq
+The presence of a non-integer (in fact, irrational) quantum dimension
+$\d$ signals the non-abelian statistics of the quasi-particle
+excitations in this Hall fluid. Actually, some fusion
+rules yields more than one field in the r.h.s., for example:
+\beqa\label{3.12'}
+&&(1,0) \times (1,0) = (2,0) + (2,1)  \nn
+&&(0,1) \times (0,1) = (0,0) + (0,1).
+\eeqa
+Further properties of the coset construction of 
+$\Z_k$-parafermion Hall fluids, such as the ${\cal W}_k$ symmetry
+\cite{ctz}, can be found in Ref.\cite{cgt2}.
+
+\bigskip
+{\bf Acknowledgments}
+
+L. G. thanks Christoph Schweigert for fruitful discussions.
+L. G. thanks I.N.F.N. and Dipartimento di Fisica, Firenze for hospitality;
+I. T. thanks the Erwin Schroedinger Institute (ESI), Vienna and l'Institut des
+Hautes Etudes Scientifiques (IHES), Bures-sur-Yvette, for hospitality
+during the completion of this paper.
+I.T. thanks the organizers of the
+Seminar on "Symmetries and Quantum Symmetries", Dubna, July 1999 and of
+the "6th Wigner Symposium", Istambul, August 1999 for inviting him to
+present this talk.
+L.G. and I.T. acknowledge partial support from the Bulgarian
+National Foundation for Scientific Research under contract F-827.
+A.C. acknowledges the partial support from the European
+Community network programme FMRX-CT96-0012.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\def\NP{{\it Nucl. Phys.\ }}
+\def\PRL{{\it Phys. Rev. Lett.\ }}
+\def\PL{{\it Phys. Lett.\ }}
+\def\PR{{\it Phys. Rev.\ }}
+\def\CMP{{\it Comm. Math. Phys.\ }}
+\def\IJMP{{\it Int. J. Mod. Phys.\ }}
+\def\JSP{{\it J. Stat. Phys.\ }}
+\def\JP{{\it J. Phys.\ }}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{thebibliography}{999}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\bibitem{prange} For a review see: R. A. Prange and S. M. Girvin, 
+                {\it The Quantum Hall Effect}, Springer Verlag, New York 
+                (1990); S. Das Sarma and A. Pinczuk, {\it Perspectives 
+                in Quantum Hall effects}, John Wiley, (1997).
+\bibitem{wen}   For a review, see: X. G. Wen, \IJMP {\bf 6 B} (1992) 1711; 
+                {\it Adv. in Phys.} {\bf 44} (1995) 405.
+\bibitem{expe}  L. Saminadayar, D. C. Glattli, Y. Jin and
+                B. Etienne, \PRL {\bf 79} (1997) 2526;
+                R. de Picciotto, M. Reznikov, M. Heiblum, V. Umansky,
+                G. Bunin and D. Mahalu, {\it Nature} {\bf 389} (1997) 162.
+\bibitem{pfaf}  G. Moore and N. Read, \NP {\bf B 360} (1991) 362;
+                see also B. Halperin, {\it Helv. Phys. Acta} {\bf 56}
+                (1983) 1031.
+\bibitem{killhr} R. H. Morf, \PRL {\bf 80} (1998) 1505; E. H. Rezayi and 
+                F. D. M. Haldane, cond-mat/9906137.
+\bibitem{rr}   N. Read, E. Rezayi, \PR {\bf B 59} (1998) 8084.
+\bibitem{zf}  A.B. Zamolodchikov and V.A. Fateev,  Sov. Phys. JETP 
+              {\bf 62} (1985) 215, Nucl. Phys. {\bf B 280}(1987) 644;
+              D. Gepner, Z. Qui, \NP {\bf B285} (1987) 423.
+\bibitem{exper} W. Pan et al., \PRL {\bf 83} (1999) 3530.
+\bibitem{gura} V. Gurarie and E. Rezayi, cond-mat/9812288.
+\bibitem{fro}  J. Fr\"{o}hlich and E. Thiran, \JSP {\bf 76} (1994) 209;
+               J. Fr\"{o}hlich, U. M. Studer and E. Thiran, \JSP
+               {\bf 86} (1997) 821;J. Fr\"{o}hlich, T. Kerler,
+                U. M. Studer and E. Thiran, \NP {\bf B 453} (1995) 670.
+\bibitem{cgt} A. Cappelli, L. S. Georgiev and I. T. Todorov,
+               Commun. Math. Phys. {\bf 205} (1999) 657--689.
+\bibitem{gko} P. Goddard, A. Kent,  D. Olive, Commun. Math. Phys.
+              {\bf 103} (1986) 105.
+\bibitem{cgt2} A. Cappelli, L. S. Georgiev and I. T. Todorov,
+               in preparation.
+\bibitem{schout} E. Fradkin, C. Nayak and K. Schoutens, cond-mat/9811005;
+               X. G. Wen, cond-mat/9811111. 
+\bibitem{kt} V.G. Kac and I.T. Todorov, Commun. Math Phys. {\bf 190} 
+              (1997) 57.
+\bibitem{cz}  A. Cappelli and G.R. Zemba, \NP {\bf B490} (1997) 595.
+\bibitem{schw} J. Fuchs, A.N. Schellekens, C. Schweigert,
+              \NP {\bf B461} (1996) 39.
+\bibitem{schil} A. Schilling, {Nucl. Phys.} {\bf B459}, 393 (1996),
+              {Nucl. Phys.} {\bf B467}, 247 (1996), and references therein.
+\bibitem{ctz}  A. Cappelli, C. A. Trugenberger and G. R. Zemba,
+               \NP {\bf B 396} (1993) 465, \NP {\bf B 448} (1995) 470; 
+               Cappelli and G. R. Zemba, \NP {\bf B 540} (1999) 610;
+               S. Iso, D. Karabali and B. Sakita, \NP {\bf B 388} (1992) 700.
+\end{thebibliography}
+
+\end{document}

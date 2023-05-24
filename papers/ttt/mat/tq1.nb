@@ -1,0 +1,4446 @@
+(***********************************************************************
+
+                    Mathematica-Compatible Notebook
+
+This notebook can be used on any computer system with Mathematica 3.0,
+MathReader 3.0, or any compatible application. The data for the notebook 
+starts with the line of stars above.
+
+To get the notebook into a Mathematica-compatible application, do one of 
+the following:
+
+* Save the data starting with the line of stars above into a file
+  with a name ending in .nb, then open the file inside the application;
+
+* Copy the data starting with the line of stars above to the
+  clipboard, then use the Paste menu command inside the application.
+
+Data for notebooks contains only printable 7-bit ASCII and can be
+sent directly in email or through ftp in text mode.  Newlines can be
+CR, LF or CRLF (Unix, Macintosh or MS-DOS style).
+
+NOTE: If you modify the data for this notebook not in a Mathematica-
+compatible application, you must delete the line below containing the 
+word CacheID, otherwise Mathematica-compatible applications may try to 
+use invalid cache data.
+
+For more information on notebooks and Mathematica-compatible 
+applications, contact Wolfram Research:
+  web: http://www.wolfram.com
+  email: info@wolfram.com
+  phone: +1-217-398-0700 (U.S.)
+
+Notebook reader applications are available free of charge from 
+Wolfram Research.
+***********************************************************************)
+
+(*CacheID: 232*)
+
+
+(*NotebookFileLineBreakTest
+NotebookFileLineBreakTest*)
+(*NotebookOptionsPosition[    146594,       4273]*)
+(*NotebookOutlinePosition[    147876,       4314]*)
+(*  CellTagsIndexPosition[    147832,       4310]*)
+(*WindowFrame->Normal*)
+
+
+
+Notebook[{
+
+Cell[CellGroupData[{
+Cell[BoxData[{
+    \( (*\ \ 
+      \(************************************************************\)*\n\n
+            \ \ \ \ CONSTRUCTION\ OF\ THE\ 77\ TENSORS\ BOSE - 
+          SYMM\ \((\(1\  < \) -> \ 2)\)\ \n\ \ \ \ \nbas
+            \ \ \ \ \ \ \ \ \ \ \ \ basis\ of\ all\ 137\ 6 - 
+          index\ tensors\nbasind\ \ \ \ \ \ \ \ \ 77\ representatives\ of\ the
+            \ Bose - 
+          symm\ tensors\ 
+            \((Bose - 
+                symm\ partner\ should\ be\ added\ if\ present\n
+                  \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \
+\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ to\ get\ the\ full\ 
+                  tensor\ \((Riccardo)\)\ )\)\nbasind6\ \ \ \ \ \ \ \ 15\ 
+            representatives\ of\ tensorial\ dim . \ D = 
+        6\nbasind4\ \ \ \ \ \ \ \ 62\ remaining\ with\ D\  < \ 6\na[1],  .. , 
+      a[77]\ \ free\ coefficients\ after\ Bose\ symm\ \nts
+          \ \ \ \ \ \ \ \ \ \ \ \ \  < TTT > \ in\ this\ parametrization\n
+      \n********************************************************************) 
+      \n\nbasis\  = 
+      \ {k2 . h1 . k1\  -> \ k1 . h1 . k2, \ \n\ \ \ \ \ \ \ \ \ 
+        k2 . h2 . k1\  -> \ k1 . h2 . k2, \ \n\ \ \ \ \ \ \ \ \ 
+        k2 . h3 . k1\  -> \ k1 . h3 . k2, \ \n\ \ \ \ \ \ \ \ \ 
+        k1 . h1 . h2 . k1\  -> \ k1 . h2 . h1 . k1, \n\ \ \ \ \ \ \ \ \ 
+        k2 . h1 . h2 . k2\  -> \ k2 . h2 . h1 . k2, \ \n\ \ \ \ \ \ \ \ \ 
+        k2 . h1 . h2 . k1\  -> \ k1 . h2 . h1 . k2, \n\ \ \ \ \ \ \ \ \ 
+        k1 . h1 . h2 . k2\  -> \ k2 . h2 . h1 . k1, \n\ \ \ \ \ \ \ \ \ 
+        k1 . h1 . h3 . k1\  -> \ k1 . h3 . h1 . k1, \n\ \ \ \ \ \ \ \ \ 
+        k2 . h1 . h3 . k2\  -> \ k2 . h3 . h1 . k2, \ \n\ \ \ \ \ \ \ \ \ 
+        k2 . h1 . h3 . k1\  -> \ k1 . h3 . h1 . k2, \n\ \ \ \ \ \ \ \ \ 
+        k1 . h1 . h3 . k2\  -> \ k2 . h3 . h1 . k1, \n\ \ \ \ \ \ \ \ \ 
+        k1 . h2 . h3 . k1\  -> \ k1 . h3 . h2 . k1, \n\ \ \ \ \ \ \ \ \ 
+        k2 . h2 . h3 . k2\  -> \ k2 . h3 . h2 . k2, \ \n\ \ \ \ \ \ \ \ \ 
+        k2 . h2 . h3 . k1\  -> \ k1 . h3 . h2 . k2, \n\ \ \ \ \ \ \ \ \ 
+        k1 . h2 . h3 . k2\  -> \ k2 . h3 . h2 . k1, \n\ \ \ \ \ \ \ \ \ 
+        k1 . h2 . h1 . h3 . k1\  -> \ k1 . h3 . h1 . h2 . k1, \n
+        \ \ \ \ \ \ \ \ \ 
+        k1 . h2 . h1 . h3 . k2\  -> \ k2 . h3 . h1 . h2 . k1, \n
+        \ \ \ \ \ \ \ \ \ 
+        k2 . h2 . h1 . h3 . k1\  -> \ k1 . h3 . h1 . h2 . k2, \n
+        \ \ \ \ \ \ \ \ \ 
+        k2 . h2 . h1 . h3 . k2\  -> \ k2 . h3 . h1 . h2 . k2, \n
+        \ \ \ \ \ \ \ \ \ 
+        k1 . h1 . h2 . h3 . k1\  -> \ k1 . h3 . h2 . h1 . k1, \n
+        \ \ \ \ \ \ \ \ \ 
+        k1 . h1 . h2 . h3 . k2\  -> \ k2 . h3 . h2 . h1 . k1, \n
+        \ \ \ \ \ \ \ \ \ 
+        k2 . h1 . h2 . h3 . k1\  -> \ k1 . h3 . h2 . h1 . k2, \n
+        \ \ \ \ \ \ \ \ \ 
+        k2 . h1 . h2 . h3 . k2\  -> \ k2 . h3 . h2 . h1 . k2, \n
+        \ \ \ \ \ \ \ \ \ 
+        k1 . h1 . h3 . h2 . k1\  -> \ k1 . h2 . h3 . h1 . k1, \n
+        \ \ \ \ \ \ \ \ \ 
+        k1 . h1 . h3 . h2 . k2\  -> \ k2 . h2 . h3 . h1 . k1, \n
+        \ \ \ \ \ \ \ \ \ 
+        k2 . h1 . h3 . h2 . k1\  -> \ k1 . h2 . h3 . h1 . k2, \n
+        \ \ \ \ \ \ \ \ \ 
+        k2 . h1 . h3 . h2 . k2\  -> \ k2 . h2 . h3 . h1 . k2, \n
+        \ \ \ \ \ \ \ \ \ tr[h1 . h2]\  -> \ tr[h2 . h1], \n\ \ \ \ \ \ \ \ \ 
+        tr[h1 . h3]\  -> \ tr[h3 . h1], \n\ \ \ \ \ \ \ \ \ 
+        tr[h2 . h3]\  -> \ tr[h3 . h2], \n\ \ \ \ \ \ \ \ \ 
+        tr[h2 . h1 . h3]\  -> \ tr[h3 . h2 . h1], \n\ \ \ \ \ \ \ \ \ 
+        tr[h1 . h2 . h3]\  -> \ tr[h3 . h2 . h1], \n\ \ \ \ \ \ \ \ \ 
+        tr[h1 . h3 . h2]\  -> \ tr[h3 . h2 . h1], \n\ \ \ \ \ \ \ \ \ 
+        tr[h3 . h1 . h2]\  -> \ tr[h3 . h2 . h1], \n\ \ \ \ \ \ \ \ \ 
+        tr[h2 . h3 . h1]\  -> \ tr[h3 . h2 . h1], \n\ \ \ \ \ \ \ \ \ \ 
+        k2 . v\  -> \ v . k2, \ k1 . v\  -> \ v . k1, \n\ \ \ \ \ \ \ \ \ \ 
+        k1 . h2 . v\  -> \ v . h2 . k1, \n\ \ \ \ \ \ \ \ \ \ 
+        k2 . h2 . v\  -> \ v . h2 . k2, \n\ \ \ \ \ \ \ \ \ \ 
+        k1 . h1 . v\  -> \ v . h1 . k1, \n\ \ \ \ \ \ \ \ \ \ 
+        k2 . h1 . v\  -> \ v . h1 . k2, \n\ \ \ \ \ \ \ \ \ \ 
+        k1 . h3 . v\  -> \ v . h3 . k1, \n\ \ \ \ \ \ \ \ \ \ 
+        k2 . h3 . v\  -> \ v . h3 . k2, \n\ \ \ \ \ \ \ \ \ \ 
+        k1 . h1 . h2 . v\  -> \ v . h2 . h1 . k1, \n\ \ \ \ \ \ \ \ \ \ 
+        k2 . h1 . h2 . v\  -> \ v . h2 . h1 . k2, \n\ \ \ \ \ \ \ \ \ \ 
+        k1 . h2 . h1 . v\  -> \ v . h1 . h2 . k1, \n\ \ \ \ \ \ \ \ \ \ 
+        k2 . h2 . h1 . v\  -> \ v . h1 . h2 . k2, \n\ \ \ \ \ \ \ \ \ \ 
+        k1 . h3 . h2 . v\  -> \ v . h2 . h3 . k1, \n\ \ \ \ \ \ \ \ \ \ 
+        k2 . h3 . h2 . v\  -> \ v . h2 . h3 . k2, \n\ \ \ \ \ \ \ \ \ \ 
+        k1 . h2 . h3 . v\  -> \ v . h3 . h2 . k1, \n\ \ \ \ \ \ \ \ \ \ 
+        k2 . h2 . h3 . v\  -> \ v . h3 . h2 . k2}; \n\ \n
+    ir123\  = {k1 . h3 . h1 . h2 . k1, \ k2 . h3 . h1 . h2 . k1, \ 
+        k1 . h3 . h1 . h2 . k2, \ k2 . h3 . h1 . h2 . k2, \n\ \ \ \ \ \ \ \ 
+        k1 . h3 . h2 . h1 . k1, \ k2 . h3 . h2 . h1 . k1, \ 
+        k1 . h3 . h2 . h1 . k2, \ k2 . h3 . h2 . h1 . k2, \n\ \ \ \ \ \ \ \ 
+        k1 . h2 . h3 . h1 . k1, \ k2 . h2 . h3 . h1 . k1, \ 
+        k1 . h2 . h3 . h1 . k2, \ k2 . h2 . h3 . h1 . k2, \n\ \ \ \ \ \ \ \ 
+        tr[h3 . h2 . h1]}; \nbas1\ \  = \ ir123; \n\ \ \ \ \ \ \ \ \n
+    ir12\  = {\ k1 . h2 . h1 . k1, \ k2 . h2 . h1 . k2, \ k1 . h2 . h1 . k2, 
+        \ k2 . h2 . h1 . k1, \ tr[h2 . h1]}; \n
+    ir13\  = {\ k1 . h3 . h1 . k1, \ k2 . h3 . h1 . k2, \ k1 . h3 . h1 . k2, 
+        \ k2 . h3 . h1 . k1, \ tr[h3 . h1]}; \n
+    ir23\  = {\ k1 . h3 . h2 . k1, \ k2 . h3 . h2 . k2, \ k1 . h3 . h2 . k2, 
+        \ k2 . h3 . h2 . k1, \ tr[h3 . h2]}; \n
+    ir1\ \  = {\ k1 . h1 . k1, \ k2 . h1 . k2, \ k1 . h1 . k2, \ tr[h1]}; \n
+    ir2\ \  = {\ k1 . h2 . k1, \ k2 . h2 . k2, \ k1 . h2 . k2, \ tr[h2]}; \n
+    ir3\ \  = {\ k1 . h3 . k1, \ k2 . h3 . k2, \ k1 . h3 . k2, \ tr[h3]}; \n
+    bas2\  = \ 
+      Union[Table[
+          ir12[\([Floor[i/4]\  + \ 1]\)]\ ir3[\([Mod[i, \ 4]\  + \ 1]\)], 
+          \ {i, \ 0, \ 19}], \n\ \ \ \ \ \ \ \ 
+        Table[ir13[\([Floor[i/4]\  + \ 1]\)]\ ir2[\([Mod[i, \ 4]\  + \ 1]\)], 
+          \ {i, \ 0, \ 19}], \n\ \ \ \ \ \ \ \ 
+        Table[ir23[\([Floor[i/4]\  + \ 1]\)]\ ir1[\([Mod[i, \ 4]\  + \ 1]\)], 
+          \ {i, \ 0, \ 19}]]; \n\ \ \ \ \ \ \ \ \n
+    bas3\  = \ 
+      Table[ir1[\([Mod[i, 4] + 1]\)]\ ir2[\([Mod[Floor[i/4], 4] + 1]\)]\ 
+          ir3[\([Floor[i/16] + 1]\)], \ \n
+        \ \ \ \ \ \ \ \ \ \ \ \ \ \ {i, \ 0, \ 63}]; \n
+    bas\  = \ Union[bas1, bas2, bas3]; \ \ \ \ \ \ \ \ \ \n
+    t1\ \  = \ \ Sum[b[i]\ \ bas[\([i]\)], \ {i, \ 1, \ 137}]; \n\n
+    te1\  = \ 
+      t1\  //. \ {k1\  -> \ kk1, \ k2\  -> \ kk2, \ h1\  -> \ hh1, \ 
+          h2\  -> \ hh2}; \n
+    t11\  = \ \(t1\  - \ te1\ \  //. 
+          \ {kk1\  -> \ k2, \ kk2\  -> \ k1, \ hh1\  -> \ h2, \ hh2\  -> \ h1}
+            \)\  //. \ basis; \n
+    solsym1\  = \ 
+      Solve[Coefficient[t11, bas]\  == \ 0, \ 
+        Table[b[i], \ {i, \ 1, \ 137}]\ ]; \n
+    ts1\  = \ Expand[\ t1\ \  //. \ Part[solsym1, 1]\ ]; \n
+    vars1\  = \ 
+      Complement[
+        Union[\ Table[If[FreeQ[ts1, \ b[i]], \ 0, \ b[i]], {i, 1, 137}]
+            \ \ ], {0}]\), 
+    \(basind\  = \ Coefficient[t1, \ vars1]; \n
+    vars\  = \ Table[a[i], {i, 1, 77}]; \n
+    ts\  = \ ts1\  //. \ 
+        Table[vars1[\([i]\)]\  -> \ vars[\([i]\)], {i, 1, 77}]; \n
+    basind6\  = \ Table[basind[\([i]\)], {i, 1, 15}]; \n
+    basind4\  = \ Table[basind[\([i]\)], {i, 16, 77}]; \n
+    \n (*\(****************************************************************\n
+          \nIMPOSING\)\ THE\ TWO\ DIFF\ WARD\ IDENTITIES\n\nc[1],  .. , 
+      c[17]\ \ \ \ coefficients\ of\ the\ homogeneous\ solution\ of\ Diff\ WI
+        \nc[18],  .. , c[21]\ \ \  + \(-\ combinations\)\ of\ f0[q^2], \ 
+      f0[k^2]\ and\ f2[q^2], \ 
+      f2[k^2]\ntc\ \ \ \ \ \ \ \ \ \ \ \ \ \  < TTT > \ 
+        result\ of\ this\ step\ of\ the\ calculation\n
+      \n******************************************************************) \n
+    \ncons\  = 
+      \ {x__ . v**k1 . t__\  -> \ 
+          \((x . v)\) \((k1 . t)\) + \((x . k1)\) \((v . t)\), \n
+        \ \ \ \ \ \ \ \ \ 
+        x__ . v**k2 . t__\  -> \ 
+          \((x . v)\) \((k2 . t)\) + \((x . k2)\) \((v . t)\), \n
+        \ \ \ \ \ \ \ \ \ \ k1 . k1\  -> \ q1, \ k2 . k2\  -> \ q2, \ 
+        k1 . k2\  -> \ \((q - q1 - q2)\)/2, \n\ \ \ \ \ \ \ \ \ \ 
+        k2 . k1\  -> \ \((q - q1 - q2)\)/2, \n\ \ \ \ \ \ \ \ \ \ 
+        tr[v**z_]\  -> \ 2\ v . z, \n\ \ \ \ \ \ \ \ \ \ 
+        tr[x_\  + \ y_]\  -> \ tr[x] + \ tr[y], \n\ \ \ \ \ \ \ \ \ \ 
+        tr[u__ . v**k1]\  -> \ k1 . u . v\  + \ v . u . k1, \n
+        \ \ \ \ \ \ \ \ \ \ 
+        tr[u__ . v**k2]\  -> \ k2 . u . v\  + \ v . u . k2, \n
+        \ \ \ \ \ \ \ \ \ \ 
+        tr[v**k1 . s__]\  -> \ v . s . k1\  + \ k1 . s . v, \n
+        \ \ \ \ \ \ \ \ \ \ 
+        tr[v**k2 . s__]\  -> \ v . s . k2\  + \ k2 . s . v, \n
+        \ \ \ \ \ \ \ \ \ \ 
+        tr[u__ . v**k1 . s__]\  -> \ k1 . s . u . v\  + \ v . s . u . k1, \n
+        \ \ \ \ \ \ \ \ \ \ 
+        tr[u__ . v**k2 . s__]\  -> \ k2 . s . u . v\  + \ v . s . u . k2, \n
+        \ \ \ \ \ \ \ \ \ \ k3\  -> \ \(-\ k1\)\  - \ k2, \n
+        \ \ \ \ \ \ \ \ \ \ 
+        x___ . \((y_ + z_)\) . t___\  -> \ x . y . t\  + \ x . z . t, \n
+        \ \ \ \ \ \ \ \ \ \ 
+        x___ . \((\(-\ z_\))\) . t___\  -> \ \(-\ x . z . t\)}; \n
+    \ \ \ \ \ \ \ \ \ \ \n\ 
+    cons1\  = 
+      \ {x__ . v**k1 . t__\  -> \ \((x . v)\) \((k1 . t)\), \n
+        \ \ \ \ \ \ \ \ \ \ 
+        x__ . v**k2 . t__\  -> \ \((x . v)\) \((k2 . t)\), \n
+        \ \ \ \ \ \ \ \ \ \ k1 . k1\  -> \ 1, \ k2 . k2\  -> \ 1, \ 
+        k1 . k2\  -> \ 1, \ k2 . k1\  -> \ 1, \n\ \ \ \ \ \ \ \ \ \ 
+        tr[v**z_]\  -> \ v . z, \n\ \ \ \ \ \ \ \ \ \ 
+        tr[x_\  + \ y_]\  -> \ tr[x] + \ tr[y], \n\ \ \ \ \ \ \ \ \ \ 
+        tr[u__ . v**k1]\  -> \ k1 . u . v, \n\ \ \ \ \ \ \ \ \ \ 
+        tr[u__ . v**k2]\  -> \ k2 . u . v, \n\ \ \ \ \ \ \ \ \ \ 
+        tr[v**k1 . s__]\  -> \ v . s . k1, \n\ \ \ \ \ \ \ \ \ \ 
+        tr[v**k2 . s__]\  -> \ v . s . k2, \n\ \ \ \ \ \ \ \ \ \ 
+        tr[u__ . v**k1 . s__]\  -> \ k1 . s . u . v, \n\ \ \ \ \ \ \ \ \ \ 
+        tr[u__ . v**k2 . s__]\  -> \ k2 . s . u . v, \n\ \ \ \ \ \ \ \ \ \ 
+        x___ . \((y_ + z_)\) . t___\  -> \ x . y . t\  + \ x . z . t}; \n
+    \ \ \ \ \ \ \ \ \ \ \n\ 
+    cons2\  = 
+      \ {x__ . v**k1 . t__\  -> \ \((x . k1)\) \((v . t)\), \n
+        \ \ \ \ \ \ \ \ \ \ 
+        x__ . v**k2 . t__\  -> \ \((x . k2)\) \((v . t)\), \n
+        \ \ \ \ \ \ \ \ \ \ k1 . k1\  -> \ 1, \ k2 . k2\  -> \ 1, \ 
+        k1 . k2\  -> \ 1, \ k2 . k1\  -> \ 1, \n\ \ \ \ \ \ \ \ \ \ 
+        tr[v**z_]\  -> \ v . z, \n\ \ \ \ \ \ \ \ \ \ 
+        tr[x_\  + \ y_]\  -> \ tr[x] + \ tr[y], \n\ \ \ \ \ \ \ \ \ \ 
+        tr[u__ . v**k1]\  -> \ v . u . k1, \n\ \ \ \ \ \ \ \ \ \ 
+        tr[u__ . v**k2]\  -> \ v . u . k2, \n\ \ \ \ \ \ \ \ \ \ 
+        tr[v**k1 . s__]\  -> \ k1 . s . v, \n\ \ \ \ \ \ \ \ \ \ 
+        tr[v**k2 . s__]\  -> \ k2 . s . v, \n\ \ \ \ \ \ \ \ \ \ 
+        tr[u__ . v**k1 . s__]\  -> \ v . s . u . k1, \n\ \ \ \ \ \ \ \ \ \ 
+        tr[u__ . v**k2 . s__]\  -> \ v . s . u . k2, \n\ \ \ \ \ \ \ \ \ \ 
+        x___ . \((y_ + z_)\) . t___\  -> \ x . y . t\  + \ x . z . t}; \n\ \n
+    \ cont3\  = 
+      \ {x__ . hh1 . t__\  -> \ 
+          \((x . v)\) \((k3 . h1 . t)\) + \((x . h1 . k3)\) \((v . t)\), \n
+        \ \ \ \ \ \ \ \ \ \ 
+        x__ . hh2 . t__\  -> \ 
+          \((x . v)\) \((k3 . h2 . t)\) + \((x . h2 . k3)\) \((v . t)\), \n
+        \ \ \ \ \ \ \ \ \ \ tr[hh1]\  -> \ 2\ v . h1 . k3, \n
+        \ \ \ \ \ \ \ \ \ \ tr[hh2]\  -> \ 2\ v . h2 . k3, \n
+        \ \ \ \ \ \ \ \ \ \ 
+        tr[u__ . hh1]\  -> \ k3 . h1 . u . v\  + \ v . u . h1 . k3, \n
+        \ \ \ \ \ \ \ \ \ \ 
+        tr[u__ . hh2]\  -> \ k3 . h2 . u . v\  + \ v . u . h2 . k3, \n
+        \ \ \ \ \ \ \ \ \ \ 
+        tr[hh1 . s__]\  -> \ v . s . h1 . k3\  + \ k3 . h1 . s . v, \n
+        \ \ \ \ \ \ \ \ \ \ 
+        tr[hh2 . s__]\  -> \ v . s . h2 . k3\  + \ k3 . h2 . s . v}; \n\n\ 
+    cont1\  = 
+      \ {x__ . hh3 . t__\  -> \ 
+          \((x . v)\) \((k1 . h3 . t)\) + \((x . h3 . k1)\) \((v . t)\), \n
+        \ \ \ \ \ \ \ \ \ \ 
+        x__ . hh2 . t__\  -> \ 
+          \((x . v)\) \((k1 . h2 . t)\) + \((x . h2 . k1)\) \((v . t)\), \n
+        \ \ \ \ \ \ \ \ \ \ tr[hh3]\  -> \ 2\ v . h3 . k1, \n
+        \ \ \ \ \ \ \ \ \ \ tr[hh2]\  -> \ 2\ v . h2 . k1, \n
+        \ \ \ \ \ \ \ \ \ \ 
+        tr[u__ . hh3]\  -> \ k1 . h3 . u . v\  + \ v . u . h3 . k1, \n
+        \ \ \ \ \ \ \ \ \ \ 
+        tr[u__ . hh2]\  -> \ k1 . h2 . u . v\  + \ v . u . h2 . k1, \n
+        \ \ \ \ \ \ \ \ \ \ 
+        tr[hh3 . s__]\  -> \ v . s . h3 . k1\  + \ k1 . h3 . s . v, \n
+        \ \ \ \ \ \ \ \ \ \ 
+        tr[hh2 . s__]\  -> \ v . s . h2 . k1\  + \ k1 . h2 . s . v}; \n\n
+    q2\  = \ k\n\), 
+    \(q1\  = \ k\n\), 
+    \(q\  = \ 1\n\), 
+    \(d = 4\n\), 
+    \(basv3\  = \ 
+      Union[Union[
+          \(\(bas\  /. \ h3\  -> \ v**k1\)\  //. \ cons1\)\  //. \ basis], \n
+        \ \ \ \ \ \ \ \ \ \ \ \ \ 
+        Union[\(\(bas\  /. \ h3\  -> \ v**k1\)\  //. \ cons2\)\  //. \ 
+            basis], \n\ \ \ \ \ \ \ \ \ \ \ \ \ 
+        Union[\(\(bas\  /. \ h3\  -> \ v**k2\)\  //. \ cons1\)\  //. \ 
+            basis], \n\ \ \ \ \ \ \ \ \ \ \ \ \ 
+        Union[\(\(bas\  /. \ h3\  -> \ v**k2\)\  //. \ cons2\)\  //. \ basis]
+          \ ]; \n\ \ \ \ \ \ \ \ \ \ \ \ \ \n
+    t[p_, h_, g_] := 
+      \((f0[p . p] - f2[p . p])\)\ \((p . p\ tr[h]\  - \ p . h . p)\) 
+          \((p . p\ tr[g]\  - \ p . g . p)\)\  + \ \n
+        \ \ \ \ \ \ \ \ \ \ \ \ \ 
+        \((d - 1)\)\ f2[p . p] 
+          \((p . h . p\ p . g . p\  - 2\ p . p\ p . h . g . p\  + \ 
+              \((p . p)\)^2\ tr[h . g])\)\), 
+    \(sub1\  = \ 2\ t[k1, hh2, h1]\  + \ 2\ t[k2, hh1, h2]\  /. \ cont3; \n
+    sub2\  = \ \(sub1\  //. \ cons\)\  //. \ basis; \n
+    sub3\  = \ 
+      \(-\ 2\)\ v . k2\ t[k1, h1, h2]\  - \ 2\ v . k1\ t[k2, h2, h1]; \n
+    wi3\  = \ Expand[
+        \(\(ts\  + \ sub2\  + \ sub3\  /. \ 
+              h3\  -> \ v**k1\  + \ v**k2\)\  //. \ cons\)\  //. \ basis]; \n
+    coef3\  = \ Coefficient[wi3, \ basv3]; \n\n
+    basv1\  = \ 
+      Union[Union[
+          \(\(bas\  /. \ h1\  -> \ v**k1\)\  //. \ cons1\)\  //. \ basis], \n
+        \ \ \ \ \ \ \ \ \ \ \ \ \ \ 
+        Union[\(\(bas\  /. \ h1\  -> \ v**k1\)\  //. \ cons2\)\  //. \ basis]
+          \ ]; \nsuc1\  = \ 
+      2\ t[k3, hh2, h3]\  + \ 2\ t[k2, hh3, h2]\  /. \ cont1; \n
+    suc2\  = \ \(suc1\  //. \ cons\)\  //. \ basis; \n
+    suc3\  = \ 
+      \(-\ 2\)\ v . k2\ t[k3, h3, h2]\  + \ 
+        \((2\ v . k1\  + \ 2\ v . k2)\)\ t[k2, h2, h3]; \n
+    wi1\  = \ Expand[
+        \(\(ts\  - \ suc2\  - \ suc3\  /. \ h1\  -> \ v**k1\)\ \  //. \ cons
+            \)\  //. \ basis]; \ncoef1\  = \ Coefficient[wi1, basv1]; \n\n
+    solcon\  = \ Solve[{coef3\  == \ 0, \ coef1\  == \ 0}, vars]; \n\n
+    tc1\ \  = \ Expand[ts\  //. \ Part[solcon, 1]]; \n
+    varc1\  = \ 
+      Complement[
+        Union[\n\t\t
+          Table[If[FreeQ[tc1, \ a[i]], \ 0, \ a[i]], {i, 1, 137}]\ \ ], {0}]
+        \), 
+    \(varc\  = \ Table[c[i], \ {i, 1, 17}]\), 
+    \(tc2\  = \ 
+      tc1\  //. \ Table[\ varc1[\([i]\)]\  -> \ varc[\([i]\)], {i, 1, 17}]; \n
+    tc\ \  = \ 
+      tc2\  //. 
+        \ {f0[q]\  -> \ c[18]\  + \ c[19], \ f0[q1]\  -> \ c[18]\  - \ c[19], 
+          \ f0[q2]\  -> \ c[18]\  - \ c[19], \ \n
+          \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ f2[q]\  -> \ c[20]\  + \ c[21], \ 
+          f2[q1]\  -> \ c[20]\  - \ c[21], \ 
+          f2[q2]\  -> \ c[20]\  - \ c[21]}; \n
+    Do[Print[\ "\<c[\>", i, "\<] :   \>", \ 
+        Coefficient[Coefficient[tc, c[i]], basind6]], {i, 1, 21}]\)}], "Input"],
+
+Cell[BoxData[
+    \(General::"spell1" \( : \ \) 
+      "Possible spelling error: new symbol name \"\!\(ir13\)\" is similar to \
+existing symbol \"\!\(ir123\)\"."\)], "Message"],
+
+Cell[BoxData[
+    \(General::"spell1" \( : \ \) 
+      "Possible spelling error: new symbol name \"\!\(ir23\)\" is similar to \
+existing symbol \"\!\(ir123\)\"."\)], "Message"],
+
+Cell[BoxData[
+    \(Solve::"svars" \( : \ \) 
+      "Equations may not give solutions for all \"solve\" variables."\)], 
+  "Message"],
+
+Cell[BoxData[
+    \({b[8], b[11], b[12], b[15], b[16], b[18], b[19], b[20], b[21], b[22], 
+      b[23], b[24], b[25], b[26], b[27], b[32], b[33], b[47], b[48], b[49], 
+      b[50], b[51], b[52], b[53], b[54], b[55], b[56], b[57], b[58], b[59], 
+      b[60], b[61], b[62], b[63], b[65], b[70], b[71], b[72], b[73], b[74], 
+      b[75], b[89], b[90], b[91], b[92], b[93], b[94], b[95], b[96], b[97], 
+      b[98], b[99], b[100], b[101], b[103], b[104], b[108], b[109], b[110], 
+      b[111], b[112], b[113], b[115], b[116], b[117], b[121], b[122], b[123], 
+      b[124], b[126], b[127], b[128], b[133], b[134], b[135], b[136], b[137]}
+      \)], "Output"],
+
+Cell[BoxData[
+    \(General::"spell1" \( : \ \) 
+      "Possible spelling error: new symbol name \"\!\(cont1\)\" is similar to \
+existing symbol \"\!\(cons1\)\"."\)], "Message"],
+
+Cell[BoxData[
+    \(k\)], "Output"],
+
+Cell[BoxData[
+    \(k\)], "Output"],
+
+Cell[BoxData[
+    \(1\)], "Output"],
+
+Cell[BoxData[
+    \(4\)], "Output"],
+
+Cell[BoxData[
+    \(General::"spell1" \( : \ \) 
+      "Possible spelling error: new symbol name \"\!\(basv3\)\" is similar to \
+existing symbol \"\!\(bas3\)\"."\)], "Message"],
+
+Cell[BoxData[
+    \(General::"spell1" \( : \ \) 
+      "Possible spelling error: new symbol name \"\!\(basv1\)\" is similar to \
+existing symbol \"\!\(bas1\)\"."\)], "Message"],
+
+Cell[BoxData[
+    \(General::"spell1" \( : \ \) 
+      "Possible spelling error: new symbol name \"\!\(suc1\)\" is similar to \
+existing symbol \"\!\(sub1\)\"."\)], "Message"],
+
+Cell[BoxData[
+    \(General::"spell1" \( : \ \) 
+      "Possible spelling error: new symbol name \"\!\(suc2\)\" is similar to \
+existing symbol \"\!\(sub2\)\"."\)], "Message"],
+
+Cell[BoxData[
+    \(General::"stop" \( : \ \) 
+      "Further output of \!\(General :: \"spell1\"\) will be suppressed \
+during this calculation."\)], "Message"],
+
+Cell[BoxData[
+    \(Solve::"svars" \( : \ \) 
+      "Equations may not give solutions for all \"solve\" variables."\)], 
+  "Message"],
+
+Cell[BoxData[
+    \({a[3], a[5], a[10], a[13], a[17], a[24], a[27], a[28], a[29], a[30], 
+      a[31], a[33], a[59], a[61], a[63], a[65], a[66]}\)], "Output"],
+
+Cell[BoxData[
+    \(General::"spell1" \( : \ \) 
+      "Possible spelling error: new symbol name \"\!\(varc\)\" is similar to \
+existing symbol \"\!\(vars\)\"."\)], "Message"],
+
+Cell[BoxData[
+    \({c[1], c[2], c[3], c[4], c[5], c[6], c[7], c[8], c[9], c[10], c[11], 
+      c[12], c[13], c[14], c[15], c[16], c[17]}\)], "Output"],
+
+Cell[BoxData[
+    InterpretationBox[
+      \("c["\[InvisibleSpace]1
+        \[InvisibleSpace]"] :   "\[InvisibleSpace]{0, k\/\(\(-1\) + 2\ k\), 
+          1, 0, 0, 0, 0, \(-\(1\/2\)\), 0, 0, 
+          \(-\(k\/\(2\ \((\(-1\) + 2\ k)\)\)\)\), \(-\(1\/2\)\), 0, 0, 0}\),
+      SequenceForm[ "c[", 1, "] :   ", {0, 
+        Times[ k, 
+          Power[ 
+            Plus[ -1, 
+              Times[ 2, k]], -1]], 1, 0, 0, 0, 0, 
+        Rational[ -1, 2], 0, 0, 
+        Times[ 
+          Rational[ -1, 2], k, 
+          Power[ 
+            Plus[ -1, 
+              Times[ 2, k]], -1]], 
+        Rational[ -1, 2], 0, 0, 0}],
+      Editable->False]], "Print"],
+
+Cell[BoxData[
+    InterpretationBox[
+      \("c["\[InvisibleSpace]2
+        \[InvisibleSpace]"] :   "\[InvisibleSpace]{0, 0, 0, 0, 1, 
+          k\/\(\(-1\) + 2\ k\), \(-\(k\/\(2\ \((\(-1\) + 2\ k)\)\)\)\), 0, 
+          \(-\(1\/2\)\), 0, 0, 0, 0, \(-\(1\/2\)\), 
+          \(-\(k\/\(2\ \((\(-1\) + 2\ k)\)\)\)\)}\),
+      SequenceForm[ "c[", 2, "] :   ", {0, 0, 0, 0, 1, 
+        Times[ k, 
+          Power[ 
+            Plus[ -1, 
+              Times[ 2, k]], -1]], 
+        Times[ 
+          Rational[ -1, 2], k, 
+          Power[ 
+            Plus[ -1, 
+              Times[ 2, k]], -1]], 0, 
+        Rational[ -1, 2], 0, 0, 0, 0, 
+        Rational[ -1, 2], 
+        Times[ 
+          Rational[ -1, 2], k, 
+          Power[ 
+            Plus[ -1, 
+              Times[ 2, k]], -1]]}],
+      Editable->False]], "Print"],
+
+Cell[BoxData[
+    InterpretationBox[
+      \("c["\[InvisibleSpace]3
+        \[InvisibleSpace]"] :   "\[InvisibleSpace]{\(-2\), 0, 0, 0, 0, 0, 0, 
+          0, 0, 1, 0, 0, 0, 0, 0}\),
+      SequenceForm[ 
+      "c[", 3, "] :   ", {-2, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0}],
+      Editable->False]], "Print"],
+
+Cell[BoxData[
+    InterpretationBox[
+      \("c["\[InvisibleSpace]4
+        \[InvisibleSpace]"] :   "\[InvisibleSpace]{0, 0, 0, \(-2\), 0, 0, 0, 
+          0, 0, 0, 0, 0, 1, 0, 0}\),
+      SequenceForm[ 
+      "c[", 4, "] :   ", {0, 0, 0, -2, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0}],
+      Editable->False]], "Print"],
+
+Cell[BoxData[
+    InterpretationBox[
+      \("c["\[InvisibleSpace]5
+        \[InvisibleSpace]"] :   "\[InvisibleSpace]{0, 
+          \(-\(2\/\(\(-1\) + 2\ k\)\)\), 0, 0, 0, 0, 0, 0, 0, 0, 
+          \(-\(1\/\(1 - 2\ k\)\)\), 0, 0, 0, 0}\),
+      SequenceForm[ "c[", 5, "] :   ", {0, 
+        Times[ -2, 
+          Power[ 
+            Plus[ -1, 
+              Times[ 2, k]], -1]], 0, 0, 0, 0, 0, 0, 0, 0, 
+        Times[ -1, 
+          Power[ 
+            Plus[ 1, 
+              Times[ -2, k]], -1]], 0, 0, 0, 0}],
+      Editable->False]], "Print"],
+
+Cell[BoxData[
+    InterpretationBox[
+      \("c["\[InvisibleSpace]6
+        \[InvisibleSpace]"] :   "\[InvisibleSpace]{\(-2\), 
+          \(4\ k\)\/\(\(-1\) + 4\ k\), 0, 2\/\(\(-1\) + 4\ k\), 0, 0, 
+          \(-\(\(2\ k\)\/\(\(-1\) + 4\ k\)\)\), 0, 
+          2\/\(\(-1\) + 4\ k\) - \(4\ k\)\/\(\(-1\) + 4\ k\), 0, 0, 0, 0, 0, 
+          0}\),
+      SequenceForm[ "c[", 6, "] :   ", {-2, 
+        Times[ 4, k, 
+          Power[ 
+            Plus[ -1, 
+              Times[ 4, k]], -1]], 0, 
+        Times[ 2, 
+          Power[ 
+            Plus[ -1, 
+              Times[ 4, k]], -1]], 0, 0, 
+        Times[ -2, k, 
+          Power[ 
+            Plus[ -1, 
+              Times[ 4, k]], -1]], 0, 
+        Plus[ 
+          Times[ 2, 
+            Power[ 
+              Plus[ -1, 
+                Times[ 4, k]], -1]], 
+          Times[ -4, k, 
+            Power[ 
+              Plus[ -1, 
+                Times[ 4, k]], -1]]], 0, 0, 0, 0, 0, 0}],
+      Editable->False]], "Print"],
+
+Cell[BoxData[
+    InterpretationBox[
+      \("c["\[InvisibleSpace]7
+        \[InvisibleSpace]"] :   "\[InvisibleSpace]{\(-2\), 
+          2\/\(\(-1\) + 2\ k\) - \(2\ k\)\/\(\(-1\) + 2\ k\), 0, 0, 0, 0, 0, 
+          \(-1\), 0, 0, \(-\(k\/\(\(-1\) + 2\ k\)\)\), \(-1\), 0, 0, 0}\),
+      SequenceForm[ "c[", 7, "] :   ", {-2, 
+        Plus[ 
+          Times[ 2, 
+            Power[ 
+              Plus[ -1, 
+                Times[ 2, k]], -1]], 
+          Times[ -2, k, 
+            Power[ 
+              Plus[ -1, 
+                Times[ 2, k]], -1]]], 0, 0, 0, 0, 0, -1, 0, 0, 
+        Times[ -1, k, 
+          Power[ 
+            Plus[ -1, 
+              Times[ 2, k]], -1]], -1, 0, 0, 0}],
+      Editable->False]], "Print"],
+
+Cell[BoxData[
+    InterpretationBox[
+      \("c["\[InvisibleSpace]8
+        \[InvisibleSpace]"] :   "\[InvisibleSpace]{0, 0, 0, \(-2\), 0, 
+          \(-\(1\/\(1 - 2\ k\)\)\), \(-\(1\/\(2\ \((\(-1\) + 2\ k)\)\)\)\), 
+          0, \(-\(1\/\(2\ k\)\)\), 0, 0, 0, 0, \(-2\) + 1\/\(2\ k\), 
+          1\/\(2\ \((\(-1\) + 2\ k)\)\) - \(2\ k\)\/\(\(-1\) + 2\ k\)}\),
+      SequenceForm[ "c[", 8, "] :   ", {0, 0, 0, -2, 0, 
+        Times[ -1, 
+          Power[ 
+            Plus[ 1, 
+              Times[ -2, k]], -1]], 
+        Times[ 
+          Rational[ -1, 2], 
+          Power[ 
+            Plus[ -1, 
+              Times[ 2, k]], -1]], 0, 
+        Times[ 
+          Rational[ -1, 2], 
+          Power[ k, -1]], 0, 0, 0, 0, 
+        Plus[ -2, 
+          Times[ 
+            Rational[ 1, 2], 
+            Power[ k, -1]]], 
+        Plus[ 
+          Times[ 
+            Rational[ 1, 2], 
+            Power[ 
+              Plus[ -1, 
+                Times[ 2, k]], -1]], 
+          Times[ -2, k, 
+            Power[ 
+              Plus[ -1, 
+                Times[ 2, k]], -1]]]}],
+      Editable->False]], "Print"],
+
+Cell[BoxData[
+    InterpretationBox[
+      \("c["\[InvisibleSpace]9
+        \[InvisibleSpace]"] :   "\[InvisibleSpace]{0, 0, 0, \(-2\), 0, 0, 
+          \(-1\), 0, \(-2\), 0, 0, 0, 0, 0, 0}\),
+      SequenceForm[ 
+      "c[", 9, "] :   ", {0, 0, 0, -2, 0, 0, -1, 0, -2, 0, 0, 0, 0, 0, 0}],
+      Editable->False]], "Print"],
+
+Cell[BoxData[
+    InterpretationBox[
+      \("c["\[InvisibleSpace]10
+        \[InvisibleSpace]"] :   "\[InvisibleSpace]{\(-2\), 
+          \(-\(2\/\(\(-1\) + 4\ k\)\)\) + \(4\ k\)\/\(\(-1\) + 4\ k\), 0, 
+          \(-\(4\/\(\(-1\) + 4\ k\)\)\) + \(8\ k\)\/\(\(-1\) + 4\ k\), 0, 0, 
+          \(2\ k\)\/\(\(-1\) + 4\ k\), 0, 
+          \(-\(2\/\(\(-1\) + 4\ k\)\)\) + \(4\ k\)\/\(\(-1\) + 4\ k\), 0, 0, 
+          0, 0, 0, 0}\),
+      SequenceForm[ "c[", 10, "] :   ", {-2, 
+        Plus[ 
+          Times[ -2, 
+            Power[ 
+              Plus[ -1, 
+                Times[ 4, k]], -1]], 
+          Times[ 4, k, 
+            Power[ 
+              Plus[ -1, 
+                Times[ 4, k]], -1]]], 0, 
+        Plus[ 
+          Times[ -4, 
+            Power[ 
+              Plus[ -1, 
+                Times[ 4, k]], -1]], 
+          Times[ 8, k, 
+            Power[ 
+              Plus[ -1, 
+                Times[ 4, k]], -1]]], 0, 0, 
+        Times[ 2, k, 
+          Power[ 
+            Plus[ -1, 
+              Times[ 4, k]], -1]], 0, 
+        Plus[ 
+          Times[ -2, 
+            Power[ 
+              Plus[ -1, 
+                Times[ 4, k]], -1]], 
+          Times[ 4, k, 
+            Power[ 
+              Plus[ -1, 
+                Times[ 4, k]], -1]]], 0, 0, 0, 0, 0, 0}],
+      Editable->False]], "Print"],
+
+Cell[BoxData[
+    InterpretationBox[
+      \("c["\[InvisibleSpace]11
+        \[InvisibleSpace]"] :   "\[InvisibleSpace]{0, 
+          \(-\(12\/\(\((\(-1\) + 2\ k)\)\ \((\(-1\) + 4\ k)\)\)\)\) + 
+            2\/\(k\ \((\(-1\) + 2\ k)\)\ \((\(-1\) + 4\ k)\)\) + 
+            \(22\ k\)\/\(\((\(-1\) + 2\ k)\)\ \((\(-1\) + 4\ k)\)\) - 
+            \(16\ k\^2\)\/\(\((\(-1\) + 2\ k)\)\ \((\(-1\) + 4\ k)\)\), 0, 
+          8\/\(\(-1\) + 4\ k\) - 2\/\(k\ \((\(-1\) + 4\ k)\)\) - 
+            \(8\ k\)\/\(\(-1\) + 4\ k\), 0, 0, 
+          1\/\(\(-1\) + 4\ k\) - \(2\ k\)\/\(\(-1\) + 4\ k\), \(-1\) + 1\/k, 
+          4\/\(\(-1\) + 4\ k\) - 1\/\(k\ \((\(-1\) + 4\ k)\)\) - 
+            \(4\ k\)\/\(\(-1\) + 4\ k\), 0, 
+          1\/\(\(-1\) + 2\ k\) - k\/\(\(-1\) + 2\ k\), \(-1\), 0, 0, 0}\),
+      SequenceForm[ "c[", 11, "] :   ", {0, 
+        Plus[ 
+          Times[ -12, 
+            Power[ 
+              Plus[ -1, 
+                Times[ 2, k]], -1], 
+            Power[ 
+              Plus[ -1, 
+                Times[ 4, k]], -1]], 
+          Times[ 2, 
+            Power[ k, -1], 
+            Power[ 
+              Plus[ -1, 
+                Times[ 2, k]], -1], 
+            Power[ 
+              Plus[ -1, 
+                Times[ 4, k]], -1]], 
+          Times[ 22, k, 
+            Power[ 
+              Plus[ -1, 
+                Times[ 2, k]], -1], 
+            Power[ 
+              Plus[ -1, 
+                Times[ 4, k]], -1]], 
+          Times[ -16, 
+            Power[ k, 2], 
+            Power[ 
+              Plus[ -1, 
+                Times[ 2, k]], -1], 
+            Power[ 
+              Plus[ -1, 
+                Times[ 4, k]], -1]]], 0, 
+        Plus[ 
+          Times[ 8, 
+            Power[ 
+              Plus[ -1, 
+                Times[ 4, k]], -1]], 
+          Times[ -2, 
+            Power[ k, -1], 
+            Power[ 
+              Plus[ -1, 
+                Times[ 4, k]], -1]], 
+          Times[ -8, k, 
+            Power[ 
+              Plus[ -1, 
+                Times[ 4, k]], -1]]], 0, 0, 
+        Plus[ 
+          Power[ 
+            Plus[ -1, 
+              Times[ 4, k]], -1], 
+          Times[ -2, k, 
+            Power[ 
+              Plus[ -1, 
+                Times[ 4, k]], -1]]], 
+        Plus[ -1, 
+          Power[ k, -1]], 
+        Plus[ 
+          Times[ 4, 
+            Power[ 
+              Plus[ -1, 
+                Times[ 4, k]], -1]], 
+          Times[ -1, 
+            Power[ k, -1], 
+            Power[ 
+              Plus[ -1, 
+                Times[ 4, k]], -1]], 
+          Times[ -4, k, 
+            Power[ 
+              Plus[ -1, 
+                Times[ 4, k]], -1]]], 0, 
+        Plus[ 
+          Power[ 
+            Plus[ -1, 
+              Times[ 2, k]], -1], 
+          Times[ -1, k, 
+            Power[ 
+              Plus[ -1, 
+                Times[ 2, k]], -1]]], -1, 0, 0, 0}],
+      Editable->False]], "Print"],
+
+Cell[BoxData[
+    InterpretationBox[
+      \("c["\[InvisibleSpace]12
+        \[InvisibleSpace]"] :   "\[InvisibleSpace]{\(-2\), 
+          \(2\ k\^2\)\/\(\((\(-1\) + 2\ k)\)\^2\ \((\(-1\) + 4\ k)\)\), 0, 
+          2\/\(\(-1\) + 4\ k\) - \(4\ k\)\/\(\(-1\) + 4\ k\), 0, 0, 
+          \(-\(k\/\(\(-1\) + 4\ k\)\)\), \(-\(k\/\(\(-1\) + 2\ k\)\)\), 
+          1\/\(\(-1\) + 4\ k\) - \(2\ k\)\/\(\(-1\) + 4\ k\), 0, 
+          \(-\(k\^2\/\((\(-1\) + 2\ k)\)\^2\)\), 
+          \(-\(k\/\(\(-1\) + 2\ k\)\)\), 0, \(-1\), 
+          \(-\(k\/\(\(-1\) + 2\ k\)\)\)}\),
+      SequenceForm[ "c[", 12, "] :   ", {-2, 
+        Times[ 2, 
+          Power[ k, 2], 
+          Power[ 
+            Plus[ -1, 
+              Times[ 2, k]], -2], 
+          Power[ 
+            Plus[ -1, 
+              Times[ 4, k]], -1]], 0, 
+        Plus[ 
+          Times[ 2, 
+            Power[ 
+              Plus[ -1, 
+                Times[ 4, k]], -1]], 
+          Times[ -4, k, 
+            Power[ 
+              Plus[ -1, 
+                Times[ 4, k]], -1]]], 0, 0, 
+        Times[ -1, k, 
+          Power[ 
+            Plus[ -1, 
+              Times[ 4, k]], -1]], 
+        Times[ -1, k, 
+          Power[ 
+            Plus[ -1, 
+              Times[ 2, k]], -1]], 
+        Plus[ 
+          Power[ 
+            Plus[ -1, 
+              Times[ 4, k]], -1], 
+          Times[ -2, k, 
+            Power[ 
+              Plus[ -1, 
+                Times[ 4, k]], -1]]], 0, 
+        Times[ -1, 
+          Power[ k, 2], 
+          Power[ 
+            Plus[ -1, 
+              Times[ 2, k]], -2]], 
+        Times[ -1, k, 
+          Power[ 
+            Plus[ -1, 
+              Times[ 2, k]], -1]], 0, -1, 
+        Times[ -1, k, 
+          Power[ 
+            Plus[ -1, 
+              Times[ 2, k]], -1]]}],
+      Editable->False]], "Print"],
+
+Cell[BoxData[
+    InterpretationBox[
+      \("c["\[InvisibleSpace]13
+        \[InvisibleSpace]"] :   "\[InvisibleSpace]{\(-8\) + 4\/k, 0, 0, 0, 0, 
+          0, 0, \(-2\), 0, 0, \(-\(\(2\ k\)\/\(\(-1\) + 2\ k\)\)\), \(-2\), 
+          0, 0, 0}\),
+      SequenceForm[ "c[", 13, "] :   ", {
+        Plus[ -8, 
+          Times[ 4, 
+            Power[ k, -1]]], 0, 0, 0, 0, 0, 0, -2, 0, 0, 
+        Times[ -2, k, 
+          Power[ 
+            Plus[ -1, 
+              Times[ 2, k]], -1]], -2, 0, 0, 0}],
+      Editable->False]], "Print"],
+
+Cell[BoxData[
+    InterpretationBox[
+      \("c["\[InvisibleSpace]14
+        \[InvisibleSpace]"] :   "\[InvisibleSpace]{0, 0, 0, \(-2\) + 1\/k, 0, 
+          0, \(-\(\(2\ k\)\/\(\(-1\) + 2\ k\)\)\), 0, \(-2\), 0, 0, 0, 0, 
+          \(-2\), \(-\(\(2\ k\)\/\(\(-1\) + 2\ k\)\)\)}\),
+      SequenceForm[ "c[", 14, "] :   ", {0, 0, 0, 
+        Plus[ -2, 
+          Power[ k, -1]], 0, 0, 
+        Times[ -2, k, 
+          Power[ 
+            Plus[ -1, 
+              Times[ 2, k]], -1]], 0, -2, 0, 0, 0, 0, -2, 
+        Times[ -2, k, 
+          Power[ 
+            Plus[ -1, 
+              Times[ 2, k]], -1]]}],
+      Editable->False]], "Print"],
+
+Cell[BoxData[
+    InterpretationBox[
+      \("c["\[InvisibleSpace]15
+        \[InvisibleSpace]"] :   "\[InvisibleSpace]{0, 
+          \(-\(4\/\(\(-1\) + 2\ k\)\)\), 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+          0}\),
+      SequenceForm[ "c[", 15, "] :   ", {0, 
+        Times[ -4, 
+          Power[ 
+            Plus[ -1, 
+              Times[ 2, k]], -1]], 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0}],
+      Editable->False]], "Print"],
+
+Cell[BoxData[
+    InterpretationBox[
+      \("c["\[InvisibleSpace]16
+        \[InvisibleSpace]"] :   "\[InvisibleSpace]{4\/k, 0, 0, 0, 0, 0, 0, 0, 
+          0, 0, 0, 0, 0, 0, 0}\),
+      SequenceForm[ "c[", 16, "] :   ", {
+        Times[ 4, 
+          Power[ k, -1]], 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0}],
+      Editable->False]], "Print"],
+
+Cell[BoxData[
+    InterpretationBox[
+      \("c["\[InvisibleSpace]17
+        \[InvisibleSpace]"] :   "\[InvisibleSpace]{0, 0, 0, 4\/k, 0, 0, 0, 0, 
+          0, 0, 0, 0, 0, 0, 0}\),
+      SequenceForm[ "c[", 17, "] :   ", {0, 0, 0, 
+        Times[ 4, 
+          Power[ k, -1]], 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0}],
+      Editable->False]], "Print"],
+
+Cell[BoxData[
+    InterpretationBox[
+      \("c["\[InvisibleSpace]18
+        \[InvisibleSpace]"] :   "\[InvisibleSpace]{0, 
+          \(-\(4\/\(\((\(-1\) + 2\ k)\)\^2\ \((\(-1\) + 4\ k)\)\)\)\) + 
+            \(24\ k\)\/\(\((\(-1\) + 2\ k)\)\^2\ \((\(-1\) + 4\ k)\)\) - 
+            \(32\ k\^2\)\/\(\((\(-1\) + 2\ k)\)\^2\ \((\(-1\) + 4\ k)\)\), 0, 
+          \(-\(4\/\(\(-1\) + 4\ k\)\)\) + \(16\ k\)\/\(\(-1\) + 4\ k\), 0, 0, 
+          \(-\(2\/\(\((\(-1\) + 2\ k)\)\ \((\(-1\) + 4\ k)\)\)\)\) + 
+            \(8\ k\)\/\(\((\(-1\) + 2\ k)\)\ \((\(-1\) + 4\ k)\)\), 0, 0, 0, 
+          2\/\((\(-1\) + 2\ k)\)\^2 - \(4\ k\)\/\((\(-1\) + 2\ k)\)\^2, 0, 0, 
+          4, \(4\ k\)\/\(\(-1\) + 2\ k\)}\),
+      SequenceForm[ "c[", 18, "] :   ", {0, 
+        Plus[ 
+          Times[ -4, 
+            Power[ 
+              Plus[ -1, 
+                Times[ 2, k]], -2], 
+            Power[ 
+              Plus[ -1, 
+                Times[ 4, k]], -1]], 
+          Times[ 24, k, 
+            Power[ 
+              Plus[ -1, 
+                Times[ 2, k]], -2], 
+            Power[ 
+              Plus[ -1, 
+                Times[ 4, k]], -1]], 
+          Times[ -32, 
+            Power[ k, 2], 
+            Power[ 
+              Plus[ -1, 
+                Times[ 2, k]], -2], 
+            Power[ 
+              Plus[ -1, 
+                Times[ 4, k]], -1]]], 0, 
+        Plus[ 
+          Times[ -4, 
+            Power[ 
+              Plus[ -1, 
+                Times[ 4, k]], -1]], 
+          Times[ 16, k, 
+            Power[ 
+              Plus[ -1, 
+                Times[ 4, k]], -1]]], 0, 0, 
+        Plus[ 
+          Times[ -2, 
+            Power[ 
+              Plus[ -1, 
+                Times[ 2, k]], -1], 
+            Power[ 
+              Plus[ -1, 
+                Times[ 4, k]], -1]], 
+          Times[ 8, k, 
+            Power[ 
+              Plus[ -1, 
+                Times[ 2, k]], -1], 
+            Power[ 
+              Plus[ -1, 
+                Times[ 4, k]], -1]]], 0, 0, 0, 
+        Plus[ 
+          Times[ 2, 
+            Power[ 
+              Plus[ -1, 
+                Times[ 2, k]], -2]], 
+          Times[ -4, k, 
+            Power[ 
+              Plus[ -1, 
+                Times[ 2, k]], -2]]], 0, 0, 4, 
+        Times[ 4, k, 
+          Power[ 
+            Plus[ -1, 
+              Times[ 2, k]], -1]]}],
+      Editable->False]], "Print"],
+
+Cell[BoxData[
+    InterpretationBox[
+      \("c["\[InvisibleSpace]19
+        \[InvisibleSpace]"] :   "\[InvisibleSpace]{0, 
+          \(-\(4\/\(\((\(-1\) + 2\ k)\)\^2\ \((\(-1\) + 4\ k)\)\)\)\) + 
+            \(24\ k\)\/\(\((\(-1\) + 2\ k)\)\^2\ \((\(-1\) + 4\ k)\)\) - 
+            \(32\ k\^2\)\/\(\((\(-1\) + 2\ k)\)\^2\ \((\(-1\) + 4\ k)\)\), 0, 
+          4\/\(\(-1\) + 4\ k\) - \(16\ k\)\/\(\(-1\) + 4\ k\), 0, 
+          8\/\(\(-1\) + 2\ k\), 
+          \(-\(2\/\(\((\(-1\) + 2\ k)\)\ \((\(-1\) + 4\ k)\)\)\)\) + 
+            \(8\ k\)\/\(\((\(-1\) + 2\ k)\)\ \((\(-1\) + 4\ k)\)\), 0, 0, 0, 
+          2\/\((\(-1\) + 2\ k)\)\^2 - \(4\ k\)\/\((\(-1\) + 2\ k)\)\^2, 0, 0, 
+          \(-4\), 4\/\(\(-1\) + 2\ k\) - \(4\ k\)\/\(\(-1\) + 2\ k\)}\),
+      SequenceForm[ "c[", 19, "] :   ", {0, 
+        Plus[ 
+          Times[ -4, 
+            Power[ 
+              Plus[ -1, 
+                Times[ 2, k]], -2], 
+            Power[ 
+              Plus[ -1, 
+                Times[ 4, k]], -1]], 
+          Times[ 24, k, 
+            Power[ 
+              Plus[ -1, 
+                Times[ 2, k]], -2], 
+            Power[ 
+              Plus[ -1, 
+                Times[ 4, k]], -1]], 
+          Times[ -32, 
+            Power[ k, 2], 
+            Power[ 
+              Plus[ -1, 
+                Times[ 2, k]], -2], 
+            Power[ 
+              Plus[ -1, 
+                Times[ 4, k]], -1]]], 0, 
+        Plus[ 
+          Times[ 4, 
+            Power[ 
+              Plus[ -1, 
+                Times[ 4, k]], -1]], 
+          Times[ -16, k, 
+            Power[ 
+              Plus[ -1, 
+                Times[ 4, k]], -1]]], 0, 
+        Times[ 8, 
+          Power[ 
+            Plus[ -1, 
+              Times[ 2, k]], -1]], 
+        Plus[ 
+          Times[ -2, 
+            Power[ 
+              Plus[ -1, 
+                Times[ 2, k]], -1], 
+            Power[ 
+              Plus[ -1, 
+                Times[ 4, k]], -1]], 
+          Times[ 8, k, 
+            Power[ 
+              Plus[ -1, 
+                Times[ 2, k]], -1], 
+            Power[ 
+              Plus[ -1, 
+                Times[ 4, k]], -1]]], 0, 0, 0, 
+        Plus[ 
+          Times[ 2, 
+            Power[ 
+              Plus[ -1, 
+                Times[ 2, k]], -2]], 
+          Times[ -4, k, 
+            Power[ 
+              Plus[ -1, 
+                Times[ 2, k]], -2]]], 0, 0, -4, 
+        Plus[ 
+          Times[ 4, 
+            Power[ 
+              Plus[ -1, 
+                Times[ 2, k]], -1]], 
+          Times[ -4, k, 
+            Power[ 
+              Plus[ -1, 
+                Times[ 2, k]], -1]]]}],
+      Editable->False]], "Print"],
+
+Cell[BoxData[
+    InterpretationBox[
+      \("c["\[InvisibleSpace]20
+        \[InvisibleSpace]"] :   "\[InvisibleSpace]{0, 
+          16\/\(\((\(-1\) + 2\ k)\)\^2\ \((\(-1\) + 4\ k)\)\) - 
+            \(120\ k\)\/\(\((\(-1\) + 2\ k)\)\^2\ \((\(-1\) + 4\ k)\)\) + 
+            \(152\ k\^2\)\/\(\((\(-1\) + 2\ k)\)\^2\ \((\(-1\) + 4\ k)\)\), 
+          0, \(-\(44\/\(\(-1\) + 4\ k\)\)\) + \(32\ k\)\/\(\(-1\) + 4\ k\), 
+          0, 0, \(-\(4\/\(\((\(-1\) + 2\ k)\)\ \((\(-1\) + 4\ k)\)\)\)\) - 
+            \(8\ k\)\/\(\((\(-1\) + 2\ k)\)\ \((\(-1\) + 4\ k)\)\) + 
+            \(24\ k\^2\)\/\(\((\(-1\) + 2\ k)\)\ \((\(-1\) + 4\ k)\)\), 
+          12\/\(\(-1\) + 2\ k\) - \(12\ k\)\/\(\(-1\) + 2\ k\), 
+          \(-\(24\/\(\(-1\) + 4\ k\)\)\) + \(24\ k\)\/\(\(-1\) + 4\ k\), 0, 
+          4\/\((\(-1\) + 2\ k)\)\^2 + \(4\ k\)\/\((\(-1\) + 2\ k)\)\^2 - 
+            \(12\ k\^2\)\/\((\(-1\) + 2\ k)\)\^2, 
+          12\/\(\(-1\) + 2\ k\) - \(12\ k\)\/\(\(-1\) + 2\ k\), 0, 8, 
+          \(8\ k\)\/\(\(-1\) + 2\ k\)}\),
+      SequenceForm[ "c[", 20, "] :   ", {0, 
+        Plus[ 
+          Times[ 16, 
+            Power[ 
+              Plus[ -1, 
+                Times[ 2, k]], -2], 
+            Power[ 
+              Plus[ -1, 
+                Times[ 4, k]], -1]], 
+          Times[ -120, k, 
+            Power[ 
+              Plus[ -1, 
+                Times[ 2, k]], -2], 
+            Power[ 
+              Plus[ -1, 
+                Times[ 4, k]], -1]], 
+          Times[ 152, 
+            Power[ k, 2], 
+            Power[ 
+              Plus[ -1, 
+                Times[ 2, k]], -2], 
+            Power[ 
+              Plus[ -1, 
+                Times[ 4, k]], -1]]], 0, 
+        Plus[ 
+          Times[ -44, 
+            Power[ 
+              Plus[ -1, 
+                Times[ 4, k]], -1]], 
+          Times[ 32, k, 
+            Power[ 
+              Plus[ -1, 
+                Times[ 4, k]], -1]]], 0, 0, 
+        Plus[ 
+          Times[ -4, 
+            Power[ 
+              Plus[ -1, 
+                Times[ 2, k]], -1], 
+            Power[ 
+              Plus[ -1, 
+                Times[ 4, k]], -1]], 
+          Times[ -8, k, 
+            Power[ 
+              Plus[ -1, 
+                Times[ 2, k]], -1], 
+            Power[ 
+              Plus[ -1, 
+                Times[ 4, k]], -1]], 
+          Times[ 24, 
+            Power[ k, 2], 
+            Power[ 
+              Plus[ -1, 
+                Times[ 2, k]], -1], 
+            Power[ 
+              Plus[ -1, 
+                Times[ 4, k]], -1]]], 
+        Plus[ 
+          Times[ 12, 
+            Power[ 
+              Plus[ -1, 
+                Times[ 2, k]], -1]], 
+          Times[ -12, k, 
+            Power[ 
+              Plus[ -1, 
+                Times[ 2, k]], -1]]], 
+        Plus[ 
+          Times[ -24, 
+            Power[ 
+              Plus[ -1, 
+                Times[ 4, k]], -1]], 
+          Times[ 24, k, 
+            Power[ 
+              Plus[ -1, 
+                Times[ 4, k]], -1]]], 0, 
+        Plus[ 
+          Times[ 4, 
+            Power[ 
+              Plus[ -1, 
+                Times[ 2, k]], -2]], 
+          Times[ 4, k, 
+            Power[ 
+              Plus[ -1, 
+                Times[ 2, k]], -2]], 
+          Times[ -12, 
+            Power[ k, 2], 
+            Power[ 
+              Plus[ -1, 
+                Times[ 2, k]], -2]]], 
+        Plus[ 
+          Times[ 12, 
+            Power[ 
+              Plus[ -1, 
+                Times[ 2, k]], -1]], 
+          Times[ -12, k, 
+            Power[ 
+              Plus[ -1, 
+                Times[ 2, k]], -1]]], 0, 8, 
+        Times[ 8, k, 
+          Power[ 
+            Plus[ -1, 
+              Times[ 2, k]], -1]]}],
+      Editable->False]], "Print"],
+
+Cell[BoxData[
+    InterpretationBox[
+      \("c["\[InvisibleSpace]21
+        \[InvisibleSpace]"] :   "\[InvisibleSpace]{0, 
+          16\/\(\((\(-1\) + 2\ k)\)\^2\ \((\(-1\) + 4\ k)\)\) - 
+            \(120\ k\)\/\(\((\(-1\) + 2\ k)\)\^2\ \((\(-1\) + 4\ k)\)\) + 
+            \(104\ k\^2\)\/\(\((\(-1\) + 2\ k)\)\^2\ \((\(-1\) + 4\ k)\)\), 
+          0, \(-\(52\/\(\(-1\) + 4\ k\)\)\) - \(32\ k\)\/\(\(-1\) + 4\ k\), 
+          0, 16\/\(\(-1\) + 2\ k\), 
+          \(-\(4\/\(\((\(-1\) + 2\ k)\)\ \((\(-1\) + 4\ k)\)\)\)\) - 
+            \(8\ k\)\/\(\((\(-1\) + 2\ k)\)\ \((\(-1\) + 4\ k)\)\) - 
+            \(24\ k\^2\)\/\(\((\(-1\) + 2\ k)\)\ \((\(-1\) + 4\ k)\)\), 
+          12\/\(\(-1\) + 2\ k\) + \(12\ k\)\/\(\(-1\) + 2\ k\), 
+          \(-\(24\/\(\(-1\) + 4\ k\)\)\) - \(24\ k\)\/\(\(-1\) + 4\ k\), 0, 
+          4\/\((\(-1\) + 2\ k)\)\^2 + \(4\ k\)\/\((\(-1\) + 2\ k)\)\^2 + 
+            \(12\ k\^2\)\/\((\(-1\) + 2\ k)\)\^2, 
+          12\/\(\(-1\) + 2\ k\) + \(12\ k\)\/\(\(-1\) + 2\ k\), 0, \(-8\), 
+          8\/\(\(-1\) + 2\ k\) - \(8\ k\)\/\(\(-1\) + 2\ k\)}\),
+      SequenceForm[ "c[", 21, "] :   ", {0, 
+        Plus[ 
+          Times[ 16, 
+            Power[ 
+              Plus[ -1, 
+                Times[ 2, k]], -2], 
+            Power[ 
+              Plus[ -1, 
+                Times[ 4, k]], -1]], 
+          Times[ -120, k, 
+            Power[ 
+              Plus[ -1, 
+                Times[ 2, k]], -2], 
+            Power[ 
+              Plus[ -1, 
+                Times[ 4, k]], -1]], 
+          Times[ 104, 
+            Power[ k, 2], 
+            Power[ 
+              Plus[ -1, 
+                Times[ 2, k]], -2], 
+            Power[ 
+              Plus[ -1, 
+                Times[ 4, k]], -1]]], 0, 
+        Plus[ 
+          Times[ -52, 
+            Power[ 
+              Plus[ -1, 
+                Times[ 4, k]], -1]], 
+          Times[ -32, k, 
+            Power[ 
+              Plus[ -1, 
+                Times[ 4, k]], -1]]], 0, 
+        Times[ 16, 
+          Power[ 
+            Plus[ -1, 
+              Times[ 2, k]], -1]], 
+        Plus[ 
+          Times[ -4, 
+            Power[ 
+              Plus[ -1, 
+                Times[ 2, k]], -1], 
+            Power[ 
+              Plus[ -1, 
+                Times[ 4, k]], -1]], 
+          Times[ -8, k, 
+            Power[ 
+              Plus[ -1, 
+                Times[ 2, k]], -1], 
+            Power[ 
+              Plus[ -1, 
+                Times[ 4, k]], -1]], 
+          Times[ -24, 
+            Power[ k, 2], 
+            Power[ 
+              Plus[ -1, 
+                Times[ 2, k]], -1], 
+            Power[ 
+              Plus[ -1, 
+                Times[ 4, k]], -1]]], 
+        Plus[ 
+          Times[ 12, 
+            Power[ 
+              Plus[ -1, 
+                Times[ 2, k]], -1]], 
+          Times[ 12, k, 
+            Power[ 
+              Plus[ -1, 
+                Times[ 2, k]], -1]]], 
+        Plus[ 
+          Times[ -24, 
+            Power[ 
+              Plus[ -1, 
+                Times[ 4, k]], -1]], 
+          Times[ -24, k, 
+            Power[ 
+              Plus[ -1, 
+                Times[ 4, k]], -1]]], 0, 
+        Plus[ 
+          Times[ 4, 
+            Power[ 
+              Plus[ -1, 
+                Times[ 2, k]], -2]], 
+          Times[ 4, k, 
+            Power[ 
+              Plus[ -1, 
+                Times[ 2, k]], -2]], 
+          Times[ 12, 
+            Power[ k, 2], 
+            Power[ 
+              Plus[ -1, 
+                Times[ 2, k]], -2]]], 
+        Plus[ 
+          Times[ 12, 
+            Power[ 
+              Plus[ -1, 
+                Times[ 2, k]], -1]], 
+          Times[ 12, k, 
+            Power[ 
+              Plus[ -1, 
+                Times[ 2, k]], -1]]], 0, -8, 
+        Plus[ 
+          Times[ 8, 
+            Power[ 
+              Plus[ -1, 
+                Times[ 2, k]], -1]], 
+          Times[ -8, k, 
+            Power[ 
+              Plus[ -1, 
+                Times[ 2, k]], -1]]]}],
+      Editable->False]], "Print"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["\<\
+(*******************************************************************\
+ 
+\t
+\tDIAGONALIZATION OF THE SOLUTION W.R.T. THE D=6 BASIS
+\t\t
+Above is the printout of the components of the 17+4 solutions (homo+inhomo) 
+of the Diff WI in the 15-dim basis of D=6 tensors: p[1],..,p[15]
+the 17 are free parameters and can be (maximally) diagonalized w.r.t to the
+D=6 basis; this turns out to be possible for the first 14 tensors in the \
+basis:
+c[i] -> e[i], i,1,14. Reduce finds a condition 
+between e[14] and e[15] (which vanishes for k^2=0), indicating the max linear
+indep of 14 tensors only; there remain 3 homo D<6 tensor; 
+by inspection, the 4 inhomo also split into 2 D=6 +2 D<6. In conclusion:
+17+4 = (14+2)_{D=6} + (3+2)_{D<6}
+(Instead Riccardo finds 15 D=6 homo, which is the maximal value) 
+For k^2=0, one finds instead 17+3 = (12+1)_{D=6} + (5+2)_{D<6} (see t0.nb)
+
+Free coefficients e[i] and c[i] are renamed as follows:
+e[1],..e[14]   14 coeff of D=6 homo tensors diagonal w.r.t. the D=6 basis
+e[15],.,e[17]   3 coeff of D<6 homo tensors 
+e[19], e[21]    2 coeff of D=6 inhomo tensor
+e[18], e[20]    2 coeff of D<6 inhomo tensors
+The inhomo tensors are trated as follows; after diagonalization of the homo
+tensors (e[1],..e[14]), the inhomo tensors are simplified in their D=6 \
+components 
+by adding suitable homo tensors, e.g. t[19] -> t[19] +\\sum a[i] p[i],
+so as to kill their first 14 components; the result of this procedure
+on t[18] and t[20] is that their 15th component also vanishes, i.e. they have \
+D<6;
+for t[19] and t[21], the 15th components are not zero but proportional among \
+them
+(there are 15 D=6 tensors at most): only e[19] +2 e[21] remains in the D=6 \
+basis.
+Anyhow, these amplitudes are supposed given data  of the problem,
+so they are what they are.
+tttq        <TTT> at the end of this calculation is saved to the disk for
+            the use of tq2.nb
+\t
+****************************************************************)
+
+
+tcho = tc //. Table[c[i] -> 0,{i,18,21}];
+rediag = Reduce[Coefficient[tcho,basind6] ==Table[e[i],{i,1,15}], 
+                Table[c[i],{i,1,17}]]
+bas6 =Table[basind6[[i]],{i,1,14}];
+soldiag = Part[Solve[Coefficient[tcho,bas6] == Table[e[i],{i,1,14}],
+\t\t             Table[c[i],{i,1,17}]],1]
+Length[soldiag]
+
+tcor = Expand[tc //. soldiag];
+coeor6= Coefficient[tcor,basind6];
+coeor4= Coefficient[tcor,basind4];
+Do[Print[ \"c[ \",i,\" ] :   \", Factor[Coefficient[coeor6,c[i]]]],{i,1,21}]
+Do[Print[ \"c[ \",i,\" ] :   \", Factor[Coefficient[coeor4,c[i]]]],{i,1,21}]
+Do[Print[ \"e[ \",i,\" ] :   \", \
+Factor[Coefficient[coeor6,e[i]]]],{i,1,14}]\
+\>", "Input",
+  PageWidth->Infinity,
+  InitializationCell->True,
+  ShowSpecialCharacters->False,
+  FormatType->InputForm],
+
+Cell[BoxData[
+    \(1 - 2\ k \[NotEqual] 0 && k \[NotEqual] 0 && 
+      \(-1\) + 2\ k \[NotEqual] 0 && \(-1\) + 4\ k \[NotEqual] 0 && 
+      k\ e[14] == \((\(-1\) + 2\ k)\)\ e[15] && 
+      c[16] == 1\/8\ 
+          \((4\ c[7] - 4\ k\ c[7] + 8\ k\ c[10] + c[12] - 
+              c[12]\/\(1 - 2\ k\) + 2\ k\ c[12] + 2\ k\ e[1] + 2\ e[3] - 
+              4\ k\ e[3] + 2\ k\ e[5] - 8\ k\^2\ e[5] + 2\ e[6] - 
+              12\ k\ e[6] + 16\ k\^2\ e[6] + 4\ k\ e[7] - 16\ k\^2\ e[7] + 
+              6\ k\ e[8] - 12\ k\^2\ e[8] - 2\ k\ e[9] + 8\ k\^2\ e[9] + 
+              4\ k\ e[10] + 4\ e[12] - 14\ k\ e[12] + 12\ k\^2\ e[12] - 
+              2\ e[15] + 8\ k\ e[15])\) && c[3] == e[10] && 
+      c[17] == 1\/16\ 
+          \((\(-8\)\ k\ c[10] + \(2\ c[12]\)\/\(1 - 2\ k\) + 4\ k\ e[4] + 
+              2\ e[5] - 4\ k\ e[5] - 4\ e[6] + e[6]\/k + 4\ k\ e[6] + 
+              16\ k\^2\ e[7] - 4\ k\ e[8] + 8\ k\^2\ e[8] - 4\ k\ e[9] - 
+              8\ k\^2\ e[9] + 4\ k\ e[12] - 8\ k\^2\ e[12] + 8\ k\ e[13] + 
+              2\ e[14] - 8\ k\ e[15])\) && c[4] == e[13] && 
+      c[15] == 1\/8\ 
+          \((4\ c[7] - 4\ k\ c[7] - 4\ c[10] + 8\ k\ c[10] + c[12] - 
+              c[12]\/\(1 - 2\ k\) + 2\ k\ c[12] + 2\ e[2] - 4\ k\ e[2] + 
+              2\ k\ e[3] + 4\ k\ e[5] - 8\ k\^2\ e[5] + 4\ e[6] - 
+              16\ k\ e[6] + 16\ k\^2\ e[6] + 8\ k\ e[7] - 16\ k\^2\ e[7] - 
+              4\ e[8] + 16\ k\ e[8] - 12\ k\^2\ e[8] - 4\ k\ e[9] + 
+              8\ k\^2\ e[9] + 4\ e[11] - 8\ k\ e[11] + 4\ e[12] - 
+              12\ k\ e[12] + 12\ k\^2\ e[12] - 4\ e[15] + 8\ k\ e[15])\) && 
+      c[5] == \(-k\)\ e[8] - e[11] + 2\ k\ e[11] && 
+      c[9] == \(-e[7]\) + 2\ k\ e[7] - k\ e[9] && 
+      c[13] == 1\/4\ 
+          \((\(-2\)\ c[7] - c[12] + c[12]\/\(1 - 2\ k\) - e[3] - 2\ k\ e[8] - 
+              2\ e[12] + 2\ k\ e[12])\) && c[2] == e[5] && 
+      c[8] == \(-k\)\ e[5] - e[6] + 2\ k\ e[6] && 
+      c[14] == 1\/4\ 
+          \((\(-2\)\ c[12] - 2\ e[5] + 4\ k\ e[5] + 6\ e[6] - e[6]\/k - 
+              8\ k\ e[6] - 2\ e[14])\) && 
+      c[6] == 1\/2\ 
+          \((2\ c[10] + c[12] - c[12]\/\(1 - 2\ k\) + e[5] - 4\ k\ e[5] - 
+              6\ e[6] + e[6]\/k + 8\ k\ e[6] + 2\ e[7] - 8\ k\ e[7] + e[8] - 
+              2\ k\ e[8] - e[9] + 4\ k\ e[9] - e[12] + 2\ k\ e[12] + e[14] + 
+              2\ e[15])\) && c[1] == e[3] && 
+      c[11] == k\ \((e[8] - e[12])\)\)], "Output"],
+
+Cell[BoxData[
+    \(Solve::"svars" \( : \ \) 
+      "Equations may not give solutions for all \"solve\" variables."\)], 
+  "Message"],
+
+Cell[BoxData[
+    \({c[17] \[Rule] 
+        \(-\(1\/2\)\)\ k\ c[10] - c[12]\/\(8\ \((\(-1\) + 2\ k)\)\) + 
+          1\/4\ k\ e[4] - 1\/2\ k\ \((k\ e[5] + e[6] - 2\ k\ e[6])\) - 
+          1\/2\ k\ \((e[7] - 2\ k\ e[7] + k\ e[9])\) - 
+          1\/4\ k\^2\ 
+            \((8\/\(\(-1\) + 4\ k\) - 2\/\(k\ \((\(-1\) + 4\ k)\)\) - 
+                \(8\ k\)\/\(\(-1\) + 4\ k\))\)\ \((e[8] - e[12])\) + 
+          1\/2\ k\ e[13] + 
+          1\/16\ \((\(-2\) + 1\/k)\)\ 
+            \((2\ k\ e[5] - 4\ k\^2\ e[5] + e[6] - 6\ k\ e[6] + 
+                8\ k\^2\ e[6] + 2\ k\ e[14])\) + 
+          \(1\/\(4\ \((\(-1\) + 2\ k)\)\ \((\(-1\) + 4\ k)\)\)\) 
+            \((k\ e[5] - 6\ k\^2\ e[5] + 8\ k\^3\ e[5] + e[6] - 8\ k\ e[6] + 
+                20\ k\^2\ e[6] - 16\ k\^3\ e[6] + 2\ k\ e[7] - 
+                12\ k\^2\ e[7] + 16\ k\^3\ e[7] + k\ e[8] - 4\ k\^2\ e[8] + 
+                4\ k\^3\ e[8] - k\ e[9] + 6\ k\^2\ e[9] - 8\ k\^3\ e[9] - 
+                k\ e[12] + 4\ k\^2\ e[12] - 4\ k\^3\ e[12] + k\ e[14] - 
+                4\ k\^2\ e[14])\), 
+      c[16] \[Rule] 
+        \(-\(1\/2\)\)\ \((\(-1\) + k)\)\ c[7] + k\ c[10] + 
+          \(k\^2\ c[12]\)\/\(2\ \((\(-1\) + 2\ k)\)\) + 1\/4\ k\ e[1] + 
+          1\/2\ k\ e[10] + 
+          1\/16\ \((\(-8\) + 4\/k)\)\ k\ 
+            \((e[3] + 2\ k\ e[8] + 2\ e[12] - 2\ k\ e[12])\) - 
+          \(1\/\(4\ \((\(-1\) + 2\ k)\)\)\) 
+            \((k\ e[5] - 6\ k\^2\ e[5] + 8\ k\^3\ e[5] + e[6] - 8\ k\ e[6] + 
+                20\ k\^2\ e[6] - 16\ k\^3\ e[6] + 2\ k\ e[7] - 
+                12\ k\^2\ e[7] + 16\ k\^3\ e[7] + k\ e[8] - 4\ k\^2\ e[8] + 
+                4\ k\^3\ e[8] - k\ e[9] + 6\ k\^2\ e[9] - 8\ k\^3\ e[9] - 
+                k\ e[12] + 4\ k\^2\ e[12] - 4\ k\^3\ e[12] + k\ e[14] - 
+                4\ k\^2\ e[14])\), 
+      c[15] \[Rule] 
+        \(-\(1\/2\)\)\ \((\(-1\) + k)\)\ c[7] - 1\/2\ \((1 - 2\ k)\)\ c[10] + 
+          \(k\^2\ c[12]\)\/\(2\ \((\(-1\) + 2\ k)\)\) + 
+          1\/4\ \((1 - 2\ k)\)\ e[2] - 
+          \(\((1 - 2\ k)\)\ k\ e[3]\)\/\(4\ \((\(-1\) + 2\ k)\)\) - 
+          \(\((1 - 2\ k)\)\ \((k\ e[8] + e[11] - 2\ k\ e[11])\)\)\/\(2\ 
+              \((\(-1\) + 2\ k)\)\) - 
+          1\/4\ \((1 - 2\ k)\)\ k\ 
+            \((\(-\(12\/\(\((\(-1\) + 2\ k)\)\ \((\(-1\) + 4\ k)\)\)\)\) + 
+                2\/\(k\ \((\(-1\) + 2\ k)\)\ \((\(-1\) + 4\ k)\)\) + 
+                \(22\ k\)\/\(\((\(-1\) + 2\ k)\)\ \((\(-1\) + 4\ k)\)\) - 
+                \(16\ k\^2\)\/\(\((\(-1\) + 2\ k)\)\ \((\(-1\) + 4\ k)\)\))
+              \)\ \((e[8] - e[12])\) + 
+          \(1\/\(2\ \((\(-1\) + 2\ k)\)\ \((\(-1\) + 4\ k)\)\)\) 
+            \((\((1 - 2\ k)\)\ 
+                \((k\ e[5] - 6\ k\^2\ e[5] + 8\ k\^3\ e[5] + e[6] - 
+                    8\ k\ e[6] + 20\ k\^2\ e[6] - 16\ k\^3\ e[6] + 
+                    2\ k\ e[7] - 12\ k\^2\ e[7] + 16\ k\^3\ e[7] + k\ e[8] - 
+                    4\ k\^2\ e[8] + 4\ k\^3\ e[8] - k\ e[9] + 6\ k\^2\ e[9] - 
+                    8\ k\^3\ e[9] - k\ e[12] + 4\ k\^2\ e[12] - 
+                    4\ k\^3\ e[12] + k\ e[14] - 4\ k\^2\ e[14])\))\), 
+      c[3] \[Rule] e[10], c[4] \[Rule] e[13], 
+      c[9] \[Rule] \(-e[7]\) + 2\ k\ e[7] - k\ e[9], 
+      c[5] \[Rule] \(-k\)\ e[8] - e[11] + 2\ k\ e[11], 
+      c[14] \[Rule] 
+        \(-\(c[12]\/2\)\) - 
+          \(2\ k\ e[5] - 4\ k\^2\ e[5] + e[6] - 6\ k\ e[6] + 8\ k\^2\ e[6] + 
+              2\ k\ e[14]\)\/\(4\ k\), 
+      c[13] \[Rule] 
+        \(-\(c[7]\/2\)\) - \(k\ c[12]\)\/\(2\ \((\(-1\) + 2\ k)\)\) + 
+          1\/4\ \((\(-e[3]\) - 2\ k\ e[8] - 2\ e[12] + 2\ k\ e[12])\), 
+      c[1] \[Rule] e[3], c[8] \[Rule] \(-k\)\ e[5] - e[6] + 2\ k\ e[6], 
+      c[6] \[Rule] 
+        c[10] + \(k\ c[12]\)\/\(\(-1\) + 2\ k\) - 
+          \(1\/\(2\ k\ \((\(-1\) + 2\ k)\)\)\) 
+            \((k\ e[5] - 6\ k\^2\ e[5] + 8\ k\^3\ e[5] + e[6] - 8\ k\ e[6] + 
+                20\ k\^2\ e[6] - 16\ k\^3\ e[6] + 2\ k\ e[7] - 
+                12\ k\^2\ e[7] + 16\ k\^3\ e[7] + k\ e[8] - 4\ k\^2\ e[8] + 
+                4\ k\^3\ e[8] - k\ e[9] + 6\ k\^2\ e[9] - 8\ k\^3\ e[9] - 
+                k\ e[12] + 4\ k\^2\ e[12] - 4\ k\^3\ e[12] + k\ e[14] - 
+                4\ k\^2\ e[14])\), c[11] \[Rule] k\ \((e[8] - e[12])\), 
+      c[2] \[Rule] e[5]}\)], "Output"],
+
+Cell[BoxData[
+    \(14\)], "Output"],
+
+Cell[BoxData[
+    InterpretationBox[
+      \("c[ "\[InvisibleSpace]1
+        \[InvisibleSpace]" ] :   "\[InvisibleSpace]{0, 0, 0, 0, 0, 0, 0, 0, 
+          0, 0, 0, 0, 0, 0, 0}\),
+      SequenceForm[ 
+      "c[ ", 1, " ] :   ", {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0}],
+      Editable->False]], "Print"],
+
+Cell[BoxData[
+    InterpretationBox[
+      \("c[ "\[InvisibleSpace]2
+        \[InvisibleSpace]" ] :   "\[InvisibleSpace]{0, 0, 0, 0, 0, 0, 0, 0, 
+          0, 0, 0, 0, 0, 0, 0}\),
+      SequenceForm[ 
+      "c[ ", 2, " ] :   ", {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0}],
+      Editable->False]], "Print"],
+
+Cell[BoxData[
+    InterpretationBox[
+      \("c[ "\[InvisibleSpace]3
+        \[InvisibleSpace]" ] :   "\[InvisibleSpace]{0, 0, 0, 0, 0, 0, 0, 0, 
+          0, 0, 0, 0, 0, 0, 0}\),
+      SequenceForm[ 
+      "c[ ", 3, " ] :   ", {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0}],
+      Editable->False]], "Print"],
+
+Cell[BoxData[
+    InterpretationBox[
+      \("c[ "\[InvisibleSpace]4
+        \[InvisibleSpace]" ] :   "\[InvisibleSpace]{0, 0, 0, 0, 0, 0, 0, 0, 
+          0, 0, 0, 0, 0, 0, 0}\),
+      SequenceForm[ 
+      "c[ ", 4, " ] :   ", {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0}],
+      Editable->False]], "Print"],
+
+Cell[BoxData[
+    InterpretationBox[
+      \("c[ "\[InvisibleSpace]5
+        \[InvisibleSpace]" ] :   "\[InvisibleSpace]{0, 0, 0, 0, 0, 0, 0, 0, 
+          0, 0, 0, 0, 0, 0, 0}\),
+      SequenceForm[ 
+      "c[ ", 5, " ] :   ", {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0}],
+      Editable->False]], "Print"],
+
+Cell[BoxData[
+    InterpretationBox[
+      \("c[ "\[InvisibleSpace]6
+        \[InvisibleSpace]" ] :   "\[InvisibleSpace]{0, 0, 0, 0, 0, 0, 0, 0, 
+          0, 0, 0, 0, 0, 0, 0}\),
+      SequenceForm[ 
+      "c[ ", 6, " ] :   ", {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0}],
+      Editable->False]], "Print"],
+
+Cell[BoxData[
+    InterpretationBox[
+      \("c[ "\[InvisibleSpace]7
+        \[InvisibleSpace]" ] :   "\[InvisibleSpace]{0, 0, 0, 0, 0, 0, 0, 0, 
+          0, 0, 0, 0, 0, 0, 0}\),
+      SequenceForm[ 
+      "c[ ", 7, " ] :   ", {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0}],
+      Editable->False]], "Print"],
+
+Cell[BoxData[
+    InterpretationBox[
+      \("c[ "\[InvisibleSpace]8
+        \[InvisibleSpace]" ] :   "\[InvisibleSpace]{0, 0, 0, 0, 0, 0, 0, 0, 
+          0, 0, 0, 0, 0, 0, 0}\),
+      SequenceForm[ 
+      "c[ ", 8, " ] :   ", {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0}],
+      Editable->False]], "Print"],
+
+Cell[BoxData[
+    InterpretationBox[
+      \("c[ "\[InvisibleSpace]9
+        \[InvisibleSpace]" ] :   "\[InvisibleSpace]{0, 0, 0, 0, 0, 0, 0, 0, 
+          0, 0, 0, 0, 0, 0, 0}\),
+      SequenceForm[ 
+      "c[ ", 9, " ] :   ", {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0}],
+      Editable->False]], "Print"],
+
+Cell[BoxData[
+    InterpretationBox[
+      \("c[ "\[InvisibleSpace]10
+        \[InvisibleSpace]" ] :   "\[InvisibleSpace]{0, 0, 0, 0, 0, 0, 0, 0, 
+          0, 0, 0, 0, 0, 0, 0}\),
+      SequenceForm[ 
+      "c[ ", 10, " ] :   ", {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0}],
+      Editable->False]], "Print"],
+
+Cell[BoxData[
+    InterpretationBox[
+      \("c[ "\[InvisibleSpace]11
+        \[InvisibleSpace]" ] :   "\[InvisibleSpace]{0, 0, 0, 0, 0, 0, 0, 0, 
+          0, 0, 0, 0, 0, 0, 0}\),
+      SequenceForm[ 
+      "c[ ", 11, " ] :   ", {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0}],
+      Editable->False]], "Print"],
+
+Cell[BoxData[
+    InterpretationBox[
+      \("c[ "\[InvisibleSpace]12
+        \[InvisibleSpace]" ] :   "\[InvisibleSpace]{0, 0, 0, 0, 0, 0, 0, 0, 
+          0, 0, 0, 0, 0, 0, 0}\),
+      SequenceForm[ 
+      "c[ ", 12, " ] :   ", {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0}],
+      Editable->False]], "Print"],
+
+Cell[BoxData[
+    InterpretationBox[
+      \("c[ "\[InvisibleSpace]13
+        \[InvisibleSpace]" ] :   "\[InvisibleSpace]{0, 0, 0, 0, 0, 0, 0, 0, 
+          0, 0, 0, 0, 0, 0, 0}\),
+      SequenceForm[ 
+      "c[ ", 13, " ] :   ", {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0}],
+      Editable->False]], "Print"],
+
+Cell[BoxData[
+    InterpretationBox[
+      \("c[ "\[InvisibleSpace]14
+        \[InvisibleSpace]" ] :   "\[InvisibleSpace]{0, 0, 0, 0, 0, 0, 0, 0, 
+          0, 0, 0, 0, 0, 0, 0}\),
+      SequenceForm[ 
+      "c[ ", 14, " ] :   ", {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0}],
+      Editable->False]], "Print"],
+
+Cell[BoxData[
+    InterpretationBox[
+      \("c[ "\[InvisibleSpace]15
+        \[InvisibleSpace]" ] :   "\[InvisibleSpace]{0, 0, 0, 0, 0, 0, 0, 0, 
+          0, 0, 0, 0, 0, 0, 0}\),
+      SequenceForm[ 
+      "c[ ", 15, " ] :   ", {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0}],
+      Editable->False]], "Print"],
+
+Cell[BoxData[
+    InterpretationBox[
+      \("c[ "\[InvisibleSpace]16
+        \[InvisibleSpace]" ] :   "\[InvisibleSpace]{0, 0, 0, 0, 0, 0, 0, 0, 
+          0, 0, 0, 0, 0, 0, 0}\),
+      SequenceForm[ 
+      "c[ ", 16, " ] :   ", {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0}],
+      Editable->False]], "Print"],
+
+Cell[BoxData[
+    InterpretationBox[
+      \("c[ "\[InvisibleSpace]17
+        \[InvisibleSpace]" ] :   "\[InvisibleSpace]{0, 0, 0, 0, 0, 0, 0, 0, 
+          0, 0, 0, 0, 0, 0, 0}\),
+      SequenceForm[ 
+      "c[ ", 17, " ] :   ", {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0}],
+      Editable->False]], "Print"],
+
+Cell[BoxData[
+    InterpretationBox[
+      \("c[ "\[InvisibleSpace]18
+        \[InvisibleSpace]" ] :   "\[InvisibleSpace]{0, 
+          \(-\(4\/\(\(-1\) + 2\ k\)\)\), 0, 4, 0, 0, 2\/\(\(-1\) + 2\ k\), 0, 
+          0, 0, \(-\(2\/\(\(-1\) + 2\ k\)\)\), 0, 0, 4, 
+          \(4\ k\)\/\(\(-1\) + 2\ k\)}\),
+      SequenceForm[ "c[ ", 18, " ] :   ", {0, 
+        Times[ -4, 
+          Power[ 
+            Plus[ -1, 
+              Times[ 2, k]], -1]], 0, 4, 0, 0, 
+        Times[ 2, 
+          Power[ 
+            Plus[ -1, 
+              Times[ 2, k]], -1]], 0, 0, 0, 
+        Times[ -2, 
+          Power[ 
+            Plus[ -1, 
+              Times[ 2, k]], -1]], 0, 0, 4, 
+        Times[ 4, k, 
+          Power[ 
+            Plus[ -1, 
+              Times[ 2, k]], -1]]}],
+      Editable->False]], "Print"],
+
+Cell[BoxData[
+    InterpretationBox[
+      \("c[ "\[InvisibleSpace]19
+        \[InvisibleSpace]" ] :   "\[InvisibleSpace]{0, 
+          \(-\(4\/\(\(-1\) + 2\ k\)\)\), 0, \(-4\), 0, 8\/\(\(-1\) + 2\ k\), 
+          2\/\(\(-1\) + 2\ k\), 0, 0, 0, \(-\(2\/\(\(-1\) + 2\ k\)\)\), 0, 0, 
+          \(-4\), \(-\(\(4\ \((\(-1\) + k)\)\)\/\(\(-1\) + 2\ k\)\)\)}\),
+      SequenceForm[ "c[ ", 19, " ] :   ", {0, 
+        Times[ -4, 
+          Power[ 
+            Plus[ -1, 
+              Times[ 2, k]], -1]], 0, -4, 0, 
+        Times[ 8, 
+          Power[ 
+            Plus[ -1, 
+              Times[ 2, k]], -1]], 
+        Times[ 2, 
+          Power[ 
+            Plus[ -1, 
+              Times[ 2, k]], -1]], 0, 0, 0, 
+        Times[ -2, 
+          Power[ 
+            Plus[ -1, 
+              Times[ 2, k]], -1]], 0, 0, -4, 
+        Times[ -4, 
+          Plus[ -1, k], 
+          Power[ 
+            Plus[ -1, 
+              Times[ 2, k]], -1]]}],
+      Editable->False]], "Print"],
+
+Cell[BoxData[
+    InterpretationBox[
+      \("c[ "\[InvisibleSpace]20
+        \[InvisibleSpace]" ] :   "\[InvisibleSpace]{0, 
+          \(8\ \((2 - 15\ k + 19\ k\^2)\)\)\/\(\((\(-1\) + 2\ k)\)\^2\ 
+              \((\(-1\) + 4\ k)\)\), 0, 
+          \(4\ \((\(-11\) + 8\ k)\)\)\/\(\(-1\) + 4\ k\), 0, 0, 
+          \(4\ \((\(-1\) - 2\ k + 6\ k\^2)\)\)\/\(\((\(-1\) + 2\ k)\)\ 
+              \((\(-1\) + 4\ k)\)\), 
+          \(-\(\(12\ \((\(-1\) + k)\)\)\/\(\(-1\) + 2\ k\)\)\), 
+          \(24\ \((\(-1\) + k)\)\)\/\(\(-1\) + 4\ k\), 0, 
+          \(-\(\(4\ \((\(-1\) - k + 3\ k\^2)\)\)\/\((\(-1\) + 2\ k)\)\^2\)\), 
+          \(-\(\(12\ \((\(-1\) + k)\)\)\/\(\(-1\) + 2\ k\)\)\), 0, 8, 
+          \(8\ k\)\/\(\(-1\) + 2\ k\)}\),
+      SequenceForm[ "c[ ", 20, " ] :   ", {0, 
+        Times[ 8, 
+          Power[ 
+            Plus[ -1, 
+              Times[ 2, k]], -2], 
+          Power[ 
+            Plus[ -1, 
+              Times[ 4, k]], -1], 
+          Plus[ 2, 
+            Times[ -15, k], 
+            Times[ 19, 
+              Power[ k, 2]]]], 0, 
+        Times[ 4, 
+          Power[ 
+            Plus[ -1, 
+              Times[ 4, k]], -1], 
+          Plus[ -11, 
+            Times[ 8, k]]], 0, 0, 
+        Times[ 4, 
+          Power[ 
+            Plus[ -1, 
+              Times[ 2, k]], -1], 
+          Power[ 
+            Plus[ -1, 
+              Times[ 4, k]], -1], 
+          Plus[ -1, 
+            Times[ -2, k], 
+            Times[ 6, 
+              Power[ k, 2]]]], 
+        Times[ -12, 
+          Plus[ -1, k], 
+          Power[ 
+            Plus[ -1, 
+              Times[ 2, k]], -1]], 
+        Times[ 24, 
+          Plus[ -1, k], 
+          Power[ 
+            Plus[ -1, 
+              Times[ 4, k]], -1]], 0, 
+        Times[ -4, 
+          Power[ 
+            Plus[ -1, 
+              Times[ 2, k]], -2], 
+          Plus[ -1, 
+            Times[ -1, k], 
+            Times[ 3, 
+              Power[ k, 2]]]], 
+        Times[ -12, 
+          Plus[ -1, k], 
+          Power[ 
+            Plus[ -1, 
+              Times[ 2, k]], -1]], 0, 8, 
+        Times[ 8, k, 
+          Power[ 
+            Plus[ -1, 
+              Times[ 2, k]], -1]]}],
+      Editable->False]], "Print"],
+
+Cell[BoxData[
+    InterpretationBox[
+      \("c[ "\[InvisibleSpace]21
+        \[InvisibleSpace]" ] :   "\[InvisibleSpace]{0, 
+          \(8\ \((\(-1\) + k)\)\ 
+              \((\(-2\) + 13\ k)\)\)\/\(\((\(-1\) + 2\ k)\)\^2\ 
+              \((\(-1\) + 4\ k)\)\), 0, 
+          \(-\(\(4\ \((13 + 8\ k)\)\)\/\(\(-1\) + 4\ k\)\)\), 0, 
+          16\/\(\(-1\) + 2\ k\), 
+          \(-\(\(4\ \((1 + 2\ k + 6\ k\^2)\)\)\/\(\((\(-1\) + 2\ k)\)\ 
+                  \((\(-1\) + 4\ k)\)\)\)\), 
+          \(12\ \((1 + k)\)\)\/\(\(-1\) + 2\ k\), 
+          \(-\(\(24\ \((1 + k)\)\)\/\(\(-1\) + 4\ k\)\)\), 0, 
+          \(4\ \((1 + k + 3\ k\^2)\)\)\/\((\(-1\) + 2\ k)\)\^2, 
+          \(12\ \((1 + k)\)\)\/\(\(-1\) + 2\ k\), 0, \(-8\), 
+          \(-\(\(8\ \((\(-1\) + k)\)\)\/\(\(-1\) + 2\ k\)\)\)}\),
+      SequenceForm[ "c[ ", 21, " ] :   ", {0, 
+        Times[ 8, 
+          Plus[ -1, k], 
+          Power[ 
+            Plus[ -1, 
+              Times[ 2, k]], -2], 
+          Power[ 
+            Plus[ -1, 
+              Times[ 4, k]], -1], 
+          Plus[ -2, 
+            Times[ 13, k]]], 0, 
+        Times[ -4, 
+          Power[ 
+            Plus[ -1, 
+              Times[ 4, k]], -1], 
+          Plus[ 13, 
+            Times[ 8, k]]], 0, 
+        Times[ 16, 
+          Power[ 
+            Plus[ -1, 
+              Times[ 2, k]], -1]], 
+        Times[ -4, 
+          Power[ 
+            Plus[ -1, 
+              Times[ 2, k]], -1], 
+          Power[ 
+            Plus[ -1, 
+              Times[ 4, k]], -1], 
+          Plus[ 1, 
+            Times[ 2, k], 
+            Times[ 6, 
+              Power[ k, 2]]]], 
+        Times[ 12, 
+          Plus[ 1, k], 
+          Power[ 
+            Plus[ -1, 
+              Times[ 2, k]], -1]], 
+        Times[ -24, 
+          Plus[ 1, k], 
+          Power[ 
+            Plus[ -1, 
+              Times[ 4, k]], -1]], 0, 
+        Times[ 4, 
+          Power[ 
+            Plus[ -1, 
+              Times[ 2, k]], -2], 
+          Plus[ 1, k, 
+            Times[ 3, 
+              Power[ k, 2]]]], 
+        Times[ 12, 
+          Plus[ 1, k], 
+          Power[ 
+            Plus[ -1, 
+              Times[ 2, k]], -1]], 0, -8, 
+        Times[ -8, 
+          Plus[ -1, k], 
+          Power[ 
+            Plus[ -1, 
+              Times[ 2, k]], -1]]}],
+      Editable->False]], "Print"],
+
+Cell[BoxData[
+    InterpretationBox[
+      \("c[ "\[InvisibleSpace]1
+        \[InvisibleSpace]" ] :   "\[InvisibleSpace]{0, 0, 0, 0, 0, 0, 0, 0, 
+          0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+          0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+          0, 0, 0, 0, 0, 0, 0, 0, 0, 0}\),
+      SequenceForm[ 
+      "c[ ", 1, " ] :   ", {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+        0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+        0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+        0}],
+      Editable->False]], "Print"],
+
+Cell[BoxData[
+    InterpretationBox[
+      \("c[ "\[InvisibleSpace]2
+        \[InvisibleSpace]" ] :   "\[InvisibleSpace]{0, 0, 0, 0, 0, 0, 0, 0, 
+          0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+          0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+          0, 0, 0, 0, 0, 0, 0, 0, 0, 0}\),
+      SequenceForm[ 
+      "c[ ", 2, " ] :   ", {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+        0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+        0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+        0}],
+      Editable->False]], "Print"],
+
+Cell[BoxData[
+    InterpretationBox[
+      \("c[ "\[InvisibleSpace]3
+        \[InvisibleSpace]" ] :   "\[InvisibleSpace]{0, 0, 0, 0, 0, 0, 0, 0, 
+          0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+          0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+          0, 0, 0, 0, 0, 0, 0, 0, 0, 0}\),
+      SequenceForm[ 
+      "c[ ", 3, " ] :   ", {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+        0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+        0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+        0}],
+      Editable->False]], "Print"],
+
+Cell[BoxData[
+    InterpretationBox[
+      \("c[ "\[InvisibleSpace]4
+        \[InvisibleSpace]" ] :   "\[InvisibleSpace]{0, 0, 0, 0, 0, 0, 0, 0, 
+          0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+          0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+          0, 0, 0, 0, 0, 0, 0, 0, 0, 0}\),
+      SequenceForm[ 
+      "c[ ", 4, " ] :   ", {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+        0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+        0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+        0}],
+      Editable->False]], "Print"],
+
+Cell[BoxData[
+    InterpretationBox[
+      \("c[ "\[InvisibleSpace]5
+        \[InvisibleSpace]" ] :   "\[InvisibleSpace]{0, 0, 0, 0, 0, 0, 0, 0, 
+          0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+          0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+          0, 0, 0, 0, 0, 0, 0, 0, 0, 0}\),
+      SequenceForm[ 
+      "c[ ", 5, " ] :   ", {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+        0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+        0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+        0}],
+      Editable->False]], "Print"],
+
+Cell[BoxData[
+    InterpretationBox[
+      \("c[ "\[InvisibleSpace]6
+        \[InvisibleSpace]" ] :   "\[InvisibleSpace]{0, 0, 0, 0, 0, 0, 0, 0, 
+          0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+          0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+          0, 0, 0, 0, 0, 0, 0, 0, 0, 0}\),
+      SequenceForm[ 
+      "c[ ", 6, " ] :   ", {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+        0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+        0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+        0}],
+      Editable->False]], "Print"],
+
+Cell[BoxData[
+    InterpretationBox[
+      \("c[ "\[InvisibleSpace]7
+        \[InvisibleSpace]" ] :   "\[InvisibleSpace]{\(-1\), 0, 
+          \(-\(\(\(-1\) + 2\ k\)\/k\)\), 0, 0, \(-1\), 0, 0, 0, 0, 1, 1, 0, 
+          0, 0, 0, 0, 0, 0, \(-\(1\/2\)\), 0, 0, 1\/2\ \((\(-1\) + 2\ k)\), 
+          1\/2\ \((\(-1\) + 2\ k)\), 0, 0, 0, 0, 0, 
+          \(\(-1\) + 2\ k\)\/\(2\ k\), 0, 1\/2, 0, 0, 0, 0, 0, 0, 0, 
+          \((\(-1\) + 2\ k)\)\^2\/\(8\ k\), 0, \(-\(1\/2\)\), \(-\(1\/2\)\), 
+          \(-\(1\/2\)\), 0, 0, 0, \(1 - k\)\/2, 
+          \(-\(\(\((\(-1\) + k)\)\ \((\(-1\) + 2\ k)\)\)\/\(4\ k\)\)\), 
+          \(1 - k\)\/2, 0, \(-\(\(\(-1\) + 2\ k\)\/\(8\ k\)\)\), 
+          \(-\(1\/8\)\), \(-\(\((\(-1\) + 2\ k)\)\^2\/\(32\ k\)\)\), 
+          \(1 - k\)\/2, 0, 1\/8\ \((\(-1\) + k)\), 0, 0, 0, 0, 
+          1\/4\ \((1 - 2\ k)\)}\),
+      SequenceForm[ "c[ ", 7, " ] :   ", {-1, 0, 
+        Times[ -1, 
+          Power[ k, -1], 
+          Plus[ -1, 
+            Times[ 2, k]]], 0, 0, -1, 0, 0, 0, 0, 1, 1, 0, 0, 0, 0, 0, 0, 0, 
+        Rational[ -1, 2], 0, 0, 
+        Times[ 
+          Rational[ 1, 2], 
+          Plus[ -1, 
+            Times[ 2, k]]], 
+        Times[ 
+          Rational[ 1, 2], 
+          Plus[ -1, 
+            Times[ 2, k]]], 0, 0, 0, 0, 0, 
+        Times[ 
+          Rational[ 1, 2], 
+          Power[ k, -1], 
+          Plus[ -1, 
+            Times[ 2, k]]], 0, 
+        Rational[ 1, 2], 0, 0, 0, 0, 0, 0, 0, 
+        Times[ 
+          Rational[ 1, 8], 
+          Power[ k, -1], 
+          Power[ 
+            Plus[ -1, 
+              Times[ 2, k]], 2]], 0, 
+        Rational[ -1, 2], 
+        Rational[ -1, 2], 
+        Rational[ -1, 2], 0, 0, 0, 
+        Times[ 
+          Rational[ 1, 2], 
+          Plus[ 1, 
+            Times[ -1, k]]], 
+        Times[ 
+          Rational[ -1, 4], 
+          Plus[ -1, k], 
+          Power[ k, -1], 
+          Plus[ -1, 
+            Times[ 2, k]]], 
+        Times[ 
+          Rational[ 1, 2], 
+          Plus[ 1, 
+            Times[ -1, k]]], 0, 
+        Times[ 
+          Rational[ -1, 8], 
+          Power[ k, -1], 
+          Plus[ -1, 
+            Times[ 2, k]]], 
+        Rational[ -1, 8], 
+        Times[ 
+          Rational[ -1, 32], 
+          Power[ k, -1], 
+          Power[ 
+            Plus[ -1, 
+              Times[ 2, k]], 2]], 
+        Times[ 
+          Rational[ 1, 2], 
+          Plus[ 1, 
+            Times[ -1, k]]], 0, 
+        Times[ 
+          Rational[ 1, 8], 
+          Plus[ -1, k]], 0, 0, 0, 0, 
+        Times[ 
+          Rational[ 1, 4], 
+          Plus[ 1, 
+            Times[ -2, k]]]}],
+      Editable->False]], "Print"],
+
+Cell[BoxData[
+    InterpretationBox[
+      \("c[ "\[InvisibleSpace]8
+        \[InvisibleSpace]" ] :   "\[InvisibleSpace]{0, 0, 0, 0, 0, 0, 0, 0, 
+          0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+          0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+          0, 0, 0, 0, 0, 0, 0, 0, 0, 0}\),
+      SequenceForm[ 
+      "c[ ", 8, " ] :   ", {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+        0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+        0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+        0}],
+      Editable->False]], "Print"],
+
+Cell[BoxData[
+    InterpretationBox[
+      \("c[ "\[InvisibleSpace]9
+        \[InvisibleSpace]" ] :   "\[InvisibleSpace]{0, 0, 0, 0, 0, 0, 0, 0, 
+          0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+          0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+          0, 0, 0, 0, 0, 0, 0, 0, 0, 0}\),
+      SequenceForm[ 
+      "c[ ", 9, " ] :   ", {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+        0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+        0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+        0}],
+      Editable->False]], "Print"],
+
+Cell[BoxData[
+    InterpretationBox[
+      \("c[ "\[InvisibleSpace]10
+        \[InvisibleSpace]" ] :   "\[InvisibleSpace]{1, 0, 1, 0, \(-1\), 0, 0, 
+          0, 1, 0, \(-1\), 0, 0, 0, 1, 0, \(-1\), 0, 0, 1\/2\ \((1 - 2\ k)\), 
+          1\/2\ \((1 - 2\ k)\), \(-k\), 1\/2\ \((1 - 2\ k)\), \(-k\), 
+          1\/2\ \((1 - 2\ k)\), \(-k\), 0, 0, 0, \(-1\), 1\/2, 0, 1\/2, 0, 0, 
+          k, 1\/2\ \((\(-1\) + 2\ k)\), 1\/2\ \((\(-1\) + 2\ k)\), k, 
+          1\/2\ \((1 - 2\ k)\), \(-\(k\/2\)\), \(-1\), 1\/2, 0, 1\/2, 0, 0, 
+          1\/2\ \((\(-1\) + 2\ k)\), 1\/2\ \((\(-1\) + 2\ k)\), k, 
+          \(-\(k\/2\)\), 1\/2\ \((1 - 2\ k)\), \(-\(k\/2\)\), 
+          1\/8\ \((\(-1\) + 4\ k)\), 1\/2\ \((\(-1\) + 2\ k)\), k\/2, 
+          1\/8\ \((1 - 4\ k)\), k\/2, 1\/2\ \((\(-1\) + 2\ k)\), k\/2, 
+          1\/8\ \((1 - 4\ k)\), 1\/4\ \((\(-1\) + 4\ k)\)}\),
+      SequenceForm[ 
+      "c[ ", 10, " ] :   ", {1, 0, 1, 0, -1, 0, 0, 0, 1, 0, -1, 0, 0, 0, 1, 
+        0, -1, 0, 0, 
+        Times[ 
+          Rational[ 1, 2], 
+          Plus[ 1, 
+            Times[ -2, k]]], 
+        Times[ 
+          Rational[ 1, 2], 
+          Plus[ 1, 
+            Times[ -2, k]]], 
+        Times[ -1, k], 
+        Times[ 
+          Rational[ 1, 2], 
+          Plus[ 1, 
+            Times[ -2, k]]], 
+        Times[ -1, k], 
+        Times[ 
+          Rational[ 1, 2], 
+          Plus[ 1, 
+            Times[ -2, k]]], 
+        Times[ -1, k], 0, 0, 0, -1, 
+        Rational[ 1, 2], 0, 
+        Rational[ 1, 2], 0, 0, k, 
+        Times[ 
+          Rational[ 1, 2], 
+          Plus[ -1, 
+            Times[ 2, k]]], 
+        Times[ 
+          Rational[ 1, 2], 
+          Plus[ -1, 
+            Times[ 2, k]]], k, 
+        Times[ 
+          Rational[ 1, 2], 
+          Plus[ 1, 
+            Times[ -2, k]]], 
+        Times[ 
+          Rational[ -1, 2], k], -1, 
+        Rational[ 1, 2], 0, 
+        Rational[ 1, 2], 0, 0, 
+        Times[ 
+          Rational[ 1, 2], 
+          Plus[ -1, 
+            Times[ 2, k]]], 
+        Times[ 
+          Rational[ 1, 2], 
+          Plus[ -1, 
+            Times[ 2, k]]], k, 
+        Times[ 
+          Rational[ -1, 2], k], 
+        Times[ 
+          Rational[ 1, 2], 
+          Plus[ 1, 
+            Times[ -2, k]]], 
+        Times[ 
+          Rational[ -1, 2], k], 
+        Times[ 
+          Rational[ 1, 8], 
+          Plus[ -1, 
+            Times[ 4, k]]], 
+        Times[ 
+          Rational[ 1, 2], 
+          Plus[ -1, 
+            Times[ 2, k]]], 
+        Times[ 
+          Rational[ 1, 2], k], 
+        Times[ 
+          Rational[ 1, 8], 
+          Plus[ 1, 
+            Times[ -4, k]]], 
+        Times[ 
+          Rational[ 1, 2], k], 
+        Times[ 
+          Rational[ 1, 2], 
+          Plus[ -1, 
+            Times[ 2, k]]], 
+        Times[ 
+          Rational[ 1, 2], k], 
+        Times[ 
+          Rational[ 1, 8], 
+          Plus[ 1, 
+            Times[ -4, k]]], 
+        Times[ 
+          Rational[ 1, 4], 
+          Plus[ -1, 
+            Times[ 4, k]]]}],
+      Editable->False]], "Print"],
+
+Cell[BoxData[
+    InterpretationBox[
+      \("c[ "\[InvisibleSpace]11
+        \[InvisibleSpace]" ] :   "\[InvisibleSpace]{0, 0, 0, 0, 0, 0, 0, 0, 
+          0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+          0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+          0, 0, 0, 0, 0, 0, 0, 0, 0, 0}\),
+      SequenceForm[ 
+      "c[ ", 11, " ] :   ", {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+        0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+        0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+        0}],
+      Editable->False]], "Print"],
+
+Cell[BoxData[
+    InterpretationBox[
+      \("c[ "\[InvisibleSpace]12
+        \[InvisibleSpace]" ] :   "\[InvisibleSpace]{0, 0, 
+          k\/\(\(-1\) + 2\ k\), 0, 0, 0, 0, k\/\(\(-1\) + 2\ k\), 
+          k\/\(\(-1\) + 2\ k\), 0, 0, 0, 0, 0, 0, 0, 
+          \(\(-1\) + k\)\/\(\(-1\) + 2\ k\), 1, k\/\(\(-1\) + 2\ k\), 
+          k\^2\/\(\(-1\) + 2\ k\), 1\/2\ \((\(-1\) + k)\), 
+          \(\((\(-1\) + k)\)\ k\)\/\(\(-1\) + 2\ k\), 
+          \(-\(k\^2\/\(\(-1\) + 2\ k\)\)\), \(-\(k\^2\/\(\(-1\) + 2\ k\)\)\), 
+          0, 0, 0, 0, 0, \(-\(k\/\(\(-1\) + 2\ k\)\)\), 0, 
+          \(-\(k\/\(2\ \((\(-1\) + 2\ k)\)\)\)\), 
+          \(-\(\(\(-1\) + k\)\/\(2\ \((\(-1\) + 2\ k)\)\)\)\), \(-\(1\/2\)\), 
+          \(-\(k\/\(2\ \((\(-1\) + 2\ k)\)\)\)\), 
+          1\/\(4\ \((\(-1\) + 2\ k)\)\), 0, 1\/4, 
+          k\/\(2\ \((\(-1\) + 2\ k)\)\), 1\/8\ \((\(-1\) - 2\ k)\), 
+          \(-\(1\/\(8\ \((\(-1\) + 2\ k)\)\)\)\), 
+          \(-\(\(\(-1\) + 3\ k\)\/\(2\ \((\(-1\) + 2\ k)\)\)\)\), 0, 
+          \(-\(k\/\(2\ \((\(-1\) + 2\ k)\)\)\)\), 
+          \(-\(\(\(-1\) + k\)\/\(2\ \((\(-1\) + 2\ k)\)\)\)\), \(-\(1\/2\)\), 
+          \(-\(k\/\(2\ \((\(-1\) + 2\ k)\)\)\)\), 
+          k\^2\/\(2\ \((\(-1\) + 2\ k)\)\), k\/4, 
+          k\^2\/\(2\ \((\(-1\) + 2\ k)\)\), 
+          \(-\(1\/\(8\ \((\(-1\) + 2\ k)\)\)\)\), 1\/8, 
+          k\/\(8\ \((\(-1\) + 2\ k)\)\), 
+          \(1 + 4\ k\^2\)\/\(32\ \((\(-1\) + 2\ k)\)\), 
+          k\^2\/\(2\ \((\(-1\) + 2\ k)\)\), 0, 
+          \(-\(k\^2\/\(8\ \((\(-1\) + 2\ k)\)\)\)\), 
+          \(-\(\(\((\(-1\) + k)\)\ k\)\/\(2\ \((\(-1\) + 2\ k)\)\)\)\), 
+          \(-\(k\/2\)\), \(-\(k\^2\/\(2\ \((\(-1\) + 2\ k)\)\)\)\), 
+          \(-\(k\/\(8\ \((\(-1\) + 2\ k)\)\)\)\), 
+          k\^2\/\(2\ \((\(-1\) + 2\ k)\)\)}\),
+      SequenceForm[ "c[ ", 12, " ] :   ", {0, 0, 
+        Times[ k, 
+          Power[ 
+            Plus[ -1, 
+              Times[ 2, k]], -1]], 0, 0, 0, 0, 
+        Times[ k, 
+          Power[ 
+            Plus[ -1, 
+              Times[ 2, k]], -1]], 
+        Times[ k, 
+          Power[ 
+            Plus[ -1, 
+              Times[ 2, k]], -1]], 0, 0, 0, 0, 0, 0, 0, 
+        Times[ 
+          Plus[ -1, k], 
+          Power[ 
+            Plus[ -1, 
+              Times[ 2, k]], -1]], 1, 
+        Times[ k, 
+          Power[ 
+            Plus[ -1, 
+              Times[ 2, k]], -1]], 
+        Times[ 
+          Power[ k, 2], 
+          Power[ 
+            Plus[ -1, 
+              Times[ 2, k]], -1]], 
+        Times[ 
+          Rational[ 1, 2], 
+          Plus[ -1, k]], 
+        Times[ 
+          Plus[ -1, k], k, 
+          Power[ 
+            Plus[ -1, 
+              Times[ 2, k]], -1]], 
+        Times[ -1, 
+          Power[ k, 2], 
+          Power[ 
+            Plus[ -1, 
+              Times[ 2, k]], -1]], 
+        Times[ -1, 
+          Power[ k, 2], 
+          Power[ 
+            Plus[ -1, 
+              Times[ 2, k]], -1]], 0, 0, 0, 0, 0, 
+        Times[ -1, k, 
+          Power[ 
+            Plus[ -1, 
+              Times[ 2, k]], -1]], 0, 
+        Times[ 
+          Rational[ -1, 2], k, 
+          Power[ 
+            Plus[ -1, 
+              Times[ 2, k]], -1]], 
+        Times[ 
+          Rational[ -1, 2], 
+          Plus[ -1, k], 
+          Power[ 
+            Plus[ -1, 
+              Times[ 2, k]], -1]], 
+        Rational[ -1, 2], 
+        Times[ 
+          Rational[ -1, 2], k, 
+          Power[ 
+            Plus[ -1, 
+              Times[ 2, k]], -1]], 
+        Times[ 
+          Rational[ 1, 4], 
+          Power[ 
+            Plus[ -1, 
+              Times[ 2, k]], -1]], 0, 
+        Rational[ 1, 4], 
+        Times[ 
+          Rational[ 1, 2], k, 
+          Power[ 
+            Plus[ -1, 
+              Times[ 2, k]], -1]], 
+        Times[ 
+          Rational[ 1, 8], 
+          Plus[ -1, 
+            Times[ -2, k]]], 
+        Times[ 
+          Rational[ -1, 8], 
+          Power[ 
+            Plus[ -1, 
+              Times[ 2, k]], -1]], 
+        Times[ 
+          Rational[ -1, 2], 
+          Power[ 
+            Plus[ -1, 
+              Times[ 2, k]], -1], 
+          Plus[ -1, 
+            Times[ 3, k]]], 0, 
+        Times[ 
+          Rational[ -1, 2], k, 
+          Power[ 
+            Plus[ -1, 
+              Times[ 2, k]], -1]], 
+        Times[ 
+          Rational[ -1, 2], 
+          Plus[ -1, k], 
+          Power[ 
+            Plus[ -1, 
+              Times[ 2, k]], -1]], 
+        Rational[ -1, 2], 
+        Times[ 
+          Rational[ -1, 2], k, 
+          Power[ 
+            Plus[ -1, 
+              Times[ 2, k]], -1]], 
+        Times[ 
+          Rational[ 1, 2], 
+          Power[ k, 2], 
+          Power[ 
+            Plus[ -1, 
+              Times[ 2, k]], -1]], 
+        Times[ 
+          Rational[ 1, 4], k], 
+        Times[ 
+          Rational[ 1, 2], 
+          Power[ k, 2], 
+          Power[ 
+            Plus[ -1, 
+              Times[ 2, k]], -1]], 
+        Times[ 
+          Rational[ -1, 8], 
+          Power[ 
+            Plus[ -1, 
+              Times[ 2, k]], -1]], 
+        Rational[ 1, 8], 
+        Times[ 
+          Rational[ 1, 8], k, 
+          Power[ 
+            Plus[ -1, 
+              Times[ 2, k]], -1]], 
+        Times[ 
+          Rational[ 1, 32], 
+          Power[ 
+            Plus[ -1, 
+              Times[ 2, k]], -1], 
+          Plus[ 1, 
+            Times[ 4, 
+              Power[ k, 2]]]], 
+        Times[ 
+          Rational[ 1, 2], 
+          Power[ k, 2], 
+          Power[ 
+            Plus[ -1, 
+              Times[ 2, k]], -1]], 0, 
+        Times[ 
+          Rational[ -1, 8], 
+          Power[ k, 2], 
+          Power[ 
+            Plus[ -1, 
+              Times[ 2, k]], -1]], 
+        Times[ 
+          Rational[ -1, 2], 
+          Plus[ -1, k], k, 
+          Power[ 
+            Plus[ -1, 
+              Times[ 2, k]], -1]], 
+        Times[ 
+          Rational[ -1, 2], k], 
+        Times[ 
+          Rational[ -1, 2], 
+          Power[ k, 2], 
+          Power[ 
+            Plus[ -1, 
+              Times[ 2, k]], -1]], 
+        Times[ 
+          Rational[ -1, 8], k, 
+          Power[ 
+            Plus[ -1, 
+              Times[ 2, k]], -1]], 
+        Times[ 
+          Rational[ 1, 2], 
+          Power[ k, 2], 
+          Power[ 
+            Plus[ -1, 
+              Times[ 2, k]], -1]]}],
+      Editable->False]], "Print"],
+
+Cell[BoxData[
+    InterpretationBox[
+      \("c[ "\[InvisibleSpace]13
+        \[InvisibleSpace]" ] :   "\[InvisibleSpace]{0, 0, 0, 0, 0, 0, 0, 0, 
+          0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+          0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+          0, 0, 0, 0, 0, 0, 0, 0, 0, 0}\),
+      SequenceForm[ 
+      "c[ ", 13, " ] :   ", {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+        0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+        0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+        0}],
+      Editable->False]], "Print"],
+
+Cell[BoxData[
+    InterpretationBox[
+      \("c[ "\[InvisibleSpace]14
+        \[InvisibleSpace]" ] :   "\[InvisibleSpace]{0, 0, 0, 0, 0, 0, 0, 0, 
+          0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+          0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+          0, 0, 0, 0, 0, 0, 0, 0, 0, 0}\),
+      SequenceForm[ 
+      "c[ ", 14, " ] :   ", {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+        0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+        0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+        0}],
+      Editable->False]], "Print"],
+
+Cell[BoxData[
+    InterpretationBox[
+      \("c[ "\[InvisibleSpace]15
+        \[InvisibleSpace]" ] :   "\[InvisibleSpace]{0, 0, 0, 0, 0, 0, 0, 0, 
+          0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+          0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+          0, 0, 0, 0, 0, 0, 0, 0, 0, 0}\),
+      SequenceForm[ 
+      "c[ ", 15, " ] :   ", {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+        0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+        0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+        0}],
+      Editable->False]], "Print"],
+
+Cell[BoxData[
+    InterpretationBox[
+      \("c[ "\[InvisibleSpace]16
+        \[InvisibleSpace]" ] :   "\[InvisibleSpace]{0, 0, 0, 0, 0, 0, 0, 0, 
+          0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+          0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+          0, 0, 0, 0, 0, 0, 0, 0, 0, 0}\),
+      SequenceForm[ 
+      "c[ ", 16, " ] :   ", {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+        0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+        0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+        0}],
+      Editable->False]], "Print"],
+
+Cell[BoxData[
+    InterpretationBox[
+      \("c[ "\[InvisibleSpace]17
+        \[InvisibleSpace]" ] :   "\[InvisibleSpace]{0, 0, 0, 0, 0, 0, 0, 0, 
+          0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+          0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+          0, 0, 0, 0, 0, 0, 0, 0, 0, 0}\),
+      SequenceForm[ 
+      "c[ ", 17, " ] :   ", {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+        0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+        0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+        0}],
+      Editable->False]], "Print"],
+
+Cell[BoxData[
+    InterpretationBox[
+      \("c[ "\[InvisibleSpace]18
+        \[InvisibleSpace]" ] :   "\[InvisibleSpace]{0, 0, 0, 0, 0, 0, 0, 0, 
+          0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 2\ k, 2, 
+          \(-4\)\ k, 4, \(2\ \((\(-1\) + k)\)\)\/\(\(-1\) + 2\ k\), 4, 0, 
+          \(-2\)\ \((\(-1\) + 2\ k)\), 
+          \(-\(\(2\ \((1 - 2\ k + 2\ k\^2)\)\)\/\(\(-1\) + 2\ k\)\)\), 0, 0, 
+          0, 0, \(-1\) + 2\ k + 4\ k\^2, 1\/2\ \((\(-1\) + 2\ k - 4\ k\^2)\), 
+          0, 2\/\(\(-1\) + 2\ k\), 0, \(-1\), 0, 
+          \(2\ \((\(-1\) + k)\)\)\/\(\(-1\) + 2\ k\), 0, 0, 0, 0, \(-2\), 
+          \(-\(\(2\ \((\(-1\) + k + k\^2)\)\)\/\(\(-1\) + 2\ k\)\)\), 
+          1\/2\ \((1 - 2\ k + 2\ k\^2)\), \(-4\), \(-2\), 2, \(-2\)\ k, 0, 0, 
+          2\ k\^2, 0}\),
+      SequenceForm[ 
+      "c[ ", 18, " ] :   ", {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+        0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+        Times[ 2, k], 2, 
+        Times[ -4, k], 4, 
+        Times[ 2, 
+          Plus[ -1, k], 
+          Power[ 
+            Plus[ -1, 
+              Times[ 2, k]], -1]], 4, 0, 
+        Times[ -2, 
+          Plus[ -1, 
+            Times[ 2, k]]], 
+        Times[ -2, 
+          Power[ 
+            Plus[ -1, 
+              Times[ 2, k]], -1], 
+          Plus[ 1, 
+            Times[ -2, k], 
+            Times[ 2, 
+              Power[ k, 2]]]], 0, 0, 0, 0, 
+        Plus[ -1, 
+          Times[ 2, k], 
+          Times[ 4, 
+            Power[ k, 2]]], 
+        Times[ 
+          Rational[ 1, 2], 
+          Plus[ -1, 
+            Times[ 2, k], 
+            Times[ -4, 
+              Power[ k, 2]]]], 0, 
+        Times[ 2, 
+          Power[ 
+            Plus[ -1, 
+              Times[ 2, k]], -1]], 0, -1, 0, 
+        Times[ 2, 
+          Plus[ -1, k], 
+          Power[ 
+            Plus[ -1, 
+              Times[ 2, k]], -1]], 0, 0, 0, 0, -2, 
+        Times[ -2, 
+          Power[ 
+            Plus[ -1, 
+              Times[ 2, k]], -1], 
+          Plus[ -1, k, 
+            Power[ k, 2]]], 
+        Times[ 
+          Rational[ 1, 2], 
+          Plus[ 1, 
+            Times[ -2, k], 
+            Times[ 2, 
+              Power[ k, 2]]]], -4, -2, 2, 
+        Times[ -2, k], 0, 0, 
+        Times[ 2, 
+          Power[ k, 2]], 0}],
+      Editable->False]], "Print"],
+
+Cell[BoxData[
+    InterpretationBox[
+      \("c[ "\[InvisibleSpace]19
+        \[InvisibleSpace]" ] :   "\[InvisibleSpace]{0, 0, 0, 0, 0, 0, 0, 0, 
+          0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, \(-2\)\ k, 2, 
+          4\ k, 4, \(2\ \((\(-1\) + k)\)\)\/\(\(-1\) + 2\ k\), 
+          \(-\(4\/\(\(-1\) + 2\ k\)\)\), 0, 2\ \((1 + 2\ k)\), 
+          \(2\ \((\(-1\) + 2\ k\^2)\)\)\/\(\(-1\) + 2\ k\), 0, 0, 0, 0, 
+          \(-1\) + 2\ k - 4\ k\^2, 1\/2\ \((\(-1\) + 2\ k + 4\ k\^2)\), 0, 
+          2\/\(\(-1\) + 2\ k\), 0, 1, 0, 
+          \(-\(\(2\ \((1 + k)\)\)\/\(\(-1\) + 2\ k\)\)\), 0, 0, 0, 0, \(-2\), 
+          \(2\ \((1 - k + k\^2)\)\)\/\(\(-1\) + 2\ k\), 
+          1\/2\ \((1 - 2\ k - 2\ k\^2)\), \(-4\), \(-2\), 2, 2\ k, 0, 0, 
+          \(-2\)\ k\^2, 0}\),
+      SequenceForm[ 
+      "c[ ", 19, " ] :   ", {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+        0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+        Times[ -2, k], 2, 
+        Times[ 4, k], 4, 
+        Times[ 2, 
+          Plus[ -1, k], 
+          Power[ 
+            Plus[ -1, 
+              Times[ 2, k]], -1]], 
+        Times[ -4, 
+          Power[ 
+            Plus[ -1, 
+              Times[ 2, k]], -1]], 0, 
+        Times[ 2, 
+          Plus[ 1, 
+            Times[ 2, k]]], 
+        Times[ 2, 
+          Power[ 
+            Plus[ -1, 
+              Times[ 2, k]], -1], 
+          Plus[ -1, 
+            Times[ 2, 
+              Power[ k, 2]]]], 0, 0, 0, 0, 
+        Plus[ -1, 
+          Times[ 2, k], 
+          Times[ -4, 
+            Power[ k, 2]]], 
+        Times[ 
+          Rational[ 1, 2], 
+          Plus[ -1, 
+            Times[ 2, k], 
+            Times[ 4, 
+              Power[ k, 2]]]], 0, 
+        Times[ 2, 
+          Power[ 
+            Plus[ -1, 
+              Times[ 2, k]], -1]], 0, 1, 0, 
+        Times[ -2, 
+          Plus[ 1, k], 
+          Power[ 
+            Plus[ -1, 
+              Times[ 2, k]], -1]], 0, 0, 0, 0, -2, 
+        Times[ 2, 
+          Power[ 
+            Plus[ -1, 
+              Times[ 2, k]], -1], 
+          Plus[ 1, 
+            Times[ -1, k], 
+            Power[ k, 2]]], 
+        Times[ 
+          Rational[ 1, 2], 
+          Plus[ 1, 
+            Times[ -2, k], 
+            Times[ -2, 
+              Power[ k, 2]]]], -4, -2, 2, 
+        Times[ 2, k], 0, 0, 
+        Times[ -2, 
+          Power[ k, 2]], 0}],
+      Editable->False]], "Print"],
+
+Cell[BoxData[
+    InterpretationBox[
+      \("c[ "\[InvisibleSpace]20
+        \[InvisibleSpace]" ] :   "\[InvisibleSpace]{24, 0, 
+          \(-\(\(12\ \((\(-1\) + k)\)\)\/k\)\), 
+          \(-\(\(6\ \((\(-1\) + k)\)\ \((\(-1\) + 2\ k)\)\)\/k\)\), 
+          \(-12\)\ \((\(-1\) + k)\), 0, \(-12\)\ \((\(-1\) + k)\), 
+          \(12\ \((\(-1\) + k)\)\)\/\(\(-1\) + 4\ k\), 0, 0, 
+          \(24\ \((\(-1\) + k)\)\ k\)\/\(\((\(-1\) + 2\ k)\)\ 
+              \((\(-1\) + 4\ k)\)\), 0, 0, 0, 0, 0, 
+          \(-\(\(24\ \((\(-1\) + k)\)\)\/\(\(-1\) + 4\ k\)\)\), 0, 
+          \(12\ \((\(-1\) + k)\)\)\/\(\(-1\) + 2\ k\), 
+          \(12\ \((\(-1\) + 2\ k + 2\ k\^2)\)\)\/\(\(-1\) + 4\ k\), 
+          \(-\(\(12\ \((\(-1\) + k)\)\ \((\(-1\) + 2\ k)\)\)\/\(\(-1\) + 
+                  4\ k\)\)\), 
+          \(-\(\(24\ \((\(-1\) + k)\)\ k\)\/\(\(-1\) + 4\ k\)\)\), \(-12\), 
+          \(-12\), 0, 0, 4\ k, 
+          \(-\(\(3 - 17\ k + 2\ k\^2\)\/\(k\ \((\(-1\) + 4\ k)\)\)\)\), 
+          \(-\(\(4\ k\ \((\(-11\) + 8\ k)\)\)\/\(\(-1\) + 4\ k\)\)\), 
+          \(2\ \((\(-3\) + 7\ k)\)\)\/k, 
+          \(-\(\(\((\(-1\) + k)\)\ \((1 + 2\ k)\)\)\/\(\((\(-1\) + 2\ k)\)\ 
+                  \((\(-1\) + 4\ k)\)\)\)\), 
+          \(2\ \((\(-1\) + 13\ k)\)\)\/\(\(-1\) + 4\ k\), 
+          \(6\ \((\(-1\) + k)\)\ \((1 + 2\ k)\)\)\/\(\(-1\) + 4\ k\), 
+          \(-\(\(\((3 + k)\)\ \((\(-1\) + 2\ k)\)\)\/k\)\), 
+          \(-\(\(\(-5\) + 7\ k + 2\ k\^2\)\/\(\(-1\) + 2\ k\)\)\), 
+          \(-\(\(18\ k\)\/\(\(-1\) + 4\ k\)\)\), \(-6\), 
+          \(6\ \((\(-1\) + k)\)\ \((\(-1\) + 2\ k)\)\)\/\(\(-1\) + 4\ k\), 
+          \(12\ \((\(-1\) + k)\)\ k\)\/\(\(-1\) + 4\ k\), 
+          \(\(-3\) + 19\ k - 48\ k\^2 - 44\ k\^3 + 64\ k\^4\)\/\(2\ k\ 
+              \((\(-1\) + 4\ k)\)\), 
+          \(-\(\(\((\(-1\) + k)\)\ 
+                  \((3 - 20\ k + 52\ k\^2 + 64\ k\^3)\)\)\/\(4\ k\ 
+                  \((\(-1\) + 4\ k)\)\)\)\), 0, 
+          \(-\(2\/\(\(-1\) + 2\ k\)\)\), 0, 1, 0, 
+          \(-\(\(2\ \((\(-1\) + k)\)\)\/\(\(-1\) + 2\ k\)\)\), 0, 0, 0, 0, 2, 
+          \(2\ \((\(-1\) + k + k\^2)\)\)\/\(\(-1\) + 2\ k\), 
+          1\/2\ \((\(-1\) + 2\ k - 2\ k\^2)\), 4\ \((1 + 3\ k)\), 
+          2\ \((1 - 3\ k + 3\ k\^2)\), \(-2\), 
+          \(2\ k\ \((\(-7\) + 10\ k)\)\)\/\(\(-1\) + 4\ k\), \(-6\), 
+          \(-\(\(6\ \((\(-1\) + k + k\^2)\)\)\/\(\(-1\) + 2\ k\)\)\), 
+          \(-\(\(3 - 18\ k + 2\ k\^2 + 16\ k\^3\)\/\(2\ 
+                  \((\(-1\) + 4\ k)\)\)\)\), 6\ \((1 + 2\ k\^2)\)}\),
+      SequenceForm[ "c[ ", 20, " ] :   ", {24, 0, 
+        Times[ -12, 
+          Plus[ -1, k], 
+          Power[ k, -1]], 
+        Times[ -6, 
+          Plus[ -1, k], 
+          Power[ k, -1], 
+          Plus[ -1, 
+            Times[ 2, k]]], 
+        Times[ -12, 
+          Plus[ -1, k]], 0, 
+        Times[ -12, 
+          Plus[ -1, k]], 
+        Times[ 12, 
+          Plus[ -1, k], 
+          Power[ 
+            Plus[ -1, 
+              Times[ 4, k]], -1]], 0, 0, 
+        Times[ 24, 
+          Plus[ -1, k], k, 
+          Power[ 
+            Plus[ -1, 
+              Times[ 2, k]], -1], 
+          Power[ 
+            Plus[ -1, 
+              Times[ 4, k]], -1]], 0, 0, 0, 0, 0, 
+        Times[ -24, 
+          Plus[ -1, k], 
+          Power[ 
+            Plus[ -1, 
+              Times[ 4, k]], -1]], 0, 
+        Times[ 12, 
+          Plus[ -1, k], 
+          Power[ 
+            Plus[ -1, 
+              Times[ 2, k]], -1]], 
+        Times[ 12, 
+          Power[ 
+            Plus[ -1, 
+              Times[ 4, k]], -1], 
+          Plus[ -1, 
+            Times[ 2, k], 
+            Times[ 2, 
+              Power[ k, 2]]]], 
+        Times[ -12, 
+          Plus[ -1, k], 
+          Plus[ -1, 
+            Times[ 2, k]], 
+          Power[ 
+            Plus[ -1, 
+              Times[ 4, k]], -1]], 
+        Times[ -24, 
+          Plus[ -1, k], k, 
+          Power[ 
+            Plus[ -1, 
+              Times[ 4, k]], -1]], -12, -12, 0, 0, 
+        Times[ 4, k], 
+        Times[ -1, 
+          Power[ k, -1], 
+          Power[ 
+            Plus[ -1, 
+              Times[ 4, k]], -1], 
+          Plus[ 3, 
+            Times[ -17, k], 
+            Times[ 2, 
+              Power[ k, 2]]]], 
+        Times[ -4, k, 
+          Power[ 
+            Plus[ -1, 
+              Times[ 4, k]], -1], 
+          Plus[ -11, 
+            Times[ 8, k]]], 
+        Times[ 2, 
+          Power[ k, -1], 
+          Plus[ -3, 
+            Times[ 7, k]]], 
+        Times[ -1, 
+          Plus[ -1, k], 
+          Power[ 
+            Plus[ -1, 
+              Times[ 2, k]], -1], 
+          Plus[ 1, 
+            Times[ 2, k]], 
+          Power[ 
+            Plus[ -1, 
+              Times[ 4, k]], -1]], 
+        Times[ 2, 
+          Power[ 
+            Plus[ -1, 
+              Times[ 4, k]], -1], 
+          Plus[ -1, 
+            Times[ 13, k]]], 
+        Times[ 6, 
+          Plus[ -1, k], 
+          Plus[ 1, 
+            Times[ 2, k]], 
+          Power[ 
+            Plus[ -1, 
+              Times[ 4, k]], -1]], 
+        Times[ -1, 
+          Power[ k, -1], 
+          Plus[ 3, k], 
+          Plus[ -1, 
+            Times[ 2, k]]], 
+        Times[ -1, 
+          Power[ 
+            Plus[ -1, 
+              Times[ 2, k]], -1], 
+          Plus[ -5, 
+            Times[ 7, k], 
+            Times[ 2, 
+              Power[ k, 2]]]], 
+        Times[ -18, k, 
+          Power[ 
+            Plus[ -1, 
+              Times[ 4, k]], -1]], -6, 
+        Times[ 6, 
+          Plus[ -1, k], 
+          Plus[ -1, 
+            Times[ 2, k]], 
+          Power[ 
+            Plus[ -1, 
+              Times[ 4, k]], -1]], 
+        Times[ 12, 
+          Plus[ -1, k], k, 
+          Power[ 
+            Plus[ -1, 
+              Times[ 4, k]], -1]], 
+        Times[ 
+          Rational[ 1, 2], 
+          Power[ k, -1], 
+          Power[ 
+            Plus[ -1, 
+              Times[ 4, k]], -1], 
+          Plus[ -3, 
+            Times[ 19, k], 
+            Times[ -48, 
+              Power[ k, 2]], 
+            Times[ -44, 
+              Power[ k, 3]], 
+            Times[ 64, 
+              Power[ k, 4]]]], 
+        Times[ 
+          Rational[ -1, 4], 
+          Plus[ -1, k], 
+          Power[ k, -1], 
+          Power[ 
+            Plus[ -1, 
+              Times[ 4, k]], -1], 
+          Plus[ 3, 
+            Times[ -20, k], 
+            Times[ 52, 
+              Power[ k, 2]], 
+            Times[ 64, 
+              Power[ k, 3]]]], 0, 
+        Times[ -2, 
+          Power[ 
+            Plus[ -1, 
+              Times[ 2, k]], -1]], 0, 1, 0, 
+        Times[ -2, 
+          Plus[ -1, k], 
+          Power[ 
+            Plus[ -1, 
+              Times[ 2, k]], -1]], 0, 0, 0, 0, 2, 
+        Times[ 2, 
+          Power[ 
+            Plus[ -1, 
+              Times[ 2, k]], -1], 
+          Plus[ -1, k, 
+            Power[ k, 2]]], 
+        Times[ 
+          Rational[ 1, 2], 
+          Plus[ -1, 
+            Times[ 2, k], 
+            Times[ -2, 
+              Power[ k, 2]]]], 
+        Times[ 4, 
+          Plus[ 1, 
+            Times[ 3, k]]], 
+        Times[ 2, 
+          Plus[ 1, 
+            Times[ -3, k], 
+            Times[ 3, 
+              Power[ k, 2]]]], -2, 
+        Times[ 2, k, 
+          Power[ 
+            Plus[ -1, 
+              Times[ 4, k]], -1], 
+          Plus[ -7, 
+            Times[ 10, k]]], -6, 
+        Times[ -6, 
+          Power[ 
+            Plus[ -1, 
+              Times[ 2, k]], -1], 
+          Plus[ -1, k, 
+            Power[ k, 2]]], 
+        Times[ 
+          Rational[ -1, 2], 
+          Power[ 
+            Plus[ -1, 
+              Times[ 4, k]], -1], 
+          Plus[ 3, 
+            Times[ -18, k], 
+            Times[ 2, 
+              Power[ k, 2]], 
+            Times[ 16, 
+              Power[ k, 3]]]], 
+        Times[ 6, 
+          Plus[ 1, 
+            Times[ 2, 
+              Power[ k, 2]]]]}],
+      Editable->False]], "Print"],
+
+Cell[BoxData[
+    InterpretationBox[
+      \("c[ "\[InvisibleSpace]21
+        \[InvisibleSpace]" ] :   "\[InvisibleSpace]{24, 0, 
+          \(12\ \((1 + k)\)\)\/k, \(6\ \((1 + k)\)\ \((\(-1\) + 2\ k)\)\)\/k, 
+          12\ \((1 + k)\), 0, 12\ \((1 + k)\), 
+          \(-\(\(12\ \((1 + k)\)\)\/\(\(-1\) + 4\ k\)\)\), 0, 0, 
+          \(-\(\(24\ k\ \((1 + k)\)\)\/\(\((\(-1\) + 2\ k)\)\ 
+                  \((\(-1\) + 4\ k)\)\)\)\), 0, 0, 0, 0, 0, 
+          \(24\ \((1 + k)\)\)\/\(\(-1\) + 4\ k\), 0, 
+          \(-\(\(12\ \((1 + k)\)\)\/\(\(-1\) + 2\ k\)\)\), 
+          \(-\(\(12\ \((1 - 2\ k + 2\ k\^2)\)\)\/\(\(-1\) + 4\ k\)\)\), 
+          \(12\ \((1 + k)\)\ \((\(-1\) + 2\ k)\)\)\/\(\(-1\) + 4\ k\), 
+          \(24\ k\ \((1 + k)\)\)\/\(\(-1\) + 4\ k\), \(-12\), \(-12\), 0, 0, 
+          \(-4\)\ k, 
+          \(\((1 + 2\ k)\)\ \((\(-3\) + 17\ k)\)\)\/\(k\ 
+              \((\(-1\) + 4\ k)\)\), 
+          \(4\ k\ \((13 + 8\ k)\)\)\/\(\(-1\) + 4\ k\), 
+          \(2\ \((\(-3\) + k)\)\)\/k, 
+          \(1 - 5\ k + 34\ k\^2\)\/\(\((\(-1\) + 2\ k)\)\ 
+              \((\(-1\) + 4\ k)\)\), 
+          \(2\ \((1 - 13\ k + 6\ k\^2)\)\)\/\(\((\(-1\) + 2\ k)\)\ 
+              \((\(-1\) + 4\ k)\)\), 
+          \(-\(\(6\ \((1 + k)\)\ \((1 + 2\ k)\)\)\/\(\(-1\) + 4\ k\)\)\), 
+          \(3 + k + 2\ k\^2\)\/k, \(5 + 3\ k + 2\ k\^2\)\/\(\(-1\) + 2\ k\), 
+          \(-\(\(30\ k\)\/\(\(-1\) + 4\ k\)\)\), \(-6\), 
+          \(-\(\(6\ \((1 + k)\)\ \((\(-1\) + 2\ k)\)\)\/\(\(-1\) + 
+                  4\ k\)\)\), 
+          \(-\(\(12\ k\ \((1 + k)\)\)\/\(\(-1\) + 4\ k\)\)\), 
+          \(-\(\(3 - 13\ k + 24\ k\^2 + 84\ k\^3 + 64\ k\^4\)\/\(2\ k\ 
+                  \((\(-1\) + 4\ k)\)\)\)\), 
+          \(3 - 17\ k + 48\ k\^2 + 52\ k\^3 + 64\ k\^4\)\/\(4\ k\ 
+              \((\(-1\) + 4\ k)\)\), 0, \(-\(2\/\(\(-1\) + 2\ k\)\)\), 0, 
+          \(-1\), 0, \(2\ \((1 + k)\)\)\/\(\(-1\) + 2\ k\), 0, 0, 0, 0, 2, 
+          \(-\(\(2\ \((1 - k + k\^2)\)\)\/\(\(-1\) + 2\ k\)\)\), 
+          1\/2\ \((\(-1\) + 2\ k + 2\ k\^2)\), 4\ \((1 + 3\ k)\), 
+          \(-2\)\ \((\(-1\) + 3\ k + 3\ k\^2)\), \(-2\), 
+          \(-\(\(10\ k\ \((1 + 2\ k)\)\)\/\(\(-1\) + 4\ k\)\)\), \(-6\), 
+          \(6\ \((1 - k + k\^2)\)\)\/\(\(-1\) + 2\ k\), 
+          \(\(-3\) + 18\ k + 2\ k\^2 + 16\ k\^3\)\/\(2\ 
+              \((\(-1\) + 4\ k)\)\), \(-6\)\ \((\(-1\) + 2\ k\^2)\)}\),
+      SequenceForm[ "c[ ", 21, " ] :   ", {24, 0, 
+        Times[ 12, 
+          Power[ k, -1], 
+          Plus[ 1, k]], 
+        Times[ 6, 
+          Power[ k, -1], 
+          Plus[ 1, k], 
+          Plus[ -1, 
+            Times[ 2, k]]], 
+        Times[ 12, 
+          Plus[ 1, k]], 0, 
+        Times[ 12, 
+          Plus[ 1, k]], 
+        Times[ -12, 
+          Plus[ 1, k], 
+          Power[ 
+            Plus[ -1, 
+              Times[ 4, k]], -1]], 0, 0, 
+        Times[ -24, k, 
+          Plus[ 1, k], 
+          Power[ 
+            Plus[ -1, 
+              Times[ 2, k]], -1], 
+          Power[ 
+            Plus[ -1, 
+              Times[ 4, k]], -1]], 0, 0, 0, 0, 0, 
+        Times[ 24, 
+          Plus[ 1, k], 
+          Power[ 
+            Plus[ -1, 
+              Times[ 4, k]], -1]], 0, 
+        Times[ -12, 
+          Plus[ 1, k], 
+          Power[ 
+            Plus[ -1, 
+              Times[ 2, k]], -1]], 
+        Times[ -12, 
+          Power[ 
+            Plus[ -1, 
+              Times[ 4, k]], -1], 
+          Plus[ 1, 
+            Times[ -2, k], 
+            Times[ 2, 
+              Power[ k, 2]]]], 
+        Times[ 12, 
+          Plus[ 1, k], 
+          Plus[ -1, 
+            Times[ 2, k]], 
+          Power[ 
+            Plus[ -1, 
+              Times[ 4, k]], -1]], 
+        Times[ 24, k, 
+          Plus[ 1, k], 
+          Power[ 
+            Plus[ -1, 
+              Times[ 4, k]], -1]], -12, -12, 0, 0, 
+        Times[ -4, k], 
+        Times[ 
+          Power[ k, -1], 
+          Plus[ 1, 
+            Times[ 2, k]], 
+          Power[ 
+            Plus[ -1, 
+              Times[ 4, k]], -1], 
+          Plus[ -3, 
+            Times[ 17, k]]], 
+        Times[ 4, k, 
+          Power[ 
+            Plus[ -1, 
+              Times[ 4, k]], -1], 
+          Plus[ 13, 
+            Times[ 8, k]]], 
+        Times[ 2, 
+          Plus[ -3, k], 
+          Power[ k, -1]], 
+        Times[ 
+          Power[ 
+            Plus[ -1, 
+              Times[ 2, k]], -1], 
+          Power[ 
+            Plus[ -1, 
+              Times[ 4, k]], -1], 
+          Plus[ 1, 
+            Times[ -5, k], 
+            Times[ 34, 
+              Power[ k, 2]]]], 
+        Times[ 2, 
+          Power[ 
+            Plus[ -1, 
+              Times[ 2, k]], -1], 
+          Power[ 
+            Plus[ -1, 
+              Times[ 4, k]], -1], 
+          Plus[ 1, 
+            Times[ -13, k], 
+            Times[ 6, 
+              Power[ k, 2]]]], 
+        Times[ -6, 
+          Plus[ 1, k], 
+          Plus[ 1, 
+            Times[ 2, k]], 
+          Power[ 
+            Plus[ -1, 
+              Times[ 4, k]], -1]], 
+        Times[ 
+          Power[ k, -1], 
+          Plus[ 3, k, 
+            Times[ 2, 
+              Power[ k, 2]]]], 
+        Times[ 
+          Power[ 
+            Plus[ -1, 
+              Times[ 2, k]], -1], 
+          Plus[ 5, 
+            Times[ 3, k], 
+            Times[ 2, 
+              Power[ k, 2]]]], 
+        Times[ -30, k, 
+          Power[ 
+            Plus[ -1, 
+              Times[ 4, k]], -1]], -6, 
+        Times[ -6, 
+          Plus[ 1, k], 
+          Plus[ -1, 
+            Times[ 2, k]], 
+          Power[ 
+            Plus[ -1, 
+              Times[ 4, k]], -1]], 
+        Times[ -12, k, 
+          Plus[ 1, k], 
+          Power[ 
+            Plus[ -1, 
+              Times[ 4, k]], -1]], 
+        Times[ 
+          Rational[ -1, 2], 
+          Power[ k, -1], 
+          Power[ 
+            Plus[ -1, 
+              Times[ 4, k]], -1], 
+          Plus[ 3, 
+            Times[ -13, k], 
+            Times[ 24, 
+              Power[ k, 2]], 
+            Times[ 84, 
+              Power[ k, 3]], 
+            Times[ 64, 
+              Power[ k, 4]]]], 
+        Times[ 
+          Rational[ 1, 4], 
+          Power[ k, -1], 
+          Power[ 
+            Plus[ -1, 
+              Times[ 4, k]], -1], 
+          Plus[ 3, 
+            Times[ -17, k], 
+            Times[ 48, 
+              Power[ k, 2]], 
+            Times[ 52, 
+              Power[ k, 3]], 
+            Times[ 64, 
+              Power[ k, 4]]]], 0, 
+        Times[ -2, 
+          Power[ 
+            Plus[ -1, 
+              Times[ 2, k]], -1]], 0, -1, 0, 
+        Times[ 2, 
+          Plus[ 1, k], 
+          Power[ 
+            Plus[ -1, 
+              Times[ 2, k]], -1]], 0, 0, 0, 0, 2, 
+        Times[ -2, 
+          Power[ 
+            Plus[ -1, 
+              Times[ 2, k]], -1], 
+          Plus[ 1, 
+            Times[ -1, k], 
+            Power[ k, 2]]], 
+        Times[ 
+          Rational[ 1, 2], 
+          Plus[ -1, 
+            Times[ 2, k], 
+            Times[ 2, 
+              Power[ k, 2]]]], 
+        Times[ 4, 
+          Plus[ 1, 
+            Times[ 3, k]]], 
+        Times[ -2, 
+          Plus[ -1, 
+            Times[ 3, k], 
+            Times[ 3, 
+              Power[ k, 2]]]], -2, 
+        Times[ -10, k, 
+          Plus[ 1, 
+            Times[ 2, k]], 
+          Power[ 
+            Plus[ -1, 
+              Times[ 4, k]], -1]], -6, 
+        Times[ 6, 
+          Power[ 
+            Plus[ -1, 
+              Times[ 2, k]], -1], 
+          Plus[ 1, 
+            Times[ -1, k], 
+            Power[ k, 2]]], 
+        Times[ 
+          Rational[ 1, 2], 
+          Power[ 
+            Plus[ -1, 
+              Times[ 4, k]], -1], 
+          Plus[ -3, 
+            Times[ 18, k], 
+            Times[ 2, 
+              Power[ k, 2]], 
+            Times[ 16, 
+              Power[ k, 3]]]], 
+        Times[ -6, 
+          Plus[ -1, 
+            Times[ 2, 
+              Power[ k, 2]]]]}],
+      Editable->False]], "Print"],
+
+Cell[BoxData[
+    InterpretationBox[
+      \("e[ "\[InvisibleSpace]1
+        \[InvisibleSpace]" ] :   "\[InvisibleSpace]{1, 0, 0, 0, 0, 0, 0, 0, 
+          0, 0, 0, 0, 0, 0, 0}\),
+      SequenceForm[ 
+      "e[ ", 1, " ] :   ", {1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0}],
+      Editable->False]], "Print"],
+
+Cell[BoxData[
+    InterpretationBox[
+      \("e[ "\[InvisibleSpace]2
+        \[InvisibleSpace]" ] :   "\[InvisibleSpace]{0, 1, 0, 0, 0, 0, 0, 0, 
+          0, 0, 0, 0, 0, 0, 0}\),
+      SequenceForm[ 
+      "e[ ", 2, " ] :   ", {0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0}],
+      Editable->False]], "Print"],
+
+Cell[BoxData[
+    InterpretationBox[
+      \("e[ "\[InvisibleSpace]3
+        \[InvisibleSpace]" ] :   "\[InvisibleSpace]{0, 0, 1, 0, 0, 0, 0, 0, 
+          0, 0, 0, 0, 0, 0, 0}\),
+      SequenceForm[ 
+      "e[ ", 3, " ] :   ", {0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0}],
+      Editable->False]], "Print"],
+
+Cell[BoxData[
+    InterpretationBox[
+      \("e[ "\[InvisibleSpace]4
+        \[InvisibleSpace]" ] :   "\[InvisibleSpace]{0, 0, 0, 1, 0, 0, 0, 0, 
+          0, 0, 0, 0, 0, 0, 0}\),
+      SequenceForm[ 
+      "e[ ", 4, " ] :   ", {0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0}],
+      Editable->False]], "Print"],
+
+Cell[BoxData[
+    InterpretationBox[
+      \("e[ "\[InvisibleSpace]5
+        \[InvisibleSpace]" ] :   "\[InvisibleSpace]{0, 0, 0, 0, 1, 0, 0, 0, 
+          0, 0, 0, 0, 0, 0, 0}\),
+      SequenceForm[ 
+      "e[ ", 5, " ] :   ", {0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0}],
+      Editable->False]], "Print"],
+
+Cell[BoxData[
+    InterpretationBox[
+      \("e[ "\[InvisibleSpace]6
+        \[InvisibleSpace]" ] :   "\[InvisibleSpace]{0, 0, 0, 0, 0, 1, 0, 0, 
+          0, 0, 0, 0, 0, 0, 0}\),
+      SequenceForm[ 
+      "e[ ", 6, " ] :   ", {0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0}],
+      Editable->False]], "Print"],
+
+Cell[BoxData[
+    InterpretationBox[
+      \("e[ "\[InvisibleSpace]7
+        \[InvisibleSpace]" ] :   "\[InvisibleSpace]{0, 0, 0, 0, 0, 0, 1, 0, 
+          0, 0, 0, 0, 0, 0, 0}\),
+      SequenceForm[ 
+      "e[ ", 7, " ] :   ", {0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0}],
+      Editable->False]], "Print"],
+
+Cell[BoxData[
+    InterpretationBox[
+      \("e[ "\[InvisibleSpace]8
+        \[InvisibleSpace]" ] :   "\[InvisibleSpace]{0, 0, 0, 0, 0, 0, 0, 1, 
+          0, 0, 0, 0, 0, 0, 0}\),
+      SequenceForm[ 
+      "e[ ", 8, " ] :   ", {0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0}],
+      Editable->False]], "Print"],
+
+Cell[BoxData[
+    InterpretationBox[
+      \("e[ "\[InvisibleSpace]9
+        \[InvisibleSpace]" ] :   "\[InvisibleSpace]{0, 0, 0, 0, 0, 0, 0, 0, 
+          1, 0, 0, 0, 0, 0, 0}\),
+      SequenceForm[ 
+      "e[ ", 9, " ] :   ", {0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0}],
+      Editable->False]], "Print"],
+
+Cell[BoxData[
+    InterpretationBox[
+      \("e[ "\[InvisibleSpace]10
+        \[InvisibleSpace]" ] :   "\[InvisibleSpace]{0, 0, 0, 0, 0, 0, 0, 0, 
+          0, 1, 0, 0, 0, 0, 0}\),
+      SequenceForm[ 
+      "e[ ", 10, " ] :   ", {0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0}],
+      Editable->False]], "Print"],
+
+Cell[BoxData[
+    InterpretationBox[
+      \("e[ "\[InvisibleSpace]11
+        \[InvisibleSpace]" ] :   "\[InvisibleSpace]{0, 0, 0, 0, 0, 0, 0, 0, 
+          0, 0, 1, 0, 0, 0, 0}\),
+      SequenceForm[ 
+      "e[ ", 11, " ] :   ", {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0}],
+      Editable->False]], "Print"],
+
+Cell[BoxData[
+    InterpretationBox[
+      \("e[ "\[InvisibleSpace]12
+        \[InvisibleSpace]" ] :   "\[InvisibleSpace]{0, 0, 0, 0, 0, 0, 0, 0, 
+          0, 0, 0, 1, 0, 0, 0}\),
+      SequenceForm[ 
+      "e[ ", 12, " ] :   ", {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0}],
+      Editable->False]], "Print"],
+
+Cell[BoxData[
+    InterpretationBox[
+      \("e[ "\[InvisibleSpace]13
+        \[InvisibleSpace]" ] :   "\[InvisibleSpace]{0, 0, 0, 0, 0, 0, 0, 0, 
+          0, 0, 0, 0, 1, 0, 0}\),
+      SequenceForm[ 
+      "e[ ", 13, " ] :   ", {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0}],
+      Editable->False]], "Print"],
+
+Cell[BoxData[
+    InterpretationBox[
+      \("e[ "\[InvisibleSpace]14
+        \[InvisibleSpace]" ] :   "\[InvisibleSpace]{0, 0, 0, 0, 0, 0, 0, 0, 
+          0, 0, 0, 0, 0, 1, k\/\(\(-1\) + 2\ k\)}\),
+      SequenceForm[ 
+      "e[ ", 14, " ] :   ", {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 
+        Times[ k, 
+          Power[ 
+            Plus[ -1, 
+              Times[ 2, k]], -1]]}],
+      Editable->False]], "Print"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[{
+    \(Do[tens[i] = \ Coefficient[tcor, \ c[i]]; \n\ \ \ \ \ \ 
+      tensu[i]\  = \ 
+        Expand[tens[i]\  - \ 
+            Sum[\ Part[Coefficient[tens[i], basind6], j]\ 
+                Coefficient[tcor, e[j]], {j, 1, 14}\ ]\ ]; \n\t\ \ \ \ 
+      coeffu[i] = Coefficient[tensu[i], bas]; \n\t\ \ \ \ 
+      tenso[i]\  = \ 
+        Sum[Factor[\ Part[coeffu[i], j]\ ]\ \ Part[bas, j], {j, 1, 137}]; \n
+      \ \ \ \ \ \ \ 
+      Print[\ "\<tenso[ \>", \ i, \ "\< ] : \>", 
+        Coefficient[tenso[i], basind]\ ], \ \n\t\t{i, 18, 21}]\), 
+    \(ttt\  = \ 
+      tcor\ \  //. {c[18] -> 0, c[19] -> 0, c[20] -> 0, c[21] -> 0, \n
+          \t\t\t\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 
+          c[7] -> e[15], c[10] -> e[16], c[12] -> e[17]}; \n
+    tttq\  = ttt\  + \ Sum[e[i]\ tenso[i], \ {i, 18, 21}]; \ \ \ \ \ \)}], 
+  "Input"],
+
+Cell[BoxData[
+    \(General::"spell1" \( : \ \) 
+      "Possible spelling error: new symbol name \"\!\(tensu\)\" is similar to \
+existing symbol \"\!\(tens\)\"."\)], "Message"],
+
+Cell[BoxData[
+    \(General::"spell" \( : \ \) 
+      "Possible spelling error: new symbol name \"\!\(tenso\)\" is similar to \
+existing symbols \!\({tens, tensu}\)."\)], "Message"],
+
+Cell[BoxData[
+    InterpretationBox[
+      \("tenso[ "\[InvisibleSpace]18
+        \[InvisibleSpace]" ] : "\[InvisibleSpace]{0, 0, 0, 0, 0, 0, 0, 0, 0, 
+          0, 0, 0, 0, 0, 0, 4, 2, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, \(-2\), 0, 
+          0, \(-2\), 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 2, 0, 4, 2, 4, 1, 2, 2, 
+          2\ k, 2\ k, 0, 0, \(-1\) + 2\ k, 1\/2\ \((\(-1\) - 2\ k)\), 0, 0, 
+          0, 1, 2, 2, \(-2\), 0, 0, 1\/2\ \((\(-1\) - 2\ k)\), 
+          \(-2\)\ \((1 + k)\), \(-2\)\ \((1 + k)\), 1\/2\ \((1 + 2\ k\^2)\), 
+          \(-5\) + 2\ k, 1\/2\ \((\(-5\) + 2\ k)\), 1\/2\ \((5 - 2\ k)\), 
+          1\/2\ \((1 - 4\ k)\), 0, 0, 1\/2\ k\ \((\(-1\) + 4\ k)\), 0}\),
+      SequenceForm[ 
+      "tenso[ ", 18, " ] : ", {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+        4, 2, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, -2, 0, 0, -2, 0, 0, 0, 0, 0, 
+        0, 0, 0, 0, 1, 2, 0, 4, 2, 4, 1, 2, 2, 
+        Times[ 2, k], 
+        Times[ 2, k], 0, 0, 
+        Plus[ -1, 
+          Times[ 2, k]], 
+        Times[ 
+          Rational[ 1, 2], 
+          Plus[ -1, 
+            Times[ -2, k]]], 0, 0, 0, 1, 2, 2, -2, 0, 0, 
+        Times[ 
+          Rational[ 1, 2], 
+          Plus[ -1, 
+            Times[ -2, k]]], 
+        Times[ -2, 
+          Plus[ 1, k]], 
+        Times[ -2, 
+          Plus[ 1, k]], 
+        Times[ 
+          Rational[ 1, 2], 
+          Plus[ 1, 
+            Times[ 2, 
+              Power[ k, 2]]]], 
+        Plus[ -5, 
+          Times[ 2, k]], 
+        Times[ 
+          Rational[ 1, 2], 
+          Plus[ -5, 
+            Times[ 2, k]]], 
+        Times[ 
+          Rational[ 1, 2], 
+          Plus[ 5, 
+            Times[ -2, k]]], 
+        Times[ 
+          Rational[ 1, 2], 
+          Plus[ 1, 
+            Times[ -4, k]]], 0, 0, 
+        Times[ 
+          Rational[ 1, 2], k, 
+          Plus[ -1, 
+            Times[ 4, k]]], 0}],
+      Editable->False]], "Print"],
+
+Cell[BoxData[
+    InterpretationBox[
+      \("tenso[ "\[InvisibleSpace]19
+        \[InvisibleSpace]" ] : "\[InvisibleSpace]{0, 0, 0, 0, 0, 0, 0, 0, 0, 
+          0, 0, 0, 0, 0, 4\/\(\(-1\) + 2\ k\), 4\/\(\(-1\) + 2\ k\), 2, 
+          \(-\(\(4\ \((\(-1\) + k)\)\ \((\(-1\) + 4\ k)\)\)\/\(k\ 
+                  \((\(-1\) + 2\ k)\)\)\)\), 0, 0, 0, 0, 
+          \(-\(\(8\ \((\(-1\) + k)\)\)\/\(\(-1\) + 2\ k\)\)\), 
+          \(-\(\(4\ \((\(-1\) + k)\)\ \((\(-1\) + 4\ k)\)\)\/\(k\ 
+                  \((\(-1\) + 2\ k)\)\)\)\), 
+          \(-\(\(4\ \((\(-1\) + 2\ k)\)\)\/k\)\), 
+          \(8\ \((\(-1\) + k)\)\)\/\(\(-1\) + 2\ k\), 0, \(-8\), \(-2\), 0, 
+          0, \(-\(\(2\ \((1 + 2\ k)\)\)\/\(\(-1\) + 2\ k\)\)\), 0, 0, 
+          \(-\(\(4\ \((\(-1\) + k)\)\)\/\(\(-1\) + 2\ k\)\)\), 
+          \(2\ \((\(-1\) + k)\)\)\/k, 
+          \(4\ \((\(-1\) + k)\)\)\/\(\(-1\) + 2\ k\), 
+          \(4\ \((\(-1\) + k)\)\ \((\(-1\) + 4\ k)\)\)\/\(\(-1\) + 2\ k\), 
+          \(4\ \((\(-1\) + k)\)\ \((\(-1\) + 4\ k)\)\)\/\(\(-1\) + 2\ k\), 0, 
+          0, \(-1\), 2, \(2\ \((\(-1\) + 2\ k)\)\)\/k, 
+          \(4\ \((1 - 6\ k + 6\ k\^2)\)\)\/\(k\ \((\(-1\) + 2\ k)\)\), 2, 
+          \(4\ \((\(-2\) + 3\ k)\)\)\/\(\(-1\) + 2\ k\), 
+          \(1 + 2\ k\)\/\(\(-1\) + 2\ k\), 2, \(-\(2\/\(\(-1\) + 2\ k\)\)\), 
+          \(2\ k\ \((1 + 2\ k)\)\)\/\(\(-1\) + 2\ k\), 2\ k, 4\ k, 
+          \(8\ k\^2\)\/\(\(-1\) + 2\ k\), \(-\(\(\(-1\) + 4\ k\)\/k\)\), 
+          \(1 - 8\ k + 4\ k\^2\)\/\(2\ \((\(-1\) + 2\ k)\)\), 
+          \(2\ \((\(-1\) + k)\)\ \((\(-1\) + 4\ k)\)\)\/\(k\ 
+              \((\(-1\) + 2\ k)\)\), 
+          \(-\(\(4\ \((\(-1\) + k)\)\)\/\(\(-1\) + 2\ k\)\)\), 0, 
+          \(2 - 7\ k + 10\ k\^2\)\/\(k\ \((\(-1\) + 2\ k)\)\), 
+          \(2\ \((\(-1\) + 3\ k)\)\)\/k, 
+          \(4\ \((\(-1\) + k)\)\)\/\(\(-1\) + 2\ k\), 
+          \(-2\)\ \((\(-1\) + 2\ k)\), 
+          \(-\(\(\((\(-1\) + k)\)\ \((\(-1\) + 4\ k)\)\)\/k\)\), 
+          \(-\(\(2\ \((\(-1\) + k)\)\ \((\(-1\) + 4\ k)\)\)\/\(\(-1\) + 
+                  2\ k\)\)\), 
+          \(-\(\(1 - 3\ k + 4\ k\^2 + 4\ k\^3\)\/\(2\ k\ 
+                  \((\(-1\) + 2\ k)\)\)\)\), 
+          \(-\(\(\(-1\) + 5\ k + 2\ k\^2\)\/k\)\), 
+          \(-\(\(\(-3\) + 5\ k\)\/\(\(-1\) + 2\ k\)\)\), 
+          \(-\(\(\(-1\) + 7\ k - 16\ k\^2 + 8\ k\^4\)\/\(4\ k\ 
+                  \((\(-1\) + 2\ k)\)\)\)\), 
+          \(-\(\(\(-1\) - 4\ k + 8\ k\^2\)\/\(\(-1\) + 2\ k\)\)\), 
+          1\/2\ \((\(-5\) + 2\ k)\), 
+          \(\(-3\) + 4\ k + 2\ k\^2\)\/\(2\ \((\(-1\) + 2\ k)\)\), 
+          \(\((1 + 2\ k)\)\ \((\(-1\) + 4\ k)\)\)\/\(2\ 
+              \((\(-1\) + 2\ k)\)\), 0, 0, 
+          \(-\(\(k\ \((1 + 2\ k)\)\ \((\(-1\) + 4\ k)\)\)\/\(2\ 
+                  \((\(-1\) + 2\ k)\)\)\)\), 
+          \(-\(\(2\ \((\(-1\) + k)\)\ \((\(-1\) + 4\ k)\)\)\/\(\(-1\) + 
+                  2\ k\)\)\)}\),
+      SequenceForm[ 
+      "tenso[ ", 19, " ] : ", {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+        Times[ 4, 
+          Power[ 
+            Plus[ -1, 
+              Times[ 2, k]], -1]], 
+        Times[ 4, 
+          Power[ 
+            Plus[ -1, 
+              Times[ 2, k]], -1]], 2, 
+        Times[ -4, 
+          Plus[ -1, k], 
+          Power[ k, -1], 
+          Power[ 
+            Plus[ -1, 
+              Times[ 2, k]], -1], 
+          Plus[ -1, 
+            Times[ 4, k]]], 0, 0, 0, 0, 
+        Times[ -8, 
+          Plus[ -1, k], 
+          Power[ 
+            Plus[ -1, 
+              Times[ 2, k]], -1]], 
+        Times[ -4, 
+          Plus[ -1, k], 
+          Power[ k, -1], 
+          Power[ 
+            Plus[ -1, 
+              Times[ 2, k]], -1], 
+          Plus[ -1, 
+            Times[ 4, k]]], 
+        Times[ -4, 
+          Power[ k, -1], 
+          Plus[ -1, 
+            Times[ 2, k]]], 
+        Times[ 8, 
+          Plus[ -1, k], 
+          Power[ 
+            Plus[ -1, 
+              Times[ 2, k]], -1]], 0, -8, -2, 0, 0, 
+        Times[ -2, 
+          Power[ 
+            Plus[ -1, 
+              Times[ 2, k]], -1], 
+          Plus[ 1, 
+            Times[ 2, k]]], 0, 0, 
+        Times[ -4, 
+          Plus[ -1, k], 
+          Power[ 
+            Plus[ -1, 
+              Times[ 2, k]], -1]], 
+        Times[ 2, 
+          Plus[ -1, k], 
+          Power[ k, -1]], 
+        Times[ 4, 
+          Plus[ -1, k], 
+          Power[ 
+            Plus[ -1, 
+              Times[ 2, k]], -1]], 
+        Times[ 4, 
+          Plus[ -1, k], 
+          Power[ 
+            Plus[ -1, 
+              Times[ 2, k]], -1], 
+          Plus[ -1, 
+            Times[ 4, k]]], 
+        Times[ 4, 
+          Plus[ -1, k], 
+          Power[ 
+            Plus[ -1, 
+              Times[ 2, k]], -1], 
+          Plus[ -1, 
+            Times[ 4, k]]], 0, 0, -1, 2, 
+        Times[ 2, 
+          Power[ k, -1], 
+          Plus[ -1, 
+            Times[ 2, k]]], 
+        Times[ 4, 
+          Power[ k, -1], 
+          Power[ 
+            Plus[ -1, 
+              Times[ 2, k]], -1], 
+          Plus[ 1, 
+            Times[ -6, k], 
+            Times[ 6, 
+              Power[ k, 2]]]], 2, 
+        Times[ 4, 
+          Power[ 
+            Plus[ -1, 
+              Times[ 2, k]], -1], 
+          Plus[ -2, 
+            Times[ 3, k]]], 
+        Times[ 
+          Power[ 
+            Plus[ -1, 
+              Times[ 2, k]], -1], 
+          Plus[ 1, 
+            Times[ 2, k]]], 2, 
+        Times[ -2, 
+          Power[ 
+            Plus[ -1, 
+              Times[ 2, k]], -1]], 
+        Times[ 2, k, 
+          Power[ 
+            Plus[ -1, 
+              Times[ 2, k]], -1], 
+          Plus[ 1, 
+            Times[ 2, k]]], 
+        Times[ 2, k], 
+        Times[ 4, k], 
+        Times[ 8, 
+          Power[ k, 2], 
+          Power[ 
+            Plus[ -1, 
+              Times[ 2, k]], -1]], 
+        Times[ -1, 
+          Power[ k, -1], 
+          Plus[ -1, 
+            Times[ 4, k]]], 
+        Times[ 
+          Rational[ 1, 2], 
+          Power[ 
+            Plus[ -1, 
+              Times[ 2, k]], -1], 
+          Plus[ 1, 
+            Times[ -8, k], 
+            Times[ 4, 
+              Power[ k, 2]]]], 
+        Times[ 2, 
+          Plus[ -1, k], 
+          Power[ k, -1], 
+          Power[ 
+            Plus[ -1, 
+              Times[ 2, k]], -1], 
+          Plus[ -1, 
+            Times[ 4, k]]], 
+        Times[ -4, 
+          Plus[ -1, k], 
+          Power[ 
+            Plus[ -1, 
+              Times[ 2, k]], -1]], 0, 
+        Times[ 
+          Power[ k, -1], 
+          Power[ 
+            Plus[ -1, 
+              Times[ 2, k]], -1], 
+          Plus[ 2, 
+            Times[ -7, k], 
+            Times[ 10, 
+              Power[ k, 2]]]], 
+        Times[ 2, 
+          Power[ k, -1], 
+          Plus[ -1, 
+            Times[ 3, k]]], 
+        Times[ 4, 
+          Plus[ -1, k], 
+          Power[ 
+            Plus[ -1, 
+              Times[ 2, k]], -1]], 
+        Times[ -2, 
+          Plus[ -1, 
+            Times[ 2, k]]], 
+        Times[ -1, 
+          Plus[ -1, k], 
+          Power[ k, -1], 
+          Plus[ -1, 
+            Times[ 4, k]]], 
+        Times[ -2, 
+          Plus[ -1, k], 
+          Power[ 
+            Plus[ -1, 
+              Times[ 2, k]], -1], 
+          Plus[ -1, 
+            Times[ 4, k]]], 
+        Times[ 
+          Rational[ -1, 2], 
+          Power[ k, -1], 
+          Power[ 
+            Plus[ -1, 
+              Times[ 2, k]], -1], 
+          Plus[ 1, 
+            Times[ -3, k], 
+            Times[ 4, 
+              Power[ k, 2]], 
+            Times[ 4, 
+              Power[ k, 3]]]], 
+        Times[ -1, 
+          Power[ k, -1], 
+          Plus[ -1, 
+            Times[ 5, k], 
+            Times[ 2, 
+              Power[ k, 2]]]], 
+        Times[ -1, 
+          Power[ 
+            Plus[ -1, 
+              Times[ 2, k]], -1], 
+          Plus[ -3, 
+            Times[ 5, k]]], 
+        Times[ 
+          Rational[ -1, 4], 
+          Power[ k, -1], 
+          Power[ 
+            Plus[ -1, 
+              Times[ 2, k]], -1], 
+          Plus[ -1, 
+            Times[ 7, k], 
+            Times[ -16, 
+              Power[ k, 2]], 
+            Times[ 8, 
+              Power[ k, 4]]]], 
+        Times[ -1, 
+          Power[ 
+            Plus[ -1, 
+              Times[ 2, k]], -1], 
+          Plus[ -1, 
+            Times[ -4, k], 
+            Times[ 8, 
+              Power[ k, 2]]]], 
+        Times[ 
+          Rational[ 1, 2], 
+          Plus[ -5, 
+            Times[ 2, k]]], 
+        Times[ 
+          Rational[ 1, 2], 
+          Power[ 
+            Plus[ -1, 
+              Times[ 2, k]], -1], 
+          Plus[ -3, 
+            Times[ 4, k], 
+            Times[ 2, 
+              Power[ k, 2]]]], 
+        Times[ 
+          Rational[ 1, 2], 
+          Power[ 
+            Plus[ -1, 
+              Times[ 2, k]], -1], 
+          Plus[ 1, 
+            Times[ 2, k]], 
+          Plus[ -1, 
+            Times[ 4, k]]], 0, 0, 
+        Times[ 
+          Rational[ -1, 2], k, 
+          Power[ 
+            Plus[ -1, 
+              Times[ 2, k]], -1], 
+          Plus[ 1, 
+            Times[ 2, k]], 
+          Plus[ -1, 
+            Times[ 4, k]]], 
+        Times[ -2, 
+          Plus[ -1, k], 
+          Power[ 
+            Plus[ -1, 
+              Times[ 2, k]], -1], 
+          Plus[ -1, 
+            Times[ 4, k]]]}],
+      Editable->False]], "Print"],
+
+Cell[BoxData[
+    InterpretationBox[
+      \("tenso[ "\[InvisibleSpace]20
+        \[InvisibleSpace]" ] : "\[InvisibleSpace]{0, 0, 0, 0, 0, 0, 0, 0, 0, 
+          0, 0, 0, 0, 0, 0, 8, 4, 
+          \(-\(\(12\ \((\(-1\) + k)\)\^2\)\/\(k\ \((\(-1\) + 2\ k)\)\)\)\), 
+          0, 0, 0, 0, \(12\ \((\(-1\) + k)\)\)\/\(\(-1\) + 2\ k\), 
+          \(12\ \((\(-1\) + k)\)\)\/\(\(-1\) + 2\ k\), 0, 0, 0, 0, \(-4\), 0, 
+          0, \(-\(\(4\ \((\(-4\) + 5\ k)\)\)\/\(\(-1\) + 2\ k\)\)\), 0, 
+          \(12\ \((\(-1\) + k)\)\)\/\(\(-1\) + 2\ k\), 
+          \(12\ \((\(-1\) + k + k\^2)\)\)\/\(\(-1\) + 2\ k\), 
+          \(-6\)\ \((\(-1\) + k)\), 
+          \(-\(\(12\ \((\(-1\) + k)\)\ k\)\/\(\(-1\) + 2\ k\)\)\), 
+          \(-\(\(12\ \((\(-1\) + k + k\^2)\)\)\/\(\(-1\) + 2\ k\)\)\), 
+          \(-\(\(12\ \((\(-1\) + k + k\^2)\)\)\/\(\(-1\) + 2\ k\)\)\), 0, 0, 
+          2, 4, 0, 
+          \(2\ \((3 - 7\ k + 8\ k\^2)\)\)\/\(k\ \((\(-1\) + 2\ k)\)\), 4, 
+          \(2\ \((\(-1\) + 5\ k)\)\)\/\(\(-1\) + 2\ k\), 
+          \(2\ \((\(-4\) + 5\ k)\)\)\/\(\(-1\) + 2\ k\), 4, 
+          \(2\ \((1 + k)\)\)\/\(\(-1\) + 2\ k\), 
+          \(2\ k\ \((\(-5\) + 4\ k)\)\)\/\(\(-1\) + 2\ k\), 
+          2\ \((\(-3\) + 2\ k)\), 6\ \((\(-1\) + k)\), 
+          \(12\ \((\(-1\) + k)\)\ k\)\/\(\(-1\) + 2\ k\), 
+          \(3 - k + 2\ k\^2\)\/\(2\ k\), 
+          \(-\(\(\((\(-1\) + k)\)\ \((1 + 4\ k)\)\)\/\(\(-1\) + 2\ k\)\)\), 
+          \(-\(\(6\ \((\(-1\) + k)\)\)\/\(\(-1\) + 2\ k\)\)\), 0, 
+          \(-\(\(6\ \((\(-1\) + k)\)\)\/\(\(-1\) + 2\ k\)\)\), 
+          \(2\ \((\(-4\) + 5\ k)\)\)\/\(\(-1\) + 2\ k\), 4, 
+          \(2\ \((1 + k)\)\)\/\(\(-1\) + 2\ k\), 
+          \(2\ \((\(-1\) - k + 3\ k\^2)\)\)\/\(\(-1\) + 2\ k\), 
+          \(-\(\(3\ \((\(-1\) + k)\)\^2\)\/k\)\), 
+          \(-\(\(6\ \((\(-1\) + k)\)\^2\)\/\(\(-1\) + 2\ k\)\)\), 
+          \(-\(\(\((\(-1\) + k)\)\ \((1 + 4\ k)\)\)\/\(\(-1\) + 2\ k\)\)\), 
+          \(-\(\(\(-3\) - k + 8\ k\^2\)\/\(2\ k\)\)\), 
+          \(-\(\(1 - k + 4\ k\^2\)\/\(2\ \((\(-1\) + 2\ k)\)\)\)\), 
+          \(-\(\(\((\(-1\) + 4\ k)\)\ \((3 + k - 4\ k\^2 + 4\ k\^3)\)\)\/\(8\ 
+                  k\ \((\(-1\) + 2\ k)\)\)\)\), 
+          \(2\ \((1 + k)\)\ \((\(-4\) + 7\ k)\)\)\/\(\(-1\) + 2\ k\), 
+          1 + 2\ k, 
+          \(5 - 3\ k - 17\ k\^2 + 12\ k\^3\)\/\(2\ \((\(-1\) + 2\ k)\)\), 
+          \(\(-1\) - 6\ k + 10\ k\^2\)\/\(\(-1\) + 2\ k\), \(-6\), 
+          \(-\(\(6\ \((\(-1\) + k + k\^2)\)\)\/\(\(-1\) + 2\ k\)\)\), 
+          \(-\(\(\((\(-1\) + 4\ k)\)\ \((\(-3\) + 2\ k + 2\ k\^2)\)\)\/\(2\ 
+                  \((\(-1\) + 2\ k)\)\)\)\), 
+          \(6\ \((\(-1\) + k - k\^2 + 4\ k\^3)\)\)\/\(\(-1\) + 2\ k\)}\),
+      SequenceForm[ 
+      "tenso[ ", 20, " ] : ", {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+        8, 4, 
+        Times[ -12, 
+          Power[ 
+            Plus[ -1, k], 2], 
+          Power[ k, -1], 
+          Power[ 
+            Plus[ -1, 
+              Times[ 2, k]], -1]], 0, 0, 0, 0, 
+        Times[ 12, 
+          Plus[ -1, k], 
+          Power[ 
+            Plus[ -1, 
+              Times[ 2, k]], -1]], 
+        Times[ 12, 
+          Plus[ -1, k], 
+          Power[ 
+            Plus[ -1, 
+              Times[ 2, k]], -1]], 0, 0, 0, 0, -4, 0, 0, 
+        Times[ -4, 
+          Power[ 
+            Plus[ -1, 
+              Times[ 2, k]], -1], 
+          Plus[ -4, 
+            Times[ 5, k]]], 0, 
+        Times[ 12, 
+          Plus[ -1, k], 
+          Power[ 
+            Plus[ -1, 
+              Times[ 2, k]], -1]], 
+        Times[ 12, 
+          Power[ 
+            Plus[ -1, 
+              Times[ 2, k]], -1], 
+          Plus[ -1, k, 
+            Power[ k, 2]]], 
+        Times[ -6, 
+          Plus[ -1, k]], 
+        Times[ -12, 
+          Plus[ -1, k], k, 
+          Power[ 
+            Plus[ -1, 
+              Times[ 2, k]], -1]], 
+        Times[ -12, 
+          Power[ 
+            Plus[ -1, 
+              Times[ 2, k]], -1], 
+          Plus[ -1, k, 
+            Power[ k, 2]]], 
+        Times[ -12, 
+          Power[ 
+            Plus[ -1, 
+              Times[ 2, k]], -1], 
+          Plus[ -1, k, 
+            Power[ k, 2]]], 0, 0, 2, 4, 0, 
+        Times[ 2, 
+          Power[ k, -1], 
+          Power[ 
+            Plus[ -1, 
+              Times[ 2, k]], -1], 
+          Plus[ 3, 
+            Times[ -7, k], 
+            Times[ 8, 
+              Power[ k, 2]]]], 4, 
+        Times[ 2, 
+          Power[ 
+            Plus[ -1, 
+              Times[ 2, k]], -1], 
+          Plus[ -1, 
+            Times[ 5, k]]], 
+        Times[ 2, 
+          Power[ 
+            Plus[ -1, 
+              Times[ 2, k]], -1], 
+          Plus[ -4, 
+            Times[ 5, k]]], 4, 
+        Times[ 2, 
+          Plus[ 1, k], 
+          Power[ 
+            Plus[ -1, 
+              Times[ 2, k]], -1]], 
+        Times[ 2, k, 
+          Power[ 
+            Plus[ -1, 
+              Times[ 2, k]], -1], 
+          Plus[ -5, 
+            Times[ 4, k]]], 
+        Times[ 2, 
+          Plus[ -3, 
+            Times[ 2, k]]], 
+        Times[ 6, 
+          Plus[ -1, k]], 
+        Times[ 12, 
+          Plus[ -1, k], k, 
+          Power[ 
+            Plus[ -1, 
+              Times[ 2, k]], -1]], 
+        Times[ 
+          Rational[ 1, 2], 
+          Power[ k, -1], 
+          Plus[ 3, 
+            Times[ -1, k], 
+            Times[ 2, 
+              Power[ k, 2]]]], 
+        Times[ -1, 
+          Plus[ -1, k], 
+          Power[ 
+            Plus[ -1, 
+              Times[ 2, k]], -1], 
+          Plus[ 1, 
+            Times[ 4, k]]], 
+        Times[ -6, 
+          Plus[ -1, k], 
+          Power[ 
+            Plus[ -1, 
+              Times[ 2, k]], -1]], 0, 
+        Times[ -6, 
+          Plus[ -1, k], 
+          Power[ 
+            Plus[ -1, 
+              Times[ 2, k]], -1]], 
+        Times[ 2, 
+          Power[ 
+            Plus[ -1, 
+              Times[ 2, k]], -1], 
+          Plus[ -4, 
+            Times[ 5, k]]], 4, 
+        Times[ 2, 
+          Plus[ 1, k], 
+          Power[ 
+            Plus[ -1, 
+              Times[ 2, k]], -1]], 
+        Times[ 2, 
+          Power[ 
+            Plus[ -1, 
+              Times[ 2, k]], -1], 
+          Plus[ -1, 
+            Times[ -1, k], 
+            Times[ 3, 
+              Power[ k, 2]]]], 
+        Times[ -3, 
+          Power[ 
+            Plus[ -1, k], 2], 
+          Power[ k, -1]], 
+        Times[ -6, 
+          Power[ 
+            Plus[ -1, k], 2], 
+          Power[ 
+            Plus[ -1, 
+              Times[ 2, k]], -1]], 
+        Times[ -1, 
+          Plus[ -1, k], 
+          Power[ 
+            Plus[ -1, 
+              Times[ 2, k]], -1], 
+          Plus[ 1, 
+            Times[ 4, k]]], 
+        Times[ 
+          Rational[ -1, 2], 
+          Power[ k, -1], 
+          Plus[ -3, 
+            Times[ -1, k], 
+            Times[ 8, 
+              Power[ k, 2]]]], 
+        Times[ 
+          Rational[ -1, 2], 
+          Power[ 
+            Plus[ -1, 
+              Times[ 2, k]], -1], 
+          Plus[ 1, 
+            Times[ -1, k], 
+            Times[ 4, 
+              Power[ k, 2]]]], 
+        Times[ 
+          Rational[ -1, 8], 
+          Power[ k, -1], 
+          Power[ 
+            Plus[ -1, 
+              Times[ 2, k]], -1], 
+          Plus[ -1, 
+            Times[ 4, k]], 
+          Plus[ 3, k, 
+            Times[ -4, 
+              Power[ k, 2]], 
+            Times[ 4, 
+              Power[ k, 3]]]], 
+        Times[ 2, 
+          Plus[ 1, k], 
+          Power[ 
+            Plus[ -1, 
+              Times[ 2, k]], -1], 
+          Plus[ -4, 
+            Times[ 7, k]]], 
+        Plus[ 1, 
+          Times[ 2, k]], 
+        Times[ 
+          Rational[ 1, 2], 
+          Power[ 
+            Plus[ -1, 
+              Times[ 2, k]], -1], 
+          Plus[ 5, 
+            Times[ -3, k], 
+            Times[ -17, 
+              Power[ k, 2]], 
+            Times[ 12, 
+              Power[ k, 3]]]], 
+        Times[ 
+          Power[ 
+            Plus[ -1, 
+              Times[ 2, k]], -1], 
+          Plus[ -1, 
+            Times[ -6, k], 
+            Times[ 10, 
+              Power[ k, 2]]]], -6, 
+        Times[ -6, 
+          Power[ 
+            Plus[ -1, 
+              Times[ 2, k]], -1], 
+          Plus[ -1, k, 
+            Power[ k, 2]]], 
+        Times[ 
+          Rational[ -1, 2], 
+          Power[ 
+            Plus[ -1, 
+              Times[ 2, k]], -1], 
+          Plus[ -1, 
+            Times[ 4, k]], 
+          Plus[ -3, 
+            Times[ 2, k], 
+            Times[ 2, 
+              Power[ k, 2]]]], 
+        Times[ 6, 
+          Power[ 
+            Plus[ -1, 
+              Times[ 2, k]], -1], 
+          Plus[ -1, k, 
+            Times[ -1, 
+              Power[ k, 2]], 
+            Times[ 4, 
+              Power[ k, 3]]]]}],
+      Editable->False]], "Print"],
+
+Cell[BoxData[
+    InterpretationBox[
+      \("tenso[ "\[InvisibleSpace]21
+        \[InvisibleSpace]" ] : "\[InvisibleSpace]{0, 0, 0, 0, 0, 0, 0, 0, 0, 
+          0, 0, 0, 0, 0, 8\/\(\(-1\) + 2\ k\), 8\/\(\(-1\) + 2\ k\), 4, 
+          \(-\(\(20\ \((\(-1\) + k)\)\^2\)\/\(k\ \((\(-1\) + 2\ k)\)\)\)\), 
+          0, 0, 0, 0, \(-\(\(4\ \((\(-1\) + 7\ k)\)\)\/\(\(-1\) + 2\ k\)\)\), 
+          \(-\(\(4\ \((2 - 7\ k + 11\ k\^2)\)\)\/\(k\ 
+                  \((\(-1\) + 2\ k)\)\)\)\), 
+          \(-\(\(8\ \((\(-1\) + 2\ k)\)\)\/k\)\), 
+          \(16\ \((\(-1\) + k)\)\)\/\(\(-1\) + 2\ k\), 0, \(-16\), \(-4\), 0, 
+          0, \(4\ \((2 + k)\)\)\/\(\(-1\) + 2\ k\), 0, 
+          \(-\(\(12\ \((1 + k)\)\)\/\(\(-1\) + 2\ k\)\)\), 
+          \(-\(\(4\ \((1 - k + 3\ k\^2)\)\)\/\(\(-1\) + 2\ k\)\)\), 
+          \(2\ \((2 + k)\)\ \((\(-1\) + 3\ k)\)\)\/k, 
+          \(4\ \((2 + k)\)\ \((\(-1\) + 3\ k)\)\)\/\(\(-1\) + 2\ k\), 
+          \(4\ \((5 - 13\ k + 11\ k\^2)\)\)\/\(\(-1\) + 2\ k\), 
+          \(4\ \((5 - 13\ k + 11\ k\^2)\)\)\/\(\(-1\) + 2\ k\), 0, 0, \(-2\), 
+          4, \(4\ \((\(-1\) + 2\ k)\)\)\/k, 
+          \(2\ \((7 - 21\ k + 24\ k\^2)\)\)\/\(k\ \((\(-1\) + 2\ k)\)\), 4, 
+          \(10\ \((\(-1\) + 3\ k)\)\)\/\(\(-1\) + 2\ k\), 
+          \(-\(\(2\ \((2 + k)\)\)\/\(\(-1\) + 2\ k\)\)\), 4, 
+          \(2\ \((1 + 3\ k)\)\)\/\(\(-1\) + 2\ k\), 
+          \(2\ k\ \((\(-7\) + 4\ k)\)\)\/\(\(-1\) + 2\ k\), 
+          2\ \((\(-3\) + 2\ k)\), 2\ \((\(-3\) + k)\), 
+          \(4\ \((\(-3\) + k)\)\ k\)\/\(\(-1\) + 2\ k\), 
+          \(7 - 7\ k + 6\ k\^2\)\/\(2\ k\), 
+          \(1 + k + 4\ k\^2\)\/\(\(-1\) + 2\ k\), 
+          \(2\ \((2 - 7\ k + 11\ k\^2)\)\)\/\(k\ \((\(-1\) + 2\ k)\)\), 
+          \(-\(\(8\ \((\(-1\) + k)\)\)\/\(\(-1\) + 2\ k\)\)\), 
+          \(6\ \((1 + k)\)\)\/\(\(-1\) + 2\ k\), 
+          \(2\ \((2 - 10\ k + 7\ k\^2)\)\)\/\(k\ \((\(-1\) + 2\ k)\)\), 
+          \(4\ \((\(-1\) + 3\ k)\)\)\/k, 
+          \(2\ \((\(-1\) + 7\ k)\)\)\/\(\(-1\) + 2\ k\), 
+          \(-\(\(2\ \((5 - 11\ k + 11\ k\^2)\)\)\/\(\(-1\) + 2\ k\)\)\), 
+          \(-\(\(5\ \((\(-1\) + k)\)\^2\)\/k\)\), 
+          \(-\(\(10\ \((\(-1\) + k)\)\^2\)\/\(\(-1\) + 2\ k\)\)\), 
+          \(-\(\(\((\(-1\) + 4\ k)\)\ \((\(-1\) - k + k\^2)\)\)\/\(k\ 
+                  \((\(-1\) + 2\ k)\)\)\)\), 
+          \(-\(\(\(-7\) + 5\ k + 8\ k\^2\)\/\(2\ k\)\)\), 
+          \(-\(\(\((\(-1\) + 3\ k)\)\ \((3 + 4\ k)\)\)\/\(2\ 
+                  \((\(-1\) + 2\ k)\)\)\)\), 
+          \(7 - 25\ k + 16\ k\^2 - 36\ k\^3 + 16\ k\^4\)\/\(8\ k\ 
+              \((\(-1\) + 2\ k)\)\), 
+          \(-\(\(2\ \((\(-1\) + k)\)\ \((\(-8\) + 11\ k)\)\)\/\(\(-1\) + 
+                  2\ k\)\)\), 1 + 2\ k, 
+          \(-\(\(\(-9\) + 19\ k - 13\ k\^2 + 12\ k\^3\)\/\(2\ 
+                  \((\(-1\) + 2\ k)\)\)\)\), 
+          \(-\(\(1 - 2\ k + 10\ k\^2\)\/\(\(-1\) + 2\ k\)\)\), \(-6\), 
+          \(6\ \((1 - k + k\^2)\)\)\/\(\(-1\) + 2\ k\), 
+          \(\((\(-1\) + 4\ k)\)\ \((3 - 2\ k + 2\ k\^2)\)\)\/\(2\ 
+              \((\(-1\) + 2\ k)\)\), 
+          \(-\(\(2\ \((5 - 13\ k + 5\ k\^2 + 12\ k\^3)\)\)\/\(\(-1\) + 
+                  2\ k\)\)\)}\),
+      SequenceForm[ 
+      "tenso[ ", 21, " ] : ", {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+        Times[ 8, 
+          Power[ 
+            Plus[ -1, 
+              Times[ 2, k]], -1]], 
+        Times[ 8, 
+          Power[ 
+            Plus[ -1, 
+              Times[ 2, k]], -1]], 4, 
+        Times[ -20, 
+          Power[ 
+            Plus[ -1, k], 2], 
+          Power[ k, -1], 
+          Power[ 
+            Plus[ -1, 
+              Times[ 2, k]], -1]], 0, 0, 0, 0, 
+        Times[ -4, 
+          Power[ 
+            Plus[ -1, 
+              Times[ 2, k]], -1], 
+          Plus[ -1, 
+            Times[ 7, k]]], 
+        Times[ -4, 
+          Power[ k, -1], 
+          Power[ 
+            Plus[ -1, 
+              Times[ 2, k]], -1], 
+          Plus[ 2, 
+            Times[ -7, k], 
+            Times[ 11, 
+              Power[ k, 2]]]], 
+        Times[ -8, 
+          Power[ k, -1], 
+          Plus[ -1, 
+            Times[ 2, k]]], 
+        Times[ 16, 
+          Plus[ -1, k], 
+          Power[ 
+            Plus[ -1, 
+              Times[ 2, k]], -1]], 0, -16, -4, 0, 0, 
+        Times[ 4, 
+          Plus[ 2, k], 
+          Power[ 
+            Plus[ -1, 
+              Times[ 2, k]], -1]], 0, 
+        Times[ -12, 
+          Plus[ 1, k], 
+          Power[ 
+            Plus[ -1, 
+              Times[ 2, k]], -1]], 
+        Times[ -4, 
+          Power[ 
+            Plus[ -1, 
+              Times[ 2, k]], -1], 
+          Plus[ 1, 
+            Times[ -1, k], 
+            Times[ 3, 
+              Power[ k, 2]]]], 
+        Times[ 2, 
+          Power[ k, -1], 
+          Plus[ 2, k], 
+          Plus[ -1, 
+            Times[ 3, k]]], 
+        Times[ 4, 
+          Plus[ 2, k], 
+          Power[ 
+            Plus[ -1, 
+              Times[ 2, k]], -1], 
+          Plus[ -1, 
+            Times[ 3, k]]], 
+        Times[ 4, 
+          Power[ 
+            Plus[ -1, 
+              Times[ 2, k]], -1], 
+          Plus[ 5, 
+            Times[ -13, k], 
+            Times[ 11, 
+              Power[ k, 2]]]], 
+        Times[ 4, 
+          Power[ 
+            Plus[ -1, 
+              Times[ 2, k]], -1], 
+          Plus[ 5, 
+            Times[ -13, k], 
+            Times[ 11, 
+              Power[ k, 2]]]], 0, 0, -2, 4, 
+        Times[ 4, 
+          Power[ k, -1], 
+          Plus[ -1, 
+            Times[ 2, k]]], 
+        Times[ 2, 
+          Power[ k, -1], 
+          Power[ 
+            Plus[ -1, 
+              Times[ 2, k]], -1], 
+          Plus[ 7, 
+            Times[ -21, k], 
+            Times[ 24, 
+              Power[ k, 2]]]], 4, 
+        Times[ 10, 
+          Power[ 
+            Plus[ -1, 
+              Times[ 2, k]], -1], 
+          Plus[ -1, 
+            Times[ 3, k]]], 
+        Times[ -2, 
+          Plus[ 2, k], 
+          Power[ 
+            Plus[ -1, 
+              Times[ 2, k]], -1]], 4, 
+        Times[ 2, 
+          Power[ 
+            Plus[ -1, 
+              Times[ 2, k]], -1], 
+          Plus[ 1, 
+            Times[ 3, k]]], 
+        Times[ 2, k, 
+          Power[ 
+            Plus[ -1, 
+              Times[ 2, k]], -1], 
+          Plus[ -7, 
+            Times[ 4, k]]], 
+        Times[ 2, 
+          Plus[ -3, 
+            Times[ 2, k]]], 
+        Times[ 2, 
+          Plus[ -3, k]], 
+        Times[ 4, 
+          Plus[ -3, k], k, 
+          Power[ 
+            Plus[ -1, 
+              Times[ 2, k]], -1]], 
+        Times[ 
+          Rational[ 1, 2], 
+          Power[ k, -1], 
+          Plus[ 7, 
+            Times[ -7, k], 
+            Times[ 6, 
+              Power[ k, 2]]]], 
+        Times[ 
+          Power[ 
+            Plus[ -1, 
+              Times[ 2, k]], -1], 
+          Plus[ 1, k, 
+            Times[ 4, 
+              Power[ k, 2]]]], 
+        Times[ 2, 
+          Power[ k, -1], 
+          Power[ 
+            Plus[ -1, 
+              Times[ 2, k]], -1], 
+          Plus[ 2, 
+            Times[ -7, k], 
+            Times[ 11, 
+              Power[ k, 2]]]], 
+        Times[ -8, 
+          Plus[ -1, k], 
+          Power[ 
+            Plus[ -1, 
+              Times[ 2, k]], -1]], 
+        Times[ 6, 
+          Plus[ 1, k], 
+          Power[ 
+            Plus[ -1, 
+              Times[ 2, k]], -1]], 
+        Times[ 2, 
+          Power[ k, -1], 
+          Power[ 
+            Plus[ -1, 
+              Times[ 2, k]], -1], 
+          Plus[ 2, 
+            Times[ -10, k], 
+            Times[ 7, 
+              Power[ k, 2]]]], 
+        Times[ 4, 
+          Power[ k, -1], 
+          Plus[ -1, 
+            Times[ 3, k]]], 
+        Times[ 2, 
+          Power[ 
+            Plus[ -1, 
+              Times[ 2, k]], -1], 
+          Plus[ -1, 
+            Times[ 7, k]]], 
+        Times[ -2, 
+          Power[ 
+            Plus[ -1, 
+              Times[ 2, k]], -1], 
+          Plus[ 5, 
+            Times[ -11, k], 
+            Times[ 11, 
+              Power[ k, 2]]]], 
+        Times[ -5, 
+          Power[ 
+            Plus[ -1, k], 2], 
+          Power[ k, -1]], 
+        Times[ -10, 
+          Power[ 
+            Plus[ -1, k], 2], 
+          Power[ 
+            Plus[ -1, 
+              Times[ 2, k]], -1]], 
+        Times[ -1, 
+          Power[ k, -1], 
+          Power[ 
+            Plus[ -1, 
+              Times[ 2, k]], -1], 
+          Plus[ -1, 
+            Times[ 4, k]], 
+          Plus[ -1, 
+            Times[ -1, k], 
+            Power[ k, 2]]], 
+        Times[ 
+          Rational[ -1, 2], 
+          Power[ k, -1], 
+          Plus[ -7, 
+            Times[ 5, k], 
+            Times[ 8, 
+              Power[ k, 2]]]], 
+        Times[ 
+          Rational[ -1, 2], 
+          Power[ 
+            Plus[ -1, 
+              Times[ 2, k]], -1], 
+          Plus[ -1, 
+            Times[ 3, k]], 
+          Plus[ 3, 
+            Times[ 4, k]]], 
+        Times[ 
+          Rational[ 1, 8], 
+          Power[ k, -1], 
+          Power[ 
+            Plus[ -1, 
+              Times[ 2, k]], -1], 
+          Plus[ 7, 
+            Times[ -25, k], 
+            Times[ 16, 
+              Power[ k, 2]], 
+            Times[ -36, 
+              Power[ k, 3]], 
+            Times[ 16, 
+              Power[ k, 4]]]], 
+        Times[ -2, 
+          Plus[ -1, k], 
+          Power[ 
+            Plus[ -1, 
+              Times[ 2, k]], -1], 
+          Plus[ -8, 
+            Times[ 11, k]]], 
+        Plus[ 1, 
+          Times[ 2, k]], 
+        Times[ 
+          Rational[ -1, 2], 
+          Power[ 
+            Plus[ -1, 
+              Times[ 2, k]], -1], 
+          Plus[ -9, 
+            Times[ 19, k], 
+            Times[ -13, 
+              Power[ k, 2]], 
+            Times[ 12, 
+              Power[ k, 3]]]], 
+        Times[ -1, 
+          Power[ 
+            Plus[ -1, 
+              Times[ 2, k]], -1], 
+          Plus[ 1, 
+            Times[ -2, k], 
+            Times[ 10, 
+              Power[ k, 2]]]], -6, 
+        Times[ 6, 
+          Power[ 
+            Plus[ -1, 
+              Times[ 2, k]], -1], 
+          Plus[ 1, 
+            Times[ -1, k], 
+            Power[ k, 2]]], 
+        Times[ 
+          Rational[ 1, 2], 
+          Power[ 
+            Plus[ -1, 
+              Times[ 2, k]], -1], 
+          Plus[ -1, 
+            Times[ 4, k]], 
+          Plus[ 3, 
+            Times[ -2, k], 
+            Times[ 2, 
+              Power[ k, 2]]]], 
+        Times[ -2, 
+          Power[ 
+            Plus[ -1, 
+              Times[ 2, k]], -1], 
+          Plus[ 5, 
+            Times[ -13, k], 
+            Times[ 5, 
+              Power[ k, 2]], 
+            Times[ 12, 
+              Power[ k, 3]]]]}],
+      Editable->False]], "Print"],
+
+Cell[BoxData[
+    \(General::"spell1" \( : \ \) 
+      "Possible spelling error: new symbol name \"\!\(tttq\)\" is similar to \
+existing symbol \"\!\(ttt\)\"."\)], "Message"]
+}, Open  ]],
+
+Cell[BoxData[
+    \(Save["\<tq1.out\>", bas, basind, tttq]\)], "Input"]
+},
+FrontEndVersion->"X 3.0",
+ScreenRectangle->{{0, 1024}, {0, 768}},
+PrintingStyleEnvironment->"Printout",
+WindowSize->{988, 630},
+WindowMargins->{{Automatic, 4}, {Automatic, 25}},
+PrintingPageRange->{1, 12},
+PageHeaders->{{Cell[ 
+        TextData[ {
+          CounterBox[ "Page"]}], "PageNumber"], Inherited, Cell[ 
+        TextData[ {
+          ValueBox[ "FileName"]}], "Header"]}, {Cell[ 
+        TextData[ {
+          ValueBox[ "FileName"]}], "Header"], Inherited, Cell[ 
+        TextData[ {
+          CounterBox[ "Page"]}], "PageNumber"]}},
+PrintingOptions->{"PrintingMargins"->{{18, 36}, {36, 72}},
+"PaperSize"->{597.562, 842.375},
+"PaperOrientation"->"Portrait",
+"PrintCellBrackets"->False,
+"PrintRegistrationMarks"->False,
+"PrintMultipleHorizontalPages"->False,
+"Magnification"->1}
+]
+
+
+(***********************************************************************
+Cached data follows.  If you edit this Notebook file directly, not using
+Mathematica, you must remove the line containing CacheID at the top of 
+the file.  The cache data will then be recreated when you save this file 
+from within Mathematica.
+***********************************************************************)
+
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+
+(*NotebookFileOutline
+Notebook[{
+
+Cell[CellGroupData[{
+Cell[1731, 51, 15827, 291, 3307, "Input"],
+Cell[17561, 344, 176, 3, 20, "Message"],
+Cell[17740, 349, 176, 3, 20, "Message"],
+Cell[17919, 354, 133, 3, 20, "Message"],
+Cell[18055, 359, 653, 9, 64, "Output"],
+Cell[18711, 370, 177, 3, 24, "Message"],
+Cell[18891, 375, 35, 1, 22, "Output"],
+Cell[18929, 378, 35, 1, 22, "Output"],
+Cell[18967, 381, 35, 1, 22, "Output"],
+Cell[19005, 384, 35, 1, 22, "Output"],
+Cell[19043, 387, 176, 3, 20, "Message"],
+Cell[19222, 392, 176, 3, 20, "Message"],
+Cell[19401, 397, 175, 3, 20, "Message"],
+Cell[19579, 402, 175, 3, 20, "Message"],
+Cell[19757, 407, 161, 3, 20, "Message"],
+Cell[19921, 412, 133, 3, 20, "Message"],
+Cell[20057, 417, 158, 2, 28, "Output"],
+Cell[20218, 421, 175, 3, 20, "Message"],
+Cell[20396, 426, 151, 2, 28, "Output"],
+Cell[20550, 430, 652, 18, 26, "Print"],
+Cell[21205, 450, 822, 24, 26, "Print"],
+Cell[22030, 476, 311, 7, 20, "Print"],
+Cell[22344, 485, 311, 7, 20, "Print"],
+Cell[22658, 494, 548, 15, 24, "Print"],
+Cell[23209, 511, 977, 30, 24, "Print"],
+Cell[24189, 543, 726, 20, 24, "Print"],
+Cell[24918, 565, 1110, 34, 26, "Print"],
+Cell[26031, 601, 323, 7, 20, "Print"],
+Cell[26357, 610, 1321, 41, 33, "Print"],
+Cell[27681, 653, 2881, 92, 66, "Print"],
+Cell[30565, 747, 1806, 58, 51, "Print"],
+Cell[32374, 807, 534, 14, 24, "Print"],
+Cell[32911, 823, 642, 17, 24, "Print"],
+Cell[33556, 842, 433, 11, 24, "Print"],
+Cell[33992, 855, 346, 8, 24, "Print"],
+Cell[34341, 865, 346, 8, 24, "Print"],
+Cell[34690, 875, 2363, 73, 49, "Print"],
+Cell[37056, 950, 2635, 83, 59, "Print"],
+Cell[39694, 1035, 3710, 118, 72, "Print"],
+Cell[43407, 1155, 3993, 128, 72, "Print"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+Cell[47437, 1288, 2735, 62, 403, "Input",
+  InitializationCell->True],
+Cell[50175, 1352, 2394, 40, 296, "Output"],
+Cell[52572, 1394, 133, 3, 20, "Message"],
+Cell[52708, 1399, 4224, 73, 412, "Output"],
+Cell[56935, 1474, 36, 1, 22, "Output"],
+Cell[56974, 1477, 309, 7, 20, "Print"],
+Cell[57286, 1486, 309, 7, 20, "Print"],
+Cell[57598, 1495, 309, 7, 20, "Print"],
+Cell[57910, 1504, 309, 7, 20, "Print"],
+Cell[58222, 1513, 309, 7, 20, "Print"],
+Cell[58534, 1522, 309, 7, 20, "Print"],
+Cell[58846, 1531, 309, 7, 20, "Print"],
+Cell[59158, 1540, 309, 7, 20, "Print"],
+Cell[59470, 1549, 309, 7, 20, "Print"],
+Cell[59782, 1558, 311, 7, 20, "Print"],
+Cell[60096, 1567, 311, 7, 20, "Print"],
+Cell[60410, 1576, 311, 7, 20, "Print"],
+Cell[60724, 1585, 311, 7, 20, "Print"],
+Cell[61038, 1594, 311, 7, 20, "Print"],
+Cell[61352, 1603, 311, 7, 20, "Print"],
+Cell[61666, 1612, 311, 7, 20, "Print"],
+Cell[61980, 1621, 311, 7, 20, "Print"],
+Cell[62294, 1630, 804, 24, 24, "Print"],
+Cell[63101, 1656, 975, 29, 24, "Print"],
+Cell[64079, 1687, 2193, 70, 51, "Print"],
+Cell[66275, 1759, 2311, 75, 51, "Print"],
+Cell[68589, 1836, 640, 12, 24, "Print"],
+Cell[69232, 1850, 640, 12, 24, "Print"],
+Cell[69875, 1864, 640, 12, 24, "Print"],
+Cell[70518, 1878, 640, 12, 24, "Print"],
+Cell[71161, 1892, 640, 12, 24, "Print"],
+Cell[71804, 1906, 640, 12, 24, "Print"],
+Cell[72447, 1920, 2625, 81, 65, "Print"],
+Cell[75075, 2003, 640, 12, 24, "Print"],
+Cell[75718, 2017, 640, 12, 24, "Print"],
+Cell[76361, 2031, 3031, 100, 79, "Print"],
+Cell[79395, 2133, 642, 12, 24, "Print"],
+Cell[80040, 2147, 6299, 212, 111, "Print"],
+Cell[86342, 2361, 642, 12, 24, "Print"],
+Cell[86987, 2375, 642, 12, 24, "Print"],
+Cell[87632, 2389, 642, 12, 24, "Print"],
+Cell[88277, 2403, 642, 12, 24, "Print"],
+Cell[88922, 2417, 642, 12, 24, "Print"],
+Cell[89567, 2431, 2299, 69, 59, "Print"],
+Cell[91869, 2502, 2378, 73, 59, "Print"],
+Cell[94250, 2577, 7858, 254, 150, "Print"],
+Cell[102111, 2833, 7897, 260, 151, "Print"],
+Cell[110011, 3095, 309, 7, 20, "Print"],
+Cell[110323, 3104, 309, 7, 20, "Print"],
+Cell[110635, 3113, 309, 7, 20, "Print"],
+Cell[110947, 3122, 309, 7, 20, "Print"],
+Cell[111259, 3131, 309, 7, 20, "Print"],
+Cell[111571, 3140, 309, 7, 20, "Print"],
+Cell[111883, 3149, 309, 7, 20, "Print"],
+Cell[112195, 3158, 309, 7, 20, "Print"],
+Cell[112507, 3167, 309, 7, 20, "Print"],
+Cell[112819, 3176, 311, 7, 20, "Print"],
+Cell[113133, 3185, 311, 7, 20, "Print"],
+Cell[113447, 3194, 311, 7, 20, "Print"],
+Cell[113761, 3203, 311, 7, 20, "Print"],
+Cell[114075, 3212, 423, 11, 24, "Print"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+Cell[114535, 3228, 869, 17, 103, "Input"],
+Cell[115407, 3247, 176, 3, 20, "Message"],
+Cell[115586, 3252, 181, 3, 24, "Message"],
+Cell[115770, 3257, 1889, 54, 74, "Print"],
+Cell[117662, 3313, 9268, 306, 175, "Print"],
+Cell[126933, 3621, 8746, 286, 152, "Print"],
+Cell[135682, 3909, 10645, 353, 199, "Print"],
+Cell[146330, 4264, 174, 3, 20, "Message"]
+}, Open  ]],
+Cell[146519, 4270, 71, 1, 22, "Input"]
+}
+]
+*)
+
+
+
+
+(***********************************************************************
+End of Mathematica Notebook file.
+***********************************************************************)
+

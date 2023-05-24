@@ -1,0 +1,48 @@
+<HTML>
+<HEAD>
+<TITLE>abstract hep-th/0103237</TITLE>
+</HEAD>
+<BODY>
+
+<CENTER>
+<H2> WEB page for the paper hep-th/0103237 </H2>
+</CENTER>
+
+<HR>
+
+<H2>Exact Consequences of the Trace Anomaly in Four Dimensions</H2>
+<P>
+<B>Authors:</B> 
+<a href="mailto:andrea.cappelli@fi.infn.it">Andrea Cappelli</a>, 
+<a href="mailto:guida@spht.saclay.cea.fr">Riccardo Guida</a>, 
+<a href="mailto:magnoli@ge.infn.it">Nicodemo Magnoli</a><BR>
+<B>Comments:</B> Latex, 39 pages, 3 tables; </A><BR>
+<B>Report-no:</B> SphT T-01/027, DFF 371/01/2001, Ge-TH-03/2001<BR>
+<BLOCKQUOTE>
+The general form of the stress-tensor three-point function in four dimensions
+is obtained by solving the Ward identities for the diffeomorphism and Weyl
+symmetries. Several properties of this correlator are discussed, such as the
+renormalization and scheme independence and the analogies with the anomalous
+chiral triangle. At the critical point, the coefficients a and c of the
+four-dimensional trace anomaly are related to two finite, scheme-independent
+amplitudes of the three-point function. Off-criticality, the imaginary parts of
+these amplitudes satisfy sum rules which express the total
+renormalization-group flow of a and c between pairs of critical points.
+Although these sum rules are similar to that satisfied by the two-dimensional
+central charge, the monotonicity of the flow, i.e. the four-dimensional
+analogue of the c-theorem, remains to be proven.
+</BLOCKQUOTE>
+</P>
+<H3>Paper (published version): <a href="trace.tex">Source</a> (36kb), <a href="trace.ps">PS</a></H3>
+
+<HR>
+
+<CENTER>
+<H2> <a href="mat"> Mathematica Routines (to be cleaned up)</a></H2>
+</CENTER>
+
+
+
+<BR><BR>
+</BODY>
+</HTML>

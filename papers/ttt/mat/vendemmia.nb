@@ -1,0 +1,583 @@
+(***********************************************************************
+
+                    Mathematica-Compatible Notebook
+
+This notebook can be used on any computer system with Mathematica 4.0,
+MathReader 4.0, or any compatible application. The data for the notebook 
+starts with the line containing stars above.
+
+To get the notebook into a Mathematica-compatible application, do one of 
+the following:
+
+* Save the data starting with the line of stars above into a file
+  with a name ending in .nb, then open the file inside the application;
+
+* Copy the data starting with the line of stars above to the
+  clipboard, then use the Paste menu command inside the application.
+
+Data for notebooks contains only printable 7-bit ASCII and can be
+sent directly in email or through ftp in text mode.  Newlines can be
+CR, LF or CRLF (Unix, Macintosh or MS-DOS style).
+
+NOTE: If you modify the data for this notebook not in a Mathematica-
+compatible application, you must delete the line below containing the 
+word CacheID, otherwise Mathematica-compatible applications may try to 
+use invalid cache data.
+
+For more information on notebooks and Mathematica-compatible 
+applications, contact Wolfram Research:
+  web: http://www.wolfram.com
+  email: info@wolfram.com
+  phone: +1-217-398-0700 (U.S.)
+
+Notebook reader applications are available free of charge from 
+Wolfram Research.
+***********************************************************************)
+
+(*CacheID: 232*)
+
+
+(*NotebookFileLineBreakTest
+NotebookFileLineBreakTest*)
+(*NotebookOptionsPosition[     13879,        420]*)
+(*NotebookOutlinePosition[     14553,        444]*)
+(*  CellTagsIndexPosition[     14509,        440]*)
+(*WindowFrame->Normal*)
+
+
+
+Notebook[{
+
+Cell[CellGroupData[{
+Cell["                                    The final notebook", "Subtitle"],
+
+Cell["<<HighEnergyPhysics`fc`", "Input"],
+
+Cell[TextData[{
+  StyleBox["FeynCalc",
+    FontWeight->"Bold"],
+  " ",
+  "3.1.0.9",
+  " ",
+  "    ",
+  " Evaluate ?FeynCalc for help or visit ",
+  ButtonBox["www.feyncalc.com",
+    ButtonData:>{
+      URL[ "http://www.feyncalc.com"], None},
+    ButtonStyle->"Hyperlink",
+    ButtonNote->"http://www.feyncalc.com"]
+}], "Text",
+  GeneratedCell->True,
+  CellAutoOverwrite->True],
+
+Cell["v[p_,m_]:=FourVector[p,m]", "Input"],
+
+Cell["gm[a_,b_]:=MetricTensor[a,b]", "Input"],
+
+Cell["bose=(<<bose.dat)/.D->4;", "Input"],
+
+Cell["bosenull0=Table[bose[[i]],{i,2,77}];", "Input"],
+
+Cell["bosenull=bosenull0/.{q->k,gm[a_,b_]->t*gm[a,b],D->4};", "Input"],
+
+Cell["\<\
+u[i_]:=MatchQ[bosenull[[i]],a_.*v[p1_,m1_]*v[p2_,m2_]*v[p3_,m3_]*v[\
+p4_,m4_]*v[p5_,m5_]*v[p6_,m6_]+b_.]\
+\>", "Input"],
+
+Cell[CellGroupData[{
+
+Cell["tableandrea=Drop[Union[Table[If[u[i],i,0],{i,76}]],1]", "Input"],
+
+Cell[BoxData[
+    \(TraditionalForm\`{24, 25, 52, 53, 55, 56, 57, 65, 66, 70, 71, 72, 74, 
+      75, 76}\)], "Output"]
+}, Open  ]],
+
+Cell["imtttf=<<imtttintegraff.dat;", "Input"],
+
+Cell["Cmatrix=<<Cmatrixf.dat;", "Input"],
+
+Cell["imf=Cmatrix.imtttf//Simplify;", "Input"],
+
+Cell["fbosenull[i_]:=imf[[i]];", "Input"],
+
+Cell["imf6=Map[fbosenull,tableandrea]//Simplify;", "Input"],
+
+Cell[CellGroupData[{
+
+Cell["imf6", "Input"],
+
+Cell[BoxData[
+    \(TraditionalForm\`{\(4\ \((\(-4\)\ \((4\ mf\^2 + t)\)\ \(log(1 - rr)\)\ \
+mf\^4 + 4\ \((4\ mf\^2 + t)\)\ \(log(rr + 1)\)\ mf\^4 + rr\ t\^2\ \((4\ \((3\ \
+rr\^2 - 2)\)\ mf\^2 + \((2\ rr\^4 - 3\ rr\^2 + 1)\)\ t)\))\)\)\/\(rr\ t\^4\), \
+\(8\ \(log(1 - rr)\)\ mf\^4 - 8\ \(log(rr + 1)\)\ mf\^4 - rr\ t\ \((8\ \((2\ \
+rr\^2 - 1)\)\ mf\^2 + \((3\ rr\^4 - 4\ rr\^2 + 1)\)\ t)\)\)\/\(rr\ t\^3\), \
+\(-\(\(4\ mf\^2\ \((16\ rr\ t\ \((12\ mf\^2 + rr\^2\ t)\) + \((64\ mf\^4 + 
+                        68\ t\ mf\^2 + 3\ t\^2)\)\ \(log(
+                      1 - rr)\) - \((64\ mf\^4 + 68\ t\ mf\^2 + 
+                        3\ t\^2)\)\ \(log(
+                      rr + 1)\))\)\)\/\(rr\ t\^4\)\)\), \(2\ mf\^2\ \((32\ t\ \
+rr\^3 + 288\ mf\^2\ rr + 6\ t\ rr + 3\ \((40\ mf\^2 + 3\ t)\)\ \(log(1 - \
+rr)\) - 3\ \((40\ mf\^2 + 3\ t)\)\ \(log(rr + 1)\))\)\)\/\(3\ rr\ t\^3\), \
+\(rr\ t\ \((\(-96\)\ mf\^4 + 8\ \((2\ rr\^2 - 1)\)\ t\ mf\^2 + \((4\ rr\^4 - \
+5\ rr\^2 + 1)\)\ t\^2)\) - 8\ \((8\ mf\^6 + 5\ t\ mf\^4)\)\ \(log(1 - rr)\) + \
+8\ \((8\ mf\^6 + 5\ t\ mf\^4)\)\ \(log(rr + 1)\)\)\/\(rr\ t\^4\), \(4\ \((18\ \
+\(log(1 - rr)\)\ mf\^4 - 18\ \(log(rr + 1)\)\ mf\^4 + rr\ t\ \((mf\^2\ \((21 \
+- 32\ rr\^2)\) - 3\ \((2\ rr\^4 - 3\ rr\^2 + 1)\)\ t)\))\)\)\/\(3\ rr\ \
+t\^3\), \(\((2\ rr\^2 - 1)\)\ \((4\ mf\^2 + \((rr\^2 - 1)\)\ t)\)\)\/t\^2, \
+\(-\(\(1\/\(3\ rr\ t\^4\)\)\((2\ \((rr\ t\ \((576\ mf\^4 + 
+                      12\ \((10\ rr\^2 + 3)\)\ t\ mf\^2 + \((12\ rr\^4 - 
+                            14\ rr\^2 + 3)\)\ t\^2)\) + 
+                12\ \((8\ mf\^6 + 18\ t\ mf\^4 + 3\ t\^2\ mf\^2)\)\ \(log(
+                    1 - rr)\) - 
+                12\ \((8\ mf\^6 + 18\ t\ mf\^4 + 3\ t\^2\ mf\^2)\)\ \(log(
+                    rr + 1)\))\))\)\)\), \(24\ \((5\ mf\^2 + t)\)\ \(log(1 - \
+rr)\)\ mf\^2 - 24\ \((5\ mf\^2 + t)\)\ \(log(rr + 1)\)\ mf\^2 + rr\ \((288\ \
+mf\^4 + 8\ \((10\ rr\^2 + 3)\)\ t\ mf\^2 + \((9\ rr\^4 - 11\ rr\^2 + 3)\)\ \
+t\^2)\)\)\/\(3\ rr\ t\^3\), \(-\(\(1\/\(3\ rr\ t\^4\)\)\((rr\ t\ \((864\ \
+mf\^4 + 36\ \((4\ t\ rr\^2 + t)\)\ mf\^2 + \((12\ rr\^4 - 14\ rr\^2 + 
+                        3)\)\ t\^2)\) + 
+            6\ \((32\ mf\^6 + 52\ t\ mf\^4 + 7\ t\^2\ mf\^2)\)\ \(log(
+                1 - rr)\) - 
+            6\ \((32\ mf\^6 + 52\ t\ mf\^4 + 7\ t\^2\ mf\^2)\)\ \(log(
+                rr + 1)\))\)\)\), \(30\ \((8\ mf\^2 + t)\)\ \(log(1 - rr)\)\ \
+mf\^2 - 30\ \((8\ mf\^2 + t)\)\ \(log(rr + 1)\)\ mf\^2 + rr\ \((576\ mf\^4 + \
+4\ \((32\ rr\^2 + 3)\)\ t\ mf\^2 + \((12\ rr\^4 - 17\ rr\^2 + 6)\)\ t\^2)\)\)\
+\/\(3\ rr\ t\^3\), \(-\(\(2\ rr\^2\ \((20\ mf\^2 + \((3\ rr\^2 - 
+                        5)\)\ t)\)\)\/\(15\ t\^2\)\)\), \(24\ \(log(1 - rr)\)\
+\ mf\^4 - 24\ \(log(rr + 1)\)\ mf\^4 + rr\ t\ \((\(-4\)\ \((4\ rr\^2 - 3)\)\ \
+mf\^2 - 3\ rr\^2\ \((rr\^2 - 1)\)\ t)\)\)\/\(3\ rr\ t\^3\), \(60\ \((2\ rr\^2 \
+- 1)\)\ mf\^2 + \((24\ rr\^4 - 35\ rr\^2 + 15)\)\ t\)\/\(15\ t\^2\), \(5\ \
+rr\^2 - 3\ rr\^4\)\/\(15\ t\)}\)], "Output"]
+}, Open  ]],
+
+Cell["imtttb=<<imtttintegrabf.dat;", "Input"],
+
+Cell["imb=Cmatrix.imtttb//Simplify;", "Input"],
+
+Cell[CellGroupData[{
+
+Cell["soltf=Solve[rr^2==1-4*mf^2/t,t][[1]]", "Input"],
+
+Cell[BoxData[
+    \(TraditionalForm\`{t \[Rule] \(-\(\(4\ mf\^2\)\/\(rr\^2 - 
+                1\)\)\)}\)], "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["soltb=Solve[rr^2==1-4*mb^2/t,t][[1]]", "Input"],
+
+Cell[BoxData[
+    \(TraditionalForm\`{t \[Rule] \(-\(\(4\ mb\^2\)\/\(rr\^2 - 
+                1\)\)\)}\)], "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["measf=Dt[t/.soltf]/.{Dt[mf]->0,Dt[rr]->1}", "Input"],
+
+Cell[BoxData[
+    \(TraditionalForm\`\(8\ mf\^2\ rr\)\/\((rr\^2 - 1)\)\^2\)], "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["measb=Dt[t/.soltb]/.{Dt[mb]->0,Dt[rr]->1}", "Input"],
+
+Cell[BoxData[
+    \(TraditionalForm\`\(8\ mb\^2\ rr\)\/\((rr\^2 - 1)\)\^2\)], "Output"]
+}, Open  ]],
+
+Cell["b[1]=v[p,m]*v[k,n]*v[p,r]*v[k,s]*v[p,a]*v[k,b];", "Input"],
+
+Cell["b[2]=v[k,m]*v[k,n]*v[p,r]*v[p,s]*v[p,a]*v[k,b];", "Input"],
+
+Cell["b[3]=v[k,m]*v[k,n]*v[p,r]*v[k,s]*v[p,a]*v[k,b];", "Input"],
+
+Cell["b[4]=v[p,m]*v[p,n]*v[k,r]*v[k,s]*v[p,a]*v[k,b];", "Input"],
+
+Cell["b[5]=v[p,m]*v[k,n]*v[k,r]*v[k,s]*v[p,a]*v[k,b];", "Input"],
+
+Cell["b[6]=v[k,m]*v[k,n]*v[k,r]*v[k,s]*v[p,a]*v[k,b];", "Input"],
+
+Cell["b[7]=v[p,m]*v[p,n]*v[p,r]*v[p,s]*v[k,a]*v[k,b];", "Input"],
+
+Cell["b[8]=v[k,m]*v[k,n]*v[p,r]*v[k,s]*v[p,a]*v[p,b];", "Input"],
+
+Cell["b[9]=v[p,m]*v[p,n]*v[p,r]*v[k,s]*v[k,a]*v[k,b];", "Input"],
+
+Cell["b[10]=v[p,m]*v[k,n]*v[p,r]*v[k,s]*v[k,a]*v[k,b];", "Input"],
+
+Cell["b[11]=v[k,m]*v[k,n]*v[p,r]*v[p,s]*v[k,a]*v[k,b];", "Input"],
+
+Cell["b[12]=v[k,m]*v[k,n]*v[p,r]*v[k,s]*v[k,a]*v[k,b];", "Input"],
+
+Cell["b[13]=v[p,m]*v[p,n]*v[k,r]*v[k,s]*v[k,a]*v[k,b];", "Input"],
+
+Cell["b[14]=v[p,m]*v[k,n]*v[k,r]*v[k,s]*v[k,a]*v[k,b];", "Input"],
+
+Cell["b[15]=v[k,m]*v[k,n]*v[k,r]*v[k,s]*v[k,a]*v[k,b];", "Input"],
+
+Cell["uandrea[i_,j_]:=MatchQ[bosenull[[i]],a_.*b[j]+c_.]", "Input"],
+
+Cell[CellGroupData[{
+
+Cell["Union[Table[If[uandrea[i,j],{i,j},0],{i,76},{j,15}]]", "Input"],
+
+Cell[BoxData[
+    FormBox[
+      RowBox[{"(", "\[NoBreak]", GridBox[{
+            {"0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", 
+              "0", "0"},
+            {"0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", 
+              "0", \({76, 15}\)},
+            {"0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", 
+              "0", \({72, 14}\), "0"},
+            {"0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", 
+              "0", \({66, 13}\), "0", "0"},
+            {"0", "0", "0", "0", "0", "0", "0", "0", "0", "0", 
+              "0", \({57, 12}\), "0", "0", "0"},
+            {"0", "0", "0", "0", "0", "0", "0", "0", "0", "0", \({25, 11}\), 
+              "0", "0", "0", "0"},
+            {"0", "0", "0", "0", "0", "0", "0", "0", "0", \({53, 10}\), "0", 
+              "0", "0", "0", "0"},
+            {"0", "0", "0", "0", "0", "0", "0", "0", \({70, 9}\), "0", "0", 
+              "0", "0", "0", "0"},
+            {"0", "0", "0", "0", "0", "0", "0", \({55, 8}\), "0", "0", "0", 
+              "0", "0", "0", "0"},
+            {"0", "0", "0", "0", "0", "0", \({74, 7}\), "0", "0", "0", "0", 
+              "0", "0", "0", "0"},
+            {"0", "0", "0", "0", "0", \({75, 6}\), "0", "0", "0", "0", "0", 
+              "0", "0", "0", "0"},
+            {"0", "0", "0", "0", \({71, 5}\), "0", "0", "0", "0", "0", "0", 
+              "0", "0", "0", "0"},
+            {"0", "0", "0", \({65, 4}\), "0", "0", "0", "0", "0", "0", "0", 
+              "0", "0", "0", "0"},
+            {"0", "0", \({56, 3}\), "0", "0", "0", "0", "0", "0", "0", "0", 
+              "0", "0", "0", "0"},
+            {"0", \({24, 2}\), "0", "0", "0", "0", "0", "0", "0", "0", "0", 
+              "0", "0", "0", "0"},
+            {\({52, 1}\), "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", 
+              "0", "0", "0", "0"}
+            }], "\[NoBreak]", ")"}], TraditionalForm]], "Output"]
+}, Open  ]],
+
+Cell["Union[Table[If[uandrea[i,j],{i,j},0],{i,76},{j,15}]];", "Input"],
+
+Cell["\<\
+inte={imf[[52]],imf[[24]],imf[[56]],imf[[65]],imf[[71]],imf[[75]],\
+imf[[74]],imf[[55]],imf[[70]],imf[[53]],imf[[25]],imf[[57]],imf[[66]],imf[[72]\
+],imf[[76]]};\
+\>", "Input"],
+
+Cell["\<\
+inteb={imb[[52]],imb[[24]],imb[[56]],imb[[65]],imb[[71]],imb[[75]],\
+imb[[74]],imb[[55]],imb[[70]],imb[[53]],imb[[25]],imb[[57]],imb[[66]],imb[[72]\
+],imb[[76]]};\
+\>", "Input"],
+
+Cell["Clear[weyl,euler]", "Input"],
+
+Cell[CellGroupData[{
+
+Cell["\<\
+weylf=1/16*Integrate[measf*rr*(inte[[14]]-2*inte[[15]])/.soltf,{rr,\
+0,1}]\
+\>", "Input"],
+
+Cell[BoxData[
+    \(TraditionalForm\`\(-\(1\/60\)\)\)], "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["\<\
+weylb=1/16*Integrate[measb*rr*(inteb[[14]]-2*inteb[[15]])/.soltb,{\
+rr,0,1}]\
+\>", "Input"],
+
+Cell[BoxData[
+    \(TraditionalForm\`1\/1440\)], "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["\<\
+eulerf=1/48*Integrate[measf*rr*(-inte[[4]]+2*inte[[5]]+4*inte[[7]]-\
+2*inte[[8]]-4*inte[[13]]+9*inte[[14]]-18*inte[[15]])/.soltf,{rr,0,1}]\
+\>", \
+"Input"],
+
+Cell[BoxData[
+    \(TraditionalForm\`\(-\(11\/360\)\)\)], "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["\<\
+eulerb=1/48*Integrate[measb*rr*(-inteb[[4]]+2*inteb[[5]]+4*inteb[[7]\
+]-2*inteb[[8]]-4*inteb[[13]]+9*inteb[[14]]-18*inteb[[15]])/.soltb,{rr,0,1}]\
+\
+\>", "Input"],
+
+Cell[BoxData[
+    \(TraditionalForm\`1\/1440\)], "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["ratiof=eulerf/weylf", "Input"],
+
+Cell[BoxData[
+    \(TraditionalForm\`11\/6\)], "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["ratiob=eulerb/weylb", "Input"],
+
+Cell[BoxData[
+    \(TraditionalForm\`1\)], "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["rulerr[mf]=rr->Sqrt[1-4*mf^2/t]", "Input"],
+
+Cell[BoxData[
+    \(TraditionalForm\`rr \[Rule] \@\(1 - \(4\ mf\^2\)\/t\)\)], "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["rulerr[mb]=rr->Sqrt[1-4*mb^2/t]", "Input"],
+
+Cell[BoxData[
+    \(TraditionalForm\`rr \[Rule] \@\(1 - \(4\ mb\^2\)\/t\)\)], "Output"]
+}, Open  ]],
+
+Cell["\<\
+chek1=Integrate[Sqrt[1-4*mf^2/t]*(inte[[6]]-2*inte[[15]])/.rulerr[\
+mf]//Expand,{t,4*mf^2,Infinity}];\
+\>", "Input"],
+
+Cell["\<\
+chek2=Integrate[Sqrt[1-4*mf^2/t]*(3*inte[[3]]-inte[[4]]+2*inte[[5]]+\
+4*inte[[7]]+inte[[8]]-4*inte[[13]])/.rulerr[mf]//Expand,{t,4*mf^2,Infinity}];\
+\
+\>", "Input"],
+
+Cell["\<\
+chek3=Integrate[Sqrt[1-4*mf^2/t]*(3*inte[[1]]+2*inte[[4]]-4*inte[[5]\
+]-8*inte[[7]]+4*inte[[8]]+12*inte[[10]]+8*inte[[13]]-27*inte[[14]]+54*inte[[\
+15]])/.rulerr[mf]//Expand,{t,4*mf^2,Infinity}];\
+\>", "Input"],
+
+Cell["\<\
+chek4=Integrate[Sqrt[1-4*mf^2/t]*(inte[[12]])/.rulerr[mf]//Expand,{\
+t,4*mf^2,Infinity}];\
+\>", "Input"],
+
+Cell["\<\
+chek1b=Integrate[Sqrt[1-4*mb^2/t]*(inteb[[6]]-2*inteb[[15]])/.\
+rulerr[mb]//Expand,{t,4*mb^2,Infinity}];\
+\>", "Input"],
+
+Cell["\<\
+chek2b=Integrate[Sqrt[1-4*mb^2/t]*(3*inteb[[3]]-inteb[[4]]+2*inteb[[\
+5]]+4*inteb[[7]]+inteb[[8]]-4*inteb[[13]])/.rulerr[mb]//Expand,{t,4*mb^2,\
+Infinity}];\
+\>", "Input"],
+
+Cell["\<\
+chek3b=Integrate[Sqrt[1-4*mb^2/t]*(3*inteb[[1]]+2*inteb[[4]]-4*\
+inteb[[5]]-8*inteb[[7]]+4*inteb[[8]]+12*inteb[[10]]+8*inteb[[13]]-27*inteb[[\
+14]]+54*inteb[[15]])/.rulerr[mb]//Expand,{t,4*mb^2,Infinity}];\
+\>", "Input"],
+
+Cell["\<\
+chek4b=Integrate[Sqrt[1-4*mb^2/t]*(inteb[[12]])/.rulerr[mb]//Expand,\
+{t,4*mb^2,Infinity}];\
+\>", "Input"],
+
+Cell[CellGroupData[{
+
+Cell["{{chek1,chek2,chek3,chek4},{chek1b,chek2b,chek3b,chek4b}}", "Input"],
+
+Cell[BoxData[
+    FormBox[
+      RowBox[{"(", "\[NoBreak]", GridBox[{
+            {"0", "0", "0", "0"},
+            {"0", "0", "0", "0"}
+            },
+          ColumnAlignments->{Decimal}], "\[NoBreak]", ")"}], 
+      TraditionalForm]], "Output"]
+}, Open  ]]
+}, Open  ]]
+},
+FrontEndVersion->"4.0 for X",
+ScreenRectangle->{{0, 1152}, {0, 864}},
+ScreenStyleEnvironment->"Working",
+WindowSize->{781, 600},
+WindowMargins->{{57, Automatic}, {Automatic, 61}}
+]
+
+
+(***********************************************************************
+Cached data follows.  If you edit this Notebook file directly, not using
+Mathematica, you must remove the line containing CacheID at the top of 
+the file.  The cache data will then be recreated when you save this file 
+from within Mathematica.
+***********************************************************************)
+
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+
+(*NotebookFileOutline
+Notebook[{
+
+Cell[CellGroupData[{
+Cell[1739, 51, 74, 0, 64, "Subtitle"],
+Cell[1816, 53, 40, 0, 27, "Input"],
+Cell[1859, 55, 375, 15, 32, "Text"],
+Cell[2237, 72, 42, 0, 27, "Input"],
+Cell[2282, 74, 45, 0, 27, "Input"],
+Cell[2330, 76, 41, 0, 27, "Input"],
+Cell[2374, 78, 53, 0, 27, "Input"],
+Cell[2430, 80, 70, 0, 27, "Input"],
+Cell[2503, 82, 129, 3, 42, "Input"],
+
+Cell[CellGroupData[{
+Cell[2657, 89, 70, 0, 27, "Input"],
+Cell[2730, 91, 118, 2, 28, "Output"]
+}, Open  ]],
+Cell[2863, 96, 45, 0, 27, "Input"],
+Cell[2911, 98, 40, 0, 27, "Input"],
+Cell[2954, 100, 46, 0, 27, "Input"],
+Cell[3003, 102, 41, 0, 27, "Input"],
+Cell[3047, 104, 59, 0, 27, "Input"],
+
+Cell[CellGroupData[{
+Cell[3131, 108, 21, 0, 27, "Input"],
+Cell[3155, 110, 2977, 42, 499, "Output"]
+}, Open  ]],
+Cell[6147, 155, 45, 0, 27, "Input"],
+Cell[6195, 157, 46, 0, 27, "Input"],
+
+Cell[CellGroupData[{
+Cell[6266, 161, 53, 0, 27, "Input"],
+Cell[6322, 163, 116, 2, 46, "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+Cell[6475, 170, 53, 0, 27, "Input"],
+Cell[6531, 172, 116, 2, 46, "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+Cell[6684, 179, 58, 0, 27, "Input"],
+Cell[6745, 181, 87, 1, 48, "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+Cell[6869, 187, 58, 0, 27, "Input"],
+Cell[6930, 189, 87, 1, 48, "Output"]
+}, Open  ]],
+Cell[7032, 193, 64, 0, 27, "Input"],
+Cell[7099, 195, 64, 0, 27, "Input"],
+Cell[7166, 197, 64, 0, 27, "Input"],
+Cell[7233, 199, 64, 0, 27, "Input"],
+Cell[7300, 201, 64, 0, 27, "Input"],
+Cell[7367, 203, 64, 0, 27, "Input"],
+Cell[7434, 205, 64, 0, 27, "Input"],
+Cell[7501, 207, 64, 0, 27, "Input"],
+Cell[7568, 209, 64, 0, 27, "Input"],
+Cell[7635, 211, 65, 0, 27, "Input"],
+Cell[7703, 213, 65, 0, 27, "Input"],
+Cell[7771, 215, 65, 0, 27, "Input"],
+Cell[7839, 217, 65, 0, 27, "Input"],
+Cell[7907, 219, 65, 0, 27, "Input"],
+Cell[7975, 221, 65, 0, 27, "Input"],
+Cell[8043, 223, 67, 0, 27, "Input"],
+
+Cell[CellGroupData[{
+Cell[8135, 227, 69, 0, 27, "Input"],
+Cell[8207, 229, 1924, 35, 297, "Output"]
+}, Open  ]],
+Cell[10146, 267, 70, 0, 27, "Input"],
+Cell[10219, 269, 186, 4, 42, "Input"],
+Cell[10408, 275, 187, 4, 42, "Input"],
+Cell[10598, 281, 34, 0, 27, "Input"],
+
+Cell[CellGroupData[{
+Cell[10657, 285, 99, 3, 27, "Input"],
+Cell[10759, 290, 65, 1, 44, "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+Cell[10861, 296, 101, 3, 27, "Input"],
+Cell[10965, 301, 58, 1, 44, "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+Cell[11060, 307, 165, 4, 57, "Input"],
+Cell[11228, 313, 67, 1, 44, "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+Cell[11332, 319, 172, 4, 57, "Input"],
+Cell[11507, 325, 58, 1, 44, "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+Cell[11602, 331, 36, 0, 27, "Input"],
+Cell[11641, 333, 56, 1, 44, "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+Cell[11734, 339, 36, 0, 27, "Input"],
+Cell[11773, 341, 52, 1, 28, "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+Cell[11862, 347, 48, 0, 27, "Input"],
+Cell[11913, 349, 87, 1, 50, "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+Cell[12037, 355, 48, 0, 27, "Input"],
+Cell[12088, 357, 87, 1, 50, "Output"]
+}, Open  ]],
+Cell[12190, 361, 126, 3, 42, "Input"],
+Cell[12319, 366, 174, 4, 57, "Input"],
+Cell[12496, 372, 220, 4, 42, "Input"],
+Cell[12719, 378, 114, 3, 27, "Input"],
+Cell[12836, 383, 129, 3, 42, "Input"],
+Cell[12968, 388, 181, 4, 57, "Input"],
+Cell[13152, 394, 230, 4, 57, "Input"],
+Cell[13385, 400, 116, 3, 27, "Input"],
+
+Cell[CellGroupData[{
+Cell[13526, 407, 74, 0, 27, "Input"],
+Cell[13603, 409, 248, 7, 45, "Output"]
+}, Open  ]]
+}, Open  ]]
+}
+]
+*)
+
+
+
+
+(***********************************************************************
+End of Mathematica Notebook file.
+***********************************************************************)
+

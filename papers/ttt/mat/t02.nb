@@ -1,0 +1,2675 @@
+(***********************************************************************
+
+                    Mathematica-Compatible Notebook
+
+This notebook can be used on any computer system with Mathematica 3.0,
+MathReader 3.0, or any compatible application. The data for the notebook 
+starts with the line of stars above.
+
+To get the notebook into a Mathematica-compatible application, do one of 
+the following:
+
+* Save the data starting with the line of stars above into a file
+  with a name ending in .nb, then open the file inside the application;
+
+* Copy the data starting with the line of stars above to the
+  clipboard, then use the Paste menu command inside the application.
+
+Data for notebooks contains only printable 7-bit ASCII and can be
+sent directly in email or through ftp in text mode.  Newlines can be
+CR, LF or CRLF (Unix, Macintosh or MS-DOS style).
+
+NOTE: If you modify the data for this notebook not in a Mathematica-
+compatible application, you must delete the line below containing the 
+word CacheID, otherwise Mathematica-compatible applications may try to 
+use invalid cache data.
+
+For more information on notebooks and Mathematica-compatible 
+applications, contact Wolfram Research:
+  web: http://www.wolfram.com
+  email: info@wolfram.com
+  phone: +1-217-398-0700 (U.S.)
+
+Notebook reader applications are available free of charge from 
+Wolfram Research.
+***********************************************************************)
+
+(*CacheID: 232*)
+
+
+(*NotebookFileLineBreakTest
+NotebookFileLineBreakTest*)
+(*NotebookOptionsPosition[     96744,       2390]*)
+(*NotebookOutlinePosition[     98028,       2431]*)
+(*  CellTagsIndexPosition[     97984,       2427]*)
+(*WindowFrame->Normal*)
+
+
+
+Notebook[{
+
+Cell[CellGroupData[{
+Cell["\<\
+(*  *************************************************************
+
+    CONSTRUCTION OF THE 77 TENSORS BOSE-SYMM (1 <-> 2) 
+    
+bas            basis of all 137 6-index tensors
+basind         77 representatives of the Bose-symm tensors (Bose-symm partner \
+should be added if present
+                                                         to get the full \
+tensor)
+basind6        15 representatives of tensorial dim. D=6
+basind4        62 remaining with D < 6
+a[1],..,a[77]  free coefficients after Bose symm 
+ts             <TTT> in this parametrization
+
+********************************************************************)
+
+basis = {k2.h1.k1 -> k1.h1.k2, 
+         k2.h2.k1 -> k1.h2.k2, 
+         k2.h3.k1 -> k1.h3.k2, 
+         k1.h1.h2.k1 -> k1.h2.h1.k1,
+         k2.h1.h2.k2 -> k2.h2.h1.k2, 
+         k2.h1.h2.k1 -> k1.h2.h1.k2,
+         k1.h1.h2.k2 -> k2.h2.h1.k1,
+         k1.h1.h3.k1 -> k1.h3.h1.k1,
+         k2.h1.h3.k2 -> k2.h3.h1.k2, 
+         k2.h1.h3.k1 -> k1.h3.h1.k2,
+         k1.h1.h3.k2 -> k2.h3.h1.k1,
+         k1.h2.h3.k1 -> k1.h3.h2.k1,
+         k2.h2.h3.k2 -> k2.h3.h2.k2, 
+         k2.h2.h3.k1 -> k1.h3.h2.k2,
+         k1.h2.h3.k2 -> k2.h3.h2.k1,
+         k1.h2.h1.h3.k1 -> k1.h3.h1.h2.k1,
+         k1.h2.h1.h3.k2 -> k2.h3.h1.h2.k1,
+         k2.h2.h1.h3.k1 -> k1.h3.h1.h2.k2,
+         k2.h2.h1.h3.k2 -> k2.h3.h1.h2.k2,
+         k1.h1.h2.h3.k1 -> k1.h3.h2.h1.k1,
+         k1.h1.h2.h3.k2 -> k2.h3.h2.h1.k1,
+         k2.h1.h2.h3.k1 -> k1.h3.h2.h1.k2,
+         k2.h1.h2.h3.k2 -> k2.h3.h2.h1.k2,
+         k1.h1.h3.h2.k1 -> k1.h2.h3.h1.k1,
+         k1.h1.h3.h2.k2 -> k2.h2.h3.h1.k1,
+         k2.h1.h3.h2.k1 -> k1.h2.h3.h1.k2,
+         k2.h1.h3.h2.k2 -> k2.h2.h3.h1.k2,
+         tr[h1.h2] -> tr[h2.h1],
+         tr[h1.h3] -> tr[h3.h1],
+         tr[h2.h3] -> tr[h3.h2],
+         tr[h2.h1.h3] -> tr[h3.h2.h1],
+         tr[h1.h2.h3] -> tr[h3.h2.h1],
+         tr[h1.h3.h2] -> tr[h3.h2.h1],
+         tr[h3.h1.h2] -> tr[h3.h2.h1],
+         tr[h2.h3.h1] -> tr[h3.h2.h1],
+          k2.v -> v.k2, k1.v -> v.k1,
+          k1.h2.v -> v.h2.k1,
+          k2.h2.v -> v.h2.k2,
+          k1.h1.v -> v.h1.k1,
+          k2.h1.v -> v.h1.k2,
+          k1.h3.v -> v.h3.k1,
+          k2.h3.v -> v.h3.k2,
+          k1.h1.h2.v -> v.h2.h1.k1,
+          k2.h1.h2.v -> v.h2.h1.k2,
+          k1.h2.h1.v -> v.h1.h2.k1,
+          k2.h2.h1.v -> v.h1.h2.k2,
+          k1.h3.h2.v -> v.h2.h3.k1,
+          k2.h3.h2.v -> v.h2.h3.k2,
+          k1.h2.h3.v -> v.h3.h2.k1,
+          k2.h2.h3.v -> v.h3.h2.k2};
+ 
+ir123 ={k1.h3.h1.h2.k1, k2.h3.h1.h2.k1, k1.h3.h1.h2.k2, k2.h3.h1.h2.k2,
+        k1.h3.h2.h1.k1, k2.h3.h2.h1.k1, k1.h3.h2.h1.k2, k2.h3.h2.h1.k2,
+        k1.h2.h3.h1.k1, k2.h2.h3.h1.k1, k1.h2.h3.h1.k2, k2.h2.h3.h1.k2,
+        tr[h3.h2.h1]};
+bas1  = ir123;
+        
+ir12 ={ k1.h2.h1.k1, k2.h2.h1.k2, k1.h2.h1.k2, k2.h2.h1.k1, tr[h2.h1]};
+ir13 ={ k1.h3.h1.k1, k2.h3.h1.k2, k1.h3.h1.k2, k2.h3.h1.k1, tr[h3.h1]};
+ir23 ={ k1.h3.h2.k1, k2.h3.h2.k2, k1.h3.h2.k2, k2.h3.h2.k1, tr[h3.h2]};
+ir1  ={ k1.h1.k1, k2.h1.k2, k1.h1.k2, tr[h1]};
+ir2  ={ k1.h2.k1, k2.h2.k2, k1.h2.k2, tr[h2]};
+ir3  ={ k1.h3.k1, k2.h3.k2, k1.h3.k2, tr[h3]};
+bas2 = Union[Table[ir12[[Floor[i/4] + 1]] ir3[[Mod[i, 4] + 1]], {i, 0, 19}],
+        Table[ir13[[Floor[i/4] + 1]] ir2[[Mod[i, 4] + 1]], {i, 0, 19}],
+        Table[ir23[[Floor[i/4] + 1]] ir1[[Mod[i, 4] + 1]], {i, 0, 19}]];
+        
+bas3 = Table[ir1[[Mod[i,4]+1]] ir2[[Mod[Floor[i/4],4]+1]] \
+ir3[[Floor[i/16]+1]], 
+              {i, 0, 63}];
+bas = Union[bas1,bas2,bas3];         
+t1  =  Sum[b[i]  bas[[i]], {i, 1, 137}];
+
+te1 = t1 //. {k1 -> kk1, k2 -> kk2, h1 -> hh1, h2 -> hh2};
+t11 = t1 - te1  //. {kk1 -> k2, kk2 -> k1, hh1 -> h2, hh2 -> h1} //. basis;
+solsym1 = Solve[Coefficient[t11,bas] == 0, Table[b[i], {i, 1, 137}] ];
+ts1 = Expand[ t1  //. Part[solsym1,1] ];
+vars1 = Complement[Union[ Table[If[FreeQ[ts1, b[i]], 0, b[i]],{i,1,137}]  \
+],{0}]
+basind = Coefficient[t1, vars1];
+vars = Table[a[i],{i,1,77}];
+ts = ts1 //. Table[vars1[[i]] -> vars[[i]],{i,1,77}];
+basind6 = Table[basind[[i]],{i,1,15}];
+basind4 = Table[basind[[i]],{i,16,77}];\
+\>", "Input",
+  PageWidth->Infinity,
+  InitializationCell->True,
+  ShowSpecialCharacters->False,
+  FormatType->InputForm],
+
+Cell[BoxData[
+    \(General::"spell1" \( : \ \) 
+      "Possible spelling error: new symbol name \"\!\(ir13\)\" is similar to \
+existing symbol \"\!\(ir123\)\"."\)], "Message"],
+
+Cell[BoxData[
+    \(General::"spell1" \( : \ \) 
+      "Possible spelling error: new symbol name \"\!\(ir23\)\" is similar to \
+existing symbol \"\!\(ir123\)\"."\)], "Message"],
+
+Cell[BoxData[
+    \(Solve::"svars" \( : \ \) 
+      "Equations may not give solutions for all \"solve\" variables."\)], 
+  "Message"],
+
+Cell[BoxData[
+    \({b[8], b[11], b[12], b[15], b[16], b[18], b[19], b[20], b[21], b[22], 
+      b[23], b[24], b[25], b[26], b[27], b[32], b[33], b[47], b[48], b[49], 
+      b[50], b[51], b[52], b[53], b[54], b[55], b[56], b[57], b[58], b[59], 
+      b[60], b[61], b[62], b[63], b[65], b[70], b[71], b[72], b[73], b[74], 
+      b[75], b[89], b[90], b[91], b[92], b[93], b[94], b[95], b[96], b[97], 
+      b[98], b[99], b[100], b[101], b[103], b[104], b[108], b[109], b[110], 
+      b[111], b[112], b[113], b[115], b[116], b[117], b[121], b[122], b[123], 
+      b[124], b[126], b[127], b[128], b[133], b[134], b[135], b[136], b[137]}
+      \)], "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["\<\
+
+(*****************************************************************
+
+IMPOSING THE TWO DIFF WARD IDENTITIES AT k1^2= k2^2 = 0
+
+c[1],..,c[17]    coefficients of the homogeneous solution of Diff WI
+c[18],c[19],c[20] convenient renaming of f0[k^2],f0[q^2] and f2[q^2]
+                  (original names are put back later)
+tc              <TTT> result of this step of the calculation
+
+******************************************************************)
+
+cons = {x__.v**k1.t__ -> (x.v)(k1.t)+(x.k1)(v.t),
+         x__.v**k2.t__ -> (x.v)(k2.t)+(x.k2)(v.t),
+          k1.k1 -> q1, k2.k2 -> q2, k1.k2 -> (q-q1-q2)/2,
+          k2.k1 -> (q-q1-q2)/2,
+          tr[v**z_] -> 2 v.z,
+          tr[x_ + y_] -> tr[x]+ tr[y],
+          tr[u__.v**k1] -> k1.u.v + v.u.k1,
+          tr[u__.v**k2] -> k2.u.v + v.u.k2,
+          tr[v**k1.s__] -> v.s.k1 + k1.s.v,
+          tr[v**k2.s__] -> v.s.k2 + k2.s.v,
+          tr[u__.v**k1.s__] -> k1.s.u.v + v.s.u.k1,
+          tr[u__.v**k2.s__] -> k2.s.u.v + v.s.u.k2,
+          k3 -> - k1 - k2,
+          x___.(y_+z_).t___ -> x.y.t + x.z.t,
+          x___.(- z_).t___ -> - x.z.t};
+          
+ cons1 = {x__.v**k1.t__ -> (x.v)(k1.t),
+          x__.v**k2.t__ -> (x.v)(k2.t),
+          k1.k1 -> 1, k2.k2 -> 1, k1.k2 -> 1, k2.k1 -> 1,
+          tr[v**z_] -> v.z,
+          tr[x_ + y_] -> tr[x]+ tr[y],
+          tr[u__.v**k1] -> k1.u.v,
+          tr[u__.v**k2] -> k2.u.v,
+          tr[v**k1.s__] -> v.s.k1,
+          tr[v**k2.s__] -> v.s.k2,
+          tr[u__.v**k1.s__] -> k1.s.u.v,
+          tr[u__.v**k2.s__] -> k2.s.u.v,
+          x___.(y_+z_).t___ -> x.y.t + x.z.t};
+          
+ cons2 = {x__.v**k1.t__ -> (x.k1)(v.t),
+          x__.v**k2.t__ -> (x.k2)(v.t),
+          k1.k1 -> 1, k2.k2 -> 1, k1.k2 -> 1, k2.k1 -> 1,
+          tr[v**z_] -> v.z,
+          tr[x_ + y_] -> tr[x]+ tr[y],
+          tr[u__.v**k1] -> v.u.k1,
+          tr[u__.v**k2] -> v.u.k2,
+          tr[v**k1.s__] -> k1.s.v,
+          tr[v**k2.s__] -> k2.s.v,
+          tr[u__.v**k1.s__] -> v.s.u.k1,
+          tr[u__.v**k2.s__] -> v.s.u.k2,
+          x___.(y_+z_).t___ -> x.y.t + x.z.t};
+ 
+ cont3 = {x__.hh1.t__ -> (x.v)(k3.h1.t)+(x.h1.k3)(v.t),
+          x__.hh2.t__ -> (x.v)(k3.h2.t)+(x.h2.k3)(v.t),
+          tr[hh1] -> 2 v.h1.k3,
+          tr[hh2] -> 2 v.h2.k3,
+          tr[u__.hh1] -> k3.h1.u.v + v.u.h1.k3,
+          tr[u__.hh2] -> k3.h2.u.v + v.u.h2.k3,
+          tr[hh1.s__] -> v.s.h1.k3 + k3.h1.s.v,
+          tr[hh2.s__] -> v.s.h2.k3 + k3.h2.s.v};
+
+ cont1 = {x__.hh3.t__ -> (x.v)(k1.h3.t)+(x.h3.k1)(v.t),
+          x__.hh2.t__ -> (x.v)(k1.h2.t)+(x.h2.k1)(v.t),
+          tr[hh3] -> 2 v.h3.k1,
+          tr[hh2] -> 2 v.h2.k1,
+          tr[u__.hh3] -> k1.h3.u.v + v.u.h3.k1,
+          tr[u__.hh2] -> k1.h2.u.v + v.u.h2.k1,
+          tr[hh3.s__] -> v.s.h3.k1 + k1.h3.s.v,
+          tr[hh2.s__] -> v.s.h2.k1 + k1.h2.s.v};
+
+q2 = 0
+
+q1 = 0
+
+q = 1
+
+d=4
+
+f2[q1] = 0
+
+basv3 = Union[Union[bas /. h3 -> v**k1 //. cons1 //. basis],
+             Union[bas /. h3 -> v**k1 //. cons2 //. basis],
+             Union[bas /. h3 -> v**k2 //. cons1 //. basis],
+             Union[bas /. h3 -> v**k2 //. cons2 //. basis] ];
+             
+t[p_,h_,g_]:=(f0[p.p]-f2[p.p]) (p.p tr[h] - p.h.p)(p.p tr[g] - p.g.p) + 
+             (d-1) f2[p.p](p.h.p p.g.p -2 p.p p.h.g.p + (p.p)^2 tr[h.g])
+sub1 = 2 t[k1,hh2,h1] + 2 t[k2,hh1,h2] /. cont3;
+sub2 = sub1 //. cons //. basis;
+sub3 = - 2 v.k2 t[k1,h1,h2] - 2 v.k1 t[k2,h2,h1];
+wi3 = Expand[ts + sub2 + sub3 /. h3 -> v**k1 + v**k2 //. cons //. basis];
+coef3 = Coefficient[wi3, basv3];
+
+basv1 = Union[Union[bas /. h1 -> v**k1 //. cons1 //. basis],
+              Union[bas /. h1 -> v**k1 //. cons2 //. basis] ];
+suc1 = 2 t[k3,hh2,h3] + 2 t[k2,hh3,h2] /. cont1;
+suc2 = suc1 //. cons //. basis;
+suc3 = - 2 v.k2 t[k3,h3,h2] + (2 v.k1 + 2 v.k2) t[k2,h2,h3];
+wi1 = Expand[ts - suc2 - suc3 /. h1 -> v**k1  //. cons //. basis];
+coef1 = Coefficient[wi1,basv1];
+
+solcon = Solve[{coef3 == 0, coef1 == 0},vars];
+
+tc1  = Expand[ts //. Part[solcon,1]];
+varc1 = Complement[Union[
+\t\tTable[If[FreeQ[tc1, a[i]], 0, a[i]],{i,1,137}]  ],{0}]
+varc = Table[c[i], {i,1,17}]
+tc2 = tc1 //. Table[ varc1[[i]] -> varc[[i]],{i,1,17}];
+tc  = tc2 //. {f0[q] -> c[18] + c[19], f0[q1] -> c[18] - c[19], f0[q2] -> \
+c[18] - c[19], f2[q] -> 2 c[20]};
+Do[Print[ \"c[\",i,\"] :   \", \
+Coefficient[Coefficient[tc,c[i]],basind6]],{i,1,20}]\
+\>", "Input",
+  PageWidth->Infinity,
+  InitializationCell->True,
+  ShowSpecialCharacters->False,
+  FormatType->InputForm],
+
+Cell[BoxData[
+    \(General::"spell1" \( : \ \) 
+      "Possible spelling error: new symbol name \"\!\(cont1\)\" is similar to \
+existing symbol \"\!\(cons1\)\"."\)], "Message"],
+
+Cell[BoxData[
+    \(0\)], "Output"],
+
+Cell[BoxData[
+    \(0\)], "Output"],
+
+Cell[BoxData[
+    \(1\)], "Output"],
+
+Cell[BoxData[
+    \(4\)], "Output"],
+
+Cell[BoxData[
+    \(0\)], "Output"],
+
+Cell[BoxData[
+    \(General::"spell1" \( : \ \) 
+      "Possible spelling error: new symbol name \"\!\(basv3\)\" is similar to \
+existing symbol \"\!\(bas3\)\"."\)], "Message"],
+
+Cell[BoxData[
+    \(General::"spell1" \( : \ \) 
+      "Possible spelling error: new symbol name \"\!\(basv1\)\" is similar to \
+existing symbol \"\!\(bas1\)\"."\)], "Message"],
+
+Cell[BoxData[
+    \(General::"spell1" \( : \ \) 
+      "Possible spelling error: new symbol name \"\!\(suc1\)\" is similar to \
+existing symbol \"\!\(sub1\)\"."\)], "Message"],
+
+Cell[BoxData[
+    \(General::"spell1" \( : \ \) 
+      "Possible spelling error: new symbol name \"\!\(suc2\)\" is similar to \
+existing symbol \"\!\(sub2\)\"."\)], "Message"],
+
+Cell[BoxData[
+    \(General::"spell1" \( : \ \) 
+      "Possible spelling error: new symbol name \"\!\(suc3\)\" is similar to \
+existing symbol \"\!\(sub3\)\"."\)], "Message"],
+
+Cell[BoxData[
+    \(Solve::"svars" \( : \ \) 
+      "Equations may not give solutions for all \"solve\" variables."\)], 
+  "Message"],
+
+Cell[BoxData[
+    \(General::"spell1" \( : \ \) 
+      "Possible spelling error: new symbol name \"\!\(varc1\)\" is similar to \
+existing symbol \"\!\(vars1\)\"."\)], "Message"],
+
+Cell[BoxData[
+    \({a[13], a[19], a[32], a[36], a[40], a[48], a[53], a[56], a[60], a[64], 
+      a[66], a[69], a[71], a[72], a[73], a[76], a[77]}\)], "Output"],
+
+Cell[BoxData[
+    \(General::"spell1" \( : \ \) 
+      "Possible spelling error: new symbol name \"\!\(varc\)\" is similar to \
+existing symbol \"\!\(vars\)\"."\)], "Message"],
+
+Cell[BoxData[
+    \({c[1], c[2], c[3], c[4], c[5], c[6], c[7], c[8], c[9], c[10], c[11], 
+      c[12], c[13], c[14], c[15], c[16], c[17]}\)], "Output"],
+
+Cell[BoxData[
+    InterpretationBox[
+      \("c["\[InvisibleSpace]1
+        \[InvisibleSpace]"] :   "\[InvisibleSpace]{0, 0, 0, \(-2\), 0, 0, 0, 
+          0, 0, 0, 0, 0, 1, 0, 0}\),
+      SequenceForm[ 
+      "c[", 1, "] :   ", {0, 0, 0, -2, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0}],
+      Editable->False]], "Print"],
+
+Cell[BoxData[
+    InterpretationBox[
+      \("c["\[InvisibleSpace]2
+        \[InvisibleSpace]"] :   "\[InvisibleSpace]{4, 0, 0, 0, 0, 0, 0, 0, 0, 
+          \(-2\), 0, 0, 0, 0, 0}\),
+      SequenceForm[ 
+      "c[", 2, "] :   ", {4, 0, 0, 0, 0, 0, 0, 0, 0, -2, 0, 0, 0, 0, 0}],
+      Editable->False]], "Print"],
+
+Cell[BoxData[
+    InterpretationBox[
+      \("c["\[InvisibleSpace]3
+        \[InvisibleSpace]"] :   "\[InvisibleSpace]{0, 0, 0, 0, 2, 0, 0, 0, 
+          \(-2\), 0, 0, 0, 0, 0, 0}\),
+      SequenceForm[ 
+      "c[", 3, "] :   ", {0, 0, 0, 0, 2, 0, 0, 0, -2, 0, 0, 0, 0, 0, 0}],
+      Editable->False]], "Print"],
+
+Cell[BoxData[
+    InterpretationBox[
+      \("c["\[InvisibleSpace]4
+        \[InvisibleSpace]"] :   "\[InvisibleSpace]{4, 0, 0, 4, 4, 0, 0, 0, 0, 
+          0, 0, 0, 0, 0, 0}\),
+      SequenceForm[ 
+      "c[", 4, "] :   ", {4, 0, 0, 4, 4, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0}],
+      Editable->False]], "Print"],
+
+Cell[BoxData[
+    InterpretationBox[
+      \("c["\[InvisibleSpace]5
+        \[InvisibleSpace]"] :   "\[InvisibleSpace]{0, 0, \(-4\), 0, 0, 0, 0, 
+          4, 0, 0, 0, 0, 0, 0, 0}\),
+      SequenceForm[ 
+      "c[", 5, "] :   ", {0, 0, -4, 0, 0, 0, 0, 4, 0, 0, 0, 0, 0, 0, 0}],
+      Editable->False]], "Print"],
+
+Cell[BoxData[
+    InterpretationBox[
+      \("c["\[InvisibleSpace]6
+        \[InvisibleSpace]"] :   "\[InvisibleSpace]{0, 0, 0, 0, 8, 0, 0, 0, 
+          \(-4\), 0, 0, 0, 0, \(-4\), 0}\),
+      SequenceForm[ 
+      "c[", 6, "] :   ", {0, 0, 0, 0, 8, 0, 0, 0, -4, 0, 0, 0, 0, -4, 0}],
+      Editable->False]], "Print"],
+
+Cell[BoxData[
+    InterpretationBox[
+      \("c["\[InvisibleSpace]7
+        \[InvisibleSpace]"] :   "\[InvisibleSpace]{16, 0, 0, 0, 8, 0, 0, 0, 
+          0, \(-8\), 0, 0, 0, \(-8\), 0}\),
+      SequenceForm[ 
+      "c[", 7, "] :   ", {16, 0, 0, 0, 8, 0, 0, 0, 0, -8, 0, 0, 0, -8, 0}],
+      Editable->False]], "Print"],
+
+Cell[BoxData[
+    InterpretationBox[
+      \("c["\[InvisibleSpace]8
+        \[InvisibleSpace]"] :   "\[InvisibleSpace]{\(-32\), 0, 0, 0, 0, 0, 0, 
+          0, 0, 16, 0, 0, 0, 0, 0}\),
+      SequenceForm[ 
+      "c[", 8, "] :   ", {-32, 0, 0, 0, 0, 0, 0, 0, 0, 16, 0, 0, 0, 0, 0}],
+      Editable->False]], "Print"],
+
+Cell[BoxData[
+    InterpretationBox[
+      \("c["\[InvisibleSpace]9
+        \[InvisibleSpace]"] :   "\[InvisibleSpace]{0, 0, 0, \(-4\), 0, 0, 0, 
+          0, 0, 0, 0, 0, 0, 0, 0}\),
+      SequenceForm[ 
+      "c[", 9, "] :   ", {0, 0, 0, -4, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0}],
+      Editable->False]], "Print"],
+
+Cell[BoxData[
+    InterpretationBox[
+      \("c["\[InvisibleSpace]10
+        \[InvisibleSpace]"] :   "\[InvisibleSpace]{8, 0, 0, 0, 0, 0, 0, 0, 0, 
+          0, 0, 0, 0, 0, 0}\),
+      SequenceForm[ 
+      "c[", 10, "] :   ", {8, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0}],
+      Editable->False]], "Print"],
+
+Cell[BoxData[
+    InterpretationBox[
+      \("c["\[InvisibleSpace]11
+        \[InvisibleSpace]"] :   "\[InvisibleSpace]{0, 0, 0, 0, 16, 0, 0, 0, 
+          0, 0, 0, 0, 0, 0, 0}\),
+      SequenceForm[ 
+      "c[", 11, "] :   ", {0, 0, 0, 0, 16, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0}],
+      Editable->False]], "Print"],
+
+Cell[BoxData[
+    InterpretationBox[
+      \("c["\[InvisibleSpace]12
+        \[InvisibleSpace]"] :   "\[InvisibleSpace]{\(-64\), 0, 0, 0, 0, 0, 0, 
+          0, 0, 0, 0, 0, 0, 0, 0}\),
+      SequenceForm[ 
+      "c[", 12, "] :   ", {-64, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0}],
+      Editable->False]], "Print"],
+
+Cell[BoxData[
+    InterpretationBox[
+      \("c["\[InvisibleSpace]13
+        \[InvisibleSpace]"] :   "\[InvisibleSpace]{0, \(-8\), 0, 0, 0, 0, 0, 
+          0, 0, 0, 4, 0, 0, 0, 0}\),
+      SequenceForm[ 
+      "c[", 13, "] :   ", {0, -8, 0, 0, 0, 0, 0, 0, 0, 0, 4, 0, 0, 0, 0}],
+      Editable->False]], "Print"],
+
+Cell[BoxData[
+    InterpretationBox[
+      \("c["\[InvisibleSpace]14
+        \[InvisibleSpace]"] :   "\[InvisibleSpace]{0, \(-16\), 0, 0, 0, 0, 0, 
+          0, 0, 0, 0, 0, 0, 0, 0}\),
+      SequenceForm[ 
+      "c[", 14, "] :   ", {0, -16, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0}],
+      Editable->False]], "Print"],
+
+Cell[BoxData[
+    InterpretationBox[
+      \("c["\[InvisibleSpace]15
+        \[InvisibleSpace]"] :   "\[InvisibleSpace]{0, 0, 0, 8, 8, 0, 4, 0, 0, 
+          0, 0, 0, 0, 0, 0}\),
+      SequenceForm[ 
+      "c[", 15, "] :   ", {0, 0, 0, 8, 8, 0, 4, 0, 0, 0, 0, 0, 0, 0, 0}],
+      Editable->False]], "Print"],
+
+Cell[BoxData[
+    InterpretationBox[
+      \("c["\[InvisibleSpace]16
+        \[InvisibleSpace]"] :   "\[InvisibleSpace]{0, 0, 0, 0, 0, 0, 0, 
+          \(-16\), 0, \(-32\), 0, 0, 0, \(-16\), 0}\),
+      SequenceForm[ 
+      "c[", 16, "] :   ", {0, 0, 0, 0, 0, 0, 0, -16, 0, -32, 0, 0, 0, -16, 
+        0}],
+      Editable->False]], "Print"],
+
+Cell[BoxData[
+    InterpretationBox[
+      \("c["\[InvisibleSpace]17
+        \[InvisibleSpace]"] :   "\[InvisibleSpace]{\(-8\), \(-8\), \(-8\), 0, 
+          0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0}\),
+      SequenceForm[ 
+      "c[", 17, "] :   ", {-8, -8, -8, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0}],
+      Editable->False]], "Print"],
+
+Cell[BoxData[
+    InterpretationBox[
+      \("c["\[InvisibleSpace]18
+        \[InvisibleSpace]"] :   "\[InvisibleSpace]{16, 20, 0, 0, 0, 0, 
+          \(-2\), 0, 0, 8, 10, 0, 0, 4, 0}\),
+      SequenceForm[ 
+      "c[", 18, "] :   ", {16, 20, 0, 0, 0, 0, -2, 0, 0, 8, 10, 0, 0, 4, 0}],
+      Editable->False]], "Print"],
+
+Cell[BoxData[
+    InterpretationBox[
+      \("c["\[InvisibleSpace]19
+        \[InvisibleSpace]"] :   "\[InvisibleSpace]{16, 20, 0, 0, 0, \(-8\), 
+          \(-2\), 0, 0, 8, 10, 0, 0, \(-4\), \(-4\)}\),
+      SequenceForm[ 
+      "c[", 19, "] :   ", {16, 20, 0, 0, 0, -8, -2, 0, 0, 8, 10, 0, 
+        0, -4, -4}],
+      Editable->False]], "Print"],
+
+Cell[BoxData[
+    InterpretationBox[
+      \("c["\[InvisibleSpace]20
+        \[InvisibleSpace]"] :   "\[InvisibleSpace]{64, 32, 48, 0, 0, \(-16\), 
+          \(-8\), 48, 0, 32, \(-8\), 0, 0, 0, \(-8\)}\),
+      SequenceForm[ 
+      "c[", 20, "] :   ", {64, 32, 48, 0, 0, -16, -8, 48, 0, 32, -8, 0, 0, 
+        0, -8}],
+      Editable->False]], "Print"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[{
+    \( (*\(******************************************************************
+            \ \n\t\n\tDIAGONALIZATION\)\ OF\ THE\ SOLUTION\ OF\ THE\ DIFF\ 
+          W . R . T . \ THE\ D = 
+        \(6\ BASIS\n\t\t\nAbove\ is\ the\ printout\ of\ the\ components\ of\ 
+              the\ 17 + 
+            3\ solutions\ \((homo + inhomo)\)\ of\ Diff\ WI\ in\ the\ 15 - 
+            dim\nbasis\ of\ D = 6\ tensors\); \ 
+      the\ 17\ are\ free\ parameters\ and\ can\ be\ \((maximally)\)\ 
+        diagonalized; \nc[i]\  -> \ e[i], \ i, 1, 15 : \ e[6], e[12], 
+      e[15]\ do\ not\ appear\ in\ the\ D = 6\ basis, \ 
+      i . e . \ there\ are\nonly\ 12\ homo\ D = 6\ tensors\ \((see\ below)\); 
+      \ there\ remain\ 5\ homo\ D < 6\ tensor; \ by\ inspection, \ 
+      the\ 3\ inhomo\nalso\ split\ into\ 1\ D = 
+        \(6\  + 2\ D < 6. \ In\ \(conclusion : \n17 + 3\)\  = \ 
+          \(\((12 + 1)\) _ {D = 6}\  + \ 
+              \((5 + 2)\) _ {D < 6}\nInstead\ Riccardo\ finds\ 15\ D = 
+            6\ homo\)\), \ which\ is\ the\ maximal\ value; \ 
+      maybe\ the\ restriction\ k^2 = 
+        0\nplays\ a\ role . \nFree\ coefficients\ e[i]\ and\ c[i]\ are\ 
+          renamed\ as\ \(follows : \ne[1]\), 
+      \( ..  e[12]\ \ \ 12\ coeff\ of\ D\) = 
+        \(6\ homo\ tensors\ diagonal\ w . r . t . \ the\ D = 
+          6\ basis\ne[13]\), 
+      \(\( . \(, e[17]\ \ \ 5\ coeff\ of\ D\) < 
+          6\ homo\ tensors\ \ne[19]\ \ \ \ \ \ \ \ \ \ \ 1\ coeff\ of\ D\) = 
+        6\ inhomo\ tensor\ne[18], \ 
+      e[20]\ \ \ \ 2\ coeff\ of\ D < 
+        6\ inhomo\ tensors\nThe\ result\ on\ the\ inhomo\ tensors\ is\ 
+          obtained\ as\ follows; \ 
+      after\ diagonalization\ of\ the\ homo\ntensors\ 
+        \((e[1], \( ..  e[12]\))\), \ 
+      the\ inhomo\ tensors\ are\ simplified\ in\ their\ D = 
+        6\ components\ \nby\ adding\ suitable\ homo\ tensors; \ 
+      only\ e[19]\ remains\ in\ the\ D = 
+        6\ basis . \ntttq\ \ \ \ \ \ \ \  < TTT > \ 
+          at\ the\ end\ of\ this\ calculation\)\ \n\t
+      \n****************************************************************) \n\n
+    \ntcho\  = \ tc\  //. \ Table[c[i]\  -> \ 0, {i, 18, 20}]; \n
+    tcih\  = \ tc\  //. \ Table[c[i]\  -> \ 0, {i, 1, 17}]; \n
+    soldiag\  = 
+      Solve[Coefficient[tcho, basind6]\  == \ Table[e[i], {i, 1, 15}], \ 
+        Table[c[i], {i, 1, 17}]]\), 
+    \(tcor\  = \ Expand[tc\  //. \ Part[soldiag, 1]]; \n
+    Do[Print[\ "\<c[ \>", i, "\< ] :   \>", \ 
+        Coefficient[Coefficient[tcor, c[i]], basind6]], {i, 1, 20}]\), 
+    \(Do[Print[\ "\<c[ \>", i, "\< ] :   \>", \ 
+        Coefficient[Coefficient[tcor, c[i]], basind4]], {i, 1, 20}]\), 
+    \(Do[Print[\ "\<e[ \>", i, "\< ] :   \>", \ 
+        Coefficient[Coefficient[tcor, e[i]], basind6]], {i, 1, 15}]\), 
+    \(Do[Print[\ "\<e[ \>", i, "\< ] :   \>", \ 
+        Coefficient[Coefficient[tcor, e[i]], basind4]], {i, 1, 15}]\n\), 
+    \(Do[tens[i] = \ Coefficient[tcor, \ c[i]], \ {i, 18, 20}]\), 
+    \(Do[tenso[i]\  = \ 
+        Expand[\ tens[i]\  - \ 
+            Sum[\ Part[Coefficient[tens[i], basind6], j]\ 
+                Coefficient[tcor, e[j]], \ \n
+              \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \
+\ \ \ \ {j, 1, 15}\ ]\ ], \ {i, 18, 20}]\), 
+    \(Do[Print[\ "\<tenso[ \>", \ i, \ "\< ] : \>", \ 
+        Coefficient[tenso[i], basind]\ ], \ {i, 18, 20}]\n\), 
+    \(Expand[
+      Coefficient[
+        tcih, {basind[\([6]\)], \ basind[\([12]\)], basind[\([15]\)]}]]\), 
+    \(tttq\  = \ 
+      Sum[e[i]\ Coefficient[tcor, \ e[i]], {i, 1, 5}]\  + \ 
+        Sum[e[i - 1]\ Coefficient[tcor, \ e[i]], {i, 7, 11}]\  + \ \n
+        \ \ \ \ \ \ \ 
+        Sum[e[i - 2]\ Coefficient[tcor, \ e[i]], {i, 12, 14}]\  + \ 
+        e[13]\ Coefficient[tcor, \ c[4]]\  + \n\ \ \ \ \ \ \ 
+        e[14]\ Coefficient[tcor, \ c[7]]\  + \ 
+        e[15]\ Coefficient[tcor, \ c[8]]\  + \ 
+        e[16]\ Coefficient[tcor, \ c[12]]\  + \n\ \ \ \ \ \ \ 
+        e[17]\ Coefficient[tcor, \ c[17]]\  + \ \n\ \ \ \ \ \ \ 
+        e[18]\ tenso[18]\  + \ 
+        e[19]\ \((2\ tenso[19]\  + \ tenso[20])\)/2\  + \ 
+        e[20]\ \((2\ tenso[19]\  - \ tenso[20])\)/2; \n\ \ \ \ \ \ \ \n
+    coeq\  = \ Coefficient[Expand[tttq], \ basind6]\)}], "Input"],
+
+Cell[BoxData[
+    \(Solve::"svars" \( : \ \) 
+      "Equations may not give solutions for all \"solve\" variables."\)], 
+  "Message"],
+
+Cell[BoxData[
+    \({{c[9] \[Rule] 1\/4\ \((4\ c[4] - e[4] + 2\ e[7] - 2\ e[13])\), 
+        c[10] \[Rule] 
+          1\/8\ \((
+              \(-4\)\ c[4] + 64\ c[12] - 24\ c[17] + e[1] - 4\ e[3] - 
+                4\ e[8] + 2\ e[10])\), 
+        c[11] \[Rule] 
+          1\/16\ \((
+              \(-4\)\ c[4] - 8\ c[17] - e[3] + e[5] - 2\ e[7] - e[8] + e[9] + 
+                e[14])\), 
+        c[14] \[Rule] 1\/16\ \((\(-8\)\ c[17] - e[2] - 2\ e[11])\), 
+        c[1] \[Rule] e[13], 
+        c[2] \[Rule] 
+          1\/2\ \((
+              \(-8\)\ c[7] + 16\ c[8] + 16\ c[17] + 2\ e[3] + 2\ e[8] - e[10])
+              \), c[3] \[Rule] 
+          1\/2\ \((8\ c[7] - 8\ c[17] - e[3] - e[8] - e[9] + e[14])\), 
+        c[5] \[Rule] 1\/4\ \((\(-8\)\ c[17] - e[3])\), 
+        c[13] \[Rule] e[11]\/4, 
+        c[6] \[Rule] 
+          1\/4\ \((\(-8\)\ c[7] + 8\ c[17] + e[3] + e[8] - e[14])\), 
+        c[15] \[Rule] e[7]\/4, 
+        c[16] \[Rule] 1\/16\ \((\(-8\)\ c[17] - e[3] - e[8])\)}}\)], "Output"],
+
+Cell[BoxData[
+    InterpretationBox[
+      \("c[ "\[InvisibleSpace]1
+        \[InvisibleSpace]" ] :   "\[InvisibleSpace]{0, 0, 0, 0, 0, 0, 0, 0, 
+          0, 0, 0, 0, 0, 0, 0}\),
+      SequenceForm[ 
+      "c[ ", 1, " ] :   ", {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0}],
+      Editable->False]], "Print"],
+
+Cell[BoxData[
+    InterpretationBox[
+      \("c[ "\[InvisibleSpace]2
+        \[InvisibleSpace]" ] :   "\[InvisibleSpace]{0, 0, 0, 0, 0, 0, 0, 0, 
+          0, 0, 0, 0, 0, 0, 0}\),
+      SequenceForm[ 
+      "c[ ", 2, " ] :   ", {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0}],
+      Editable->False]], "Print"],
+
+Cell[BoxData[
+    InterpretationBox[
+      \("c[ "\[InvisibleSpace]3
+        \[InvisibleSpace]" ] :   "\[InvisibleSpace]{0, 0, 0, 0, 0, 0, 0, 0, 
+          0, 0, 0, 0, 0, 0, 0}\),
+      SequenceForm[ 
+      "c[ ", 3, " ] :   ", {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0}],
+      Editable->False]], "Print"],
+
+Cell[BoxData[
+    InterpretationBox[
+      \("c[ "\[InvisibleSpace]4
+        \[InvisibleSpace]" ] :   "\[InvisibleSpace]{0, 0, 0, 0, 0, 0, 0, 0, 
+          0, 0, 0, 0, 0, 0, 0}\),
+      SequenceForm[ 
+      "c[ ", 4, " ] :   ", {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0}],
+      Editable->False]], "Print"],
+
+Cell[BoxData[
+    InterpretationBox[
+      \("c[ "\[InvisibleSpace]5
+        \[InvisibleSpace]" ] :   "\[InvisibleSpace]{0, 0, 0, 0, 0, 0, 0, 0, 
+          0, 0, 0, 0, 0, 0, 0}\),
+      SequenceForm[ 
+      "c[ ", 5, " ] :   ", {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0}],
+      Editable->False]], "Print"],
+
+Cell[BoxData[
+    InterpretationBox[
+      \("c[ "\[InvisibleSpace]6
+        \[InvisibleSpace]" ] :   "\[InvisibleSpace]{0, 0, 0, 0, 0, 0, 0, 0, 
+          0, 0, 0, 0, 0, 0, 0}\),
+      SequenceForm[ 
+      "c[ ", 6, " ] :   ", {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0}],
+      Editable->False]], "Print"],
+
+Cell[BoxData[
+    InterpretationBox[
+      \("c[ "\[InvisibleSpace]7
+        \[InvisibleSpace]" ] :   "\[InvisibleSpace]{0, 0, 0, 0, 0, 0, 0, 0, 
+          0, 0, 0, 0, 0, 0, 0}\),
+      SequenceForm[ 
+      "c[ ", 7, " ] :   ", {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0}],
+      Editable->False]], "Print"],
+
+Cell[BoxData[
+    InterpretationBox[
+      \("c[ "\[InvisibleSpace]8
+        \[InvisibleSpace]" ] :   "\[InvisibleSpace]{0, 0, 0, 0, 0, 0, 0, 0, 
+          0, 0, 0, 0, 0, 0, 0}\),
+      SequenceForm[ 
+      "c[ ", 8, " ] :   ", {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0}],
+      Editable->False]], "Print"],
+
+Cell[BoxData[
+    InterpretationBox[
+      \("c[ "\[InvisibleSpace]9
+        \[InvisibleSpace]" ] :   "\[InvisibleSpace]{0, 0, 0, 0, 0, 0, 0, 0, 
+          0, 0, 0, 0, 0, 0, 0}\),
+      SequenceForm[ 
+      "c[ ", 9, " ] :   ", {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0}],
+      Editable->False]], "Print"],
+
+Cell[BoxData[
+    InterpretationBox[
+      \("c[ "\[InvisibleSpace]10
+        \[InvisibleSpace]" ] :   "\[InvisibleSpace]{0, 0, 0, 0, 0, 0, 0, 0, 
+          0, 0, 0, 0, 0, 0, 0}\),
+      SequenceForm[ 
+      "c[ ", 10, " ] :   ", {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0}],
+      Editable->False]], "Print"],
+
+Cell[BoxData[
+    InterpretationBox[
+      \("c[ "\[InvisibleSpace]11
+        \[InvisibleSpace]" ] :   "\[InvisibleSpace]{0, 0, 0, 0, 0, 0, 0, 0, 
+          0, 0, 0, 0, 0, 0, 0}\),
+      SequenceForm[ 
+      "c[ ", 11, " ] :   ", {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0}],
+      Editable->False]], "Print"],
+
+Cell[BoxData[
+    InterpretationBox[
+      \("c[ "\[InvisibleSpace]12
+        \[InvisibleSpace]" ] :   "\[InvisibleSpace]{0, 0, 0, 0, 0, 0, 0, 0, 
+          0, 0, 0, 0, 0, 0, 0}\),
+      SequenceForm[ 
+      "c[ ", 12, " ] :   ", {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0}],
+      Editable->False]], "Print"],
+
+Cell[BoxData[
+    InterpretationBox[
+      \("c[ "\[InvisibleSpace]13
+        \[InvisibleSpace]" ] :   "\[InvisibleSpace]{0, 0, 0, 0, 0, 0, 0, 0, 
+          0, 0, 0, 0, 0, 0, 0}\),
+      SequenceForm[ 
+      "c[ ", 13, " ] :   ", {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0}],
+      Editable->False]], "Print"],
+
+Cell[BoxData[
+    InterpretationBox[
+      \("c[ "\[InvisibleSpace]14
+        \[InvisibleSpace]" ] :   "\[InvisibleSpace]{0, 0, 0, 0, 0, 0, 0, 0, 
+          0, 0, 0, 0, 0, 0, 0}\),
+      SequenceForm[ 
+      "c[ ", 14, " ] :   ", {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0}],
+      Editable->False]], "Print"],
+
+Cell[BoxData[
+    InterpretationBox[
+      \("c[ "\[InvisibleSpace]15
+        \[InvisibleSpace]" ] :   "\[InvisibleSpace]{0, 0, 0, 0, 0, 0, 0, 0, 
+          0, 0, 0, 0, 0, 0, 0}\),
+      SequenceForm[ 
+      "c[ ", 15, " ] :   ", {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0}],
+      Editable->False]], "Print"],
+
+Cell[BoxData[
+    InterpretationBox[
+      \("c[ "\[InvisibleSpace]16
+        \[InvisibleSpace]" ] :   "\[InvisibleSpace]{0, 0, 0, 0, 0, 0, 0, 0, 
+          0, 0, 0, 0, 0, 0, 0}\),
+      SequenceForm[ 
+      "c[ ", 16, " ] :   ", {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0}],
+      Editable->False]], "Print"],
+
+Cell[BoxData[
+    InterpretationBox[
+      \("c[ "\[InvisibleSpace]17
+        \[InvisibleSpace]" ] :   "\[InvisibleSpace]{0, 0, 0, 0, 0, 0, 0, 0, 
+          0, 0, 0, 0, 0, 0, 0}\),
+      SequenceForm[ 
+      "c[ ", 17, " ] :   ", {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0}],
+      Editable->False]], "Print"],
+
+Cell[BoxData[
+    InterpretationBox[
+      \("c[ "\[InvisibleSpace]18
+        \[InvisibleSpace]" ] :   "\[InvisibleSpace]{16, 20, 0, 0, 0, 0, 
+          \(-2\), 0, 0, 8, 10, 0, 0, 4, 0}\),
+      SequenceForm[ 
+      "c[ ", 18, " ] :   ", {16, 20, 0, 0, 0, 0, -2, 0, 0, 8, 10, 0, 0, 4, 
+        0}],
+      Editable->False]], "Print"],
+
+Cell[BoxData[
+    InterpretationBox[
+      \("c[ "\[InvisibleSpace]19
+        \[InvisibleSpace]" ] :   "\[InvisibleSpace]{16, 20, 0, 0, 0, \(-8\), 
+          \(-2\), 0, 0, 8, 10, 0, 0, \(-4\), \(-4\)}\),
+      SequenceForm[ 
+      "c[ ", 19, " ] :   ", {16, 20, 0, 0, 0, -8, -2, 0, 0, 8, 10, 0, 
+        0, -4, -4}],
+      Editable->False]], "Print"],
+
+Cell[BoxData[
+    InterpretationBox[
+      \("c[ "\[InvisibleSpace]20
+        \[InvisibleSpace]" ] :   "\[InvisibleSpace]{64, 32, 48, 0, 0, 
+          \(-16\), \(-8\), 48, 0, 32, \(-8\), 0, 0, 0, \(-8\)}\),
+      SequenceForm[ 
+      "c[ ", 20, " ] :   ", {64, 32, 48, 0, 0, -16, -8, 48, 0, 32, -8, 0, 0, 
+        0, -8}],
+      Editable->False]], "Print"],
+
+Cell[BoxData[
+    InterpretationBox[
+      \("c[ "\[InvisibleSpace]1
+        \[InvisibleSpace]" ] :   "\[InvisibleSpace]{0, 0, 0, 0, 0, 0, 0, 0, 
+          0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+          0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+          0, 0, 0, 0, 0, 0, 0, 0, 0, 0}\),
+      SequenceForm[ 
+      "c[ ", 1, " ] :   ", {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+        0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+        0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+        0}],
+      Editable->False]], "Print"],
+
+Cell[BoxData[
+    InterpretationBox[
+      \("c[ "\[InvisibleSpace]2
+        \[InvisibleSpace]" ] :   "\[InvisibleSpace]{0, 0, 0, 0, 0, 0, 0, 0, 
+          0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+          0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+          0, 0, 0, 0, 0, 0, 0, 0, 0, 0}\),
+      SequenceForm[ 
+      "c[ ", 2, " ] :   ", {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+        0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+        0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+        0}],
+      Editable->False]], "Print"],
+
+Cell[BoxData[
+    InterpretationBox[
+      \("c[ "\[InvisibleSpace]3
+        \[InvisibleSpace]" ] :   "\[InvisibleSpace]{0, 0, 0, 0, 0, 0, 0, 0, 
+          0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+          0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+          0, 0, 0, 0, 0, 0, 0, 0, 0, 0}\),
+      SequenceForm[ 
+      "c[ ", 3, " ] :   ", {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+        0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+        0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+        0}],
+      Editable->False]], "Print"],
+
+Cell[BoxData[
+    InterpretationBox[
+      \("c[ "\[InvisibleSpace]4
+        \[InvisibleSpace]" ] :   "\[InvisibleSpace]{0, 0, 2, 0, 0, 0, 0, 0, 
+          \(-2\), \(-2\), 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 
+          0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 1, 1, 0, 0, 
+          \(-\(1\/2\)\), 0, \(-\(1\/4\)\), 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0}
+          \),
+      SequenceForm[ 
+      "c[ ", 4, " ] :   ", {0, 0, 2, 0, 0, 0, 0, 0, -2, -2, 0, 0, 0, 0, 0, 0, 
+        0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+        0, 0, 1, 0, 0, 1, 1, 0, 0, 
+        Rational[ -1, 2], 0, 
+        Rational[ -1, 4], 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0}],
+      Editable->False]], "Print"],
+
+Cell[BoxData[
+    InterpretationBox[
+      \("c[ "\[InvisibleSpace]5
+        \[InvisibleSpace]" ] :   "\[InvisibleSpace]{0, 0, 0, 0, 0, 0, 0, 0, 
+          0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+          0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+          0, 0, 0, 0, 0, 0, 0, 0, 0, 0}\),
+      SequenceForm[ 
+      "c[ ", 5, " ] :   ", {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+        0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+        0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+        0}],
+      Editable->False]], "Print"],
+
+Cell[BoxData[
+    InterpretationBox[
+      \("c[ "\[InvisibleSpace]6
+        \[InvisibleSpace]" ] :   "\[InvisibleSpace]{0, 0, 0, 0, 0, 0, 0, 0, 
+          0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+          0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+          0, 0, 0, 0, 0, 0, 0, 0, 0, 0}\),
+      SequenceForm[ 
+      "c[ ", 6, " ] :   ", {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+        0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+        0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+        0}],
+      Editable->False]], "Print"],
+
+Cell[BoxData[
+    InterpretationBox[
+      \("c[ "\[InvisibleSpace]7
+        \[InvisibleSpace]" ] :   "\[InvisibleSpace]{0, 0, 8, \(-4\), 0, 0, 0, 
+          0, \(-4\), \(-4\), 0, 0, 0, 0, 0, 0, 4, 4, 0, 0, 0, 0, 0, 0, 0, 0, 
+          0, 2, 2, \(-2\), 0, 0, \(-2\), 0, 0, \(-1\), 0, 1, 0, 0, 0, 0, 0, 
+          0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0}\),
+      SequenceForm[ 
+      "c[ ", 7, " ] :   ", {0, 0, 8, -4, 0, 0, 0, 0, -4, -4, 0, 0, 0, 0, 0, 
+        0, 4, 4, 0, 0, 0, 0, 0, 0, 0, 0, 0, 2, 2, -2, 0, 0, -2, 0, 0, -1, 0, 
+        1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+        0, 0}],
+      Editable->False]], "Print"],
+
+Cell[BoxData[
+    InterpretationBox[
+      \("c[ "\[InvisibleSpace]8
+        \[InvisibleSpace]" ] :   "\[InvisibleSpace]{0, 0, \(-16\), 8, 0, 0, 
+          0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+          \(-4\), 0, 8, 0, 0, 0, \(-4\), 0, 0, 0, 0, 0, \(-2\), 1, 0, 0, 0, 
+          0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0}\),
+      SequenceForm[ 
+      "c[ ", 8, " ] :   ", {0, 0, -16, 8, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+        0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, -4, 0, 8, 0, 0, 0, -4, 0, 0, 0, 0, 
+        0, -2, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+        0}],
+      Editable->False]], "Print"],
+
+Cell[BoxData[
+    InterpretationBox[
+      \("c[ "\[InvisibleSpace]9
+        \[InvisibleSpace]" ] :   "\[InvisibleSpace]{0, 0, 0, 0, 0, 0, 0, 0, 
+          0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+          0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+          0, 0, 0, 0, 0, 0, 0, 0, 0, 0}\),
+      SequenceForm[ 
+      "c[ ", 9, " ] :   ", {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+        0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+        0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+        0}],
+      Editable->False]], "Print"],
+
+Cell[BoxData[
+    InterpretationBox[
+      \("c[ "\[InvisibleSpace]10
+        \[InvisibleSpace]" ] :   "\[InvisibleSpace]{0, 0, 0, 0, 0, 0, 0, 0, 
+          0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+          0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+          0, 0, 0, 0, 0, 0, 0, 0, 0, 0}\),
+      SequenceForm[ 
+      "c[ ", 10, " ] :   ", {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+        0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+        0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+        0}],
+      Editable->False]], "Print"],
+
+Cell[BoxData[
+    InterpretationBox[
+      \("c[ "\[InvisibleSpace]11
+        \[InvisibleSpace]" ] :   "\[InvisibleSpace]{0, 0, 0, 0, 0, 0, 0, 0, 
+          0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+          0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+          0, 0, 0, 0, 0, 0, 0, 0, 0, 0}\),
+      SequenceForm[ 
+      "c[ ", 11, " ] :   ", {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+        0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+        0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+        0}],
+      Editable->False]], "Print"],
+
+Cell[BoxData[
+    InterpretationBox[
+      \("c[ "\[InvisibleSpace]12
+        \[InvisibleSpace]" ] :   "\[InvisibleSpace]{0, 0, \(-32\), 0, 0, 0, 
+          0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+          0, 16, 0, 0, 0, 0, 0, 0, 0, 0, 0, \(-4\), 0, 0, 0, 0, 0, 0, 0, 0, 
+          8, 0, 0, \(-4\), 0, 1, 0, 0, 0, 0, 0, 0, 0, 0}\),
+      SequenceForm[ 
+      "c[ ", 12, " ] :   ", {0, 0, -32, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+        0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 16, 0, 0, 0, 0, 0, 0, 0, 0, 
+        0, -4, 0, 0, 0, 0, 0, 0, 0, 0, 8, 0, 0, -4, 0, 1, 0, 0, 0, 0, 0, 0, 
+        0, 0}],
+      Editable->False]], "Print"],
+
+Cell[BoxData[
+    InterpretationBox[
+      \("c[ "\[InvisibleSpace]13
+        \[InvisibleSpace]" ] :   "\[InvisibleSpace]{0, 0, 0, 0, 0, 0, 0, 0, 
+          0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+          0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+          0, 0, 0, 0, 0, 0, 0, 0, 0, 0}\),
+      SequenceForm[ 
+      "c[ ", 13, " ] :   ", {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+        0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+        0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+        0}],
+      Editable->False]], "Print"],
+
+Cell[BoxData[
+    InterpretationBox[
+      \("c[ "\[InvisibleSpace]14
+        \[InvisibleSpace]" ] :   "\[InvisibleSpace]{0, 0, 0, 0, 0, 0, 0, 0, 
+          0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+          0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+          0, 0, 0, 0, 0, 0, 0, 0, 0, 0}\),
+      SequenceForm[ 
+      "c[ ", 14, " ] :   ", {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+        0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+        0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+        0}],
+      Editable->False]], "Print"],
+
+Cell[BoxData[
+    InterpretationBox[
+      \("c[ "\[InvisibleSpace]15
+        \[InvisibleSpace]" ] :   "\[InvisibleSpace]{0, 0, 0, 0, 0, 0, 0, 0, 
+          0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+          0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+          0, 0, 0, 0, 0, 0, 0, 0, 0, 0}\),
+      SequenceForm[ 
+      "c[ ", 15, " ] :   ", {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+        0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+        0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+        0}],
+      Editable->False]], "Print"],
+
+Cell[BoxData[
+    InterpretationBox[
+      \("c[ "\[InvisibleSpace]16
+        \[InvisibleSpace]" ] :   "\[InvisibleSpace]{0, 0, 0, 0, 0, 0, 0, 0, 
+          0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+          0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+          0, 0, 0, 0, 0, 0, 0, 0, 0, 0}\),
+      SequenceForm[ 
+      "c[ ", 16, " ] :   ", {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+        0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+        0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+        0}],
+      Editable->False]], "Print"],
+
+Cell[BoxData[
+    InterpretationBox[
+      \("c[ "\[InvisibleSpace]17
+        \[InvisibleSpace]" ] :   "\[InvisibleSpace]{\(-4\), 0, 0, 8, 4, 0, 0, 
+          0, 0, 4, 4, 0, 0, 0, \(-4\), 0, \(-4\), \(-8\), 0, \(-2\), 0, 0, 
+          \(-2\), 0, \(-2\), 0, 0, \(-4\), \(-2\), 0, \(-2\), 0, 2, 0, 0, 2, 
+          2, 0, 0, 0, 0, 6, \(-2\), 0, 0, 2, 0, 2, \(-3\), 0, \(-\(1\/2\)\), 
+          0, 0, 0, 2, 0, \(-\(1\/2\)\), 0, 2, 0, \(-\(1\/2\)\), 1}\),
+      SequenceForm[ 
+      "c[ ", 17, " ] :   ", {-4, 0, 0, 8, 4, 0, 0, 0, 0, 4, 4, 0, 0, 0, -4, 
+        0, -4, -8, 0, -2, 0, 0, -2, 0, -2, 0, 0, -4, -2, 0, -2, 0, 2, 0, 0, 
+        2, 2, 0, 0, 0, 0, 6, -2, 0, 0, 2, 0, 2, -3, 0, 
+        Rational[ -1, 2], 0, 0, 0, 2, 0, 
+        Rational[ -1, 2], 0, 2, 0, 
+        Rational[ -1, 2], 1}],
+      Editable->False]], "Print"],
+
+Cell[BoxData[
+    InterpretationBox[
+      \("c[ "\[InvisibleSpace]18
+        \[InvisibleSpace]" ] :   "\[InvisibleSpace]{\(-16\), \(-8\), 0, 0, 0, 
+          0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+          0, 0, 0, 2, 4, 0, 0, 2, 0, 0, 0, 0, 0, 0, \(-8\), \(-10\), 0, 0, 0, 
+          2, 8, 0, 0, 0, 0, \(-2\), 0, 0, 0, 0, 0, 0, 0, 0, 0}\),
+      SequenceForm[ 
+      "c[ ", 18, " ] :   ", {-16, -8, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+        0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 2, 4, 0, 0, 2, 0, 0, 0, 
+        0, 0, 0, -8, -10, 0, 0, 0, 2, 8, 0, 0, 0, 0, -2, 0, 0, 0, 0, 0, 0, 0, 
+        0, 0}],
+      Editable->False]], "Print"],
+
+Cell[BoxData[
+    InterpretationBox[
+      \("c[ "\[InvisibleSpace]19
+        \[InvisibleSpace]" ] :   "\[InvisibleSpace]{\(-16\), \(-8\), 0, 0, 0, 
+          0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+          0, 0, 0, 2, 4, 0, 0, 2, 0, 0, 0, 0, 0, 0, \(-8\), \(-10\), 0, 0, 0, 
+          2, 8, 0, 0, 0, 0, \(-2\), 0, 0, 0, 0, 0, 0, 0, 0, 0}\),
+      SequenceForm[ 
+      "c[ ", 19, " ] :   ", {-16, -8, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+        0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 2, 4, 0, 0, 2, 0, 0, 0, 
+        0, 0, 0, -8, -10, 0, 0, 0, 2, 8, 0, 0, 0, 0, -2, 0, 0, 0, 0, 0, 0, 0, 
+        0, 0}],
+      Editable->False]], "Print"],
+
+Cell[BoxData[
+    InterpretationBox[
+      \("c[ "\[InvisibleSpace]20
+        \[InvisibleSpace]" ] :   "\[InvisibleSpace]{32, 16, 0, 0, 0, 0, 0, 
+          24, 0, 0, \(-48\), \(-48\), 0, 0, \(-48\), 0, 0, 0, 24, 48, 0, 0, 
+          0, 0, 0, 0, 0, 0, 0, 0, \(-4\), \(-8\), 0, 0, \(-4\), 0, 0, 0, 0, 
+          0, 0, 16, 20, 0, 0, 0, \(-4\), \(-16\), 0, 0, 0, 0, 4, 0, 0, 0, 0, 
+          0, 0, \(-12\), 0, 0}\),
+      SequenceForm[ 
+      "c[ ", 20, " ] :   ", {32, 16, 0, 0, 0, 0, 0, 24, 0, 0, -48, -48, 0, 
+        0, -48, 0, 0, 0, 24, 48, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, -4, -8, 0, 
+        0, -4, 0, 0, 0, 0, 0, 0, 16, 20, 0, 0, 0, -4, -16, 0, 0, 0, 0, 4, 0, 
+        0, 0, 0, 0, 0, -12, 0, 0}],
+      Editable->False]], "Print"],
+
+Cell[BoxData[
+    InterpretationBox[
+      \("e[ "\[InvisibleSpace]1
+        \[InvisibleSpace]" ] :   "\[InvisibleSpace]{1, 0, 0, 0, 0, 0, 0, 0, 
+          0, 0, 0, 0, 0, 0, 0}\),
+      SequenceForm[ 
+      "e[ ", 1, " ] :   ", {1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0}],
+      Editable->False]], "Print"],
+
+Cell[BoxData[
+    InterpretationBox[
+      \("e[ "\[InvisibleSpace]2
+        \[InvisibleSpace]" ] :   "\[InvisibleSpace]{0, 1, 0, 0, 0, 0, 0, 0, 
+          0, 0, 0, 0, 0, 0, 0}\),
+      SequenceForm[ 
+      "e[ ", 2, " ] :   ", {0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0}],
+      Editable->False]], "Print"],
+
+Cell[BoxData[
+    InterpretationBox[
+      \("e[ "\[InvisibleSpace]3
+        \[InvisibleSpace]" ] :   "\[InvisibleSpace]{0, 0, 1, 0, 0, 0, 0, 0, 
+          0, 0, 0, 0, 0, 0, 0}\),
+      SequenceForm[ 
+      "e[ ", 3, " ] :   ", {0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0}],
+      Editable->False]], "Print"],
+
+Cell[BoxData[
+    InterpretationBox[
+      \("e[ "\[InvisibleSpace]4
+        \[InvisibleSpace]" ] :   "\[InvisibleSpace]{0, 0, 0, 1, 0, 0, 0, 0, 
+          0, 0, 0, 0, 0, 0, 0}\),
+      SequenceForm[ 
+      "e[ ", 4, " ] :   ", {0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0}],
+      Editable->False]], "Print"],
+
+Cell[BoxData[
+    InterpretationBox[
+      \("e[ "\[InvisibleSpace]5
+        \[InvisibleSpace]" ] :   "\[InvisibleSpace]{0, 0, 0, 0, 1, 0, 0, 0, 
+          0, 0, 0, 0, 0, 0, 0}\),
+      SequenceForm[ 
+      "e[ ", 5, " ] :   ", {0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0}],
+      Editable->False]], "Print"],
+
+Cell[BoxData[
+    InterpretationBox[
+      \("e[ "\[InvisibleSpace]6
+        \[InvisibleSpace]" ] :   "\[InvisibleSpace]{0, 0, 0, 0, 0, 0, 0, 0, 
+          0, 0, 0, 0, 0, 0, 0}\),
+      SequenceForm[ 
+      "e[ ", 6, " ] :   ", {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0}],
+      Editable->False]], "Print"],
+
+Cell[BoxData[
+    InterpretationBox[
+      \("e[ "\[InvisibleSpace]7
+        \[InvisibleSpace]" ] :   "\[InvisibleSpace]{0, 0, 0, 0, 0, 0, 1, 0, 
+          0, 0, 0, 0, 0, 0, 0}\),
+      SequenceForm[ 
+      "e[ ", 7, " ] :   ", {0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0}],
+      Editable->False]], "Print"],
+
+Cell[BoxData[
+    InterpretationBox[
+      \("e[ "\[InvisibleSpace]8
+        \[InvisibleSpace]" ] :   "\[InvisibleSpace]{0, 0, 0, 0, 0, 0, 0, 1, 
+          0, 0, 0, 0, 0, 0, 0}\),
+      SequenceForm[ 
+      "e[ ", 8, " ] :   ", {0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0}],
+      Editable->False]], "Print"],
+
+Cell[BoxData[
+    InterpretationBox[
+      \("e[ "\[InvisibleSpace]9
+        \[InvisibleSpace]" ] :   "\[InvisibleSpace]{0, 0, 0, 0, 0, 0, 0, 0, 
+          1, 0, 0, 0, 0, 0, 0}\),
+      SequenceForm[ 
+      "e[ ", 9, " ] :   ", {0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0}],
+      Editable->False]], "Print"],
+
+Cell[BoxData[
+    InterpretationBox[
+      \("e[ "\[InvisibleSpace]10
+        \[InvisibleSpace]" ] :   "\[InvisibleSpace]{0, 0, 0, 0, 0, 0, 0, 0, 
+          0, 1, 0, 0, 0, 0, 0}\),
+      SequenceForm[ 
+      "e[ ", 10, " ] :   ", {0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0}],
+      Editable->False]], "Print"],
+
+Cell[BoxData[
+    InterpretationBox[
+      \("e[ "\[InvisibleSpace]11
+        \[InvisibleSpace]" ] :   "\[InvisibleSpace]{0, 0, 0, 0, 0, 0, 0, 0, 
+          0, 0, 1, 0, 0, 0, 0}\),
+      SequenceForm[ 
+      "e[ ", 11, " ] :   ", {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0}],
+      Editable->False]], "Print"],
+
+Cell[BoxData[
+    InterpretationBox[
+      \("e[ "\[InvisibleSpace]12
+        \[InvisibleSpace]" ] :   "\[InvisibleSpace]{0, 0, 0, 0, 0, 0, 0, 0, 
+          0, 0, 0, 0, 0, 0, 0}\),
+      SequenceForm[ 
+      "e[ ", 12, " ] :   ", {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0}],
+      Editable->False]], "Print"],
+
+Cell[BoxData[
+    InterpretationBox[
+      \("e[ "\[InvisibleSpace]13
+        \[InvisibleSpace]" ] :   "\[InvisibleSpace]{0, 0, 0, 0, 0, 0, 0, 0, 
+          0, 0, 0, 0, 1, 0, 0}\),
+      SequenceForm[ 
+      "e[ ", 13, " ] :   ", {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0}],
+      Editable->False]], "Print"],
+
+Cell[BoxData[
+    InterpretationBox[
+      \("e[ "\[InvisibleSpace]14
+        \[InvisibleSpace]" ] :   "\[InvisibleSpace]{0, 0, 0, 0, 0, 0, 0, 0, 
+          0, 0, 0, 0, 0, 1, 0}\),
+      SequenceForm[ 
+      "e[ ", 14, " ] :   ", {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0}],
+      Editable->False]], "Print"],
+
+Cell[BoxData[
+    InterpretationBox[
+      \("e[ "\[InvisibleSpace]15
+        \[InvisibleSpace]" ] :   "\[InvisibleSpace]{0, 0, 0, 0, 0, 0, 0, 0, 
+          0, 0, 0, 0, 0, 0, 0}\),
+      SequenceForm[ 
+      "e[ ", 15, " ] :   ", {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0}],
+      Editable->False]], "Print"],
+
+Cell[BoxData[
+    InterpretationBox[
+      \("e[ "\[InvisibleSpace]1
+        \[InvisibleSpace]" ] :   "\[InvisibleSpace]{0, 0, \(-\(1\/2\)\), 0, 
+          0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+          0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, \(-\(1\/4\)\), 0, 0, 
+          0, 0, 0, 0, 1\/8, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0}\),
+      SequenceForm[ "e[ ", 1, " ] :   ", {0, 0, 
+        Rational[ -1, 2], 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+        0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+        Rational[ -1, 4], 0, 0, 0, 0, 0, 0, 
+        Rational[ 1, 8], 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0}],
+      Editable->False]], "Print"],
+
+Cell[BoxData[
+    InterpretationBox[
+      \("e[ "\[InvisibleSpace]2
+        \[InvisibleSpace]" ] :   "\[InvisibleSpace]{\(-1\), 0, 0, 0, 0, 0, 0, 
+          0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+          0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, \(-\(1\/4\)\), 0, 0, 0, 0, 
+          1\/4, 0, 0, 0, 0, 0, 0, 1\/4, 0, \(-\(1\/16\)\), 0, 0, 0, 0, 0}\),
+      SequenceForm[ 
+      "e[ ", 2, " ] :   ", {-1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+        0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+        0, 0, 0, 
+        Rational[ -1, 4], 0, 0, 0, 0, 
+        Rational[ 1, 4], 0, 0, 0, 0, 0, 0, 
+        Rational[ 1, 4], 0, 
+        Rational[ -1, 16], 0, 0, 0, 0, 0}],
+      Editable->False]], "Print"],
+
+Cell[BoxData[
+    InterpretationBox[
+      \("e[ "\[InvisibleSpace]3
+        \[InvisibleSpace]" ] :   "\[InvisibleSpace]{0, 0, 0, 1, 1\/2, 
+          \(-\(1\/2\)\), 0, 0, 0, 1\/2, 0, \(-\(1\/2\)\), 0, 0, 
+          \(-\(1\/2\)\), 0, \(-\(1\/2\)\), \(-1\), 0, 0, 0, 0, 0, 1\/4, 
+          \(-\(1\/4\)\), 0, 0, \(-\(1\/2\)\), \(-\(1\/4\)\), 0, 
+          \(-\(1\/4\)\), 0, 1\/4, 0, 0, 1\/4, 1\/4, 0, 0, 0, 0, 1, 0, 0, 0, 
+          1\/4, 0, 0, \(-\(1\/2\)\), 0, \(-\(1\/16\)\), 0, 0, 0, 0, 0, 0, 0, 
+          1\/4, 0, \(-\(1\/16\)\), 0}\),
+      SequenceForm[ "e[ ", 3, " ] :   ", {0, 0, 0, 1, 
+        Rational[ 1, 2], 
+        Rational[ -1, 2], 0, 0, 0, 
+        Rational[ 1, 2], 0, 
+        Rational[ -1, 2], 0, 0, 
+        Rational[ -1, 2], 0, 
+        Rational[ -1, 2], -1, 0, 0, 0, 0, 0, 
+        Rational[ 1, 4], 
+        Rational[ -1, 4], 0, 0, 
+        Rational[ -1, 2], 
+        Rational[ -1, 4], 0, 
+        Rational[ -1, 4], 0, 
+        Rational[ 1, 4], 0, 0, 
+        Rational[ 1, 4], 
+        Rational[ 1, 4], 0, 0, 0, 0, 1, 0, 0, 0, 
+        Rational[ 1, 4], 0, 0, 
+        Rational[ -1, 2], 0, 
+        Rational[ -1, 16], 0, 0, 0, 0, 0, 0, 0, 
+        Rational[ 1, 4], 0, 
+        Rational[ -1, 16], 0}],
+      Editable->False]], "Print"],
+
+Cell[BoxData[
+    InterpretationBox[
+      \("e[ "\[InvisibleSpace]4
+        \[InvisibleSpace]" ] :   "\[InvisibleSpace]{0, 0, 0, 0, 0, 0, 0, 0, 
+          0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+          0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, \(-\(1\/4\)\), 0, 0, 0, 
+          0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0}\),
+      SequenceForm[ 
+      "e[ ", 4, " ] :   ", {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+        0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+        0, 0, 0, 0, 0, 
+        Rational[ -1, 4], 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+        0}],
+      Editable->False]], "Print"],
+
+Cell[BoxData[
+    InterpretationBox[
+      \("e[ "\[InvisibleSpace]5
+        \[InvisibleSpace]" ] :   "\[InvisibleSpace]{0, 0, 0, 0, 0, 0, 0, 0, 
+          0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+          \(-\(1\/4\)\), 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+          \(-\(1\/4\)\), 0, 0, 0, 0, 1\/16, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0}
+          \),
+      SequenceForm[ 
+      "e[ ", 5, " ] :   ", {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+        0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+        Rational[ -1, 4], 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+        Rational[ -1, 4], 0, 0, 0, 0, 
+        Rational[ 1, 16], 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0}],
+      Editable->False]], "Print"],
+
+Cell[BoxData[
+    InterpretationBox[
+      \("e[ "\[InvisibleSpace]6
+        \[InvisibleSpace]" ] :   "\[InvisibleSpace]{0, 0, 0, 0, 0, 0, 0, 0, 
+          0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+          0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+          0, 0, 0, 0, 0, 0, 0, 0, 0, 0}\),
+      SequenceForm[ 
+      "e[ ", 6, " ] :   ", {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+        0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+        0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+        0}],
+      Editable->False]], "Print"],
+
+Cell[BoxData[
+    InterpretationBox[
+      \("e[ "\[InvisibleSpace]7
+        \[InvisibleSpace]" ] :   "\[InvisibleSpace]{0, 0, 0, 0, 0, 0, 0, 0, 
+          0, \(-1\), 0, 0, 0, \(-1\), 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+          0, 1\/2, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1\/2, 1\/2, 
+          0, 0, 0, 0, \(-\(1\/8\)\), 0, 0, 0, 0, 0, 0, 1\/4, 0, 0, 0, 0}\),
+      SequenceForm[ 
+      "e[ ", 7, " ] :   ", {0, 0, 0, 0, 0, 0, 0, 0, 0, -1, 0, 0, 0, -1, 0, 0, 
+        0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+        Rational[ 1, 2], 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+        Rational[ 1, 2], 
+        Rational[ 1, 2], 0, 0, 0, 0, 
+        Rational[ -1, 8], 0, 0, 0, 0, 0, 0, 
+        Rational[ 1, 4], 0, 0, 0, 0}],
+      Editable->False]], "Print"],
+
+Cell[BoxData[
+    InterpretationBox[
+      \("e[ "\[InvisibleSpace]8
+        \[InvisibleSpace]" ] :   "\[InvisibleSpace]{0, 0, 0, 1, 0, 0, 0, 0, 
+          0, 1\/2, 0, 0, 0, 0, \(-1\), 0, \(-\(1\/2\)\), \(-1\), 0, 0, 0, 0, 
+          0, 0, 0, 0, 0, \(-\(1\/2\)\), \(-\(1\/4\)\), 0, \(-\(1\/4\)\), 0, 
+          1\/4, 0, 0, 1\/4, 1\/4, 0, 0, 0, 0, 1, 0, 0, 0, 1\/4, 0, 0, 
+          \(-\(1\/2\)\), 0, \(-\(1\/16\)\), 0, 0, 0, 0, 0, 0, 0, 1\/4, 0, 
+          \(-\(1\/16\)\), 0}\),
+      SequenceForm[ "e[ ", 8, " ] :   ", {0, 0, 0, 1, 0, 0, 0, 0, 0, 
+        Rational[ 1, 2], 0, 0, 0, 0, -1, 0, 
+        Rational[ -1, 2], -1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+        Rational[ -1, 2], 
+        Rational[ -1, 4], 0, 
+        Rational[ -1, 4], 0, 
+        Rational[ 1, 4], 0, 0, 
+        Rational[ 1, 4], 
+        Rational[ 1, 4], 0, 0, 0, 0, 1, 0, 0, 0, 
+        Rational[ 1, 4], 0, 0, 
+        Rational[ -1, 2], 0, 
+        Rational[ -1, 16], 0, 0, 0, 0, 0, 0, 0, 
+        Rational[ 1, 4], 0, 
+        Rational[ -1, 16], 0}],
+      Editable->False]], "Print"],
+
+Cell[BoxData[
+    InterpretationBox[
+      \("e[ "\[InvisibleSpace]9
+        \[InvisibleSpace]" ] :   "\[InvisibleSpace]{0, 0, 0, 0, 0, 0, 0, 0, 
+          0, 1\/2, 0, 0, 0, 0, 0, 0, \(-\(1\/2\)\), 0, 0, 0, 0, 0, 0, 0, 0, 
+          0, 0, 0, \(-\(1\/4\)\), 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+          0, 0, \(-\(1\/4\)\), 0, 0, 0, 0, 1\/16, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+          0, 0}\),
+      SequenceForm[ "e[ ", 9, " ] :   ", {0, 0, 0, 0, 0, 0, 0, 0, 0, 
+        Rational[ 1, 2], 0, 0, 0, 0, 0, 0, 
+        Rational[ -1, 2], 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+        Rational[ -1, 4], 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+        Rational[ -1, 4], 0, 0, 0, 0, 
+        Rational[ 1, 16], 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0}],
+      Editable->False]], "Print"],
+
+Cell[BoxData[
+    InterpretationBox[
+      \("e[ "\[InvisibleSpace]10
+        \[InvisibleSpace]" ] :   "\[InvisibleSpace]{0, 0, 0, \(-\(1\/2\)\), 
+          0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+          0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, \(-\(1\/2\)\), 0, 0, 
+          0, 0, 0, 0, 1\/4, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0}\),
+      SequenceForm[ "e[ ", 10, " ] :   ", {0, 0, 0, 
+        Rational[ -1, 2], 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+        0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+        Rational[ -1, 2], 0, 0, 0, 0, 0, 0, 
+        Rational[ 1, 4], 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0}],
+      Editable->False]], "Print"],
+
+Cell[BoxData[
+    InterpretationBox[
+      \("e[ "\[InvisibleSpace]11
+        \[InvisibleSpace]" ] :   "\[InvisibleSpace]{0, \(-1\), 0, 0, 0, 0, 0, 
+          0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+          0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, \(-\(1\/2\)\), 0, 0, 0, 0, 
+          1\/2, 0, 0, 0, 0, 0, 0, 0, 1\/4, \(-\(1\/8\)\), 0, 0, 0, 0, 0}\),
+      SequenceForm[ 
+      "e[ ", 11, " ] :   ", {0, -1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+        0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+        0, 0, 0, 
+        Rational[ -1, 2], 0, 0, 0, 0, 
+        Rational[ 1, 2], 0, 0, 0, 0, 0, 0, 0, 
+        Rational[ 1, 4], 
+        Rational[ -1, 8], 0, 0, 0, 0, 0}],
+      Editable->False]], "Print"],
+
+Cell[BoxData[
+    InterpretationBox[
+      \("e[ "\[InvisibleSpace]12
+        \[InvisibleSpace]" ] :   "\[InvisibleSpace]{0, 0, 0, 0, 0, 0, 0, 0, 
+          0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+          0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+          0, 0, 0, 0, 0, 0, 0, 0, 0, 0}\),
+      SequenceForm[ 
+      "e[ ", 12, " ] :   ", {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+        0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+        0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+        0}],
+      Editable->False]], "Print"],
+
+Cell[BoxData[
+    InterpretationBox[
+      \("e[ "\[InvisibleSpace]13
+        \[InvisibleSpace]" ] :   "\[InvisibleSpace]{0, 0, 0, 0, 0, 0, 0, 0, 
+          0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+          0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, \(-\(1\/2\)\), 0, 0, 0, 
+          0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0}\),
+      SequenceForm[ 
+      "e[ ", 13, " ] :   ", {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+        0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+        0, 0, 0, 0, 0, 
+        Rational[ -1, 2], 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+        0}],
+      Editable->False]], "Print"],
+
+Cell[BoxData[
+    InterpretationBox[
+      \("e[ "\[InvisibleSpace]14
+        \[InvisibleSpace]" ] :   "\[InvisibleSpace]{0, 0, 0, 0, 0, 0, 0, 0, 
+          0, \(-\(1\/2\)\), 0, 0, 0, 0, 0, 0, 1\/2, 0, 0, 0, 0, 0, 0, 0, 0, 
+          0, \(-\(1\/4\)\), 0, 1\/4, 0, 0, 0, \(-\(1\/4\)\), 0, 0, 0, 0, 0, 
+          0, 0, 0, 0, 0, 0, 0, \(-\(1\/4\)\), 0, 0, 0, 0, 1\/16, 0, 0, 0, 0, 
+          0, 0, 0, 0, 0, 0, 0}\),
+      SequenceForm[ "e[ ", 14, " ] :   ", {0, 0, 0, 0, 0, 0, 0, 0, 0, 
+        Rational[ -1, 2], 0, 0, 0, 0, 0, 0, 
+        Rational[ 1, 2], 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+        Rational[ -1, 4], 0, 
+        Rational[ 1, 4], 0, 0, 0, 
+        Rational[ -1, 4], 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+        Rational[ -1, 4], 0, 0, 0, 0, 
+        Rational[ 1, 16], 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0}],
+      Editable->False]], "Print"],
+
+Cell[BoxData[
+    InterpretationBox[
+      \("e[ "\[InvisibleSpace]15
+        \[InvisibleSpace]" ] :   "\[InvisibleSpace]{0, 0, 0, 0, 0, 0, 0, 0, 
+          0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+          0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+          0, 0, 0, 0, 0, 0, 0, 0, 0, 0}\),
+      SequenceForm[ 
+      "e[ ", 15, " ] :   ", {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+        0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+        0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+        0}],
+      Editable->False]], "Print"],
+
+Cell[BoxData[
+    \(General::"spell1" \( : \ \) 
+      "Possible spelling error: new symbol name \"\!\(tenso\)\" is similar to \
+existing symbol \"\!\(tens\)\"."\)], "Message"],
+
+Cell[BoxData[
+    InterpretationBox[
+      \("tenso[ "\[InvisibleSpace]18
+        \[InvisibleSpace]" ] : "\[InvisibleSpace]{0, 0, 0, 0, 0, 0, 0, 0, 0, 
+          0, 0, 0, 0, 0, 0, 4, 2, 8, 4, 0, 0, 0, 0, 0, 0, 0, 0, 0, \(-2\), 0, 
+          0, \(-2\), 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 2, 4, 1, 0, 2, 0, 
+          0, 0, 0, 0, 0, 0, 0, 0, 1, 2, 2, \(-2\), \(-4\), 0, \(-\(1\/2\)\), 
+          0, \(-2\), 0, \(-5\), \(-\(5\/2\)\), 5\/2, 1\/2, 0, 0, 0, 0}\),
+      SequenceForm[ 
+      "tenso[ ", 18, " ] : ", {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+        4, 2, 8, 4, 0, 0, 0, 0, 0, 0, 0, 0, 0, -2, 0, 0, -2, 0, 0, 0, 0, 0, 
+        0, 0, 0, 0, 1, 0, 0, 0, 2, 4, 1, 0, 2, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 
+        2, 2, -2, -4, 0, 
+        Rational[ -1, 2], 0, -2, 0, -5, 
+        Rational[ -5, 2], 
+        Rational[ 5, 2], 
+        Rational[ 1, 2], 0, 0, 0, 0}],
+      Editable->False]], "Print"],
+
+Cell[BoxData[
+    InterpretationBox[
+      \("tenso[ "\[InvisibleSpace]19
+        \[InvisibleSpace]" ] : "\[InvisibleSpace]{0, 0, 0, 0, 0, \(-8\), 0, 
+          0, 0, 0, 0, 0, 0, 0, \(-4\), 4, 2, 8, 4, 0, 0, 0, 0, 0, \(-4\), 0, 
+          0, 0, \(-2\), 0, 0, 2, 0, 0, 0, 0, 0, 0, 0, 0, 0, \(-1\), 0, 2, 0, 
+          2, 4, \(-1\), 0, 2, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 2, \(-2\), 
+          \(-4\), 0, 0, 0, \(-2\), 0, \(-5\), \(-\(5\/2\)\), 5\/2, 1\/2, 0, 
+          0, 0, 0}\),
+      SequenceForm[ 
+      "tenso[ ", 19, " ] : ", {0, 0, 0, 0, 0, -8, 0, 0, 0, 0, 0, 0, 0, 0, -4, 
+        4, 2, 8, 4, 0, 0, 0, 0, 0, -4, 0, 0, 0, -2, 0, 0, 2, 0, 0, 0, 0, 0, 
+        0, 0, 0, 0, -1, 0, 2, 0, 2, 4, -1, 0, 2, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+        1, 0, 2, -2, -4, 0, 0, 0, -2, 0, -5, 
+        Rational[ -5, 2], 
+        Rational[ 5, 2], 
+        Rational[ 1, 2], 0, 0, 0, 0}],
+      Editable->False]], "Print"],
+
+Cell[BoxData[
+    InterpretationBox[
+      \("tenso[ "\[InvisibleSpace]20
+        \[InvisibleSpace]" ] : "\[InvisibleSpace]{0, 0, 0, 0, 0, \(-16\), 0, 
+          0, 0, 0, 0, 0, 0, 0, \(-8\), 64, 8, 32, \(-80\), \(-24\), 24, 0, 
+          24, 0, \(-56\), \(-48\), \(-24\), 0, \(-8\), 24, 0, 48, 96, 24, 48, 
+          0, 0, 0, \(-12\), 12, 0, 0, 48, 28, 0, 20, \(-8\), \(-24\), 0, 
+          \(-4\), \(-24\), \(-24\), 0, 0, 0, 0, \(-48\), 24, 0, 4, \(-20\), 
+          \(-4\), \(-20\), 32, 0, 5, 0, 4, 0, \(-8\), 2, 1, 2, \(-24\), 
+          \(-12\), 6, 0}\),
+      SequenceForm[ 
+      "tenso[ ", 20, " ] : ", {0, 0, 0, 0, 0, -16, 0, 0, 0, 0, 0, 0, 0, 
+        0, -8, 64, 8, 32, -80, -24, 24, 0, 24, 0, -56, -48, -24, 0, -8, 24, 
+        0, 48, 96, 24, 48, 0, 0, 0, -12, 12, 0, 0, 48, 28, 0, 20, -8, -24, 
+        0, -4, -24, -24, 0, 0, 0, 0, -48, 24, 0, 4, -20, -4, -20, 32, 0, 5, 
+        0, 4, 0, -8, 2, 1, 2, -24, -12, 6, 0}],
+      Editable->False]], "Print"],
+
+Cell[BoxData[
+    \({\(-8\)\ c[19] - 16\ c[20], 0, \(-4\)\ c[19] - 8\ c[20]}\)], "Output"],
+
+Cell[BoxData[
+    \({e[1], e[2], e[3], e[4], e[5], \(-16\)\ e[19], e[6], e[7], e[8], e[9], 
+      e[10], 0, e[11], e[12], \(-8\)\ e[19]}\)], "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[{
+    \( (*\(\(******************************************************\)*\n\n\ 
+                IMPOSING\ THE\ WEYL\ WI\ AT\ THE\ CRITICAL\ POINT\n\nThe\ 
+                values\ of\ cr = 
+              \(0\ and\ f0 = 
+                \(\(2  cb/3\ are\ fixed\ by\ the\ compatibility\ of\ Diff\ &
+                      \)\ Weyl\ WI\nThe\ two\ Weyl\ WI\ impose\ 9\ conditions
+                    \ but\ introduce\ 2\ new\ param\ 
+                    \((ce, cw, \ 
+                      the\ notation\ is\nof\ my\ notes\ with\ 1/2880\ V\  -> 
+                        1)\)\ so\ there\ remain\ 10\ free\ parameters\  = 
+                  9  _ {D = 6}\  + 
+                    1  _ {D < 6}\ \n
+                      \((the\ latter\ is\ the\ null\ tensor\)\)\)}\) for\ the
+          \ Diff - homo\ tensors\ \((in\ agreement\ with\ Riccardo)\); \n
+      the\ inhomo\ tens\ were\ fixed\ a\ priori\ to\ cb\ t_b\  + \ 
+        f2[q^2]\ t_  2\ \((D = 4, 6\ \(risp . \))\)\n\t
+      \n*************************************************) \n\n
+    trace = {\ x___ . Id . y___\  -> \ x . y, \ tr[Id]\  -> \ d}\), 
+    \(retot = 
+      Union[\(\(\(\(bas /. \ h3\  -> \ Id\)\  //. {\ 
+                  x___ . Id . y___\  -> \ x . y, \ tr[Id]\  -> \ 1}\) //. \ \ 
+              cons1\) //. \ cons2\)\  //. \ basis\ ]\n\), 
+    \(cr = 0\n\), 
+    \(th[p_, h_] := 
+      \((d - 1)\)\ f0[p . p]\ p . p\ \((p . p\ tr[h]\  - \ p . h . p)\)\n\), 
+    \(f0[q] = \ \(-2\)\ cb/\((d - 1)\)\n\), 
+    \(f0[q1] = \ \(-2\)\ cb/\((d - 1)\)\n\t\t\), 
+    \(f0[q2] = \ \(-2\)\ cb/\((d - 1)\)\n\), 
+    \(e[18] = \((f0[q]\  + f0[q1])\)/2\n\), 
+    \(e[19] = \((f0[q]\  - f0[q1] + \ 2  f2[q])\)/4\n\), 
+    \(e[20] = \((f0[q]\  - f0[q1]\  - 2\ \ f2[q])\)/4\n\), 
+    \(anom[k1_, k2_, h1_, h2_] := 
+      2 \((ce\  - 3\ cw)\) 
+          \((\ \((k1 . k2)\)^2\ tr[h1 . h2]\  + \ 
+              k1 . h2 . k1\ k2 . h1 . k2\  - 2\ k1 . k2\ k1 . h2 . h1 . k2)
+            \) + \n\t\t\ \ \ \ \ \ \ \ \ \ 
+        \((3\ cw\  - 2\ ce)\)\ 
+          \((\((k1 . k2)\)^2\ tr[h1]\ tr[h2]\  + 
+              k1 . k1\ k2 . k2\ tr[h1 . h2]\  + 
+              2\ k1 . k2\ k1 . h1 . h2 . k2\  + \n
+              \t\t\t\t\t\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \
+\ \ \ \ \ k2 . k2\ tr[h1]\ k1 . h2 . k1\  + \ 
+              k1 . k1\ tr[h2]\ k2 . h1 . k2\ \ \  - 
+              2\ k1 . k2\ tr[h1]\ k2 . h2 . k1\  - \ \n
+              \t\t\t\t\t\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \
+\ \ \ \ 2\ k1 . k2\ \ tr[h2]\ k1 . h1 . k2\ \  - \ 
+              2\ k1 . k1\ k2 . h2 . h1 . k2\ \  - \n
+              \t\t\t\t\t\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \
+\ \ \ \ \ 2\ k2 . k2\ k1 . h1 . h2 . k1\  + \ 2\ k2 . h2 . k1\ k1 . h1 . k2)
+            \) + \n\t\t\ \ \ \ \ \ \ \ \ \ 
+        2 \((\(-cw\) + ce\  + cr)\) \((k1 . k1\ tr[h1]\  - k1 . h1 . k1)\) 
+          \((k2 . k2\ tr[h2]\  - \ k2 . h2 . k2)\)\  - \n
+        \ \t\t\ \ \ \ \ \ \ \ \ 
+        \((cb/2\ )\) 
+          \((\ tr[h1]\ k2 . k2\ \ 
+                \((k2 . k2\ tr[h2]\  - \ k2 . h2 . k2)\)\  + \ 
+              tr[h2]\ k1 . k1\ \ \((k1 . k1\ tr[h1]\  - k1 . h1 . k1)\)\ )
+            \) + \n\t\t\ \ \ \ \ \ \ \ \ \ 
+        cb\ \((k2 . h1 . k2\  + \ k1 . h1 . k2\  - \ k1 . k2\ tr[h1]/2)\)\ 
+          \((k2 . k2\ tr[h2]\  - \ k2 . h2 . k2)\) + \n\t\ \t\t\t\ \ \ \ 
+        cb \((k1 . h2 . k1\  + k2 . h2 . k1\  - \ k1 . k2\ tr[h2]/2)\)\ 
+          \((k1 . k1\ tr[h1]\  - k1 . h1 . k1)\)\  + \n
+        \t\t\ \ \ \ \ \ \ \ \ \ 
+        cb\ \((k1 + k2)\) . \((k1 + k2)\)\ 
+          \((\ \(-\ tr[h1 . h2]\)\ 
+                \((k1 . k1\  + k2 . k2\  + 5\ k1 . k2/2)\)\  - \ 
+              k1 . k2\ tr[h1]\ tr[h2]/2\  + \n\t\t\t\t\t\ \ \ 
+              k2 . h1 . h2 . k1 + 
+              tr[h1]\ \((k1 . h2 . k1\  + \ k1 . h2 . k2)\)\  + \ 
+              tr[h2]\ \((k2 . h1 . k2\  + \ k1 . h1 . k2)\)\ )
+            \)\ \ \ \ \ \ \ \ \ \ \ \), 
+    \(weyl3 = 
+      Expand[\(\(\(tttq\  - 2\ t[k1, h1, h2]\  - 2\ t[k2, h1, h2]\  - \n
+                  \t\t\t\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 
+                  4\ anom[\ k1, k2, h1, h2] /. \ h3\  -> \ Id\)\  //. \ trace
+              \) //. \ cons\)\  //. \ basis]; \n
+    coe33\  = Coefficient[weyl3, retot]; 
+    \n (*\ so33\  = \ 
+        Part[Solve[coe33 == 0, \ Table[e[i], {i, 1, 17}]], 1]\n
+          Length[so33]\ *) \n\n
+    retot1 = Union[
+        \(\(\(\(bas\  /. \ h1\  -> \ Id\)\  //. 
+                \ \ {\ x___ . Id . y___\  -> \ x . y, \ tr[Id]\  -> \ 1}
+                  \)\  //. \ cons1\)\  //. \ cons2\)\  //. \ basis\ \ ]; \n
+    weyl1 = Expand[
+        \(\(\(tttq - 2\ t[k3, h3, h2]\  - 2\ t[k2, h3, h2]\  - \n
+                  \t\t\t\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 
+                  4\ anom[k3, k2, h3, h2]\ \  /. \ h1\  -> \ Id\)\  //. \ 
+              trace\) //. \ cons\)\  //. \ basis]; \n
+    coe11\  = Coefficient[weyl1, retot1]; \n
+    so11\  = \ 
+      Part[Solve[{coe11 == 0, coe33 == 0}, \ Table[e[i], {i, 1, 17}]], 1]\), 
+    \(Length[so11]\), 
+    \(tttc\  = \ Expand[tttq\ \ \  //. \ so11]; \n
+    coefi = \ Coefficient[tttc, \ basind6]\), 
+    \(Part[
+      Solve[coefi\  == 0, {e[6], e[8], e[9], e[11], e[13], e[14], e[16], 
+          e[17], cb, ce, cw, f2[1]}], 1]\)}], "Input"],
+
+Cell[BoxData[
+    \(General::"spell1" \( : \ \) 
+      "Possible spelling error: new symbol name \"\!\(trace\)\" is similar to \
+existing symbol \"\!\(Trace\)\"."\)], "Message"],
+
+Cell[BoxData[
+    \({x___ . Id . y___ \[Rule] x . y, tr[Id] \[Rule] 4}\)], "Output"],
+
+Cell[BoxData[
+    \({k1 . h1 . k1\ k1 . h2 . k1, k1 . h1 . k2\ k1 . h2 . k1, 
+      k1 . h1 . k1\ k1 . h2 . k2, k1 . h1 . k2\ k1 . h2 . k2, 
+      k1 . h2 . k1\ k2 . h1 . k2, k1 . h2 . k2\ k2 . h1 . k2, 
+      k1 . h1 . k1\ k2 . h2 . k2, k1 . h1 . k2\ k2 . h2 . k2, 
+      k2 . h1 . k2\ k2 . h2 . k2, k1 . h2 . h1 . k1, k1 . h2 . h1 . k2, 
+      k2 . h2 . h1 . k1, k2 . h2 . h1 . k2, k1 . h2 . k1\ tr[h1], 
+      k1 . h2 . k2\ tr[h1], k2 . h2 . k2\ tr[h1], k1 . h1 . k1\ tr[h2], 
+      k1 . h1 . k2\ tr[h2], k2 . h1 . k2\ tr[h2], tr[h1]\ tr[h2], tr[h2 . h1]}
+      \)], "Output"],
+
+Cell[BoxData[
+    \(0\)], "Output"],
+
+Cell[BoxData[
+    \(\(-\(\(2\ cb\)\/3\)\)\)], "Output"],
+
+Cell[BoxData[
+    \(\(-\(\(2\ cb\)\/3\)\)\)], "Output"],
+
+Cell[BoxData[
+    \(\(-\(\(2\ cb\)\/3\)\)\)], "Output"],
+
+Cell[BoxData[
+    \(\(-\(\(2\ cb\)\/3\)\)\)], "Output"],
+
+Cell[BoxData[
+    \(f2[1]\/2\)], "Output"],
+
+Cell[BoxData[
+    \(\(-\(f2[1]\/2\)\)\)], "Output"],
+
+Cell[BoxData[
+    \(Solve::"svars" \( : \ \) 
+      "Equations may not give solutions for all \"solve\" variables."\)], 
+  "Message"],
+
+Cell[BoxData[
+    \({e[1] \[Rule] 16\ \((2\ ce + 3\ cw)\) - 4\ e[9], 
+      e[2] \[Rule] 
+        64\ e[16] - 32\ e[17] + 
+          16\/3\ \((4\ cb + 21\ ce - 45\ cw + 33\ f2[1])\), 
+      e[3] \[Rule] 8\ e[14] - 16\ e[17] + 8\ \((4\ ce - 6\ cw + 9\ f2[1])\), 
+      e[4] \[Rule] 
+        4\ e[6] - 2\ e[8] - 4\ e[11] + 8\ e[13] + 16\ e[14] - 16\ e[17] + 
+          16\ \((ce - 3\ cw + 6\ f2[1])\), 
+      e[5] \[Rule] 
+        \(-e[8]\) + 4\ e[13] + 8\ e[17] - 8\ \((2\ ce + 3\ f2[1])\), 
+      e[7] \[Rule] 
+        \(-8\)\ e[14] + 16\ e[17] - 24\ \((2\ ce - 4\ cw + 3\ f2[1])\), 
+      e[10] \[Rule] 
+        \(-16\)\ e[16] + 8\ e[17] - 
+          4\/3\ \((4\ cb + 24\ ce - 54\ cw + 33\ f2[1])\), 
+      e[12] \[Rule] 8\ \((2\ cw - f2[1])\), 
+      e[15] \[Rule] cb + 4\ ce - 9\ cw + 2\ e[16] - e[17] + 6\ f2[1]}\)], 
+  "Output"],
+
+Cell[BoxData[
+    \(9\)], "Output"],
+
+Cell[BoxData[
+    \(General::"spell1" \( : \ \) 
+      "Possible spelling error: new symbol name \"\!\(tttc\)\" is similar to \
+existing symbol \"\!\(tttq\)\"."\)], "Message"],
+
+Cell[BoxData[
+    \({32\ ce + 48\ cw - 4\ e[9], 
+      \(64\ cb\)\/3 + 112\ ce - 240\ cw + 64\ e[16] - 32\ e[17] + 176\ f2[1], 
+      32\ ce - 48\ cw + 8\ e[14] - 16\ e[17] + 72\ f2[1], 
+      16\ ce - 48\ cw + 4\ e[6] - 2\ e[8] - 4\ e[11] + 8\ e[13] + 16\ e[14] - 
+        16\ e[17] + 96\ f2[1], 
+      \(-16\)\ ce - e[8] + 4\ e[13] + 8\ e[17] - 24\ f2[1], \(-8\)\ f2[1], 
+      e[6], \(-48\)\ ce + 96\ cw - 8\ e[14] + 16\ e[17] - 72\ f2[1], e[8], 
+      e[9], \(-\(\(16\ cb\)\/3\)\) - 32\ ce + 72\ cw - 16\ e[16] + 8\ e[17] - 
+        44\ f2[1], 0, e[11], 16\ cw - 8\ f2[1], \(-4\)\ f2[1]}\)], "Output"],
+
+Cell[BoxData[
+    \(Solve::"svars" \( : \ \) 
+      "Equations may not give solutions for all \"solve\" variables."\)], 
+  "Message"],
+
+Cell[BoxData[
+    \({e[6] \[Rule] 0, e[8] \[Rule] 0, e[9] \[Rule] 0, e[11] \[Rule] 0, 
+      e[13] \[Rule] \(-2\)\ e[17], e[14] \[Rule] 2\ e[17], 
+      e[16] \[Rule] \(-\(cb\/3\)\) + e[17]\/2, ce \[Rule] 0, cw \[Rule] 0, 
+      f2[1] \[Rule] 0}\)], "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[{
+    \(coefin = \ 
+      Coefficient[tttc, \ basind6] + {0, e[2], e[3], 0, 0, 0, 0, 0, 0, 0, 0, 
+          0, 0, e[12], 0}\), 
+    \(Part[
+      Solve[coefin\  == 0, {e[2], e[3], e[6], e[8], e[9], e[11], e[12], 
+          e[13], e[14], e[16], e[17], cb, ce, cw, f2[1]}], 1]\)}], "Input"],
+
+Cell[BoxData[
+    \({32\ ce + 48\ cw - 4\ e[9], 
+      \(64\ cb\)\/3 + 112\ ce - 240\ cw + e[2] + 64\ e[16] - 32\ e[17] + 
+        176\ f2[1], 
+      32\ ce - 48\ cw + e[3] + 8\ e[14] - 16\ e[17] + 72\ f2[1], 
+      16\ ce - 48\ cw + 4\ e[6] - 2\ e[8] - 4\ e[11] + 8\ e[13] + 16\ e[14] - 
+        16\ e[17] + 96\ f2[1], 
+      \(-16\)\ ce - e[8] + 4\ e[13] + 8\ e[17] - 24\ f2[1], \(-8\)\ f2[1], 
+      e[6], \(-48\)\ ce + 96\ cw - 8\ e[14] + 16\ e[17] - 72\ f2[1], e[8], 
+      e[9], \(-\(\(16\ cb\)\/3\)\) - 32\ ce + 72\ cw - 16\ e[16] + 8\ e[17] - 
+        44\ f2[1], 0, e[11], 16\ cw + e[12] - 8\ f2[1], \(-4\)\ f2[1]}\)], 
+  "Output"],
+
+Cell[BoxData[
+    \(Solve::"svars" \( : \ \) 
+      "Equations may not give solutions for all \"solve\" variables."\)], 
+  "Message"],
+
+Cell[BoxData[
+    \({e[2] \[Rule] 0, e[3] \[Rule] 0, e[6] \[Rule] 0, e[8] \[Rule] 0, 
+      e[9] \[Rule] 0, e[11] \[Rule] 0, e[12] \[Rule] 0, 
+      e[13] \[Rule] \(-2\)\ e[17], e[14] \[Rule] 2\ e[17], 
+      e[16] \[Rule] \(-\(cb\/3\)\) + e[17]\/2, ce \[Rule] 0, cw \[Rule] 0, 
+      f2[1] \[Rule] 0}\)], "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[{
+    \( (*\(************************************************************\n\t\t
+            \n\t\tRENAMING\)\ OF\ FREE\ PARAMETERS\n\nAlthough\ there\ are\ 
+          only\ 10\ D = 6\ independent\ tensors, \ 
+      the\ output\ of\ the\ previous\ncalculation\ contains\ 12\ parameters; 
+      \ two\ are\ redundant\ 
+        \((for\ the\ D = 6\ basis, \ not\ for\ the\ full\ basis)\), \n
+      so\ they\ are\ redefined\ by\ne[i]\  -> \ g[i], \ i, 13, 14, 
+      16\nIn\ particular, \ 
+      the\ dependence\ on\ cb\ desappears\ from\ the\ D = 6\ basis, \ 
+      as\ it\ should; \n
+      this\ redefinition\ of\ parameters\ is\ equivalent\ to\ adding\ an\ homo
+          \ solution\ of\ the\ Weyl\ WI\ to\nthe\ traceful\ tensors\ so\ as\ 
+          to\ cearly\ devide\ them\ into\ D = 
+        \(6\ and\ D < 
+            6\ tensors . \nvarfin\ \ \ \ \ \ list\ of\ the\ 10\ indep\ coeff\ 
+              of\ the\ D = 
+          6\ \(tensors : \n\t\t\t\t\t\ \ \ \ \ \ \ e[6]\)\),  .. , 
+      g[16]\ \ are\ 7\ traceless\ 
+        conserv . \ \((as\ checked\ a\ posteriori\ in\ the\ next\ cell)\)\n
+        \t\t\t\ \ \ \ \ \ \ \ \ ce, 
+      cw\ are\ the\ 2\ traceful\ conserv\n\t\t\ \ \ \ \ \ \ \ \ \ f2[q^2]\ is
+            \ neither\ntttc2\ \ \ \ \ \ \  < 
+          TTT > _c\ at\ the\ end\ of\ this\ calculation\ntttimp\ \ \ \ \ \ is
+            \ an\ explicit\ check\ of\ the\ elimination\ of\ the\ cb\ 
+            dependence\ from\ the\ D = 
+        6\ tensors\ by\ adding\ an\n\t\t\t\ \ \ \ \ \ \ \ \ homo\ sol\ of\ the
+          \ Weyl\ WI\n\t\t\t\n\t***************************************) \n\n
+    repla = \ {e[13]\  -> \ g[13]\  - 2\ e[17], \ 
+        e[14]\  -> \ g[14]\  + 2\ e[17], \ 
+        e[16] -> \ g[16] - \((cb/3)\)\  + \((e[17]/2)\)}\), 
+    \(coefin2\  = Expand[coefin\  //. \ repla]\), 
+    \(tttc2\  = \ Expand[tttc\  //. repla]; \n
+    indepeq = 
+      Part[Solve[
+          coefin2\  == 0, {e[2], e[3], e[6], e[8], e[9], e[11], e[12], g[13], 
+            g[14], g[16], e[17], cb, ce, cw, f2[1]}], 1]\), 
+    \(varfin\  = 
+      \ {e[2], e[3], e[6], e[8], e[9], e[11], e[12], g[13], g[14], g[16], ce, 
+        cw, f2[1]}\)}], "Input"],
+
+Cell[BoxData[
+    \({e[13] \[Rule] \(-2\)\ e[17] + g[13], e[14] \[Rule] 2\ e[17] + g[14], 
+      e[16] \[Rule] \(-\(cb\/3\)\) + e[17]\/2 + g[16]}\)], "Output"],
+
+Cell[BoxData[
+    \({32\ ce + 48\ cw - 4\ e[9], 
+      112\ ce - 240\ cw + e[2] + 176\ f2[1] + 64\ g[16], 
+      32\ ce - 48\ cw + e[3] + 72\ f2[1] + 8\ g[14], 
+      16\ ce - 48\ cw + 4\ e[6] - 2\ e[8] - 4\ e[11] + 96\ f2[1] + 8\ g[13] + 
+        16\ g[14], \(-16\)\ ce - e[8] - 24\ f2[1] + 4\ g[13], \(-8\)\ f2[1], 
+      e[6], \(-48\)\ ce + 96\ cw - 72\ f2[1] - 8\ g[14], e[8], e[9], 
+      \(-32\)\ ce + 72\ cw - 44\ f2[1] - 16\ g[16], 0, e[11], 
+      16\ cw + e[12] - 8\ f2[1], \(-4\)\ f2[1]}\)], "Output"],
+
+Cell[BoxData[
+    \(Solve::"svars" \( : \ \) 
+      "Equations may not give solutions for all \"solve\" variables."\)], 
+  "Message"],
+
+Cell[BoxData[
+    \({e[2] \[Rule] 0, e[3] \[Rule] 0, e[6] \[Rule] 0, e[8] \[Rule] 0, 
+      e[9] \[Rule] 0, e[11] \[Rule] 0, e[12] \[Rule] 0, g[13] \[Rule] 0, 
+      g[14] \[Rule] 0, g[16] \[Rule] 0, ce \[Rule] 0, cw \[Rule] 0, 
+      f2[1] \[Rule] 0}\)], "Output"],
+
+Cell[BoxData[
+    \({e[2], e[3], e[6], e[8], e[9], e[11], e[12], g[13], g[14], g[16], ce, 
+      cw, f2[1]}\)], "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[{
+    \(Expand[
+      \(\(\(Coefficient[tttc2, {e[6], e[8], e[9], e[11], g[13], g[14], g[16]}]
+                \  /. \ h1\  -> \ Id\)\  //. \ trace\) //. \ cons\)\  //. \ 
+        basis]\), 
+    \(Expand[
+      \(\(\(Coefficient[tttc2, {e[6], e[8], e[9], e[11], g[13], g[14], g[16]}]
+                \  /. \ h3\  -> \ Id\)\  //. \ trace\) //. \ cons\)\  //. \ 
+        basis]\), 
+    \(coeuniv = \ Coefficient[tttc2, basind6]\), 
+    \(tttimp\  = 
+      Expand[tttc\  - \ \((cb/3)\)\ Coefficient[tttc2, \ g[16]]\ ]; \n
+    Expand[\(\(\(tttimp\  - \ tttc /. \ h1\  -> \ Id\)\  //. \ trace\) //. \ 
+          cons\)\  //. \ basis]\), 
+    \(Expand[
+      \(\(\(tttimp\  - \ tttc /. \ h3\  -> \ Id\)\  //. \ trace\) //. \ cons
+          \)\  //. \ basis]\), 
+    \(Coefficient[tttimp, basind6]\  - coefin\)}], "Input"],
+
+Cell[BoxData[
+    \({0, 0, 0, 0, 0, 0, 0}\)], "Output"],
+
+Cell[BoxData[
+    \({0, 0, 0, 0, 0, 0, 0}\)], "Output"],
+
+Cell[BoxData[
+    \({32\ ce + 48\ cw - 4\ e[9], 112\ ce - 240\ cw + 176\ f2[1] + 64\ g[16], 
+      32\ ce - 48\ cw + 72\ f2[1] + 8\ g[14], 
+      16\ ce - 48\ cw + 4\ e[6] - 2\ e[8] - 4\ e[11] + 96\ f2[1] + 8\ g[13] + 
+        16\ g[14], \(-16\)\ ce - e[8] - 24\ f2[1] + 4\ g[13], \(-8\)\ f2[1], 
+      e[6], \(-48\)\ ce + 96\ cw - 72\ f2[1] - 8\ g[14], e[8], e[9], 
+      \(-32\)\ ce + 72\ cw - 44\ f2[1] - 16\ g[16], 0, e[11], 
+      16\ cw - 8\ f2[1], \(-4\)\ f2[1]}\)], "Output"],
+
+Cell[BoxData[
+    \(0\)], "Output"],
+
+Cell[BoxData[
+    \(0\)], "Output"],
+
+Cell[BoxData[
+    \({0, \(-\(\(64\ cb\)\/3\)\) - e[2], \(-e[3]\), 0, 0, 0, 0, 0, 0, 0, 
+      \(16\ cb\)\/3, 0, 0, \(-e[12]\), 0}\)], "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[{
+    \( (*\(**********************************************\)*\n\t\t\n
+          DETERMINATION\ OF\ THE\ ANOMALY\ NUMBERS\ FROM\ THE\ COEFFICIENT\ OF
+          \ THE\ D = 6\ TENSORS\n\t\t\t\nu[i], \ i, 1,  .. , 
+      15\ \ are\ the\ coefficient\ of\ the\ D = 
+        6\ monomials\ of\ the\ basis\ basind6\ \((reprinted\ hereafter)\)\n
+          \t\t\t\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ which\ are\ supposed\ known\ by
+          \ explicit\ calculation\nThe\ universal\ anomalies\ ce, 
+      cw\ are\ expressed\ in\ terms\ of\ these\ u[i]' s; \n
+      since\ we\ got\  < TTT > _c\ with\ only\ 10\ independent\ D = 
+        6\ tensors\ over\ a\ 15 - dim\ basis, \n
+      the\ inversion\ of\ the\ linear\ system\ A_ij\ e[i]\  = \ 
+        u[j]\ with\ A\ 10  x15\ dimens\nexists\ only\ if\ the\ u[i]\ satisfy\ 
+          5\ constraints; \ 
+      this\ is\ why\ we\ use\ \(``Reduce'\)'\ninstead\ of\ \(``Solve'\)'; \ 
+      these\ constraints\ are\ a\ check\ for\ the\ explciit\ calculation\n\t\n
+        In\ a\ final\ cell\ we\ also\ check\ that\ the\ redefinition\ of\ the
+        \ ce\ tensor\ by\nadding\ a\ traceless\ tensor\ to\ it\ does\ not\ 
+        affect\ the\ determination\ of\ ce, 
+      cw\ from\ the\nexplicit\ calculation, \ 
+      as\ it\ should . \n\t\t\n\t\t
+          \(******************************************\)******) \n\n
+    Do[Print[\ varfin[\([i]\)], "\<    \>", 
+        Coefficient[coefin2, \ varfin[\([i]\)]]], {i, 1, 13}]\), 
+    \(Reduce[Table[coefin2[\([i]\)] == u[i], {i, 1, 15}], \ varfin]\n (*\ 
+      basind6\ *) \)}], "Input"],
+
+Cell[BoxData[
+    InterpretationBox[
+      \(e[2]\[InvisibleSpace]"    "\[InvisibleSpace]{0, 1, 0, 0, 0, 0, 0, 0, 
+          0, 0, 0, 0, 0, 0, 0}\),
+      SequenceForm[ 
+        e[ 2], "    ", {0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0}],
+      Editable->False]], "Print"],
+
+Cell[BoxData[
+    InterpretationBox[
+      \(e[3]\[InvisibleSpace]"    "\[InvisibleSpace]{0, 0, 1, 0, 0, 0, 0, 0, 
+          0, 0, 0, 0, 0, 0, 0}\),
+      SequenceForm[ 
+        e[ 3], "    ", {0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0}],
+      Editable->False]], "Print"],
+
+Cell[BoxData[
+    InterpretationBox[
+      \(e[6]\[InvisibleSpace]"    "\[InvisibleSpace]{0, 0, 0, 4, 0, 0, 1, 0, 
+          0, 0, 0, 0, 0, 0, 0}\),
+      SequenceForm[ 
+        e[ 6], "    ", {0, 0, 0, 4, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0}],
+      Editable->False]], "Print"],
+
+Cell[BoxData[
+    InterpretationBox[
+      \(e[8]\[InvisibleSpace]"    "\[InvisibleSpace]{0, 0, 0, \(-2\), \(-1\), 
+          0, 0, 0, 1, 0, 0, 0, 0, 0, 0}\),
+      SequenceForm[ 
+        e[ 8], "    ", {0, 0, 0, -2, -1, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0}],
+      Editable->False]], "Print"],
+
+Cell[BoxData[
+    InterpretationBox[
+      \(e[9]\[InvisibleSpace]"    "\[InvisibleSpace]{\(-4\), 0, 0, 0, 0, 0, 
+          0, 0, 0, 1, 0, 0, 0, 0, 0}\),
+      SequenceForm[ 
+        e[ 9], "    ", {-4, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0}],
+      Editable->False]], "Print"],
+
+Cell[BoxData[
+    InterpretationBox[
+      \(e[11]\[InvisibleSpace]"    "\[InvisibleSpace]{0, 0, 0, \(-4\), 0, 0, 
+          0, 0, 0, 0, 0, 0, 1, 0, 0}\),
+      SequenceForm[ 
+        e[ 11], "    ", {0, 0, 0, -4, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0}],
+      Editable->False]], "Print"],
+
+Cell[BoxData[
+    InterpretationBox[
+      \(e[12]\[InvisibleSpace]"    "\[InvisibleSpace]{0, 0, 0, 0, 0, 0, 0, 0, 
+          0, 0, 0, 0, 0, 1, 0}\),
+      SequenceForm[ 
+        e[ 12], "    ", {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0}],
+      Editable->False]], "Print"],
+
+Cell[BoxData[
+    InterpretationBox[
+      \(g[13]\[InvisibleSpace]"    "\[InvisibleSpace]{0, 0, 0, 8, 4, 0, 0, 0, 
+          0, 0, 0, 0, 0, 0, 0}\),
+      SequenceForm[ 
+        g[ 13], "    ", {0, 0, 0, 8, 4, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0}],
+      Editable->False]], "Print"],
+
+Cell[BoxData[
+    InterpretationBox[
+      \(g[14]\[InvisibleSpace]"    "\[InvisibleSpace]{0, 0, 8, 16, 0, 0, 0, 
+          \(-8\), 0, 0, 0, 0, 0, 0, 0}\),
+      SequenceForm[ 
+        g[ 14], "    ", {0, 0, 8, 16, 0, 0, 0, -8, 0, 0, 0, 0, 0, 0, 0}],
+      Editable->False]], "Print"],
+
+Cell[BoxData[
+    InterpretationBox[
+      \(g[16]\[InvisibleSpace]"    "\[InvisibleSpace]{0, 64, 0, 0, 0, 0, 0, 
+          0, 0, 0, \(-16\), 0, 0, 0, 0}\),
+      SequenceForm[ 
+        g[ 16], "    ", {0, 64, 0, 0, 0, 0, 0, 0, 0, 0, -16, 0, 0, 0, 0}],
+      Editable->False]], "Print"],
+
+Cell[BoxData[
+    InterpretationBox[
+      \(ce\[InvisibleSpace]"    "\[InvisibleSpace]{32, 112, 32, 16, \(-16\), 
+          0, 0, \(-48\), 0, 0, \(-32\), 0, 0, 0, 0}\),
+      SequenceForm[ 
+      ce, "    ", {32, 112, 32, 16, -16, 0, 0, -48, 0, 0, -32, 0, 0, 0, 0}],
+      Editable->False]], "Print"],
+
+Cell[BoxData[
+    InterpretationBox[
+      \(cw\[InvisibleSpace]"    "\[InvisibleSpace]{48, \(-240\), \(-48\), 
+          \(-48\), 0, 0, 0, 96, 0, 0, 72, 0, 0, 16, 0}\),
+      SequenceForm[ 
+      cw, "    ", {48, -240, -48, -48, 0, 0, 0, 96, 0, 0, 72, 0, 0, 16, 0}],
+      Editable->False]], "Print"],
+
+Cell[BoxData[
+    InterpretationBox[
+      \(f2[1]\[InvisibleSpace]"    "\[InvisibleSpace]{0, 176, 72, 96, 
+          \(-24\), \(-8\), 0, \(-72\), 0, 0, \(-44\), 0, 0, \(-8\), \(-4\)}
+          \),
+      SequenceForm[ 
+        f2[ 1], "    ", {0, 176, 72, 96, -24, -8, 0, -72, 0, 0, -44, 0, 
+        0, -8, -4}],
+      Editable->False]], "Print"],
+
+Cell[BoxData[
+    \(u[6] == 2\ u[15] && 
+      e[2] == 1\/3\ 
+          \((3\ u[2] - u[4] + 2\ u[5] + 4\ u[7] - 2\ u[8] + 12\ u[11] - 
+              4\ u[13])\) && 
+      e[3] == 1\/3\ 
+          \((3\ u[3] - u[4] + 2\ u[5] + 4\ u[7] + u[8] - 4\ u[13])\) && 
+      e[12] == 1\/27\ 
+          \((\(-3\)\ u[1] - 2\ u[4] + 4\ u[5] + 8\ u[7] - 4\ u[8] - 
+              12\ u[10] - 8\ u[13] + 27\ u[14] - 54\ u[15])\) && 
+      e[6] == u[7] && e[9] == u[10] && e[11] == u[13] && 
+      g[13] == 1\/36\ 
+          \((3\ u[1] - u[4] + 11\ u[5] + 4\ u[7] - 2\ u[8] + 9\ u[9] + 
+              12\ u[10] - 4\ u[13] - 54\ u[15])\) && 
+      g[16] == 1\/288\ 
+          \((\(-3\)\ u[1] + 10\ u[4] - 20\ u[5] - 40\ u[7] + 20\ u[8] - 
+              12\ u[10] - 18\ u[11] + 40\ u[13] + 198\ u[15])\) && 
+      e[8] == u[9] && 
+      g[14] == 1\/72\ 
+          \((\(-3\)\ u[1] + 7\ u[4] - 14\ u[5] - 28\ u[7] + 5\ u[8] - 
+              12\ u[10] + 28\ u[13] + 162\ u[15])\) && 
+      ce == 1\/144\ 
+          \((3\ u[1] - u[4] + 2\ u[5] + 4\ u[7] - 2\ u[8] + 12\ u[10] - 
+              4\ u[13])\) && 
+      cw == 1\/432\ 
+          \((3\ u[1] + 2\ u[4] - 4\ u[5] - 8\ u[7] + 4\ u[8] + 12\ u[10] + 
+              8\ u[13])\) && f2[1] == \(-\(u[15]\/4\)\) && u[12] == 0\)], 
+  "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[{
+    \(ind = {15, 7, 6, 13, 4, 14, 9, 5, 11, 2, 8, 12, 3, 10, 1, \n
+        \t\t\ \ \ \ \ \ \ \ \ 28, 32, 25, 29, 26, 34, 23, 31, 27, 33, 24, 30, 
+        22, 20, 17, 19, 21, 16, 18, \n\t\t\ \ \ \ \ \ \ \ \ 62, 60, 61, 42, 
+        48, 44, 58, 59, 46, 50, 47, 57, 43, 49, 45, 41, 39, 37, 40, 38, 35, 
+        36, 73, 75, 74, \n\t\t\ \ \ \ \ \ \ \ \ 54, 51, 53, 52, 71, 70, 65, 
+        63, 64, 66, 68, 67, 56, 55, 77, 76, 72, 69}; \n
+    reo[z_] := Table[z[\([ind[\([i]\)]]\)], {i, 1, 77}]\), 
+    \(reo6[z_] := Table[z[\([ind[\([i]\)]]\)], {i, 1, 15}]\n\), 
+    \(coefin3\  = \ reo6[coefin2]\), 
+    \(Do[Print[\ varfin[\([i]\)], "\<    \>", 
+        Coefficient[coefin3, \ varfin[\([i]\)]]], {i, 1, 10}]\), 
+    \(inveq = \ 
+      Reduce[Table[coefin3[\([i]\)] == u[i], {i, 1, 15}], \ varfin]\)}], 
+  "Input"],
+
+Cell[BoxData[
+    \({\(-4\)\ f2[1], e[6], \(-8\)\ f2[1], e[11], 
+      16\ ce - 48\ cw + 4\ e[6] - 2\ e[8] - 4\ e[11] + 96\ f2[1] + 8\ g[13] + 
+        16\ g[14], 16\ cw + e[12] - 8\ f2[1], e[8], 
+      \(-16\)\ ce - e[8] - 24\ f2[1] + 4\ g[13], 
+      \(-32\)\ ce + 72\ cw - 44\ f2[1] - 16\ g[16], 
+      112\ ce - 240\ cw + e[2] + 176\ f2[1] + 64\ g[16], 
+      \(-48\)\ ce + 96\ cw - 72\ f2[1] - 8\ g[14], 0, 
+      32\ ce - 48\ cw + e[3] + 72\ f2[1] + 8\ g[14], e[9], 
+      32\ ce + 48\ cw - 4\ e[9]}\)], "Output"],
+
+Cell[BoxData[
+    InterpretationBox[
+      \(e[2]\[InvisibleSpace]"    "\[InvisibleSpace]{0, 0, 0, 0, 0, 0, 0, 0, 
+          0, 1, 0, 0, 0, 0, 0}\),
+      SequenceForm[ 
+        e[ 2], "    ", {0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0}],
+      Editable->False]], "Print"],
+
+Cell[BoxData[
+    InterpretationBox[
+      \(e[3]\[InvisibleSpace]"    "\[InvisibleSpace]{0, 0, 0, 0, 0, 0, 0, 0, 
+          0, 0, 0, 0, 1, 0, 0}\),
+      SequenceForm[ 
+        e[ 3], "    ", {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0}],
+      Editable->False]], "Print"],
+
+Cell[BoxData[
+    InterpretationBox[
+      \(e[6]\[InvisibleSpace]"    "\[InvisibleSpace]{0, 1, 0, 0, 4, 0, 0, 0, 
+          0, 0, 0, 0, 0, 0, 0}\),
+      SequenceForm[ 
+        e[ 6], "    ", {0, 1, 0, 0, 4, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0}],
+      Editable->False]], "Print"],
+
+Cell[BoxData[
+    InterpretationBox[
+      \(e[8]\[InvisibleSpace]"    "\[InvisibleSpace]{0, 0, 0, 0, \(-2\), 0, 
+          1, \(-1\), 0, 0, 0, 0, 0, 0, 0}\),
+      SequenceForm[ 
+        e[ 8], "    ", {0, 0, 0, 0, -2, 0, 1, -1, 0, 0, 0, 0, 0, 0, 0}],
+      Editable->False]], "Print"],
+
+Cell[BoxData[
+    InterpretationBox[
+      \(e[9]\[InvisibleSpace]"    "\[InvisibleSpace]{0, 0, 0, 0, 0, 0, 0, 0, 
+          0, 0, 0, 0, 0, 1, \(-4\)}\),
+      SequenceForm[ 
+        e[ 9], "    ", {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, -4}],
+      Editable->False]], "Print"],
+
+Cell[BoxData[
+    InterpretationBox[
+      \(e[11]\[InvisibleSpace]"    "\[InvisibleSpace]{0, 0, 0, 1, \(-4\), 0, 
+          0, 0, 0, 0, 0, 0, 0, 0, 0}\),
+      SequenceForm[ 
+        e[ 11], "    ", {0, 0, 0, 1, -4, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0}],
+      Editable->False]], "Print"],
+
+Cell[BoxData[
+    InterpretationBox[
+      \(e[12]\[InvisibleSpace]"    "\[InvisibleSpace]{0, 0, 0, 0, 0, 1, 0, 0, 
+          0, 0, 0, 0, 0, 0, 0}\),
+      SequenceForm[ 
+        e[ 12], "    ", {0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0}],
+      Editable->False]], "Print"],
+
+Cell[BoxData[
+    InterpretationBox[
+      \(g[13]\[InvisibleSpace]"    "\[InvisibleSpace]{0, 0, 0, 0, 8, 0, 0, 4, 
+          0, 0, 0, 0, 0, 0, 0}\),
+      SequenceForm[ 
+        g[ 13], "    ", {0, 0, 0, 0, 8, 0, 0, 4, 0, 0, 0, 0, 0, 0, 0}],
+      Editable->False]], "Print"],
+
+Cell[BoxData[
+    InterpretationBox[
+      \(g[14]\[InvisibleSpace]"    "\[InvisibleSpace]{0, 0, 0, 0, 16, 0, 0, 
+          0, 0, 0, \(-8\), 0, 8, 0, 0}\),
+      SequenceForm[ 
+        g[ 14], "    ", {0, 0, 0, 0, 16, 0, 0, 0, 0, 0, -8, 0, 8, 0, 0}],
+      Editable->False]], "Print"],
+
+Cell[BoxData[
+    InterpretationBox[
+      \(g[16]\[InvisibleSpace]"    "\[InvisibleSpace]{0, 0, 0, 0, 0, 0, 0, 0, 
+          \(-16\), 64, 0, 0, 0, 0, 0}\),
+      SequenceForm[ 
+        g[ 16], "    ", {0, 0, 0, 0, 0, 0, 0, 0, -16, 64, 0, 0, 0, 0, 0}],
+      Editable->False]], "Print"],
+
+Cell[BoxData[
+    \(2\ u[1] == u[3] && 
+      e[2] == 1\/3\ 
+          \((4\ u[2] - 4\ u[4] - u[5] + 2\ u[8] + 12\ u[9] + 3\ u[10] - 
+              2\ u[11])\) && 
+      e[3] == 1\/3\ 
+          \((4\ u[2] - 4\ u[4] - u[5] + 2\ u[8] + u[11] + 3\ u[13])\) && 
+      e[12] == 1\/27\ 
+          \((8\ u[2] - 27\ u[3] - 8\ u[4] - 2\ u[5] + 27\ u[6] + 4\ u[8] - 
+              4\ u[11] - 12\ u[14] - 3\ u[15])\) && e[6] == u[2] && 
+      e[9] == u[14] && e[11] == u[4] && 
+      g[13] == 1\/36\ 
+          \((4\ u[2] - 27\ u[3] - 4\ u[4] - u[5] + 9\ u[7] + 11\ u[8] - 
+              2\ u[11] + 12\ u[14] + 3\ u[15])\) && 
+      g[16] == 1\/288\ 
+          \((\(-40\)\ u[2] + 99\ u[3] + 40\ u[4] + 10\ u[5] - 20\ u[8] - 
+              18\ u[9] + 20\ u[11] - 12\ u[14] - 3\ u[15])\) && 
+      e[8] == u[7] && 
+      g[14] == 1\/72\ 
+          \((\(-28\)\ u[2] + 81\ u[3] + 28\ u[4] + 7\ u[5] - 14\ u[8] + 
+              5\ u[11] - 12\ u[14] - 3\ u[15])\) && 
+      ce == 1\/144\ 
+          \((4\ u[2] - 4\ u[4] - u[5] + 2\ u[8] - 2\ u[11] + 12\ u[14] + 
+              3\ u[15])\) && 
+      cw == 1\/432\ 
+          \((\(-8\)\ u[2] + 8\ u[4] + 2\ u[5] - 4\ u[8] + 4\ u[11] + 
+              12\ u[14] + 3\ u[15])\) && f2[1] == \(-\(u[3]\/8\)\) && 
+      u[12] == 0\)], "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[{
+    \(soleq\  = Part[Solve[inveq, varfin], 1]\), 
+    \(Length[soleq]\), 
+    \(inveq\  //. \ soleq\)}], "Input"],
+
+Cell[BoxData[
+    \({e[2] \[Rule] 
+        1\/3\ \((
+            4\ u[2] - 4\ u[4] - u[5] + 2\ u[8] + 12\ u[9] + 3\ u[10] - 
+              2\ u[11])\), 
+      e[3] \[Rule] 
+        1\/3\ \((4\ u[2] - 4\ u[4] - u[5] + 2\ u[8] + u[11] + 3\ u[13])\), 
+      e[6] \[Rule] u[2], e[8] \[Rule] u[7], e[9] \[Rule] u[14], 
+      e[11] \[Rule] u[4], 
+      e[12] \[Rule] 
+        1\/27\ \((
+            8\ u[2] - 27\ u[3] - 8\ u[4] - 2\ u[5] + 27\ u[6] + 4\ u[8] - 
+              4\ u[11] - 12\ u[14] - 3\ u[15])\), 
+      g[13] \[Rule] 
+        1\/36\ \((
+            4\ u[2] - 27\ u[3] - 4\ u[4] - u[5] + 9\ u[7] + 11\ u[8] - 
+              2\ u[11] + 12\ u[14] + 3\ u[15])\), 
+      g[14] \[Rule] 
+        1\/72\ \((
+            \(-28\)\ u[2] + 81\ u[3] + 28\ u[4] + 7\ u[5] - 14\ u[8] + 
+              5\ u[11] - 12\ u[14] - 3\ u[15])\), 
+      g[16] \[Rule] 
+        1\/288\ \((
+            \(-40\)\ u[2] + 99\ u[3] + 40\ u[4] + 10\ u[5] - 20\ u[8] - 
+              18\ u[9] + 20\ u[11] - 12\ u[14] - 3\ u[15])\), 
+      ce \[Rule] 
+        1\/144\ \((
+            4\ u[2] - 4\ u[4] - u[5] + 2\ u[8] - 2\ u[11] + 12\ u[14] + 
+              3\ u[15])\), 
+      cw \[Rule] 
+        1\/432\ \((
+            \(-8\)\ u[2] + 8\ u[4] + 2\ u[5] - 4\ u[8] + 4\ u[11] + 
+              12\ u[14] + 3\ u[15])\), f2[1] \[Rule] \(-\(u[3]\/8\)\)}\)], 
+  "Output"],
+
+Cell[BoxData[
+    \(13\)], "Output"],
+
+Cell[BoxData[
+    \(2\ u[1] == u[3] && u[12] == 0\)], "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[{
+    \(ueq = \ Part[Solve[%, {u[1], u[12]}], 1]\), 
+    \(Length[%]\), 
+    \(soleq\  //. \ ueq\n\)}], "Input"],
+
+Cell[BoxData[
+    \({u[1] \[Rule] u[3]\/2, u[12] \[Rule] 0}\)], "Output"],
+
+Cell[BoxData[
+    \(2\)], "Output"],
+
+Cell[BoxData[
+    \({e[2] \[Rule] 
+        1\/3\ \((
+            4\ u[2] - 4\ u[4] - u[5] + 2\ u[8] + 12\ u[9] + 3\ u[10] - 
+              2\ u[11])\), 
+      e[3] \[Rule] 
+        1\/3\ \((4\ u[2] - 4\ u[4] - u[5] + 2\ u[8] + u[11] + 3\ u[13])\), 
+      e[6] \[Rule] u[2], e[8] \[Rule] u[7], e[9] \[Rule] u[14], 
+      e[11] \[Rule] u[4], 
+      e[12] \[Rule] 
+        1\/27\ \((
+            8\ u[2] - 27\ u[3] - 8\ u[4] - 2\ u[5] + 27\ u[6] + 4\ u[8] - 
+              4\ u[11] - 12\ u[14] - 3\ u[15])\), 
+      g[13] \[Rule] 
+        1\/36\ \((
+            4\ u[2] - 27\ u[3] - 4\ u[4] - u[5] + 9\ u[7] + 11\ u[8] - 
+              2\ u[11] + 12\ u[14] + 3\ u[15])\), 
+      g[14] \[Rule] 
+        1\/72\ \((
+            \(-28\)\ u[2] + 81\ u[3] + 28\ u[4] + 7\ u[5] - 14\ u[8] + 
+              5\ u[11] - 12\ u[14] - 3\ u[15])\), 
+      g[16] \[Rule] 
+        1\/288\ \((
+            \(-40\)\ u[2] + 99\ u[3] + 40\ u[4] + 10\ u[5] - 20\ u[8] - 
+              18\ u[9] + 20\ u[11] - 12\ u[14] - 3\ u[15])\), 
+      ce \[Rule] 
+        1\/144\ \((
+            4\ u[2] - 4\ u[4] - u[5] + 2\ u[8] - 2\ u[11] + 12\ u[14] + 
+              3\ u[15])\), 
+      cw \[Rule] 
+        1\/432\ \((
+            \(-8\)\ u[2] + 8\ u[4] + 2\ u[5] - 4\ u[8] + 4\ u[11] + 
+              12\ u[14] + 3\ u[15])\), f2[1] \[Rule] \(-\(u[3]\/8\)\)}\)], 
+  "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+    \(Simplify[%\  /. 
+        \ {u[2] -> \ 
+            \((4\ u[4]\  + \ u[5]\  - 2\ u[8]\  - u[11] - 3\ u[13])\)/4, \ 
+          u[3] -> \ 
+            \((9\ u[6]\  - 2\ u[11]\  - 2\ u[13]\  - 4\ \ u[14] - u[15])\)/9, 
+          \n\t\t\ \ \ \ \ \ \ \ \ 
+          u[9] -> \ \((\ \(-\ u[10]\)\  + u[11]\  + \ u[13])\)/4}]\)], "Input"],
+
+Cell[BoxData[
+    \({e[2] \[Rule] 0, e[3] \[Rule] 0, 
+      e[6] \[Rule] 1\/4\ \((4\ u[4] + u[5] - 2\ u[8] - u[11] - 3\ u[13])\), 
+      e[8] \[Rule] u[7], e[9] \[Rule] u[14], e[11] \[Rule] u[4], 
+      e[12] \[Rule] 0, 
+      g[13] \[Rule] 
+        1\/12\ \((
+            \(-9\)\ u[6] + 3\ u[7] + 3\ u[8] + u[11] + u[13] + 8\ u[14] + 
+              2\ u[15])\), 
+      g[14] \[Rule] 
+        1\/24\ \((27\ u[6] - 2\ u[11] + u[13] - 16\ u[14] - 4\ u[15])\), 
+      g[16] \[Rule] 
+        1\/576\ \((
+            198\ u[6] + 9\ u[10] + 
+              7\ \((u[11] + u[13] - 16\ u[14] - 4\ u[15])\))\), 
+      ce \[Rule] 1\/48\ \((\(-u[11]\) - u[13] + 4\ u[14] + u[15])\), 
+      cw \[Rule] 1\/144\ \((2\ u[11] + 2\ u[13] + 4\ u[14] + u[15])\), 
+      f2[1] \[Rule] 
+        1\/72\ \((\(-9\)\ u[6] + 2\ u[11] + 2\ u[13] + 4\ u[14] + u[15])\)}
+      \)], "Output"]
+}, Open  ]]
+},
+FrontEndVersion->"X 3.0",
+ScreenRectangle->{{0, 1024}, {0, 768}},
+PrintingStyleEnvironment->"Printout",
+WindowSize->{987, 651},
+WindowMargins->{{Automatic, 5}, {11, Automatic}},
+PrintingPageRange->{8, 9999},
+PageHeaders->{{Cell[ 
+        TextData[ {
+          CounterBox[ "Page"]}], "PageNumber"], Inherited, Cell[ 
+        TextData[ {
+          ValueBox[ "FileName"]}], "Header"]}, {Cell[ 
+        TextData[ {
+          ValueBox[ "FileName"]}], "Header"], Inherited, Cell[ 
+        TextData[ {
+          CounterBox[ "Page"]}], "PageNumber"]}},
+PrintingOptions->{"PrintingMargins"->{{18, 36}, {36, 72}},
+"PaperSize"->{597.562, 842.375},
+"PaperOrientation"->"Portrait",
+"PrintCellBrackets"->False,
+"PrintRegistrationMarks"->False,
+"PrintMultipleHorizontalPages"->False,
+"Magnification"->1}
+]
+
+
+(***********************************************************************
+Cached data follows.  If you edit this Notebook file directly, not using
+Mathematica, you must remove the line containing CacheID at the top of 
+the file.  The cache data will then be recreated when you save this file 
+from within Mathematica.
+***********************************************************************)
+
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+
+(*NotebookFileOutline
+Notebook[{
+
+Cell[CellGroupData[{
+Cell[1731, 51, 4188, 105, 1452, "Input",
+  InitializationCell->True],
+Cell[5922, 158, 176, 3, 23, "Message"],
+Cell[6101, 163, 176, 3, 23, "Message"],
+Cell[6280, 168, 133, 3, 23, "Message"],
+Cell[6416, 173, 653, 9, 91, "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+Cell[7106, 187, 4446, 119, 1692, "Input",
+  InitializationCell->True],
+Cell[11555, 308, 177, 3, 23, "Message"],
+Cell[11735, 313, 35, 1, 27, "Output"],
+Cell[11773, 316, 35, 1, 27, "Output"],
+Cell[11811, 319, 35, 1, 27, "Output"],
+Cell[11849, 322, 35, 1, 27, "Output"],
+Cell[11887, 325, 35, 1, 27, "Output"],
+Cell[11925, 328, 176, 3, 23, "Message"],
+Cell[12104, 333, 176, 3, 23, "Message"],
+Cell[12283, 338, 175, 3, 23, "Message"],
+Cell[12461, 343, 175, 3, 23, "Message"],
+Cell[12639, 348, 175, 3, 23, "Message"],
+Cell[12817, 353, 133, 3, 23, "Message"],
+Cell[12953, 358, 177, 3, 23, "Message"],
+Cell[13133, 363, 160, 2, 27, "Output"],
+Cell[13296, 367, 175, 3, 23, "Message"],
+Cell[13474, 372, 151, 2, 27, "Output"],
+Cell[13628, 376, 311, 7, 23, "Print"],
+Cell[13942, 385, 311, 7, 23, "Print"],
+Cell[14256, 394, 311, 7, 23, "Print"],
+Cell[14570, 403, 305, 7, 23, "Print"],
+Cell[14878, 412, 311, 7, 23, "Print"],
+Cell[15192, 421, 317, 7, 23, "Print"],
+Cell[15512, 430, 319, 7, 23, "Print"],
+Cell[15834, 439, 315, 7, 23, "Print"],
+Cell[16152, 448, 311, 7, 23, "Print"],
+Cell[16466, 457, 307, 7, 23, "Print"],
+Cell[16776, 466, 309, 7, 23, "Print"],
+Cell[17088, 475, 315, 7, 23, "Print"],
+Cell[17406, 484, 313, 7, 23, "Print"],
+Cell[17722, 493, 315, 7, 23, "Print"],
+Cell[18040, 502, 307, 7, 23, "Print"],
+Cell[18350, 511, 340, 8, 23, "Print"],
+Cell[18693, 521, 325, 7, 23, "Print"],
+Cell[19021, 530, 319, 7, 23, "Print"],
+Cell[19343, 539, 346, 8, 23, "Print"],
+Cell[19692, 549, 352, 8, 23, "Print"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+Cell[20081, 562, 4252, 77, 763, "Input"],
+Cell[24336, 641, 133, 3, 23, "Message"],
+Cell[24472, 646, 1003, 22, 187, "Output"],
+Cell[25478, 670, 309, 7, 23, "Print"],
+Cell[25790, 679, 309, 7, 23, "Print"],
+Cell[26102, 688, 309, 7, 23, "Print"],
+Cell[26414, 697, 309, 7, 23, "Print"],
+Cell[26726, 706, 309, 7, 23, "Print"],
+Cell[27038, 715, 309, 7, 23, "Print"],
+Cell[27350, 724, 309, 7, 23, "Print"],
+Cell[27662, 733, 309, 7, 23, "Print"],
+Cell[27974, 742, 309, 7, 23, "Print"],
+Cell[28286, 751, 311, 7, 23, "Print"],
+Cell[28600, 760, 311, 7, 23, "Print"],
+Cell[28914, 769, 311, 7, 23, "Print"],
+Cell[29228, 778, 311, 7, 23, "Print"],
+Cell[29542, 787, 311, 7, 23, "Print"],
+Cell[29856, 796, 311, 7, 23, "Print"],
+Cell[30170, 805, 311, 7, 23, "Print"],
+Cell[30484, 814, 311, 7, 23, "Print"],
+Cell[30798, 823, 332, 8, 23, "Print"],
+Cell[31133, 833, 350, 8, 23, "Print"],
+Cell[31486, 843, 356, 8, 23, "Print"],
+Cell[31845, 853, 640, 12, 39, "Print"],
+Cell[32488, 867, 640, 12, 39, "Print"],
+Cell[33131, 881, 640, 12, 39, "Print"],
+Cell[33774, 895, 726, 14, 65, "Print"],
+Cell[34503, 911, 640, 12, 39, "Print"],
+Cell[35146, 925, 640, 12, 39, "Print"],
+Cell[35789, 939, 676, 12, 39, "Print"],
+Cell[36468, 953, 666, 12, 39, "Print"],
+Cell[37137, 967, 640, 12, 39, "Print"],
+Cell[37780, 981, 642, 12, 39, "Print"],
+Cell[38425, 995, 642, 12, 39, "Print"],
+Cell[39070, 1009, 664, 12, 39, "Print"],
+Cell[39737, 1023, 642, 12, 39, "Print"],
+Cell[40382, 1037, 642, 12, 39, "Print"],
+Cell[41027, 1051, 642, 12, 39, "Print"],
+Cell[41672, 1065, 642, 12, 39, "Print"],
+Cell[42317, 1079, 824, 15, 65, "Print"],
+Cell[43144, 1096, 676, 12, 39, "Print"],
+Cell[43823, 1110, 676, 12, 39, "Print"],
+Cell[44502, 1124, 731, 13, 39, "Print"],
+Cell[45236, 1139, 309, 7, 23, "Print"],
+Cell[45548, 1148, 309, 7, 23, "Print"],
+Cell[45860, 1157, 309, 7, 23, "Print"],
+Cell[46172, 1166, 309, 7, 23, "Print"],
+Cell[46484, 1175, 309, 7, 23, "Print"],
+Cell[46796, 1184, 309, 7, 23, "Print"],
+Cell[47108, 1193, 309, 7, 23, "Print"],
+Cell[47420, 1202, 309, 7, 23, "Print"],
+Cell[47732, 1211, 309, 7, 23, "Print"],
+Cell[48044, 1220, 311, 7, 23, "Print"],
+Cell[48358, 1229, 311, 7, 23, "Print"],
+Cell[48672, 1238, 311, 7, 23, "Print"],
+Cell[48986, 1247, 311, 7, 23, "Print"],
+Cell[49300, 1256, 311, 7, 23, "Print"],
+Cell[49614, 1265, 311, 7, 23, "Print"],
+Cell[49928, 1274, 713, 12, 75, "Print"],
+Cell[50644, 1288, 763, 15, 65, "Print"],
+Cell[51410, 1305, 1253, 30, 75, "Print"],
+Cell[52666, 1337, 676, 13, 65, "Print"],
+Cell[53345, 1352, 733, 14, 75, "Print"],
+Cell[54081, 1368, 640, 12, 39, "Print"],
+Cell[54724, 1382, 774, 15, 75, "Print"],
+Cell[55501, 1399, 1052, 23, 75, "Print"],
+Cell[56556, 1424, 779, 14, 75, "Print"],
+Cell[57338, 1440, 715, 12, 75, "Print"],
+Cell[58056, 1454, 763, 15, 65, "Print"],
+Cell[58822, 1471, 642, 12, 39, "Print"],
+Cell[59467, 1485, 678, 13, 65, "Print"],
+Cell[60148, 1500, 843, 16, 75, "Print"],
+Cell[60994, 1518, 642, 12, 39, "Print"],
+Cell[61639, 1532, 176, 3, 23, "Message"],
+Cell[61818, 1537, 907, 17, 65, "Print"],
+Cell[62728, 1556, 906, 17, 65, "Print"],
+Cell[63637, 1575, 964, 16, 55, "Print"],
+Cell[64604, 1593, 90, 1, 27, "Output"],
+Cell[64697, 1596, 150, 2, 27, "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+Cell[64884, 1603, 5273, 98, 923, "Input"],
+Cell[70160, 1703, 177, 3, 23, "Message"],
+Cell[70340, 1708, 84, 1, 27, "Output"],
+Cell[70427, 1711, 579, 9, 59, "Output"],
+Cell[71009, 1722, 35, 1, 27, "Output"],
+Cell[71047, 1725, 55, 1, 43, "Output"],
+Cell[71105, 1728, 55, 1, 43, "Output"],
+Cell[71163, 1731, 55, 1, 43, "Output"],
+Cell[71221, 1734, 55, 1, 43, "Output"],
+Cell[71279, 1737, 42, 1, 43, "Output"],
+Cell[71324, 1740, 51, 1, 43, "Output"],
+Cell[71378, 1743, 133, 3, 23, "Message"],
+Cell[71514, 1748, 833, 18, 112, "Output"],
+Cell[72350, 1768, 35, 1, 27, "Output"],
+Cell[72388, 1771, 175, 3, 23, "Message"],
+Cell[72566, 1776, 605, 9, 123, "Output"],
+Cell[73174, 1787, 133, 3, 23, "Message"],
+Cell[73310, 1792, 259, 4, 43, "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+Cell[73606, 1801, 301, 6, 43, "Input"],
+Cell[73910, 1809, 639, 11, 123, "Output"],
+Cell[74552, 1822, 133, 3, 23, "Message"],
+Cell[74688, 1827, 315, 5, 70, "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+Cell[75040, 1837, 2170, 39, 427, "Input"],
+Cell[77213, 1878, 159, 2, 43, "Output"],
+Cell[77375, 1882, 512, 8, 59, "Output"],
+Cell[77890, 1892, 133, 3, 23, "Message"],
+Cell[78026, 1897, 265, 4, 27, "Output"],
+Cell[78294, 1903, 121, 2, 27, "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+Cell[78452, 1910, 828, 17, 123, "Input"],
+Cell[79283, 1929, 55, 1, 27, "Output"],
+Cell[79341, 1932, 55, 1, 27, "Output"],
+Cell[79399, 1935, 483, 7, 59, "Output"],
+Cell[79885, 1944, 35, 1, 27, "Output"],
+Cell[79923, 1947, 35, 1, 27, "Output"],
+Cell[79961, 1950, 143, 2, 43, "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+Cell[80141, 1957, 1571, 25, 347, "Input"],
+Cell[81715, 1984, 274, 6, 23, "Print"],
+Cell[81992, 1992, 274, 6, 23, "Print"],
+Cell[82269, 2000, 274, 6, 23, "Print"],
+Cell[82546, 2008, 286, 6, 23, "Print"],
+Cell[82835, 2016, 280, 6, 23, "Print"],
+Cell[83118, 2024, 282, 6, 23, "Print"],
+Cell[83403, 2032, 276, 6, 23, "Print"],
+Cell[83682, 2040, 276, 6, 23, "Print"],
+Cell[83961, 2048, 284, 6, 23, "Print"],
+Cell[84248, 2056, 286, 6, 23, "Print"],
+Cell[84537, 2064, 301, 6, 23, "Print"],
+Cell[84841, 2072, 301, 6, 23, "Print"],
+Cell[85145, 2080, 346, 8, 23, "Print"],
+Cell[85494, 2090, 1269, 27, 278, "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+Cell[86800, 2122, 825, 14, 171, "Input"],
+Cell[87628, 2138, 519, 9, 59, "Output"],
+Cell[88150, 2149, 274, 6, 23, "Print"],
+Cell[88427, 2157, 274, 6, 23, "Print"],
+Cell[88704, 2165, 274, 6, 23, "Print"],
+Cell[88981, 2173, 286, 6, 23, "Print"],
+Cell[89270, 2181, 280, 6, 23, "Print"],
+Cell[89553, 2189, 282, 6, 23, "Print"],
+Cell[89838, 2197, 276, 6, 23, "Print"],
+Cell[90117, 2205, 276, 6, 23, "Print"],
+Cell[90396, 2213, 284, 6, 23, "Print"],
+Cell[90683, 2221, 286, 6, 23, "Print"],
+Cell[90972, 2229, 1269, 27, 278, "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+Cell[92278, 2261, 128, 3, 59, "Input"],
+Cell[92409, 2266, 1343, 33, 259, "Output"],
+Cell[93755, 2301, 36, 1, 27, "Output"],
+Cell[93794, 2304, 63, 1, 27, "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+Cell[93894, 2310, 125, 3, 75, "Input"],
+Cell[94022, 2315, 73, 1, 43, "Output"],
+Cell[94098, 2318, 35, 1, 27, "Output"],
+Cell[94136, 2321, 1343, 33, 259, "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+Cell[95516, 2359, 349, 7, 43, "Input"],
+Cell[95868, 2368, 860, 19, 151, "Output"]
+}, Open  ]]
+}
+]
+*)
+
+
+
+
+(***********************************************************************
+End of Mathematica Notebook file.
+***********************************************************************)
+

@@ -1,0 +1,656 @@
+(***********************************************************************
+
+                    Mathematica-Compatible Notebook
+
+This notebook can be used on any computer system with Mathematica 3.0,
+MathReader 3.0, or any compatible application. The data for the notebook 
+starts with the line of stars above.
+
+To get the notebook into a Mathematica-compatible application, do one of 
+the following:
+
+* Save the data starting with the line of stars above into a file
+  with a name ending in .nb, then open the file inside the application;
+
+* Copy the data starting with the line of stars above to the
+  clipboard, then use the Paste menu command inside the application.
+
+Data for notebooks contains only printable 7-bit ASCII and can be
+sent directly in email or through ftp in text mode.  Newlines can be
+CR, LF or CRLF (Unix, Macintosh or MS-DOS style).
+
+NOTE: If you modify the data for this notebook not in a Mathematica-
+compatible application, you must delete the line below containing the 
+word CacheID, otherwise Mathematica-compatible applications may try to 
+use invalid cache data.
+
+For more information on notebooks and Mathematica-compatible 
+applications, contact Wolfram Research:
+  web: http://www.wolfram.com
+  email: info@wolfram.com
+  phone: +1-217-398-0700 (U.S.)
+
+Notebook reader applications are available free of charge from 
+Wolfram Research.
+***********************************************************************)
+
+(*CacheID: 232*)
+
+
+(*NotebookFileLineBreakTest
+NotebookFileLineBreakTest*)
+(*NotebookOptionsPosition[     19446,        537]*)
+(*NotebookOutlinePosition[     20082,        560]*)
+(*  CellTagsIndexPosition[     20038,        556]*)
+(*WindowFrame->Normal*)
+
+
+
+Notebook[{
+
+Cell[CellGroupData[{
+Cell["\<\
+Commento: per calcolare gli integrali devi moltiplicare ogni \
+intef[[i]] per rr=Sqrt[1-4*mf^2/t]\
+\>", "Subsubtitle"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[{
+    \(ims\  = << intcanff.dat\n\t\t\t\), 
+    \(u[k_] := 
+      rr*ims[\([k]\)] //. \ {rr \[Rule] Sqrt[1 - 4*m^2/t], \ mf -> m}\n\), 
+    \(c1 = \((u[1] - 1/2*u[3])\) // Simplify\n\), 
+    \(c2 = u[12]\)}], "Input"],
+
+Cell[BoxData[
+    \({\(5\ rr\^2 - 3\ rr\^4\)\/\(15\ t\), 
+      \(rr\ t\ \((
+              \(-4\)\ mf\^2\ \((\(-3\) + 4\ rr\^2)\) - 
+                3\ rr\^2\ \((\(-1\) + rr\^2)\)\ t)\) + 
+          24\ mf\^4\ Log[1 - rr] - 24\ mf\^4\ Log[1 + rr]\)\/\(3\ rr\ t\^3\), 
+      \(60\ mf\^2\ \((\(-1\) + 2\ rr\^2)\) + 
+          \((15 - 35\ rr\^2 + 24\ rr\^4)\)\ t\)\/\(15\ t\^2\), 
+      \(rr\ \((288\ mf\^4 + 8\ mf\^2\ \((3 + 10\ rr\^2)\)\ t + 
+                \((3 - 11\ rr\^2 + 9\ rr\^4)\)\ t\^2)\) + 
+          24\ mf\^2\ \((5\ mf\^2 + t)\)\ Log[1 - rr] - 
+          24\ mf\^2\ \((5\ mf\^2 + t)\)\ Log[1 + rr]\)\/\(3\ rr\ t\^3\), 
+      \(-\(1\/\(3\ rr\ t\^4\)\((
+          2\ \((rr\ t\ 
+                  \((576\ mf\^4 + 12\ mf\^2\ \((3 + 10\ rr\^2)\)\ t + 
+                      \((3 - 14\ rr\^2 + 12\ rr\^4)\)\ t\^2)\) + 
+                12\ \((8\ mf\^6 + 18\ mf\^4\ t + 3\ mf\^2\ t\^2)\)\ 
+                  Log[1 - rr] - 
+                12\ \((8\ mf\^6 + 18\ mf\^4\ t + 3\ mf\^2\ t\^2)\)\ 
+                  Log[1 + rr])\))\)\)\), 
+      \(-\(\(2\ rr\^2\ \((20\ mf\^2 + \((\(-5\) + 3\ rr\^2)\)\ t)\)\)\/\(15\ 
+              t\^2\)\)\), 
+      \(-\(1\/\(3\ rr\ t\^4\)\((
+          rr\ t\ \((
+                864\ mf\^4 + \((3 - 14\ rr\^2 + 12\ rr\^4)\)\ t\^2 + 
+                  36\ mf\^2\ \((t + 4\ rr\^2\ t)\))\) + 
+            6\ \((32\ mf\^6 + 52\ mf\^4\ t + 7\ mf\^2\ t\^2)\)\ Log[1 - rr] - 
+            6\ \((32\ mf\^6 + 52\ mf\^4\ t + 7\ mf\^2\ t\^2)\)\ Log[1 + rr])
+          \)\)\), \(rr\ 
+            \((576\ mf\^4 + 4\ mf\^2\ \((3 + 32\ rr\^2)\)\ t + 
+                \((6 - 17\ rr\^2 + 12\ rr\^4)\)\ t\^2)\) + 
+          30\ mf\^2\ \((8\ mf\^2 + t)\)\ Log[1 - rr] - 
+          30\ mf\^2\ \((8\ mf\^2 + t)\)\ Log[1 + rr]\)\/\(3\ rr\ t\^3\), 
+      \(\(-rr\)\ t\ 
+            \((8\ mf\^2\ \((\(-1\) + 2\ rr\^2)\) + 
+                \((1 - 4\ rr\^2 + 3\ rr\^4)\)\ t)\) + 8\ mf\^4\ Log[1 - rr] - 
+          8\ mf\^4\ Log[1 + rr]\)\/\(rr\ t\^3\), 
+      \(4\ \((rr\ t\^2\ 
+                \((4\ mf\^2\ \((\(-2\) + 3\ rr\^2)\) + 
+                    \((1 - 3\ rr\^2 + 2\ rr\^4)\)\ t)\) - 
+              4\ mf\^4\ \((4\ mf\^2 + t)\)\ Log[1 - rr] + 
+              4\ mf\^4\ \((4\ mf\^2 + t)\)\ Log[1 + rr])\)\)\/\(rr\ t\^4\), 
+      \(rr\ t\ \((
+              \(-96\)\ mf\^4 + 8\ mf\^2\ \((\(-1\) + 2\ rr\^2)\)\ t + 
+                \((1 - 5\ rr\^2 + 4\ rr\^4)\)\ t\^2)\) - 
+          8\ \((8\ mf\^6 + 5\ mf\^4\ t)\)\ Log[1 - rr] + 
+          8\ \((8\ mf\^6 + 5\ mf\^4\ t)\)\ Log[1 + rr]\)\/\(rr\ t\^4\), 
+      \(\((\(-1\) + 2\ rr\^2)\)\ \((4\ mf\^2 + \((\(-1\) + rr\^2)\)\ t)\)\)\/t
+          \^2, \(4\ 
+          \((rr\ t\ 
+                \((mf\^2\ \((21 - 32\ rr\^2)\) - 
+                    3\ \((1 - 3\ rr\^2 + 2\ rr\^4)\)\ t)\) + 
+              18\ mf\^4\ Log[1 - rr] - 18\ mf\^4\ Log[1 + rr])\)\)\/\(3\ rr\ 
+          t\^3\), \(2\ mf\^2\ 
+          \((288\ mf\^2\ rr + 6\ rr\ t + 32\ rr\^3\ t + 
+              3\ \((40\ mf\^2 + 3\ t)\)\ Log[1 - rr] - 
+              3\ \((40\ mf\^2 + 3\ t)\)\ Log[1 + rr])\)\)\/\(3\ rr\ t\^3\), 
+      \(-\(\(4\ mf\^2\ 
+              \((16\ rr\ t\ \((12\ mf\^2 + rr\^2\ t)\) + 
+                  \((64\ mf\^4 + 68\ mf\^2\ t + 3\ t\^2)\)\ Log[1 - rr] - 
+                  \((64\ mf\^4 + 68\ mf\^2\ t + 3\ t\^2)\)\ Log[1 + rr])
+                \)\)\/\(rr\ t\^4\)\)\)}\)], "Output"],
+
+Cell[BoxData[
+    \(0\)], "Output"],
+
+Cell[BoxData[
+    \(0\)], "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[{
+    \(c3 = 
+      u[2] - 1/4*\((4*u[4] + u[5] - 2*u[8] - u[11] - 3*u[13])\) // Simplify\n
+    \), 
+    \(C3 = Factor[Integrate[\ c3, t]]\), 
+    \(Limit[C3\ , t -> Infinity] - \ Limit[C3, t -> 4  m^2]\)}], "Input"],
+
+Cell[BoxData[
+    \(\(m\^2\ 
+        \((2\ \@\(1 - \(4\ m\^2\)\/t\)\ \((100\ m\^2 + 23\ t)\) + 
+            3\ \((52\ m\^2 + 3\ t)\)\ Log[1 - \@\(1 - \(4\ m\^2\)\/t\)] - 
+            3\ \((52\ m\^2 + 3\ t)\)\ Log[1 + \@\(1 - \(4\ m\^2\)\/t\)])
+          \)\)\/\(3\ t\^3\)\)], "Output"],
+
+Cell[BoxData[
+    \(\(-\(1\/\(3\ t\^2\)\((
+        m\^2\ \((
+            80\ m\^2\ \@\(\(\(-4\)\ m\^2 + t\)\/t\) + 
+              37\ t\ \@\(\(\(-4\)\ m\^2 + t\)\/t\) + 
+              78\ m\^2\ Log[1 - \@\(\(\(-4\)\ m\^2 + t\)\/t\)] + 
+              9\ t\ Log[1 - \@\(\(\(-4\)\ m\^2 + t\)\/t\)] - 
+              78\ m\^2\ Log[1 + \@\(\(\(-4\)\ m\^2 + t\)\/t\)] - 
+              9\ t\ Log[1 + \@\(\(\(-4\)\ m\^2 + t\)\/t\)])\))\)\)\)\)], 
+  "Output"],
+
+Cell[BoxData[
+    \(0\)], "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[{
+    \(c4 = 
+      u[3] - 1/9*\((9*u[6] - 2*u[11] - 2*u[13] - 4*u[14] - u[15])\) // 
+        Simplify\), 
+    \(C4 = Factor[Integrate[\ c4, t]]\), 
+    \(Limit[C4, t -> Infinity] - \ Limit[C4, t -> 4  m^2]\)}], "Input"],
+
+Cell[BoxData[
+    \(\(4\ m\^2\ 
+        \((2\ \@\(1 - \(4\ m\^2\)\/t\)\ t\ \((\(-36\)\ m\^2 + 7\ t)\) + 
+            \((\(-96\)\ m\^4 + 4\ m\^2\ t + 3\ t\^2)\)\ 
+              Log[1 - \@\(1 - \(4\ m\^2\)\/t\)] + 
+            \((96\ m\^4 - 4\ m\^2\ t - 3\ t\^2)\)\ 
+              Log[1 + \@\(1 - \(4\ m\^2\)\/t\)])\)\)\/\(9\ t\^4\)\)], "Output"],
+
+Cell[BoxData[
+    \(\(-\(1\/\(9\ t\^3\)\((
+        4\ m\^2\ \((
+            \(-32\)\ m\^2\ t\ \@\(\(\(-4\)\ m\^2 + t\)\/t\) + 
+              11\ t\^2\ \@\(\(\(-4\)\ m\^2 + t\)\/t\) - 
+              32\ m\^4\ Log[1 - \@\(\(\(-4\)\ m\^2 + t\)\/t\)] + 
+              2\ m\^2\ t\ Log[1 - \@\(\(\(-4\)\ m\^2 + t\)\/t\)] + 
+              3\ t\^2\ Log[1 - \@\(\(\(-4\)\ m\^2 + t\)\/t\)] + 
+              32\ m\^4\ Log[1 + \@\(\(\(-4\)\ m\^2 + t\)\/t\)] - 
+              2\ m\^2\ t\ Log[1 + \@\(\(\(-4\)\ m\^2 + t\)\/t\)] - 
+              3\ t\^2\ Log[1 + \@\(\(\(-4\)\ m\^2 + t\)\/t\)])\))\)\)\)\)], 
+  "Output"],
+
+Cell[BoxData[
+    \(0\)], "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[{
+    \(c5 = u[9] - 1/4*\((\(-u[10]\) + u[11] + u[13])\) // Simplify\), 
+    \(C5 = Factor[Integrate[\ c5\ , t]]\), 
+    \(Limit[C5, t -> Infinity] - \ Limit[C5, t -> 4  m^2]\)}], "Input"],
+
+Cell[BoxData[
+    \(\(2\ 
+        \((m\^2\ \@\(1 - \(4\ m\^2\)\/t\)\ \((20\ m\^2 + t)\) + 
+            12\ m\^4\ Log[1 - \@\(1 - \(4\ m\^2\)\/t\)] - 
+            12\ m\^4\ Log[1 + \@\(1 - \(4\ m\^2\)\/t\)])\)\)\/\(3\ t\^3\)\)], 
+  "Output"],
+
+Cell[BoxData[
+    \(\(-\(\(2\ m\^2\ 
+            \((8\ m\^2\ \@\(1 - \(4\ m\^2\)\/t\) + 
+                \@\(1 - \(4\ m\^2\)\/t\)\ t + 
+                6\ m\^2\ Log[1 - \@\(1 - \(4\ m\^2\)\/t\)] - 
+                6\ m\^2\ Log[1 + \@\(1 - \(4\ m\^2\)\/t\)])\)\)\/\(3\ 
+            t\^2\)\)\)\)], "Output"],
+
+Cell[BoxData[
+    \(0\)], "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+    \(\(\nIntegrate[1/\((t \((t + 1)\))\), {t, 4  m^2, Infinity}]\)\)], 
+  "Input"],
+
+Cell[BoxData[
+    RowBox[{"If", "[", 
+      RowBox[{\(m\^2 > 0\), ",", \(Log[1 + 1\/\(4\ m\^2\)]\), ",", 
+        RowBox[{
+          SubsuperscriptBox["\[Integral]", \(4\ m\^2\), 
+            InterpretationBox["\[Infinity]",
+              DirectedInfinity[ 1]]], 
+          \(\(1\/\(t\ \((1 + t)\)\)\) \[DifferentialD]t\)}]}], "]"}]], 
+  "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[{
+    \(f2 = Factor[\(-\ u[3]\)/8\ ]\n\t\t\t\), 
+    \(Limit[f2, \ m -> 0]\n\), 
+    \(if2 = Simplify[Integrate[\ f2/\((t - 1)\)\ , t]]\), 
+    \(Limit[if2, t -> Infinity] - \ Limit[if2, t -> 4  m^2]\)}], "Input"],
+
+Cell[BoxData[
+    \(\(-\(\(\@\(1 - \(4\ m\^2\)\/t\)\ \((\(-4\)\ m\^2 + t)\)\ 
+            \((6\ m\^2 + t)\)\)\/\(30\ t\^3\)\)\)\)], "Output"],
+
+Cell[BoxData[
+    \(\(-\(1\/\(30\ t\)\)\)\)], "Output"],
+
+Cell[BoxData[
+    \(1\/30\ 
+      \((\(\@\(1 - \(4\ m\^2\)\/t\)\ 
+              \((\(-31\)\ t\^2 - 8\ m\^2\ t\ \((4 + 15\ t)\) + 
+                  48\ m\^4\ \((3 + 5\ t + 15\ t\^2)\))\)\)\/\(15\ t\^2\) + 
+          \((1 - 4\ m\^2)\)\^\(3/2\)\ \((1 + 6\ m\^2)\)\ 
+            Log[\(2\ \((
+                    t + \@\(1 - 4\ m\^2\)\ \@\(1 - \(4\ m\^2\)\/t\)\ t - 
+                      2\ m\^2\ \((1 + t)\))
+                    \)\)\/\(\((1 - 4\ m\^2)\)\^\(5/2\)\ \((1 + 6\ m\^2)\)\ 
+                  \((\(-1\) + t)\)\)])\)\)], "Output"],
+
+Cell[BoxData[
+    \(\(-\(1\/30\)\)\ \((1 - 4\ m\^2)\)\^\(3/2\)\ \((1 + 6\ m\^2)\)\ 
+        Log[\(-\(\(4\ m\^2\)\/\(\((1 - 4\ m\^2)\)\^\(5/2\)\ 
+                  \((1 + 6\ m\^2)\)\)\)\)] + 
+      1\/30\ \((
+          \(-\(31\/15\)\) - 8\ m\^2 + 48\ m\^4 + 
+            \((1 - 4\ m\^2)\)\^\(3/2\)\ \((1 + 6\ m\^2)\)\ 
+              Log[\(2\ \((1 - 2\ m\^2 + \@\(1 - 4\ m\^2\))
+                      \)\)\/\(\((1 - 4\ m\^2)\)\^\(5/2\)\ 
+                    \((1 + 6\ m\^2)\)\)])\)\)], "Output"]
+}, Open  ]],
+
+Cell[BoxData[
+    \(\( (*
+      \(**************************************************\n\t\tLEGENDA\)\ 
+        REDUCTION\ FORMULAE\n\t\n\t\te[i], \ i = 6, 8, 9, 11, 13, 14, 
+      16\ \ \ \ 7\ amplitudes\ of\ tr = \(d = 0\ tensors\n\t\te[i]\), \ \ 
+      i = 2, 3, 
+      12\ \ \ \ \ \ \ \ \ \ \ \ \ \ 3\ amplitudes\ of\ tr = 
+        \(\( /= 0\ \ d\) = 
+          0\ tensors\ \n
+            \t\t\t\t\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \
+\ whose\ trace\ does\ not\ match\ the\ anomaly\n\t\tce\), cw, \ 
+      f2[q^2 = 1]\ \ \ \ \ \ \ \ \ \ \ \ \ \ anomaly\ amplitudes\ and\  < 
+        TT > \ amplitude\n\t\t\ \n\t****************************************) 
+      \n\ne[2] = 
+      \((4\ u[2] - 4\ u[4] - u[5] + 2\ u[8] + 12\ u[9] + 3\ u[10] - 2\ u[11])
+            \)/3\  // Simplify; \n
+    e[3] = \((4\ u[2] - 4\ u[4] - u[5] + 2\ u[8] + u[11] + 3\ u[13])\)/3\  // 
+        Simplify; \ne[6] = u[2]\  // Simplify; \ne[8] = u[7]\  // Simplify; \n
+    e[9] = u[14]\  // Simplify; \ne[11] = u[4]\  // Simplify; \n
+    e[12] = \((
+            8\ u[2] - 27\ u[3] - 8\ u[4] - 2\ u[5] + 27\ u[6] + 4\ u[8] - 
+              4\ u[11] - 12\ u[14] - 3\ u[15])\)/27\  // Simplify; \n
+    e[13] = \ \((
+            4\ u[2] - 27\ u[3] - 4\ u[4] - u[5] + 9\ u[7] + 11\ u[8] - 
+              2\ u[11] + 12\ u[14] + 3\ u[15])\)/36\  // Simplify; \n
+    e[14] = \ \((
+            \(-28\)\ u[2] + 81\ u[3] + 28\ u[4] + 7\ u[5] - 14\ u[8] + 
+              5\ u[11] - 12\ u[14] - 3\ u[15])\)/72\  // Simplify; \n
+    e[16] = \ \((
+            \(-40\)\ u[2] + 99\ u[3] + 40\ u[4] + 10\ u[5] - 20\ u[8] - 
+              18\ u[9] + 20\ u[11] - 12\ u[14] - 3\ u[15])\)/288\  // 
+        Simplify; 
+    ce = \ \((
+            4\ u[2] - 4\ u[4] - u[5] + 2\ u[8] - 2\ u[11] + 12\ u[14] + 
+              3\ u[15])\)/144\  // Simplify; 
+    cw = \((\(-8\)\ u[2] + 8\ u[4] + 2\ u[5] - 4\ u[8] + 4\ u[11] + 
+              12\ u[14] + 3\ u[15])\)/432\  // Simplify; \)\)], "Input"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[{
+    \(ie = Factor[Integrate[\ ce\ , t]]\), 
+    \(Limit[ie, t -> Infinity] - \ Limit[ie, t -> 4  m^2]\n\), 
+    \(iw = Factor[Integrate[\ cw\ , t]]\), 
+    \(Limit[iw, t -> Infinity] - \ Limit[iw, t -> 4  m^2]\n\), 
+    \(i2 = Factor[Integrate[\ e[2], t]]\), 
+    \(Limit[i2, t -> Infinity] - \ Limit[i2, t -> 4  m^2]\n\), 
+    \(i3 = Factor[Integrate[\ e[3]\ , t]]\), 
+    \(Limit[i3, t -> Infinity] - \ Limit[i3, t -> 4  m^2]\n\), 
+    \(i12 = Factor[Integrate[\ e[12], t]]\), 
+    \(Limit[i12, t -> Infinity] - \ Limit[i12, t -> 4  m^2]\)}], "Input"],
+
+Cell[BoxData[
+    \(\(-\(1\/\(1080\ t\^3\)\((
+        368\ m\^4\ t\ \@\(\(\(-4\)\ m\^2 + t\)\/t\) + 
+          1066\ m\^2\ t\^2\ \@\(\(\(-4\)\ m\^2 + t\)\/t\) + 
+          33\ t\^3\ \@\(\(\(-4\)\ m\^2 + t\)\/t\) - 
+          1440\ m\^6\ Log[1 - \@\(\(\(-4\)\ m\^2 + t\)\/t\)] + 
+          1500\ m\^4\ t\ Log[1 - \@\(\(\(-4\)\ m\^2 + t\)\/t\)] + 
+          360\ m\^2\ t\^2\ Log[1 - \@\(\(\(-4\)\ m\^2 + t\)\/t\)] + 
+          1440\ m\^6\ Log[1 + \@\(\(\(-4\)\ m\^2 + t\)\/t\)] - 
+          1500\ m\^4\ t\ Log[1 + \@\(\(\(-4\)\ m\^2 + t\)\/t\)] - 
+          360\ m\^2\ t\^2\ Log[1 + \@\(\(\(-4\)\ m\^2 + t\)\/t\)])\)\)\)\)], 
+  "Output"],
+
+Cell[BoxData[
+    \(\(-\(11\/360\)\)\)], "Output"],
+
+Cell[BoxData[
+    \(\(-\(1\/\(1620\ t\^3\)\((
+        \(-1808\)\ m\^4\ t\ \@\(\(\(-4\)\ m\^2 + t\)\/t\) - 
+          91\ m\^2\ t\^2\ \@\(\(\(-4\)\ m\^2 + t\)\/t\) + 
+          27\ t\^3\ \@\(\(\(-4\)\ m\^2 + t\)\/t\) - 
+          1440\ m\^6\ Log[1 - \@\(\(\(-4\)\ m\^2 + t\)\/t\)] - 
+          690\ m\^4\ t\ Log[1 - \@\(\(\(-4\)\ m\^2 + t\)\/t\)] + 
+          45\ m\^2\ t\^2\ Log[1 - \@\(\(\(-4\)\ m\^2 + t\)\/t\)] + 
+          1440\ m\^6\ Log[1 + \@\(\(\(-4\)\ m\^2 + t\)\/t\)] + 
+          690\ m\^4\ t\ Log[1 + \@\(\(\(-4\)\ m\^2 + t\)\/t\)] - 
+          45\ m\^2\ t\^2\ Log[1 + \@\(\(\(-4\)\ m\^2 + t\)\/t\)])\)\)\)\)], 
+  "Output"],
+
+Cell[BoxData[
+    \(\(-\(1\/60\)\)\)], "Output"],
+
+Cell[BoxData[
+    \(\(-\(1\/\(9\ t\^2\)\((
+        4\ m\^2\ \((
+            128\ m\^2\ \@\(\(\(-4\)\ m\^2 + t\)\/t\) + 
+              43\ t\ \@\(\(\(-4\)\ m\^2 + t\)\/t\) + 
+              114\ m\^2\ Log[1 - \@\(\(\(-4\)\ m\^2 + t\)\/t\)] + 
+              9\ t\ Log[1 - \@\(\(\(-4\)\ m\^2 + t\)\/t\)] - 
+              114\ m\^2\ Log[1 + \@\(\(\(-4\)\ m\^2 + t\)\/t\)] - 
+              9\ t\ Log[1 + \@\(\(\(-4\)\ m\^2 + t\)\/t\)])\))\)\)\)\)], 
+  "Output"],
+
+Cell[BoxData[
+    \(0\)], "Output"],
+
+Cell[BoxData[
+    \(\(-\(1\/\(9\ t\^2\)\((
+        4\ m\^2\ \((
+            80\ m\^2\ \@\(\(\(-4\)\ m\^2 + t\)\/t\) + 
+              37\ t\ \@\(\(\(-4\)\ m\^2 + t\)\/t\) + 
+              78\ m\^2\ Log[1 - \@\(\(\(-4\)\ m\^2 + t\)\/t\)] + 
+              9\ t\ Log[1 - \@\(\(\(-4\)\ m\^2 + t\)\/t\)] - 
+              78\ m\^2\ Log[1 + \@\(\(\(-4\)\ m\^2 + t\)\/t\)] - 
+              9\ t\ Log[1 + \@\(\(\(-4\)\ m\^2 + t\)\/t\)])\))\)\)\)\)], 
+  "Output"],
+
+Cell[BoxData[
+    \(0\)], "Output"],
+
+Cell[BoxData[
+    \(\(1\/\(81\ t\^3\)\((
+      4\ m\^2\ \((
+          \(-448\)\ m\^2\ t\ \@\(\(\(-4\)\ m\^2 + t\)\/t\) + 
+            25\ t\^2\ \@\(\(\(-4\)\ m\^2 + t\)\/t\) - 
+            288\ m\^4\ Log[1 - \@\(\(\(-4\)\ m\^2 + t\)\/t\)] - 
+            138\ m\^2\ t\ Log[1 - \@\(\(\(-4\)\ m\^2 + t\)\/t\)] + 
+            9\ t\^2\ Log[1 - \@\(\(\(-4\)\ m\^2 + t\)\/t\)] + 
+            288\ m\^4\ Log[1 + \@\(\(\(-4\)\ m\^2 + t\)\/t\)] + 
+            138\ m\^2\ t\ Log[1 + \@\(\(\(-4\)\ m\^2 + t\)\/t\)] - 
+            9\ t\^2\ Log[1 + \@\(\(\(-4\)\ m\^2 + t\)\/t\)])\))\)\)\)], 
+  "Output"],
+
+Cell[BoxData[
+    \(0\)], "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[{
+    \(m0[x_] := Limit[x, m -> 0]\), 
+    \(m0[ce]\), 
+    \(m0[cw]\), 
+    \(m0[e[2]]\), 
+    \(m0[e[3]]\), 
+    \(m0[e[12]]\)}], "Input"],
+
+Cell[BoxData[
+    \(0\)], "Output"],
+
+Cell[BoxData[
+    \(0\)], "Output"],
+
+Cell[BoxData[
+    \(0\)], "Output"],
+
+Cell[BoxData[
+    \(0\)], "Output"],
+
+Cell[BoxData[
+    \(0\)], "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+    \(\(Do[Print["\<e[\>", i, "\<]  -> \>", m0[e[i]]\ ], {i, 6, 16}]\ \)\)], 
+  "Input"],
+
+Cell[BoxData[
+    InterpretationBox[
+      \("e["\[InvisibleSpace]6\[InvisibleSpace]"]  -> "\[InvisibleSpace]0\),
+      SequenceForm[ "e[", 6, "]  -> ", 0],
+      Editable->False]], "Print"],
+
+Cell[BoxData[
+    InterpretationBox[
+      \("e["\[InvisibleSpace]7
+        \[InvisibleSpace]"]  -> "\[InvisibleSpace]e[7]\),
+      SequenceForm[ "e[", 7, "]  -> ", 
+        e[ 7]],
+      Editable->False]], "Print"],
+
+Cell[BoxData[
+    InterpretationBox[
+      \("e["\[InvisibleSpace]8
+        \[InvisibleSpace]"]  -> "\[InvisibleSpace]\(-\(1\/\(3\ t\)\)\)\),
+      SequenceForm[ "e[", 8, "]  -> ", 
+        Times[ 
+          Rational[ -1, 3], 
+          Power[ t, -1]]],
+      Editable->False]], "Print"],
+
+Cell[BoxData[
+    InterpretationBox[
+      \("e["\[InvisibleSpace]9\[InvisibleSpace]"]  -> "\[InvisibleSpace]0\),
+      SequenceForm[ "e[", 9, "]  -> ", 0],
+      Editable->False]], "Print"],
+
+Cell[BoxData[
+    InterpretationBox[
+      \("e["\[InvisibleSpace]10
+        \[InvisibleSpace]"]  -> "\[InvisibleSpace]e[10]\),
+      SequenceForm[ "e[", 10, "]  -> ", 
+        e[ 10]],
+      Editable->False]], "Print"],
+
+Cell[BoxData[
+    InterpretationBox[
+      \("e["\[InvisibleSpace]11
+        \[InvisibleSpace]"]  -> "\[InvisibleSpace]1\/\(3\ t\)\),
+      SequenceForm[ "e[", 11, "]  -> ", 
+        Times[ 
+          Rational[ 1, 3], 
+          Power[ t, -1]]],
+      Editable->False]], "Print"],
+
+Cell[BoxData[
+    InterpretationBox[
+      \("e["\[InvisibleSpace]12\[InvisibleSpace]"]  -> "\[InvisibleSpace]0\),
+      SequenceForm[ "e[", 12, "]  -> ", 0],
+      Editable->False]], "Print"],
+
+Cell[BoxData[
+    InterpretationBox[
+      \("e["\[InvisibleSpace]13
+        \[InvisibleSpace]"]  -> "\[InvisibleSpace]\(-\(1\/\(5\ t\)\)\)\),
+      SequenceForm[ "e[", 13, "]  -> ", 
+        Times[ 
+          Rational[ -1, 5], 
+          Power[ t, -1]]],
+      Editable->False]], "Print"],
+
+Cell[BoxData[
+    InterpretationBox[
+      \("e["\[InvisibleSpace]14
+        \[InvisibleSpace]"]  -> "\[InvisibleSpace]3\/\(10\ t\)\),
+      SequenceForm[ "e[", 14, "]  -> ", 
+        Times[ 
+          Rational[ 3, 10], 
+          Power[ t, -1]]],
+      Editable->False]], "Print"],
+
+Cell[BoxData[
+    InterpretationBox[
+      \("e["\[InvisibleSpace]15
+        \[InvisibleSpace]"]  -> "\[InvisibleSpace]e[15]\),
+      SequenceForm[ "e[", 15, "]  -> ", 
+        e[ 15]],
+      Editable->False]], "Print"],
+
+Cell[BoxData[
+    InterpretationBox[
+      \("e["\[InvisibleSpace]16
+        \[InvisibleSpace]"]  -> "\[InvisibleSpace]11\/\(120\ t\)\),
+      SequenceForm[ "e[", 16, "]  -> ", 
+        Times[ 
+          Rational[ 11, 120], 
+          Power[ t, -1]]],
+      Editable->False]], "Print"]
+}, Open  ]]
+}, Open  ]]
+},
+FrontEndVersion->"X 3.0",
+ScreenRectangle->{{0, 1280}, {0, 1024}},
+WindowSize->{933, 887},
+WindowMargins->{{84, Automatic}, {19, Automatic}}
+]
+
+
+(***********************************************************************
+Cached data follows.  If you edit this Notebook file directly, not using
+Mathematica, you must remove the line containing CacheID at the top of 
+the file.  The cache data will then be recreated when you save this file 
+from within Mathematica.
+***********************************************************************)
+
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+
+(*NotebookFileOutline
+Notebook[{
+
+Cell[CellGroupData[{
+Cell[1731, 51, 128, 3, 53, "Subsubtitle"],
+
+Cell[CellGroupData[{
+Cell[1884, 58, 230, 5, 123, "Input"],
+Cell[2117, 65, 3331, 61, 559, "Output"],
+Cell[5451, 128, 35, 1, 27, "Output"],
+Cell[5489, 131, 35, 1, 27, "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+Cell[5561, 137, 229, 5, 75, "Input"],
+Cell[5793, 144, 285, 5, 73, "Output"],
+Cell[6081, 151, 449, 9, 137, "Output"],
+Cell[6533, 162, 35, 1, 27, "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+Cell[6605, 168, 233, 5, 59, "Input"],
+Cell[6841, 175, 344, 6, 73, "Output"],
+Cell[7188, 183, 605, 11, 137, "Output"],
+Cell[7796, 196, 35, 1, 27, "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+Cell[7868, 202, 201, 3, 59, "Input"],
+Cell[8072, 207, 240, 5, 73, "Output"],
+Cell[8315, 214, 305, 6, 73, "Output"],
+Cell[8623, 222, 35, 1, 27, "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+Cell[8695, 228, 97, 2, 43, "Input"],
+Cell[8795, 232, 347, 8, 47, "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+Cell[9179, 245, 226, 4, 107, "Input"],
+Cell[9408, 251, 141, 2, 68, "Output"],
+Cell[9552, 255, 55, 1, 45, "Output"],
+Cell[9610, 258, 537, 10, 207, "Output"],
+Cell[10150, 270, 493, 9, 122, "Output"]
+}, Open  ]],
+Cell[10658, 282, 1969, 36, 363, "Input"],
+
+Cell[CellGroupData[{
+Cell[12652, 322, 568, 10, 235, "Input"],
+Cell[13223, 334, 635, 11, 178, "Output"],
+Cell[13861, 347, 50, 1, 45, "Output"],
+Cell[13914, 350, 635, 11, 178, "Output"],
+Cell[14552, 363, 48, 1, 45, "Output"],
+Cell[14603, 366, 455, 9, 137, "Output"],
+Cell[15061, 377, 35, 1, 27, "Output"],
+Cell[15099, 380, 452, 9, 137, "Output"],
+Cell[15554, 391, 35, 1, 27, "Output"],
+Cell[15592, 394, 590, 11, 137, "Output"],
+Cell[16185, 407, 35, 1, 27, "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+Cell[16257, 413, 153, 6, 107, "Input"],
+Cell[16413, 421, 35, 1, 27, "Output"],
+Cell[16451, 424, 35, 1, 27, "Output"],
+Cell[16489, 427, 35, 1, 27, "Output"],
+Cell[16527, 430, 35, 1, 27, "Output"],
+Cell[16565, 433, 35, 1, 27, "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+Cell[16637, 439, 102, 2, 27, "Input"],
+Cell[16742, 443, 190, 4, 23, "Print"],
+Cell[16935, 449, 215, 6, 23, "Print"],
+Cell[17153, 457, 287, 8, 41, "Print"],
+Cell[17443, 467, 190, 4, 23, "Print"],
+Cell[17636, 473, 219, 6, 23, "Print"],
+Cell[17858, 481, 279, 8, 41, "Print"],
+Cell[18140, 491, 192, 4, 23, "Print"],
+Cell[18335, 497, 289, 8, 41, "Print"],
+Cell[18627, 507, 281, 8, 41, "Print"],
+Cell[18911, 517, 219, 6, 23, "Print"],
+Cell[19133, 525, 285, 8, 41, "Print"]
+}, Open  ]]
+}, Open  ]]
+}
+]
+*)
+
+
+
+
+(***********************************************************************
+End of Mathematica Notebook file.
+***********************************************************************)
+

@@ -1,0 +1,64 @@
+
+                      
+                       FILE NAMING
+                       -----------
+
+
+The figures in this directory have self-explaining names of
+the kind:
+
+6-39.ps    < 6 electrons - J=39 branch of states>
+             plot of both density profiles and energy levels
+
+6r39.ps    as above, plot of density profiles
+
+6e39.ps    as above, plot of energy levels
+
+6e39-d3.ps as above, plot of energy levels including edge excitations
+           with delta J = 3
+
+6r.ps      plot of density profiles of all bottom states of 6 electrons
+
+6e.ps      plot of all energy levels
+
+6cfe.ps    plot of exact and Jain-state energy levels
+
+6e.dat     values of the energy levels
+
+overlaps.dat  overlaps between exact states and Jain
+              states (not orthogonalized)
+              
+jain.dat      overlaps among Jain states
+
+
+          
+                       LEVEL NAMING
+                       ------------
+
+
+7-3      Bottom Jain state [7,3] in the notation of the paper
+
+111      J value
+
+j1 -j5   Jain state corresponding to a particle-hole excitation 
+         of the bottom state |\Omega>, e.g. |[7,3]> or |[5,3,1]>.
+         In the Fock-space notation of the paper, 
+         (operators d, d^+, u, u^+, ...), we have:
+
+\delta J=1  j1  ->  d^+_1 d_0 |\Omega>  or   j1  ->  d^+_1 d_0 |\Omega>
+            j2  ->  u^+_1 u_0 |\Omega>       j2  ->  c^+_1 c_0 |\Omega>
+                                             j3  ->  u^+_1 u_0 |\Omega>  
+
+\delta J=2  j1  ->  d^+_2 d_0          |\Omega>
+            j2  ->  d^+_1 d_{-1}       |\Omega>
+            j3  ->  d^+_1 d_0 u^+_1 u_0|\Omega>
+            j4  ->  u^+_2 u_0          |\Omega>
+            j5  ->  u^+_1 u_{-1}       |\Omega>
+
+
+10-111-n Exact state with 10 electrons, J=111, ordered by increasing
+         energy n=0,1,... 
+
+
+
+N.B. OVERL2 == OVERL^2

@@ -1,0 +1,37 @@
+{-(5 - 10*rr^2 + 9*rr^4)/(720*t), 
+ -(rr*(-1 + rr^2)*t*(48*mb^2 - 7*t + 9*rr^2*t) - 48*mb^4*Log[1 - rr] + 
+    48*mb^4*Log[1 + rr])/(144*rr*t^3), 
+ (30*mb^2*(-1 + 3*rr^2) + (5 - 25*rr^2 + 18*rr^4)*t)/(180*t^2), 
+ (3*rr*(864*mb^4 + 48*mb^2*(3 + 5*rr^2)*t + (9 - 28*rr^2 + 27*rr^4)*t^2) + 
+   4*(288*mb^4 + 72*mb^2*t + t^2)*Log[1 - rr] - 
+   4*(288*mb^4 + 72*mb^2*t + t^2)*Log[1 + rr])/(432*rr*t^3), 
+ (-216*I*mb^6*Pi - 1296*mb^4*rr*t - 162*mb^2*rr*t^2 - 270*mb^2*rr^3*t^2 - 
+   9*rr*t^3 + 24*rr^3*t^3 - 27*rr^5*t^3 - 
+   2*(216*mb^6 + 252*mb^4*t + 57*mb^2*t^2 + t^3)*Log[1 - rr] + 
+   216*mb^6*Log[-1 + rr] + 216*mb^6*Log[1 + rr] + 504*mb^4*t*Log[1 + rr] + 
+   114*mb^2*t^2*Log[1 + rr] + 2*t^3*Log[1 + rr])/(54*rr*t^4), 
+ -(60*mb^2*rr + 60*mb^2*rr^3 + 5*rr*t - 10*rr^3*t + 9*rr^5*t + 
+    40*mb^2*Log[1 - rr] - 40*mb^2*Log[1 + rr])/(360*rr*t^2), 
+ (-144*I*mb^6*Pi - 648*mb^4*rr*t + 24*mb^2*rr*t^2 - 108*mb^2*rr^3*t^2 - 
+   5*rr*t^3 + 14*rr^3*t^3 - 9*rr^5*t^3 - 8*(36*mb^6 + 27*mb^4*t + 2*mb^2*t^2)*
+    Log[1 - rr] + 144*mb^6*Log[-1 + rr] + 144*mb^6*Log[1 + rr] + 
+   216*mb^4*t*Log[1 + rr] + 16*mb^2*t^2*Log[1 + rr])/(36*rr*t^4), 
+ (rr*(432*mb^4 + 12*mb^2*(3 + 8*rr^2)*t + (2 - 11*rr^2 + 9*rr^4)*t^2) + 
+   4*(48*mb^4 + 7*mb^2*t)*Log[1 - rr] - 4*(48*mb^4 + 7*mb^2*t)*Log[1 + rr])/
+  (36*rr*t^3), (rr*t*(mb^2*(32 - 48*rr^2) + (-5 + 14*rr^2 - 9*rr^4)*t) + 
+   16*mb^4*Log[1 - rr] - 16*mb^4*Log[1 + rr])/(48*rr*t^3), 
+ (-24*I*mb^6*Pi - 10*mb^2*rr*t^2 + 18*mb^2*rr^3*t^2 + rr*t^3 - 4*rr^3*t^3 + 
+   3*rr^5*t^3 - 8*mb^4*(6*mb^2 + t)*Log[1 - rr] + 24*mb^6*Log[-1 + rr] + 
+   24*mb^6*Log[1 + rr] + 8*mb^4*t*Log[1 + rr])/(6*rr*t^4), 
+ (-48*I*mb^6*Pi - 72*mb^4*rr*t - 8*mb^2*rr*t^2 + 12*mb^2*rr^3*t^2 + 
+   2*rr*t^3 - 5*rr^3*t^3 + 3*rr^5*t^3 - 24*mb^4*(4*mb^2 + t)*Log[1 - rr] + 
+   48*mb^6*Log[-1 + rr] + 48*mb^6*Log[1 + rr] + 24*mb^4*t*Log[1 + rr])/
+  (12*rr*t^4), ((-1 + 3*rr^2)*(4*mb^2 + (-1 + rr^2)*t))/(24*t^2), 
+ -(rr*t*(2*mb^2*(-5 + 8*rr^2) + (1 - 4*rr^2 + 3*rr^4)*t) - 
+    12*mb^4*Log[1 - rr] + 12*mb^4*Log[1 + rr])/(6*rr*t^3), 
+ (mb^2*(rr*(36*mb^2 + t + 4*rr^2*t) + (16*mb^2 + t)*Log[1 - rr] - 
+    (16*mb^2 + t)*Log[1 + rr]))/(3*rr*t^3), 
+ (4*mb^2*(12*I*mb^4*Pi - 36*mb^2*rr*t - rr*t^2 - 3*rr^3*t^2 - 
+    t*(13*mb^2 + t)*Log[1 - rr] - 12*mb^4*Log[-1 + rr] + 
+    12*mb^4*Log[1 + rr] + 13*mb^2*t*Log[1 + rr] + t^2*Log[1 + rr]))/
+  (3*rr*t^4)}

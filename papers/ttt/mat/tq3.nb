@@ -1,0 +1,935 @@
+(***********************************************************************
+
+                    Mathematica-Compatible Notebook
+
+This notebook can be used on any computer system with Mathematica 3.0,
+MathReader 3.0, or any compatible application. The data for the notebook 
+starts with the line of stars above.
+
+To get the notebook into a Mathematica-compatible application, do one of 
+the following:
+
+* Save the data starting with the line of stars above into a file
+  with a name ending in .nb, then open the file inside the application;
+
+* Copy the data starting with the line of stars above to the
+  clipboard, then use the Paste menu command inside the application.
+
+Data for notebooks contains only printable 7-bit ASCII and can be
+sent directly in email or through ftp in text mode.  Newlines can be
+CR, LF or CRLF (Unix, Macintosh or MS-DOS style).
+
+NOTE: If you modify the data for this notebook not in a Mathematica-
+compatible application, you must delete the line below containing the 
+word CacheID, otherwise Mathematica-compatible applications may try to 
+use invalid cache data.
+
+For more information on notebooks and Mathematica-compatible 
+applications, contact Wolfram Research:
+  web: http://www.wolfram.com
+  email: info@wolfram.com
+  phone: +1-217-398-0700 (U.S.)
+
+Notebook reader applications are available free of charge from 
+Wolfram Research.
+***********************************************************************)
+
+(*CacheID: 232*)
+
+
+(*NotebookFileLineBreakTest
+NotebookFileLineBreakTest*)
+(*NotebookOptionsPosition[     44171,        852]*)
+(*NotebookOutlinePosition[     45456,        893]*)
+(*  CellTagsIndexPosition[     45412,        889]*)
+(*WindowFrame->Normal*)
+
+
+
+Notebook[{
+Cell[BoxData[{
+    \( (*\(\(******************************************************\)*\n\n\ 
+                IMPOSING\ THE\ WEYL\ WI\ AT\ THE\ CRITICAL\ POINT\n\nThe\ 
+                values\ of\ cr = 
+              \(0\ and\ f0 = 
+                \(\(2  cb/3\ are\ fixed\ by\ the\ compatibility\ of\ Diff\ &
+                      \)\ Weyl\ WI\nThe\ two\ Weyl\ WI\ impose\ 9\ conditions
+                    \ but\ introduce\ 2\ new\ param\ 
+                    \((ce, cw, \ 
+                      the\ notation\ is\nof\ my\ notes\ with\ 1/2880\ V\  -> 
+                        1)\)\ so\ there\ remain\ 10\ free\ parameters\  = 
+                  9  _ {D = 6}\  + 
+                    1  _ {D < 6}\ \n
+                      \((the\ latter\ should\ be\ the\ null\ tensor\)\)\)}\) 
+          for\ the\ Diff - 
+        homo\ tensors\ \((in\ agreement\ with\ Riccardo)\); \n
+      the\ inhomo\ tens\ were\ fixed\ a\ priori\ to\ cb\ t_b\  + \ 
+          f2p\ t_fplus\  + 
+          f2m\ t_fminus\ \((D = 4, 4, 6\ \(risp . \))\)\nIn\ total\ there\ 
+            \(are : \n7\ d\) = 
+        \(tr = \(0\ tensors\ \((\(+1\)\ null\ vect)\)\  + 2\ d = 
+            0\ tens\ \((ce, cw)\)\  + \ 1 + 2\ inhomo\ tens\ above\)\)\n
+      \t*************************************************) \n\n<< tq1.out; \n
+    \nbasis\  = 
+      \ {k2 . h1 . k1\  -> \ k1 . h1 . k2, \ \n\ \ \ \ \ \ \ \ \ 
+        k2 . h2 . k1\  -> \ k1 . h2 . k2, \ \n\ \ \ \ \ \ \ \ \ 
+        k2 . h3 . k1\  -> \ k1 . h3 . k2, \ \n\ \ \ \ \ \ \ \ \ 
+        k1 . h1 . h2 . k1\  -> \ k1 . h2 . h1 . k1, \n\ \ \ \ \ \ \ \ \ 
+        k2 . h1 . h2 . k2\  -> \ k2 . h2 . h1 . k2, \ \n\ \ \ \ \ \ \ \ \ 
+        k2 . h1 . h2 . k1\  -> \ k1 . h2 . h1 . k2, \n\ \ \ \ \ \ \ \ \ 
+        k1 . h1 . h2 . k2\  -> \ k2 . h2 . h1 . k1, \n\ \ \ \ \ \ \ \ \ 
+        k1 . h1 . h3 . k1\  -> \ k1 . h3 . h1 . k1, \n\ \ \ \ \ \ \ \ \ 
+        k2 . h1 . h3 . k2\  -> \ k2 . h3 . h1 . k2, \ \n\ \ \ \ \ \ \ \ \ 
+        k2 . h1 . h3 . k1\  -> \ k1 . h3 . h1 . k2, \n\ \ \ \ \ \ \ \ \ 
+        k1 . h1 . h3 . k2\  -> \ k2 . h3 . h1 . k1, \n\ \ \ \ \ \ \ \ \ 
+        k1 . h2 . h3 . k1\  -> \ k1 . h3 . h2 . k1, \n\ \ \ \ \ \ \ \ \ 
+        k2 . h2 . h3 . k2\  -> \ k2 . h3 . h2 . k2, \ \n\ \ \ \ \ \ \ \ \ 
+        k2 . h2 . h3 . k1\  -> \ k1 . h3 . h2 . k2, \n\ \ \ \ \ \ \ \ \ 
+        k1 . h2 . h3 . k2\  -> \ k2 . h3 . h2 . k1, \n\ \ \ \ \ \ \ \ \ 
+        k1 . h2 . h1 . h3 . k1\  -> \ k1 . h3 . h1 . h2 . k1, \n
+        \ \ \ \ \ \ \ \ \ 
+        k1 . h2 . h1 . h3 . k2\  -> \ k2 . h3 . h1 . h2 . k1, \n
+        \ \ \ \ \ \ \ \ \ 
+        k2 . h2 . h1 . h3 . k1\  -> \ k1 . h3 . h1 . h2 . k2, \n
+        \ \ \ \ \ \ \ \ \ 
+        k2 . h2 . h1 . h3 . k2\  -> \ k2 . h3 . h1 . h2 . k2, \n
+        \ \ \ \ \ \ \ \ \ 
+        k1 . h1 . h2 . h3 . k1\  -> \ k1 . h3 . h2 . h1 . k1, \n
+        \ \ \ \ \ \ \ \ \ 
+        k1 . h1 . h2 . h3 . k2\  -> \ k2 . h3 . h2 . h1 . k1, \n
+        \ \ \ \ \ \ \ \ \ 
+        k2 . h1 . h2 . h3 . k1\  -> \ k1 . h3 . h2 . h1 . k2, \n
+        \ \ \ \ \ \ \ \ \ 
+        k2 . h1 . h2 . h3 . k2\  -> \ k2 . h3 . h2 . h1 . k2, \n
+        \ \ \ \ \ \ \ \ \ 
+        k1 . h1 . h3 . h2 . k1\  -> \ k1 . h2 . h3 . h1 . k1, \n
+        \ \ \ \ \ \ \ \ \ 
+        k1 . h1 . h3 . h2 . k2\  -> \ k2 . h2 . h3 . h1 . k1, \n
+        \ \ \ \ \ \ \ \ \ 
+        k2 . h1 . h3 . h2 . k1\  -> \ k1 . h2 . h3 . h1 . k2, \n
+        \ \ \ \ \ \ \ \ \ 
+        k2 . h1 . h3 . h2 . k2\  -> \ k2 . h2 . h3 . h1 . k2, \n
+        \ \ \ \ \ \ \ \ \ tr[h1 . h2]\  -> \ tr[h2 . h1], \n\ \ \ \ \ \ \ \ \ 
+        tr[h1 . h3]\  -> \ tr[h3 . h1], \n\ \ \ \ \ \ \ \ \ 
+        tr[h2 . h3]\  -> \ tr[h3 . h2], \n\ \ \ \ \ \ \ \ \ 
+        tr[h2 . h1 . h3]\  -> \ tr[h3 . h2 . h1], \n\ \ \ \ \ \ \ \ \ 
+        tr[h1 . h2 . h3]\  -> \ tr[h3 . h2 . h1], \n\ \ \ \ \ \ \ \ \ 
+        tr[h1 . h3 . h2]\  -> \ tr[h3 . h2 . h1], \n\ \ \ \ \ \ \ \ \ 
+        tr[h3 . h1 . h2]\  -> \ tr[h3 . h2 . h1], \n\ \ \ \ \ \ \ \ \ 
+        tr[h2 . h3 . h1]\  -> \ tr[h3 . h2 . h1], \n\ \ \ \ \ \ \ \ \ \ 
+        k2 . v\  -> \ v . k2, \ k1 . v\  -> \ v . k1, \n\ \ \ \ \ \ \ \ \ \ 
+        k1 . h2 . v\  -> \ v . h2 . k1, \n\ \ \ \ \ \ \ \ \ \ 
+        k2 . h2 . v\  -> \ v . h2 . k2, \n\ \ \ \ \ \ \ \ \ \ 
+        k1 . h1 . v\  -> \ v . h1 . k1, \n\ \ \ \ \ \ \ \ \ \ 
+        k2 . h1 . v\  -> \ v . h1 . k2, \n\ \ \ \ \ \ \ \ \ \ 
+        k1 . h3 . v\  -> \ v . h3 . k1, \n\ \ \ \ \ \ \ \ \ \ 
+        k2 . h3 . v\  -> \ v . h3 . k2, \n\ \ \ \ \ \ \ \ \ \ 
+        k1 . h1 . h2 . v\  -> \ v . h2 . h1 . k1, \n\ \ \ \ \ \ \ \ \ \ 
+        k2 . h1 . h2 . v\  -> \ v . h2 . h1 . k2, \n\ \ \ \ \ \ \ \ \ \ 
+        k1 . h2 . h1 . v\  -> \ v . h1 . h2 . k1, \n\ \ \ \ \ \ \ \ \ \ 
+        k2 . h2 . h1 . v\  -> \ v . h1 . h2 . k2, \n\ \ \ \ \ \ \ \ \ \ 
+        k1 . h3 . h2 . v\  -> \ v . h2 . h3 . k1, \n\ \ \ \ \ \ \ \ \ \ 
+        k2 . h3 . h2 . v\  -> \ v . h2 . h3 . k2, \n\ \ \ \ \ \ \ \ \ \ 
+        k1 . h2 . h3 . v\  -> \ v . h3 . h2 . k1, \n\ \ \ \ \ \ \ \ \ \ 
+        k2 . h2 . h3 . v\  -> \ v . h3 . h2 . k2}; \n\ \n
+    cons\  = \ {
+        x__ . v**k1 . t__\  -> \ 
+          \((x . v)\) \((k1 . t)\) + \((x . k1)\) \((v . t)\), \n
+        \ \ \ \ \ \ \ \ \ 
+        x__ . v**k2 . t__\  -> \ 
+          \((x . v)\) \((k2 . t)\) + \((x . k2)\) \((v . t)\), \n
+        \ \ \ \ \ \ \ \ \ \ k1 . k1\  -> \ q1, \ k2 . k2\  -> \ q2, \ 
+        k1 . k2\  -> \ \((q - q1 - q2)\)/2, \n\ \ \ \ \ \ \ \ \ \ 
+        k2 . k1\  -> \ \((q - q1 - q2)\)/2, \n\ \ \ \ \ \ \ \ \ \ 
+        tr[v**z_]\  -> \ 2\ v . z, \n\ \ \ \ \ \ \ \ \ \ 
+        tr[x_\  + \ y_]\  -> \ tr[x] + \ tr[y], \n\ \ \ \ \ \ \ \ \ \ 
+        tr[u__ . v**k1]\  -> \ k1 . u . v\  + \ v . u . k1, \n
+        \ \ \ \ \ \ \ \ \ \ 
+        tr[u__ . v**k2]\  -> \ k2 . u . v\  + \ v . u . k2, \n
+        \ \ \ \ \ \ \ \ \ \ 
+        tr[v**k1 . s__]\  -> \ v . s . k1\  + \ k1 . s . v, \n
+        \ \ \ \ \ \ \ \ \ \ 
+        tr[v**k2 . s__]\  -> \ v . s . k2\  + \ k2 . s . v, \n
+        \ \ \ \ \ \ \ \ \ \ 
+        tr[u__ . v**k1 . s__]\  -> \ k1 . s . u . v\  + \ v . s . u . k1, \n
+        \ \ \ \ \ \ \ \ \ \ 
+        tr[u__ . v**k2 . s__]\  -> \ k2 . s . u . v\  + \ v . s . u . k2, \n
+        \ \ \ \ \ \ \ \ \ \ k3\  -> \ \(-\ k1\)\  - \ k2, \n
+        \ \ \ \ \ \ \ \ \ \ 
+        x___ . \((y_ + z_)\) . t___\  -> \ x . y . t\  + \ x . z . t, \n
+        \ \ \ \ \ \ \ \ \ \ 
+        x___ . \((\(-\ z_\))\) . t___\  -> \ \(-\ x . z . t\)}; \n
+    \ \ \ \ \ \ \ \ \ \ \n\ 
+    cons1\  = 
+      \ {x__ . v**k1 . t__\  -> \ \((x . v)\) \((k1 . t)\), \n
+        \ \ \ \ \ \ \ \ \ \ 
+        x__ . v**k2 . t__\  -> \ \((x . v)\) \((k2 . t)\), \n
+        \ \ \ \ \ \ \ \ \ \ k1 . k1\  -> \ 1, \ k2 . k2\  -> \ 1, \ 
+        k1 . k2\  -> \ 1, \ k2 . k1\  -> \ 1, \n\ \ \ \ \ \ \ \ \ \ 
+        tr[v**z_]\  -> \ v . z, \n\ \ \ \ \ \ \ \ \ \ 
+        tr[x_\  + \ y_]\  -> \ tr[x] + \ tr[y], \n\ \ \ \ \ \ \ \ \ \ 
+        tr[u__ . v**k1]\  -> \ k1 . u . v, \n\ \ \ \ \ \ \ \ \ \ 
+        tr[u__ . v**k2]\  -> \ k2 . u . v, \n\ \ \ \ \ \ \ \ \ \ 
+        tr[v**k1 . s__]\  -> \ v . s . k1, \n\ \ \ \ \ \ \ \ \ \ 
+        tr[v**k2 . s__]\  -> \ v . s . k2, \n\ \ \ \ \ \ \ \ \ \ 
+        tr[u__ . v**k1 . s__]\  -> \ k1 . s . u . v, \n\ \ \ \ \ \ \ \ \ \ 
+        tr[u__ . v**k2 . s__]\  -> \ k2 . s . u . v, \n\ \ \ \ \ \ \ \ \ \ 
+        x___ . \((y_ + z_)\) . t___\  -> \ x . y . t\  + \ x . z . t}; \n
+    \ \ \ \ \ \ \ \ \ \ \n\ 
+    cons2\  = 
+      \ {x__ . v**k1 . t__\  -> \ \((x . k1)\) \((v . t)\), \n
+        \ \ \ \ \ \ \ \ \ \ 
+        x__ . v**k2 . t__\  -> \ \((x . k2)\) \((v . t)\), \n
+        \ \ \ \ \ \ \ \ \ \ k1 . k1\  -> \ 1, \ k2 . k2\  -> \ 1, \ 
+        k1 . k2\  -> \ 1, \ k2 . k1\  -> \ 1, \n\ \ \ \ \ \ \ \ \ \ 
+        tr[v**z_]\  -> \ v . z, \n\ \ \ \ \ \ \ \ \ \ 
+        tr[x_\  + \ y_]\  -> \ tr[x] + \ tr[y], \n\ \ \ \ \ \ \ \ \ \ 
+        tr[u__ . v**k1]\  -> \ v . u . k1, \n\ \ \ \ \ \ \ \ \ \ 
+        tr[u__ . v**k2]\  -> \ v . u . k2, \n\ \ \ \ \ \ \ \ \ \ 
+        tr[v**k1 . s__]\  -> \ k1 . s . v, \n\ \ \ \ \ \ \ \ \ \ 
+        tr[v**k2 . s__]\  -> \ k2 . s . v, \n\ \ \ \ \ \ \ \ \ \ 
+        tr[u__ . v**k1 . s__]\  -> \ v . s . u . k1, \n\ \ \ \ \ \ \ \ \ \ 
+        tr[u__ . v**k2 . s__]\  -> \ v . s . u . k2, \n\ \ \ \ \ \ \ \ \ \ 
+        x___ . \((y_ + z_)\) . t___\  -> \ x . y . t\  + \ x . z . t}; \n\n
+    q2\  = \ k\n\), 
+    \(q1\  = \ k\n\), 
+    \(q\  = \ 1\n\), 
+    \(d = 4\n\), 
+    \(basind6\  = \ Table[basind[\([i]\)], {i, 1, 15}]; \n
+    basind4\  = \ Table[basind[\([i]\)], {i, 16, 77}]; \n
+    bas6\  = Table[basind6[\([i]\)], {i, 1, 14}]; \n\n
+    t0m\  = \ Simplify[
+        Factor[Coefficient[Coefficient[tttq, e[19]], basind]\ ]\ ]; \ \n\n
+    trace = {\ x___ . Id . y___\  -> \ x . y, \ tr[Id]\  -> \ d}\n\), 
+    \(retot = 
+      Union[\(\(\(\(bas\  /. \ h3\  -> \ Id\)\  //. {\ 
+                  x___ . Id . y___\  -> \ x . y, \ tr[Id]\  -> \ 1}\)\  //. \ 
+              cons1\)\  //. \ cons2\)\  //. \ basis\ ]\n\), 
+    \(cr = 0\n\), 
+    \(t[p_, h_, g_] := 
+      \((f0[p . p] - f2[p . p])\)\ \((p . p\ tr[h]\  - \ p . h . p)\) 
+          \((p . p\ tr[g]\  - \ p . g . p)\)\  + \ \n
+        \ \ \ \ \ \ \ \ \ \ \ \ \ 
+        \((d - 1)\)\ f2[p . p] 
+          \((p . h . p\ p . g . p\  - 2\ p . p\ p . h . g . p\  + \ 
+              \((p . p)\)^2\ tr[h . g])\)\n\), 
+    \(th[p_, h_] := 
+      \((d - 1)\)\ f0[p . p]\ p . p\ \((p . p\ tr[h]\  - \ p . h . p)\)\n\), 
+    \(f0[q] = \ \(-2\)\ cb/\((d - 1)\)\n\), 
+    \(f0[k] = \ \(-2\)\ cb/\((d - 1)\)\n\t\t\), 
+    \(e[18] = \((f0[q]\  + f0[k])\)/2\n\), 
+    \(e[19] = \((f0[q]\  - f0[k])\)/2\n\), 
+    \(e[20] = \((f2[q]\  + f2[k])\)/2\n\), 
+    \(e[21] = \((f2[q]\  - f2[k])\)/2\n\), 
+    \(anom[k1_, k2_, h1_, h2_] := 
+      2 \((ce\  - 3\ cw)\) 
+          \((\ \((k1 . k2)\)^2\ tr[h1 . h2]\  + \ 
+              k1 . h2 . k1\ k2 . h1 . k2\  - 2\ k1 . k2\ k1 . h2 . h1 . k2)
+            \) + \n\t\t\ \ \ \ \ \ \ \ \ \ 
+        \((3\ cw\  - 2\ ce)\)\ 
+          \((\((k1 . k2)\)^2\ tr[h1]\ tr[h2]\  + 
+              k1 . k1\ k2 . k2\ tr[h1 . h2]\  + 
+              2\ k1 . k2\ k1 . h1 . h2 . k2\  + \n
+              \t\t\t\t\t\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \
+\ \ \ \ \ k2 . k2\ tr[h1]\ k1 . h2 . k1\  + \ 
+              k1 . k1\ tr[h2]\ k2 . h1 . k2\ \ \  - 
+              2\ k1 . k2\ tr[h1]\ k2 . h2 . k1\  - \ \n
+              \t\t\t\t\t\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \
+\ \ \ \ 2\ k1 . k2\ \ tr[h2]\ k1 . h1 . k2\ \  - \ 
+              2\ k1 . k1\ k2 . h2 . h1 . k2\ \  - \n
+              \t\t\t\t\t\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \
+\ \ \ \ \ 2\ k2 . k2\ k1 . h1 . h2 . k1\  + \ 2\ k2 . h2 . k1\ k1 . h1 . k2)
+            \) + \n\t\t\ \ \ \ \ \ \ \ \ \ 
+        2 \((\(-cw\) + ce\  + cr)\) \((k1 . k1\ tr[h1]\  - k1 . h1 . k1)\) 
+          \((k2 . k2\ tr[h2]\  - \ k2 . h2 . k2)\)\  - \n
+        \ \t\t\ \ \ \ \ \ \ \ \ 
+        \((cb/2\ )\) 
+          \((\ tr[h1]\ k2 . k2\ \ 
+                \((k2 . k2\ tr[h2]\  - \ k2 . h2 . k2)\)\  + \ 
+              tr[h2]\ k1 . k1\ \ \((k1 . k1\ tr[h1]\  - k1 . h1 . k1)\)\ )
+            \) + \n\t\t\ \ \ \ \ \ \ \ \ \ 
+        cb\ \((k2 . h1 . k2\  + \ k1 . h1 . k2\  - \ k1 . k2\ tr[h1]/2)\)\ 
+          \((k2 . k2\ tr[h2]\  - \ k2 . h2 . k2)\) + \n\t\ \t\t\t\ \ \ \ 
+        cb \((k1 . h2 . k1\  + k2 . h2 . k1\  - \ k1 . k2\ tr[h2]/2)\)\ 
+          \((k1 . k1\ tr[h1]\  - k1 . h1 . k1)\)\  + \n
+        \t\t\ \ \ \ \ \ \ \ \ \ 
+        cb\ \((k1 + k2)\) . \((k1 + k2)\)\ 
+          \((\ \(-\ tr[h1 . h2]\)\ 
+                \((k1 . k1\  + k2 . k2\  + 5\ k1 . k2/2)\)\  - \ 
+              k1 . k2\ tr[h1]\ tr[h2]/2\  + \n\t\t\t\t\t\ \ \ 
+              k2 . h1 . h2 . k1 + 
+              tr[h1]\ \((k1 . h2 . k1\  + \ k1 . h2 . k2)\)\  + \ 
+              tr[h2]\ \((k2 . h1 . k2\  + \ k1 . h1 . k2)\)\ )
+            \)\ \ \ \ \ \ \ \ \ \ \ \), 
+    \(weyl3 = 
+      Expand[\(\(\(tttq\  - 2\ t[k1, h1, h2]\  - 2\ t[k2, h1, h2]\  - \n
+                  \t\t\t\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 
+                  4\ anom[\ k1, k2, h1, h2] /. \ h3\  -> \ Id\)\  //. \ trace
+              \) //. \ cons\)\  //. \ basis]; \n
+    coe33\  = Coefficient[weyl3, retot]; 
+    \n (*\ so33\  = \ 
+        Part[Solve[coe33 == 0, \ Table[e[i], {i, 1, 17}]], 1]\n
+          Length[so33]\ *) \n\n
+    retot1 = Union[
+        \(\(\(\(bas\  /. \ h1\  -> \ Id\)\  //. 
+                \ \ {\ x___ . Id . y___\  -> \ x . y, \ tr[Id]\  -> \ 1}
+                  \)\  //. \ cons1\)\  //. \ cons2\)\  //. \ basis\ \ ]; \n
+    weyl1 = Expand[
+        \(\(\(tttq - 2\ t[k3, h3, h2]\  - 2\ t[k2, h3, h2]\  - \n
+                  \t\t\t\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 
+                  4\ anom[k3, k2, h3, h2]\ \  /. \ h1\  -> \ Id\)\  //. \ 
+              trace\) //. \ cons\)\  //. \ basis]; \n
+    coe11\  = Coefficient[weyl1, retot1]; \n
+    weyleq\  = \ 
+      Reduce[{coe11 == 0, coe33 == 0}, \ Table[e[i], {i, 1, 17}]]\), 
+    \(so12\  = Solve[weyleq, Table[e[i], {i, 1, 17}]\ ]\), 
+    \(so11\  = \ Part[so12, 2]\), 
+    \(Length[so11]\n
+    \n (*\(****************************************************\)*\n\t\t\n\t\t
+          ANALYSIS\ OF\ THE\ SOLUTION\n\nThe\ 7\ d = 
+        \(tr = 0\ tensors\ which\ survive\ at\ criticality\ are\ labelled\ by
+            \ \n\te[i]\), \ i = 5, 6, 7, 9, 10, 12, 
+      14\nThe\ null\ vector\ is\ e[16]\ 
+        \((checked\ with\ earlier\ derivation\ in\ tnull4 . nb)\)\nThe\ two\ 
+        anmaly\ tensors\ are\ parametrized\ by\ ce, 
+      cw . \nHereafter\ their\ linear\ independence\ in\ the\ D = 
+        \(6\ basis\ is\ 
+            \(checked : \n
+              no\ conditions\ on\ cb\ indicates\ that\ it\ does\ not\ appear\ 
+                in\ the\ D\) = 
+          6\ basis\n
+            \((for\ k^2 = 
+                0\ it\ appeared\ as\ a\ spurius\ parameter\ and\ was\ 
+                  eliminateb\ by\ \nthe\ shift\ of\ one\ e[i])\)\ The\ same\ 
+            applies\ to\ e[16]\), \ which\ is\ also\ D = 4; \n
+      the\ D = \(6\ inhomo\ tens\ which\ does\ not\ vanish\ at\ criticality\ 
+            is\ prop\ to\nf2m\  = 
+          \(f2[q] - f2[k]\n\t\t\t\t\t\ntttc\ \  < TTT > \ 
+              at\ criticality\ncoefin\ \ tttc\ components\ in\ the\ D = 
+            6\ basis\n**********************************************
+                \)\)*****) \n\), 
+    \(tttc\  = \ Expand[tttq\ \ \  //. \ so11]; \n
+    coefin\  = \ Coefficient[tttc, \ basind6]; \n
+    Reduce[coefin\  == 0, {e[5], e[6], e[7], e[9], e[10], e[12], e[14], 
+        e[16], cb, ce, cw, f2[1], f2[k]}]\), 
+    \(\t\tDo[Print[Factor[coefin[\([i]\)]]\ ], \ {i, 1, 15}]\)}], "Input"],
+
+Cell[BoxData[{
+    \( (*\(**************************************************\)*\n\t\t\n\ 
+          LIMIT\ k\  -> 
+        0\ of\ the\ 7\ traceless\  - \ 
+          transverse\ tensors\ \n\nIt\ requires\ to\ scale\ 3\ free\ 
+            coefficients\ by\ k; \n
+      the\ result\ is\ checked\ linear\ indep . \ at\ k = 0, \ 
+      which\ is\ not\ automatic; \n
+      the\ k = \(0\ solution\ tells\ that\ they\ should\ also\ be\ linear\ 
+            indep\ on\ \nthe\ D = 
+          6\ basis\ \((checked)\)\nAlso\ checked\ a\ posteriori\ that\ the\ 7
+            \ tensors\ are\ really\ traceless\t\t\n\t\t\n
+            \(coetr\  : \ \ 
+              coeff\ of\ the\ traceless\ part\ of\  < 
+                TTT > _c\t\t\((7\ tensors)\)\nt[n]\ \ \ \ \ tensors\ of\ 
+                  e[n]\ \ \((7\ values\ n = 5, \( ...  14\))
+                    \)\)\)\n\
+****************************************************) \n\n
+    ttto\  = \ 
+      tttc\  //. 
+        \ {ce\  -> 0, \ cb\  -> 0, \ cw -> 0, \ f2[q] -> 0, f2[k] -> 0}; 
+    \n (*\ Factor[
+          Coefficient[
+            \(\(\(ttto\  /. \ h1\  -> \ Id\)\  //. \ trace\) //. \ cons
+                \)\  //. \ basis, \ retot]\ ]\n\ \ \ 
+        Factor[Coefficient[
+            \(\(\(ttto\  /. \ h3\  -> \ Id\)\  //. \ trace\) //. \ cons
+                \)\  //. \ basis, \ retot1]\ ]\ *) \n
+    coetr\  = \ Factor[Coefficient[ttto\  //. \ e[16] -> 0, basind]]; \n
+    t[n_] := Simplify[Coefficient[coetr, e[n]]]\), 
+    \(Do[Print["\<e[\>", i, "\<] :     \>", Series[t[i], {k, 0, \(-1\)}]], {
+        i, 5, 14}]\), 
+    \(coetr0 = 
+      Limit[coetr
+          \  /. {e[12] -> k\ e[12], e[6] -> k\ e[6], e[14] -> k\ e[14]}, \ 
+        k -> 0]; \n
+    Reduce[coetr0 == 0, {e[5], e[6], e[7], e[9], e[10], e[12], e[14]}]\), 
+    \(coetr06\  = Table[coetr0[\([i]\)], {i, 1, 15}]\), 
+    \(Reduce[coetr06 == 0, {e[5], e[6], e[7], e[9], e[10], e[12], e[14]}]
+      \)}], "Input"],
+
+Cell[BoxData[{
+    \( (*\(****************************\)*\n\t\t\nLIMIT\ k -> 
+        0\ of\ null\ vector, \ 
+      Euler\ tensor\ and\ BoxR\ tensor\ are\ smooth\n\t\nttc\ \ \  < 
+          TTT > _c\ \ redefined\ for\ smooth\ limit\ of\ the\ 7\ d = 
+        \(tr = 0\ tensors\ncoefu\ \ coefficients\ of\ ttc
+            \)\n**************************************) \t\t\n\n
+    ttc\  = tttc
+        \  /. {e[12] -> k\ e[12], e[6] -> k\ e[6], e[14] -> k\ e[14]}; \n
+    coefu\  = \ Factor[Coefficient[ttc, basind]]; \n
+    nullv\  = \ Simplify[Coefficient[coefu, e[16]]]\), 
+    \(Limit[nullv, \ k -> 0]\), 
+    \(te\  = Simplify[Coefficient[coefu, ce]]\), 
+    \(Limit[te, \ k -> 0]\), 
+    \(tb\  = Simplify[Coefficient[coefu, cb]]\), 
+    \(Limit[tb, \ k -> 0]\)}], "Input"],
+
+Cell[BoxData[{
+    \( (*\(**************************************************\)*\n\t\t\nLIMIT
+            \ k -> 0\ of\ the\ Weyl\ tensor\ requires\ a\ redefinition\ by\ a
+            \ d = \(tr = 
+          0\ tensor\)\n*****************************************************) 
+      \t\t\n\ntw\  = Simplify[Coefficient[coefu, cw]]\), 
+    \(Coefficient[
+      Series[coefu/k\  /. {f2[k_] -> 0, \ cw\  -> k\ \ cw, ce\  -> 0, \ 
+            cb -> 0, e[16]\  -> 0, e[14] -> \((1 - 2  k)\) e[14]}, \n
+        \t\t\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \
+\ \ \ \ \ {k, 0, \(-1\)}], 1/k]\), 
+    \(Reduce[%\  == 0, {e[5], e[6], e[7], e[9], e[10], e[12], e[14]}]\), 
+    \(tw2\  = 
+      Simplify[Coefficient[coefu, cw]\  + \ 
+          16\ \((1 - 2  k)\) Coefficient[coefu, e[14]]/k\ ]\), 
+    \(Limit[tw2, \ k -> 0]\)}], "Input"],
+
+Cell[BoxData[{
+    \( (*\(****************************\)*\n\t\t\nLIMITS\ of\ the\ f2p, \ 
+      f2m\ tensors\ are\ smooth, \ 
+      the\ second\ requires\ a\ redefinition
+        \n**************************************) \t\n\n
+    t2p\  = Simplify[
+        Coefficient[coefu, f2[q]]\  + \ Coefficient[coefu, f2[k]]\ ]\), 
+    \(t2m\  = 
+      Simplify[Coefficient[coefu, f2[q]]\  - \ Coefficient[coefu, f2[k]]\ ]
+        \), 
+    \(Series[t2p, {k, 0, 0}]\), 
+    \(Series[t2m, {k, 0, 0}]\), 
+    \(Coefficient[
+      Series[coefu/k\  //. {f2[q] -> \ \ k\ f2m/2, \ 
+            f2[k]\  -> \(-\ k\)\ f2m/2, \ cw\  -> \ 0, ce\  -> 0, \ cb -> 0, 
+            \ e[16] -> \ 0}, \n
+        \t\t\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \
+\ \ \ \ \ {k, 0, \(-1\)}], 1/k]\), 
+    \(Reduce[%\  == 0, {e[5], e[6], e[7], e[9], e[10], e[12], e[14]}]\), 
+    \(t2mm\  = 
+      Simplify[t2m\  - \ 8\ Coefficient[coefu, e[14]]/k\  - \ 
+          8\ Coefficient[coefu, e[6]]/k\ ]\), 
+    \(Limit[tw2, \ k -> 0]\t\)}], "Input"],
+
+Cell[BoxData[{
+    \( (*\(****************************\)*\(**************\)*\n\t\t\nADDING\ 
+          the\ 5\ D = 
+        6\ and\ 2\ D < 
+          6\ transverse\ tensors\ off - 
+            criticality\n\t\nThe\ Weyl\ WI\ has\ eliminated\ 9\ coefficients\ 
+              adding\ 2\ \((ce, cw)\)\nso\ we\ have\ 7\ tensors\ in\ tttq\ to
+              \ choose\ out\ of\ 9, \ with\ coefficients\ne[i], \ i = 1, 2, 
+      3, 4, 8, 11, 13\ \((D = 6)\)\ and\ i = 15, 
+      17\ \((D = 4)\)\n\nthis\ choice\ is\ largely\ arbitrary\ and\ the\ 
+            \((mild)\)\ requirement\ is\ the\ smooth\ limit\ k -> 
+          0\ \nwith\ linear\ independence\ at\ k = 
+        \(0\ as\ known\ from\ the\ k = 0\ solution\); \n
+      this\ condition\ is\ solved\ by\ trial\ and\ 
+            error . \ \n
+              \(Result : \ 
+                the\ tensors\ of\ e[1]\ and\ e[3]\ are\ excluded\ and\ the\ 
+                    linear\ combination\ntoff[13]\  - 4\ toff[4]\  + 
+                  6\ k\ toff[14]\)\  -> 
+          \(0\ as\ k -> 
+            0\nSo\ we\ divide\ by\ k\ and\ obtain\ a\ new\ independent\ 
+              tensor . \n\t\t\t\t\t\nThe\ expected\ linear\ independences\ at
+              \ k\) = \(0\ and\ k = 
+          \( /= 0\ are\ 
+            checked . \ \n
+              \((the\ null\ vector\ t[16]\ is\ included\ because\ the\ 
+                    solution\ e[16] = 
+                  0\nensures\ that\ the\ linear\ independence\ is\ not\ 
+                    affected\ by\ the\ presence\ of\nthe\ nullvector)\) . \n\t
+              \ntoff[n]\ \ \ \ tensor\ of\ e[n]\ in\ tttq\ i . e . \ before\ 
+            imposing\ the\ Weyl\ WI
+            \)\)\n**************************************) \t\n\n
+    toff[n_] := 
+      Simplify[Factor[Coefficient[Coefficient[tttq, e[n]], basind]]]\), 
+    \(Do[Print["\<e[\>", i, "\<] :     \>", 
+        Series[toff[i], {k, 0, \(-1\)}]], {i, 1, 4}]\), 
+    \(Print["\<e[8] :     \>", Series[toff[8], {k, 0, \(-1\)}]]\), 
+    \(Print["\<e[11] :     \>", Series[toff[11], {k, 0, \(-1\)}]]\), 
+    \(Print["\<e[13] :     \>", Series[toff[13], {k, 0, \(-1\)}]]\), 
+    \(Print["\<e[15] :     \>", Series[toff[15], {k, 0, \(-1\)}]]\), 
+    \(Print["\<e[17] :     \>", Series[toff[17], {k, 0, \(-1\)}]]\)}], "Input"],
+
+Cell[BoxData[{
+    \(\ncoediff\  = 
+      coefu\ \  + \ 16\ cw\ \ Coefficient[coefu, e[14]]/k\  + \n
+        \t\t\t\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ e[2]\ toff[2]\  + \ 
+        e[4] toff[4] + \ 
+        e[13] \((toff[13]/k\  + 6\ \ t[14]\  - 4\ toff[4]/k)\) + \n
+        \t\t\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ e[8]\ toff[8]\  + \ 
+        e[11]\ toff[11]\  + \ k\ e[15]\ toff[15]\  + \ e[17]\ toff[17]; \n
+    coediff0 = 
+      Limit[coediff /. {f2[q]\  -> 0, \ f2[k]\  -> \ 0, \ cb\  -> \ 0}, \ 
+        k -> 0]\), 
+    \(Reduce[
+      coediff0 == 0, {e[2], \ e[4], e[8], e[11], e[13], e[15], e[17], ce, cw, 
+        \n\t\t\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \
+\ \ \ \ \ \ \ \ \ \ \ \ e[5], e[6], e[7], e[9], e[10], e[12], e[14], e[16]}]
+      \), 
+    \(Reduce[
+      Table[coediff0[\([i]\)], {i, 1, 15}] == 0, {e[2], \ e[4], e[8], e[11], 
+        e[13], e[15], e[17], ce, cw, \n
+        \t\t\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \
+\ \ \ \ \ \ \ \ \ \ \ e[5], e[6], e[7], e[9], e[10], e[12], e[14], e[16]}]
+      \), 
+    \(Reduce[
+      Table[coediff[\([i]\)], {i, 1, 15}] == 0, {e[2], \ e[4], e[8], e[11], 
+        e[13], e[15], e[17], ce, cw, \n
+        \t\t\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \
+\ \ \ \ \ \ \ \ \ \ \ e[5], e[6], e[7], e[9], e[10], e[12], e[14], e[16]}]
+      \)}], "Input"],
+
+Cell[BoxData[{
+    \( (*\(************************************************************\n\t\t
+          \nLIMIT\)\ of\ the\ f0m\ tensor\n\t\nthe\ corresponding\ tensor\ t0m
+        \ is\ computed\ at\ the\ beginning\ of\ the\ program; \n
+      the\ limit\ of\ f0m\ for\ k -> 
+          0\ is\ also\ smooth\ up\ to\ redefinitions\nwhich\ involve\ all\ the
+            \ 16\ d = 
+        \(0\ \(tensors\ --\)\ the\ 7\ d = 
+          \(tr = 0\ are\ not\ 
+              \(enough . 
+                \)\)\)\n\
+***************************************************************) \t\n\n
+    Series[t0m, {k, 0, 0}]\), 
+    \(Coefficient[
+      Series[t0m\  + \ coediff/k\  //. {f2[q] -> 0, \ f2[k]\  -> \ 0, 
+            cb -> 0}, \n
+        \t\t\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \
+\ \ \ \ \ {k, 0, \(-1\)}], 1/k]\), 
+    \(t0mred\  = \ 
+      Reduce[%\  == 0, {e[2], e[4], e[8], e[11], e[13], e[15], e[17], ce, cw, 
+          \n\t\t\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 
+          e[5], e[6], e[7], e[9], e[10], e[12], e[14], e[16]}]\), 
+    \(t0msol = \ 
+      Part[Solve[t0mred
+          \ , {e[2], e[4], e[8], e[11], e[13], e[15], e[17], ce, cw, \n
+            \t\t\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \
+\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ e[5], e[6], 
+            e[7], e[9], e[10], e[12], e[14], e[16]}], 1]\n\), 
+    \(t0mm\  = \ 
+      t0m\  + \ coediff/k\  //. \ 
+        Union[{f2[q] -> 0, \ f2[k]\  -> \ 0, cb -> 0}, t0msol]\), 
+    \(Limit[t0mm, \ k -> 0]\)}], "Input"],
+
+Cell[BoxData[{
+    \( (*\(**************************************\n\t\t\n\t\tRICCARDO'\) s\ 
+          ordering\ and\ polynomial\ dimension\n\tricc_base[\([i]\)] = 
+        my_base[\([ind[\([i]\)]]\)]
+          \n****************************************) \n\n
+    ind = {15, 7, 6, 13, 4, 14, 9, 5, 11, 2, 8, 12, 3, 10, 1, \n
+        \t\t\ \ \ \ \ \ \ \ \ 28, 32, 25, 29, 26, 34, 23, 31, 27, 33, 24, 30, 
+        22, 20, 17, 19, 21, 16, 18, \n\t\t\ \ \ \ \ \ \ \ \ 62, 60, 61, 42, 
+        48, 44, 58, 59, 46, 50, 47, 57, 43, 49, 45, 41, 39, 37, 40, 38, 35, 
+        36, 73, 75, 74, \n\t\t\ \ \ \ \ \ \ \ \ 54, 51, 53, 52, 71, 70, 65, 
+        63, 64, 66, 68, 67, 56, 55, 77, 76, 72, 69}; \n
+    reo[z_] := 
+      If[VectorQ[z], Table[z[\([ind[\([i]\)]]\)], {i, 1, 77}], z]\), 
+    \(reod[z_] := 
+      If[VectorQ[z], 
+        Factor[{Table[z[\([ind[\([i]\)]]\)], {i, 1, 15}]/Q, \n
+              \t\t\t\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \
+\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 
+              Table[z[\([ind[\([i]\)]]\)], {i, 16, 49}], 
+              Table[Q\ z[\([ind[\([i]\)]]\)], {i, 50, 73}], \n
+              \t\t\t\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \
+\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 
+              Table[Q^2\ z[\([ind[\([i]\)]]\)], {i, 74, 77}]}\ \  /. \ 
+            k\  -> \ k/Q], \ z]\), 
+    \(reod[nullv]\), 
+    \(nv\  = \(-8\)\ reo[nullv]; \n
+    Coefficient[Sum[\ nv[\([i]\)]\ g[i], {i, 1, 77}], k]\), 
+    \(reod[tb]\), 
+    \(tmp = Factor[t2p]; \nreod[tmp]\)}], "Input"],
+
+Cell[BoxData[{
+    \( (*\(**************************************\n\t\t\n\ TWO\)\ D < 4\ d = 
+        0\ TENSORS\ being\ not\ polynomial\ 
+          \((d = 6)\)\n****************************************) \n\n
+    t17 = Factor[\((1 - 2  k)\) toff[17]]; \nreod[t17]\), 
+    \(t15 = Factor[k\ toff[15]]; \nreod[t15]\), 
+    \(Factor[a\ reod[t17] + \ b\ reod[t15]\  + c\ reod[nullv]/Q\ ]\)}], 
+  "Input"],
+
+Cell[BoxData[{
+    \( (*\(******************************************\)*\n\t\n\t\tPolynomial\ 
+        form\ of\ te, \ 
+      tw\ and\ other\ tensors\n*****************************************) \n\n
+    Do[Print["\<e[\>", i, "\<]        \>", Factor[t[i]]], {i, 5, 14}]\ \), 
+    \(g[1] = Factor[t[5]\ ]; \ng[2] = Factor[t[6]\ ]; \n
+    g[3] = Factor[t[7]\ ]; \ng[4] = Factor[t[9]\ ]; \ng[5] = Factor[t[10]\ ]; 
+    \ng[6] = Factor[t[12]\ ]; \ng[7] = Factor[t[14]\ ]; \n\ntmp = Factor[te]; 
+    \nreod[tmp]\), 
+    \(Limit[reod[tmp], k -> 0]\)}], "Input"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+    \(\(tegen = \ ce\ te\  + \ Sum[g[i]\ a[i], {i, 1, 6}]; \n
+    tege = Factor[
+        Q\ reod[tegen]\  //. 
+          \ {a[2]\  -> \ \(-a[6]\), a[6] -> 0, \ a[1] -> \ a[5]\  - 8\ ce, \ 
+            a[3] -> \ 2\ a[5]\  - 16\ ce, \ \n
+            \t\t\t\t\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \
+\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 
+            a[4]\  -> \ 16\ ce\  - a[5], \ a[5]\  -> \ 8  ce}]\n\)\)], "Input"],
+
+Cell[BoxData[
+    \(General::"spell1" \( : \ \) 
+      "Possible spelling error: new symbol name \"\!\(tege\)\" is similar to \
+existing symbol \"\!\(tegen\)\"."\)], "Message"],
+
+Cell[BoxData[
+    \({{0, 0, 0, \(-\(\(8\ ce\)\/3\)\), \(-\(\(16\ ce\)\/3\)\), 0, 8\ ce, 0, 
+        \(-8\)\ ce, 16\ ce, \(-16\)\ ce, 0, 0, 8\ ce, 0}, {0, 
+        \(-4\)\ ce\ \((6\ k - Q)\), 0, \(-8\)\ ce\ k, 
+        \(-16\)\ ce\ \((k - Q)\), 0, 8\ ce\ k, \(-16\)\ ce\ k, 8\ ce\ k, 0, 
+        4\ ce\ \((8\ k - 3\ Q)\), 0, \(-8\)\ ce\ k, 
+        \(-8\)\ ce\ \((5\ k - 2\ Q)\), 8\ ce\ Q, \(-4\)\ ce\ \((2\ k - Q)\), 
+        \(-8\)\ ce\ k, 16\ ce\ \((3\ k - 2\ Q)\), 4\ ce\ \((4\ k - Q)\), 0, 
+        2\/3\ ce\ \((18\ k + Q)\), 0, \(8\ ce\ k\)\/3, 
+        4\/3\ ce\ \((14\ k - 3\ Q)\), \(16\ ce\ k\)\/3, 
+        8\ ce\ \((2\ k - Q)\), 4\ ce\ k, 4\ ce\ \((3\ k - Q)\), 4\ ce\ k, 0, 
+        \(-2\)\ ce\ \((10\ k - Q)\), \(-4\)\ ce\ Q, 4\ ce\ \((2\ k - Q)\), 
+        \(-8\)\ ce\ \((3\ k - Q)\)}, {\(-16\)\ ce\ k\ \((2\ k - Q)\), 
+        \(-8\)\ ce\ k\ \((3\ k - Q)\), \(-4\)\ ce\ k\ \((4\ k - Q)\), 
+        \(-8\)\ ce\ \((2\ k - Q)\)\^2, 
+        \(-8\)\ ce\ \((3\ k\^2 - 3\ k\ Q + Q\^2)\), 
+        \(-8\)\ ce\ \((k - Q)\)\ \((2\ k - Q)\), 
+        \(-2\)\ ce\ \((2\ k - Q)\)\ \((4\ k - Q)\), 8\ ce\ k\^2, 
+        4\ ce\ k\ \((2\ k - Q)\), 4\ ce\ \((2\ k - Q)\)\^2, 
+        8\ ce\ k\ \((3\ k - Q)\), 4\ ce\ k\ \((6\ k - Q)\), 
+        4\ ce\ \((2\ k - Q)\)\ \((3\ k - Q)\), 
+        4\ ce\ \((6\ k\^2 - 4\ k\ Q + Q\^2)\), 
+        2\ ce\ \((10\ k\^2 - 2\ k\ Q - Q\^2)\), 
+        4\ ce\ \((10\ k\^2 - 10\ k\ Q + 3\ Q\^2)\), 
+        2\ ce\ k\ \((14\ k - 3\ Q)\), 
+        4\ ce\ \((7\ k\^2 - 8\ k\ Q + 2\ Q\^2)\), 
+        ce\ \((14\ k - 3\ Q)\)\ \((2\ k - Q)\), 
+        \(-\(2\/3\)\)\ ce\ k\ \((18\ k + Q)\), \(-2\)\ ce\ k\ \((6\ k - Q)\), 
+        \(-2\)\ ce\ \((2\ k - Q)\)\ \((6\ k - Q)\), 
+        \(-\(1\/3\)\)\ ce\ \((44\ k\^2 - 3\ Q\^2)\), 
+        \(-\(4\/3\)\)\ ce\ \((22\ k\^2 - 15\ k\ Q + 3\ Q\^2)\)}, {
+        4\ ce\ Q\ \((7\ k\^2 - 5\ k\ Q + Q\^2)\), 
+        \(-ce\)\ Q\ \((12\ k\^2 - 6\ k\ Q + Q\^2)\), 
+        \(-2\)\ ce\ Q\ \((10\ k\^2 - 6\ k\ Q + Q\^2)\), 
+        1\/6\ ce\ Q\ \((88\ k\^2 - 30\ k\ Q + 3\ Q\^2)\)}}\)], "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[{
+    \(tmp = Factor[tw2]; \nQ\ reod[tmp]\), 
+    \(Limit[reod[tmp], k -> 0]\)}], "Input"],
+
+Cell[BoxData[
+    \({{\(-\(\(16\ k\)\/Q\)\), 0, 0, 
+        \(-\(\(16\ \((3\ k - 2\ Q)\)\)\/\(3\ Q\)\)\), 
+        \(-\(\(16\ \((12\ k\^2 - 20\ k\ Q + 5\ Q\^2)\)\)\/\(3\ Q\ 
+                \((2\ k + Q)\)\)\)\), \(-\(\(16\ \((2\ k - Q)\)\)\/Q\)\), 0, 
+        0, \(-\(\(32\ \((2\ k - Q)\)\)\/Q\)\), 
+        \(16\ \((24\ k\^2 - 18\ k\ Q + 5\ Q\^2)\)\)\/\(\((2\ k - Q)\)\ 
+            \((2\ k + Q)\)\), 
+        \(-\(\(32\ \((4\ k\^2 - 5\ k\ Q + 2\ Q\^2)\)\)\/\(\((2\ k - Q)\)\ Q
+                \)\)\), 0, 
+        \(-\(\(16\ 
+                \((12\ k\^3 - 14\ k\^2\ Q + 4\ k\ Q\^2 - Q\^3)\)\)\/\(\((
+                  2\ k - Q)\)\ Q\ \((2\ k + Q)\)\)\)\), 0, 
+        \(-\(\(16\ 
+                \((16\ k\^3 - 8\ k\^2\ Q - 10\ k\ Q\^2 + 3\ Q\^3)\)\)\/\(\((
+                  2\ k - Q)\)\ Q\ \((2\ k + Q)\)\)\)\)}, {0, 
+        \(-\(\(8\ \((10\ k\^2 - 16\ k\ Q + 7\ Q\^2)\)\)\/Q\)\), 0, 0, 
+        8\ \((6\ k - 7\ Q)\), \(-\(\(16\ k\ \((k - 2\ Q)\)\)\/Q\)\), 
+        \(-\(\(16\ k\ \((k - Q)\)\)\/Q\)\), 
+        \(-\(\(32\ k\ \((4\ k\^2 - 5\ k\ Q + 2\ Q\^2)\)\)\/\(\((2\ k - Q)\)\ Q
+                \)\)\), 
+        \(8\ \((4\ k - Q)\)\ 
+            \((4\ k\^2 - 6\ k\ Q + Q\^2)\)\)\/\(\((2\ k - Q)\)\ Q\), 
+        \(-\(\(16\ \((k - 2\ Q)\)\ \((2\ k - Q)\)\)\/Q\)\), 
+        \(8\ \((6\ k\^2 - 10\ k\ Q + 5\ Q\^2)\)\)\/Q, 0, 0, 
+        \(-\(\(32\ \((4\ k\^2 - 5\ k\ Q + 2\ Q\^2)\)\)\/Q\)\), 
+        \(-\(\(32\ \((k - Q)\)\ 
+                \((4\ k\^2 - 3\ k\ Q + Q\^2)\)\)\/\(\((2\ k - Q)\)\ Q\)\)\), 
+        0, \(-\(\(8\ \((24\ k\^3 - 40\ k\^2\ Q + 8\ k\ Q\^2 - Q\^3)\)\)\/\(Q\ 
+                \((2\ k + Q)\)\)\)\), 
+        \(8\ \((24\ k\^4 + 44\ k\^3\ Q - 84\ k\^2\ Q\^2 + 60\ k\ Q\^3 - 
+                17\ Q\^4)\)\)\/\(\((2\ k - Q)\)\ Q\ \((2\ k + Q)\)\), 
+        \(-\(\(16\ \((14\ k\^3 - 29\ k\^2\ Q + 12\ k\ Q\^2 - 3\ Q\^3)\)\)\/\(Q
+                \ \((2\ k + Q)\)\)\)\), \(8\ k\ \((k - Q)\)\)\/Q, 
+        \(8\ \((30\ k\^3 - 21\ k\^2\ Q - 14\ k\ Q\^2 + 11\ Q\^3)\)\)\/\(3\ Q\ 
+            \((2\ k + Q)\)\), \(8\ \((k - Q)\)\ \((2\ k - Q)\)\)\/Q, 
+        4\/3\ \((4\ k - 3\ Q)\), 
+        \(28\ \((6\ k\^2 - 8\ k\ Q + 3\ Q\^2)\)\)\/\(3\ Q\), 
+        \(16\ k\ \((12\ k\^2 - 20\ k\ Q + 5\ Q\^2)\)\)\/\(3\ Q\ 
+            \((2\ k + Q)\)\), 
+        \(32\ \((k + Q)\)\ \((2\ k\^2 - 2\ k\ Q + Q\^2)\)\)\/\(Q\ 
+            \((2\ k + Q)\)\), 
+        \(16\ k\ \((2\ k\^3 + 3\ k\^2\ Q - 3\ k\ Q\^2 + 2\ Q\^3)\)\)\/\(\((
+              2\ k - Q)\)\ Q\ \((2\ k + Q)\)\), 
+        \(8\ \((4\ k\^2 - 5\ k\ Q + 2\ Q\^2)\)\)\/Q, 
+        \(8\ k\ \((3\ k - 2\ Q)\)\)\/Q, 
+        \(8\ k\ \((8\ k\^2 - 14\ k\ Q + Q\^2)\)\)\/\(Q\ \((2\ k + Q)\)\), 
+        \(-\(\(4\ \((20\ k\^3 - 18\ k\^2\ Q - 8\ k\ Q\^2 + 5\ Q\^3)\)\)\/\(Q\ 
+                \((2\ k + Q)\)\)\)\), 0, 
+        \(8\ \((3\ k - 2\ Q)\)\ \((2\ k - Q)\)\)\/Q, 
+        \(-\(\(8\ \((18\ k\^2 - 17\ k\ Q + 7\ Q\^2)\)\)\/\(2\ k + Q\)\)\)}, {
+        \(-\(\(32\ k\ \((4\ k\^2 - 5\ k\ Q + 2\ Q\^2)\)\)\/Q\)\), 
+        \(4\ \((4\ k\^3 - 8\ k\^2\ Q - Q\^3)\)\)\/Q, 
+        \(-\(\(8\ k\ \((10\ k\^2 - 16\ k\ Q + 7\ Q\^2)\)\)\/Q\)\), 
+        \(-\(\(16\ \((2\ k - Q)\)\ \((4\ k\^2 - 5\ k\ Q + 2\ Q\^2)\)\)\/Q
+              \)\), \(4\ 
+            \((4\ k\^3 + 8\ k\^2\ Q - 20\ k\ Q\^2 + 7\ Q\^3)\)\)\/Q, 
+        \(-\(\(4\ 
+                \((40\ k\^4 - 92\ k\^3\ Q + 76\ k\^2\ Q\^2 - 36\ k\ Q\^3 + 
+                    7\ Q\^4)\)\)\/\(\((2\ k - Q)\)\ Q\)\)\), 
+        \(-\(\(4\ \((2\ k - Q)\)\ \((10\ k\^2 - 16\ k\ Q + 7\ Q\^2)\)\)\/Q
+              \)\), \(4\ k\ \((10\ k\^2 - 16\ k\ Q + 7\ Q\^2)\)\)\/Q, 
+        \(8\ k\ \((5\ k - 2\ Q)\)\ \((k - Q)\)\)\/Q, 
+        \(8\ \((5\ k - 2\ Q)\)\ \((k - Q)\)\ \((2\ k - Q)\)\)\/Q, 
+        \(8\ k\ \((8\ k\^2 - 13\ k\ Q + 6\ Q\^2)\)\)\/Q, 
+        \(4\ \((16\ k\^3 - 20\ k\^2\ Q + 5\ k\ Q\^2 + 2\ Q\^3)\)\)\/Q, 
+        \(4\ \((2\ k - Q)\)\ \((8\ k\^2 - 13\ k\ Q + 6\ Q\^2)\)\)\/Q, 
+        \(8\ \((2\ k - Q)\)\ \((4\ k\^2 - 5\ k\ Q + 2\ Q\^2)\)\)\/Q, 
+        \(8\ \((4\ k\^3 - 3\ k\^2\ Q + Q\^3)\)\)\/Q, 
+        \(8\ \((16\ k\^4 - 14\ k\^3\ Q - 9\ k\^2\ Q\^2 + 16\ k\ Q\^3 - 
+                6\ Q\^4)\)\)\/\(Q\ \((2\ k + Q)\)\), 
+        \(4\ k\ \((28\ k\^3 - 6\ k\^2\ Q - 20\ k\ Q\^2 + 13\ Q\^3)\)\)\/\(Q\ 
+            \((2\ k + Q)\)\), 
+        \(16\ \((k - Q)\)\ 
+            \((14\ k\^4 - 5\ k\^3\ Q - 6\ k\^2\ Q\^2 + 8\ k\ Q\^3 - 2\ Q\^4)
+              \)\)\/\(\((2\ k - Q)\)\ Q\ \((2\ k + Q)\)\), 
+        \(2\ \((2\ k - Q)\)\ 
+            \((28\ k\^3 - 6\ k\^2\ Q - 20\ k\ Q\^2 + 13\ Q\^3)\)\)\/\(Q\ 
+            \((2\ k + Q)\)\), 
+        \(-\(\(2\ 
+                \((96\ k\^4 - 48\ k\^3\ Q - 62\ k\^2\ Q\^2 + 35\ k\ Q\^3 + 
+                    3\ Q\^4)\)\)\/\(3\ Q\ \((2\ k + Q)\)\)\)\), 
+        \(-\(\(2\ k\ \((4\ k - 3\ Q)\)\ \((2\ k - Q)\)\ 
+                \((4\ k + 3\ Q)\)\)\/\(Q\ \((2\ k + Q)\)\)\)\), 
+        \(-\(\(2\ \((4\ k - 3\ Q)\)\ \((2\ k - Q)\)\^2\ 
+                \((4\ k + 3\ Q)\)\)\/\(Q\ \((2\ k + Q)\)\)\)\), 
+        \(-\(\(2\ \((48\ k\^3 - 52\ k\^2\ Q + 9\ k\ Q\^2 + 6\ Q\^3)\)\)\/\(3\ 
+                Q\)\)\), 
+        \(-\(\(2\ 
+                \((192\ k\^4 - 208\ k\^3\ Q - 68\ k\^2\ Q\^2 + 132\ k\ Q\^3 - 
+                    39\ Q\^4)\)\)\/\(3\ Q\ \((2\ k + Q)\)\)\)\)}, {
+        2\ \((28\ k\^3 - 48\ k\^2\ Q + 36\ k\ Q\^2 - 7\ Q\^3)\), 
+        \(-2\)\ \((16\ k\^3 - 27\ k\^2\ Q + 15\ k\ Q\^2 - 2\ Q\^3)\), 
+        \(-\(\(2\ 
+                \((32\ k\^4 - 18\ k\^3\ Q - 15\ k\^2\ Q\^2 + 20\ k\ Q\^3 - 
+                    4\ Q\^4)\)\)\/\(2\ k + Q\)\)\), 
+        \(384\ k\^4 - 320\ k\^3\ Q - 136\ k\^2\ Q\^2 + 174\ k\ Q\^3 - 
+            27\ Q\^4\)\/\(6\ \((2\ k + Q)\)\)}}\)], "Output"],
+
+Cell[BoxData[
+    \({{0, 0, 0, 32\/\(3\ Q\), \(-\(80\/\(3\ Q\)\)\), 16\/Q, 0, 0, 32\/Q, 
+        \(-\(80\/Q\)\), 64\/Q, 0, \(-\(16\/Q\)\), 0, 48\/Q}, {0, \(-56\), 0, 
+        0, \(-56\), 0, 0, 0, 8, \(-32\), 40, 0, 0, \(-64\), \(-32\), 0, 8, 
+        136, 48, 0, 88\/3, 8, \(-4\), 28, 0, 32, 0, 16, 0, 0, \(-20\), 0, 16, 
+        \(-56\)}, {0, \(-4\)\ Q, 0, 32\ Q, 28\ Q, 28\ Q, 28\ Q, 0, 0, 
+        \(-16\)\ Q, 0, 8\ Q, \(-24\)\ Q, \(-16\)\ Q, 8\ Q, \(-48\)\ Q, 0, 
+        \(-32\)\ Q, \(-26\)\ Q, \(-2\)\ Q, 0, 18\ Q, \(-4\)\ Q, 26\ Q}, {
+        \(-14\)\ Q\^2, 4\ Q\^2, 8\ Q\^2, \(-\(\(9\ Q\^2\)\/2\)\)}}\)], 
+  "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[{
+    \(twgen\  = \ 
+      cw\ tw\  + \ Sum[g[i]\ a[i], {i, 1, 6}]\  + \ 
+        a[7]\ \((1 - 2  k)\)\ g[7]/k; \n
+    twge = Factor[
+        Q\ reod[twgen]\  //. 
+          \ {a[7]\  -> \ 16\ cw\ k/Q, \ a[2] -> \ \(-a[6]\), \ a[6] -> 0, \ 
+            a[1] -> \ a[5]\  - 48\ cw, \n
+            \t\t\t\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \
+\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 
+            a[3] -> \ 2\ a[5] - 24\ cw, \ a[4] -> \ \(-a[5]\) + 40\ cw, \ 
+            a[5] -> \ 0}]\), 
+    \(Simplify[Limit[%, \ k -> 0]]\n\)}], "Input"],
+
+Cell[BoxData[
+    \({{\(-\(\(16\ cw\ k\)\/Q\)\), \(-24\)\ cw, 0, 
+        \(-\(\(16\ cw\ \((3\ k - 5\ Q)\)\)\/\(3\ Q\)\)\), 
+        \(-\(\(16\ cw\ \((6\ k - Q)\)\)\/\(3\ Q\)\)\), 
+        \(-\(\(16\ cw\ \((2\ k - Q)\)\)\/Q\)\), 40\ cw, \(-48\)\ cw, 
+        \(-\(\(8\ cw\ \((8\ k + 5\ Q)\)\)\/Q\)\), 208\ cw, 
+        \(-\(\(16\ cw\ \((4\ k + 5\ Q)\)\)\/Q\)\), 0, 
+        \(-\(\(16\ cw\ \((3\ k - 8\ Q)\)\)\/Q\)\), 0, 
+        \(-\(\(16\ cw\ \((4\ k - 3\ Q)\)\)\/Q\)\)}, {48\ cw\ k, 
+        \(-\(\(4\ cw\ \((20\ k\^2 + 40\ k\ Q - 17\ Q\^2)\)\)\/Q\)\), 
+        24\ cw\ \((2\ k - Q)\), \(-8\)\ cw\ \((11\ k - 3\ Q)\), 
+        \(-16\)\ cw\ \((5\ k - Q)\), 
+        \(-\(\(8\ cw\ k\ \((2\ k + 5\ Q)\)\)\/Q\)\), 
+        \(-\(\(16\ cw\ k\ \((k - 5\ Q)\)\)\/Q\)\), 
+        \(-\(\(16\ cw\ k\ \((4\ k + 5\ Q)\)\)\/Q\)\), 
+        \(8\ cw\ \((8\ k\^2 + 7\ k\ Q - 8\ Q\^2)\)\)\/Q, 
+        \(-\(\(8\ cw\ \((2\ k - Q)\)\ \((2\ k + 5\ Q)\)\)\/Q\)\), 
+        \(4\ cw\ \((12\ k\^2 + 62\ k\ Q - 25\ Q\^2)\)\)\/Q, 0, 0, 
+        \(-\(\(16\ cw\ \((2\ k - Q)\)\ \((4\ k + 5\ Q)\)\)\/Q\)\), 
+        \(-\(\(8\ cw\ \((8\ k\^2 - 8\ k\ Q - 5\ Q\^2)\)\)\/Q\)\), 0, 
+        \(-\(\(8\ cw\ \((12\ k\^2 - 25\ k\ Q + 8\ Q\^2)\)\)\/Q\)\), 
+        \(16\ cw\ \((3\ k\^2 + 23\ k\ Q - 14\ Q\^2)\)\)\/Q, 
+        \(-\(\(4\ cw\ \((28\ k\^2 - 118\ k\ Q + 43\ Q\^2)\)\)\/Q\)\), 
+        \(4\ cw\ k\ \((2\ k + Q)\)\)\/Q, 
+        \(2\ cw\ \((60\ k\^2 + 108\ k\ Q - 55\ Q\^2)\)\)\/\(3\ Q\), 
+        \(4\ cw\ \((2\ k - Q)\)\ \((2\ k + Q)\)\)\/Q, 
+        \(-\(4\/3\)\)\ cw\ \((8\ k + 3\ Q)\), 
+        \(4\ cw\ \((42\ k\^2 + 55\ k\ Q - 33\ Q\^2)\)\)\/\(3\ Q\), 
+        \(8\ cw\ \((12\ k\^2 - 20\ k\ Q + 9\ Q\^2)\)\)\/\(3\ Q\), 
+        \(8\ cw\ \((4\ k\^2 + 14\ k\ Q - 5\ Q\^2)\)\)\/Q, 
+        \(4\ cw\ k\ \((2\ k + 11\ Q)\)\)\/Q, 
+        \(4\ cw\ \((8\ k\^2 + 12\ k\ Q - 5\ Q\^2)\)\)\/Q, 
+        \(4\ cw\ k\ \((6\ k + 5\ Q)\)\)\/Q, \(32\ cw\ k\ \((k - 2\ Q)\)\)\/Q, 
+        \(-\(\(2\ cw\ \((20\ k\^2 + 52\ k\ Q - 25\ Q\^2)\)\)\/Q\)\), 
+        \(-40\)\ cw\ k, \(4\ cw\ \((2\ k - Q)\)\ \((6\ k + 5\ Q)\)\)\/Q, 
+        \(-4\)\ cw\ \((68\ k - 31\ Q)\)}, {
+        \(-\(\(16\ cw\ k\ \((2\ k - Q)\)\ \((4\ k + 5\ Q)\)\)\/Q\)\), 
+        \(8\ cw\ \((2\ k\^3 - 28\ k\^2\ Q + k\ Q\^2 + 4\ Q\^3)\)\)\/Q, 
+        \(-\(\(4\ cw\ k\ \((20\ k\^2 + 18\ k\ Q - 5\ Q\^2)\)\)\/Q\)\), 
+        \(-\(\(8\ cw\ \((2\ k - Q)\)\^2\ \((4\ k + 5\ Q)\)\)\/Q\)\), 
+        \(8\ cw\ \((2\ k\^3 - 20\ k\^2\ Q + 7\ k\ Q\^2 - Q\^3)\)\)\/Q, 
+        \(-\(\(8\ cw\ \((10\ k\^3 + 7\ k\^2\ Q - 15\ k\ Q\^2 + Q\^3)\)\)\/Q
+              \)\), \(-
+          \(\(2\ cw\ \((2\ k - Q)\)\ \((20\ k\^2 + 18\ k\ Q - 5\ Q\^2)\)\)\/Q
+              \)\), \(2\ cw\ \((20\ k\^3 + 18\ k\^2\ Q - 3\ Q\^3)\)\)\/Q, 
+        \(4\ cw\ k\ \((10\ k\^2 + 11\ k\ Q - 5\ Q\^2)\)\)\/Q, 
+        \(4\ cw\ \((2\ k - Q)\)\ \((10\ k\^2 + 11\ k\ Q - 5\ Q\^2)\)\)\/Q, 
+        \(4\ cw\ k\ \((16\ k\^2 + 28\ k\ Q - 15\ Q\^2)\)\)\/Q, 
+        \(2\ cw\ \((32\ k\^3 + 68\ k\^2\ Q - 16\ k\ Q\^2 - 5\ Q\^3)\)\)\/Q, 
+        \(2\ cw\ \((2\ k - Q)\)\ \((16\ k\^2 + 28\ k\ Q - 15\ Q\^2)\)\)\/Q, 
+        \(4\ cw\ \((16\ k\^3 + 26\ k\^2\ Q - 22\ k\ Q\^2 + 5\ Q\^3)\)\)\/Q, 
+        \(2\ cw\ \((2\ k - Q)\)\ \((8\ k\^2 + 28\ k\ Q + 5\ Q\^2)\)\)\/Q, 
+        \(4\ cw\ \((16\ k\^3 + 38\ k\^2\ Q - 50\ k\ Q\^2 + 15\ Q\^3)\)\)\/Q, 
+        \(2\ cw\ k\ \((28\ k\^2 + 92\ k\ Q - 47\ Q\^2)\)\)\/Q, 
+        \(4\ cw\ \((14\ k\^3 + 37\ k\^2\ Q - 48\ k\ Q\^2 + 10\ Q\^3)\)\)\/Q, 
+        \(cw\ \((2\ k - Q)\)\ \((28\ k\^2 + 92\ k\ Q - 47\ Q\^2)\)\)\/Q, 
+        \(-\(\(cw\ 
+                \((96\ k\^3 + 228\ k\^2\ Q - 104\ k\ Q\^2 - 3\ Q\^3)\)\)\/\(3
+                \ Q\)\)\), 
+        \(-\(\(4\ cw\ k\ \((8\ k\^2 + 19\ k\ Q - 9\ Q\^2)\)\)\/Q\)\), 
+        \(-\(\(4\ cw\ \((2\ k - Q)\)\ \((8\ k\^2 + 19\ k\ Q - 9\ Q\^2)\)\)\/Q
+              \)\), \(-
+          \(\(cw\ \((96\ k\^3 + 232\ k\^2\ Q - 90\ k\ Q\^2 - 15\ Q\^3)
+                  \)\)\/\(3\ Q\)\)\), 
+        \(-\(\(2\ cw\ 
+                \((96\ k\^3 + 184\ k\^2\ Q - 246\ k\ Q\^2 + 69\ Q\^3)\)\)\/\(3
+                \ Q\)\)\)}, {
+        4\ cw\ \((14\ k\^3 + 32\ k\^2\ Q - 17\ k\ Q\^2 + Q\^3)\), 
+        \(-cw\)\ \((32\ k\^3 + 54\ k\^2\ Q - 37\ k\ Q\^2 + 5\ Q\^3)\), 
+        \(-2\)\ cw\ \((16\ k\^3 + 43\ k\^2\ Q - 34\ k\ Q\^2 + 5\ Q\^3)\), 
+        1\/3\ cw\ \((96\ k\^3 + 208\ k\^2\ Q - 168\ k\ Q\^2 + 27\ Q\^3)\)}}
+      \)], "Output"],
+
+Cell[BoxData[
+    \({{0, \(-24\)\ cw, 0, \(80\ cw\)\/3, \(16\ cw\)\/3, 16\ cw, 40\ cw, 
+        \(-48\)\ cw, \(-40\)\ cw, 208\ cw, \(-80\)\ cw, 0, 128\ cw, 0, 
+        48\ cw}, {0, 68\ cw\ Q, \(-24\)\ cw\ Q, 24\ cw\ Q, 16\ cw\ Q, 0, 0, 
+        0, \(-64\)\ cw\ Q, 40\ cw\ Q, \(-100\)\ cw\ Q, 0, 0, 80\ cw\ Q, 
+        40\ cw\ Q, 0, \(-64\)\ cw\ Q, \(-224\)\ cw\ Q, \(-172\)\ cw\ Q, 0, 
+        \(-\(\(110\ cw\ Q\)\/3\)\), \(-4\)\ cw\ Q, \(-4\)\ cw\ Q, 
+        \(-44\)\ cw\ Q, 24\ cw\ Q, \(-40\)\ cw\ Q, 0, \(-20\)\ cw\ Q, 0, 0, 
+        50\ cw\ Q, 0, \(-20\)\ cw\ Q, 124\ cw\ Q}, {0, 32\ cw\ Q\^2, 0, 
+        \(-40\)\ cw\ Q\^2, \(-8\)\ cw\ Q\^2, \(-8\)\ cw\ Q\^2, 
+        \(-10\)\ cw\ Q\^2, \(-6\)\ cw\ Q\^2, 0, 20\ cw\ Q\^2, 0, 
+        \(-10\)\ cw\ Q\^2, 30\ cw\ Q\^2, 20\ cw\ Q\^2, \(-10\)\ cw\ Q\^2, 
+        60\ cw\ Q\^2, 0, 40\ cw\ Q\^2, 47\ cw\ Q\^2, cw\ Q\^2, 0, 
+        \(-36\)\ cw\ Q\^2, 5\ cw\ Q\^2, \(-46\)\ cw\ Q\^2}, {4\ cw\ Q\^3, 
+        \(-5\)\ cw\ Q\^3, \(-10\)\ cw\ Q\^3, 9\ cw\ Q\^3}}\)], "Output"]
+}, Open  ]],
+
+Cell[BoxData[
+    \(\( (*
+      \(**************************************\n\t\t\n\t\tThe\)\ final\ result
+          \ for\  < TTT > \n\(**********************************\)******) \n\n
+    \(coelast\  = \ coediff\  + \ f0m\ t0mm; \)\)\)], "Input"]
+},
+FrontEndVersion->"X 3.0",
+ScreenRectangle->{{0, 1280}, {0, 1024}},
+PrintingStyleEnvironment->"Printout",
+WindowSize->{987, 658},
+WindowMargins->{{Automatic, 93}, {Automatic, 106}},
+PrintingPageRange->{1, 14},
+PageHeaders->{{Cell[ 
+        TextData[ {
+          CounterBox[ "Page"]}], "PageNumber"], Inherited, Cell[ 
+        TextData[ {
+          ValueBox[ "FileName"]}], "Header"]}, {Cell[ 
+        TextData[ {
+          ValueBox[ "FileName"]}], "Header"], Inherited, Cell[ 
+        TextData[ {
+          CounterBox[ "Page"]}], "PageNumber"]}},
+PrintingOptions->{"PrintingMargins"->{{18, 36}, {36, 72}},
+"PaperSize"->{597.562, 842.375},
+"PaperOrientation"->"Portrait",
+"PrintCellBrackets"->False,
+"PrintRegistrationMarks"->False,
+"PrintMultipleHorizontalPages"->False,
+"Magnification"->1}
+]
+
+
+(***********************************************************************
+Cached data follows.  If you edit this Notebook file directly, not using
+Mathematica, you must remove the line containing CacheID at the top of 
+the file.  The cache data will then be recreated when you save this file 
+from within Mathematica.
+***********************************************************************)
+
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+
+(*NotebookFileOutline
+Notebook[{
+Cell[1709, 49, 14648, 265, 3115, "Input"],
+Cell[16360, 316, 1927, 39, 395, "Input"],
+Cell[18290, 357, 775, 15, 267, "Input"],
+Cell[19068, 374, 850, 15, 187, "Input"],
+Cell[19921, 391, 1034, 22, 235, "Input"],
+Cell[20958, 415, 2264, 40, 491, "Input"],
+Cell[23225, 457, 1384, 27, 187, "Input"],
+Cell[24612, 486, 1573, 31, 315, "Input"],
+Cell[26188, 519, 1563, 28, 331, "Input"],
+Cell[27754, 549, 399, 7, 171, "Input"],
+Cell[28156, 558, 553, 9, 283, "Input"],
+
+Cell[CellGroupData[{
+Cell[28734, 571, 470, 8, 75, "Input"],
+Cell[29207, 581, 176, 3, 23, "Message"],
+Cell[29386, 586, 2059, 34, 266, "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+Cell[31482, 625, 103, 2, 59, "Input"],
+Cell[31588, 629, 5637, 97, 722, "Output"],
+Cell[37228, 728, 625, 9, 141, "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+Cell[37890, 742, 594, 12, 91, "Input"],
+Cell[38487, 756, 4394, 71, 701, "Output"],
+Cell[42884, 829, 1022, 14, 156, "Output"]
+}, Open  ]],
+Cell[43921, 846, 246, 4, 107, "Input"]
+}
+]
+*)
+
+
+
+
+(***********************************************************************
+End of Mathematica Notebook file.
+***********************************************************************)
+
