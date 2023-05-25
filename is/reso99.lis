@@ -1,0 +1,312 @@
+
+                    Iniziativa Specifica Fi11
+             (Meccanica statistica e teoria dei campi)
+        ----------------------------------------------------
+
+                   Consuntivo Scientifico 1999
+
+
+
+Coordinatore Nazionale: Andrea Cappelli 
+
+
+Partecipanti:
+
+FI: A. Cappelli, Primo Ric. INFN, 
+    G. D'Appollonio, Dottorando in Fisica XIV ciclo     
+    F. Colomo, Ric. INFN, 
+    M. Pettini, Tecn. laur. Oss. Astr. Arcetri, 
+    S. Marmi, Prof. Ass., Dip. Matematica, 
+    S. Ruffo, Prof. Ass,. Dip. Energetica,
+    F. Bagnoli, Tecn. Laur. Fac. Ingegneria, 
+    R. Franzosi, Dottorando in Fisica XI Ciclo (tesi discussa Febbr. 99)
+
+GE: N. Magnoli, Ric. Dip. Fisica
+
+TS: G. Mussardo, Prof. Ass., Univ. Como (assoc. INFN TS)
+    M. Moriconi, Borsista ICTP
+    P. Simon, Borsista SISSA
+   
+
+-------------------------------------------------------
+
+
+Finanziamenti ricevuti nel 1999
+--------------------------------
+
+         Int. - Inviti - Est.
+Fi           2-4-12
+Ge           1-0-4
+Ts           1-0-5
+
+TOT          4-4-21 = 29
+
+
+---------------------------------------------------
+---------------------------------------------------
+
+
+
+
+Resoconto Scientifico 1999 - Gruppo di Firenze
+----------------------------------------------
+
+- A. Cappelli e G.R.Zemba
+- A. Cappelli, I. Todorov, L. Georgiev
+``Studio delle teorie conformi bidimensionali che descrivono l'effetto 
+Hall Quantistico'' 
+Abbiamo trovato una descrizione molto esplicita dei modelli minimali 
+W-infinito come teorie fermioniche con vincoli.
+Abbiamo proposto una nuova classe di teorie conformi per gli stati Hall 
+di elettroni accoppiati, come lo stato di Haldane-Rezayi e 
+lo stato del Pfaffiano; questa si generalizza a n-elettroni per stati 
+Hall parafermionici: si veda il preprint ESI 828 (99) 
+(http://www.esi.ac.at/ESI-Preprints.html)
+
+- A. Cappelli, N. Magnoli e R. Guida
+``Analisi dispersiva del triangolo conforme in quattro dimensioni''
+Abbiamo descritto la forma generale del correlatore di
+tre tensori energia-impulso e la sua rinormalizzazione per studiare
+le proprieta' fisiche dell'anomalia conforme e l'esistenza del teorema c.
+
+- A. Cappelli e G. D'Appollonio
+``Anomalia conforme in ogni dimensione''
+Abbiamo calcolato l'anomalia conforme in dimensione generica
+per le teorie libere bosoniche, fermioniche e di gauge generalizzate;
+abbiamo analizzato il limite di dimensione infinita e discusso
+l'uso dell'anomalia per contare il numero di gradi di liberta' dei campi.
+
+- F. Colomo e P. Valtancoli
+``Teorie conformi con bordo''
+Abbiamo analizzato il modello di Ising critico sul disco e le sue 
+perturbazioni di bordo e di volume, studiando il flusso RG della
+entropia di bordo ``log(g)''.
+
+- S. Marmi, P. Moussa, Y.C.Yoccoz e A.Cassa
+``Problemi di teoria delle perturbazioni del moto classico''
+Rinormalizzazione geometrica e rinormalizzazione perturbativa 
+in teoria classica delle perturbazioni: condizioni aritmetiche, 
+rottura di curve invarianti e applicazioni. Complessificazione 
+della funzione di Brjuno. Si veda anche il preprint T99/066 SPhT/Saclay
+
+- S. Marmi, D. Sauzin e A.Berretti
+``Problemi di instabilita' su larga scala in sistemi con molti 
+gradi di liberta'''
+Si veda i lavori ``Limit at resonances of linearizations of 
+some complex analytic dynamical systems'' in stampa su
+Erg. Th. Dyn. Sys.; ``Linearization of analytic and non-analytic 
+germs of diffeomorphisms'', in stampa su Bull. Soc. Math. France;
+``Chaotic behaviour in the solar system (following J. Laskar)''
+in stampa presso Asterisque (Paris).
+
+- S. Ruffo, V. Latora e A. Rapisarda
+``Dinamica vicino alla transizionie di fase''
+Abbiamo ottenuto lo spettro di Lyapunov e l'entropia di Kolmogorov-Sinai
+per un modello di rotatori classici accoppiati nel limite termodinamico.
+Abbiamo mostrato la presenza di moto superdiffusivo di singola particella
+per un modello di rotatori accoppiati.
+
+- S. Ruffo, A. Torcini, M. Nitti e M. Antoni;
+- S. Ruffo, J. de Luca e A.J. Lichtenberg;
+- S. Ruffo e A. Pikovsky.
+``Dinamica e statistica in alcuni modelli della meccanica statistica''
+Abbiamo suggerito che la transizione di fase del modello di Kuramoto di 
+rotatori accoppiati sia una biforcazione di Hopf sottoposta a rumore.
+Abbiamo proposto una teoria per il rilassamento all'equilibrio in tempi
+finiti per il modello di Fermi-Pasta-Ulam nel limite di bassa energia.
+Abbiamo proposto un nuovo algoritmo per l'integrazione numerica di equazioni
+di reazione-diffusione. Abbiamo anche scritto una rassegna dei nostri 
+risultati sui modelli con interazione a lunga portata,
+``Dynamics and statistics of simple models with infinite-range 
+attractive interaction", in ICRA Workshop {it The Chaotic Universe}, 
+Rome-Pescara, February 1999, V. Gurzadyan ed., World Scientific, in stampa.
+
+- F. Bagnoli, L. Baroni, M. Bezzi, P. Palmerini and R. Rechtman
+``Automi cellulari e criticalita' auto-organizzata''
+Sincronizzazione dei sistemi caotici estesi. Automi cellulari e algoritmi
+per il calcolo parallelo.
+
+- F. Bagnoli, F. Bochicchio e S. Bucci, 
+``Modelli per la formazione di tracce in rivelatori di particelle alpha''
+
+- M. Pettini, R. Franzosi, L. Casetti, C. Clementi, 
+- G. Pettini, L. Spinelli, R. Gatto
+- M. Pettini ed altri autori
+``Transizioni di fase e cambiamenti della topologia dello spazio delle
+configurazioni''
+Il punto centrale e` di legare l'apparire di una transizione di fase a grossi
+cambiamenti topologici di opportune sottovarieta` dello spazio delle fasi
+invece che a cambiamenti delle misure statistiche secondo quanto stabilito
+dalle teorie di Yang-Lee o di Ruelle-Dobrushin.
+I risultati fino ad ora ottenuti riguardano: la dimostrazione di un teorema 
+generale sulla necessiata` di cambiamenti di topologia delle superfici
+equipotenziali dello spazio delle configurazioni microscopiche per avere
+transizioni di fase di prima o seconda specie; il calcolo numerico di un
+invariante topologico (la caratteristica di Eulero) delle superfici 
+equipotenziali di un modello phi^4 su reticolo a due dimensioni spaziali;
+lo studio analitico del legame fra topologia e transizioni di fase in un 
+modello XY di "campo medio".
+Si vedano anche i lavori in stampa:``Topology and phase transitions: 
+a paradigmatic evidence'' su  Phys. Rev. Lett.,``Hamiltonian dynamics 
+and geometry of phase transitions in classical XY models'', su Phys. Rev. E;
+``Analytic Lyapunov exponents in a classical nonlinear field equation'',
+su Phys. Rev. E; ``Geometric approach to Hamiltonian dynamics and 
+statistical mechanics'' su Physics Reports.
+
+
+
+Pubblicazioni 1999 - Gruppo di Firenze
+--------------------------------------
+
+A. Cappelli e G. R. Zemba 
+``Hamiltonian Formulation of the W-Infinity Minimal Models''
+Nucl. Phys. B 540 (1999) 610
+
+A. Cappelli, L. S. Georgiev, I. T. Todorov
+``A Unified Conformal Field Theory Description of Paired Quantum Hall States''
+Commun. Math. Phys. 205 (1999) 657-689 
+
+S. MARMI, P MOUSSA e A CASSA,
+``Continued fractions and Brjuno functions''
+J. Comput. Appl. Math. 105 (1999) 403--415
+
+S. Ruffo, V. Latora e A. Rapisarda 
+"Chaos and statistical mechanics in the Hamiltonian mean field model", 
+Physica D131, 38 (1999)
+
+S. Ruffo, V. Latora e A. Rapisarda
+"Superdiffusion and out-of-equilibrium chaotic dynamics with many 
+degrees of freedom", 
+Phys. Rev. Lett. 83, 2104 (1999).
+
+A. Pikovsky e S. Ruffo
+"Finite-size effects in a population of interacting oscillators", 
+Phys. Rev. E 59, 1633 (1999).
+
+M. Nitti , A. Torcini e S. Ruffo
+"An integration scheme for reaction-diffusion models", 
+Int. J. Mod. Phys. C 10, 1039 (1999),
+
+J. de Luca, A.J. Lichtenberg e S. Ruffo
+"Finite times to equipartition in the thermodynamic limit", 
+Phys. Rev. E 60, 3781 (1999).
+
+F. Bagnoli, L. Baroni e P. Palmerini, 
+``Synchronization and directed percolation in  coupled map lattices'',
+Phys. Rev. E 59, 409 (1999).
+
+F. Bagnoli e R. Rechtman, 
+``Synchronization and Maximum Lyapunov Exponent in Cellular Automata''
+Phys. Rev. E 59, R1307  (1999).
+
+F. Bagnoli, F. Bochicchio e S. Bucci, 
+``Sensitivity of a LR-115 based radon dosemeter'', 
+proceedings of XIX Int. Conf. on nuclear tracks, Radiation Measurements 31,
+347--350 (1999).
+
+L. Casetti, R. Gatto e M. Pettini 
+``Geometric approach to chaos in the classical dynamics
+of abelian lattice gauge theory''
+J. Phys. A 32, 3055 (1999).
+
+L. Casetti, M. Cerruti-Sola, M. Modugno, G. Pettini, M. Pettini e R. Gatto
+``Dynamical and Statistical properties of Hamiltonian systems
+with many degrees of freedom''
+La Rivista del Nuovo Cimento 22, 1 (1999).
+
+L. Casetti, E.G.D. Cohen e M. Pettini
+``Topological origin of the phase transition in a mean-field model''
+Phys. Rev. Lett. 82, 4160 (1999).
+ 
+R. Franzosi, L. Casetti, L. Spinelli, M. Pettini 
+``Topological aspects of geometrical signatures of phase transitions''
+Phys. Rev. E60, R5009 (1999).
+
+
+
+---------------------------------------------------
+---------------------------------------------------
+
+
+
+Resoconto Scientifico 1999 - Gruppo di Genova
+----------------------------------------------
+
+- N. Magnoli, K. Konishi, G. Carlino e N. Maggiore,
+``Studio del gruppo di rinormalizzazione nelle teorie di gauge 
+  supersimmetriche''
+Abbiamo fatto un'analisi critica della letteratura sulla funzione Beta 
+"esatta" in SYM N=2, mostrando che quella proposta ha un comportamento 
+infrarosso sbagliato; abbiamo proposto una definizione corretta della 
+funziona beta.
+
+- N. Magnoli, M. Caselle e P. Grinza,
+``Studio dei correlatori off-criticality nei modelli bidimensionali
+  di meccanica statistica''
+Abbiamo ottenuto uno sviluppo a piccole distanze dei correlatori
+del modello di Ising in campo magnetico con il metodo dei fattori di forma
+(vedi hep-th/9909065); abbiamo confrontato con i risultati di una 
+simulazione Montecarlo.
+
+
+
+Pubblicazioni 1999 - Gruppo di Genova
+-------------------------------------
+
+K. Konishi, G. Carlino, N. Maggiore e N. Magnoli,
+``On the beta function in supersymmetric gauge theories'',
+Phys. Lett. B455, 171, (1999).
+
+
+
+
+---------------------------------------------------
+---------------------------------------------------
+
+
+
+Resoconto Scientifico 1999 - Gruppo di Trieste
+----------------------------------------------
+
+- G. Mussardo e A. Leclair 
+``Effetti di temperatura finita in teorie di campo''
+E' stato proposto un metodo per calcolare i correlatori
+a temperatura finita dei sistemi integrabili bidimensionali
+
+- G. Mussardo
+``Calcolo esatto di elementi di matrice in teorie di campo 
+  supersimmetriche''
+Sono stati ottenuti i fattori di forma del modello di Sinh-Gordon
+N=1 supersimmetrico; l'estenzione del calcolo ha permesso lo
+studio del flusso di gruppo di rinormalizzazione attraverso
+varie serie di modelli
+
+- G. Mussardo e S. Penati
+``Teorie di campo e modelli statistici bidimensionali
+   con un numero infinito di risonanze''
+Vedi hep-th/9907039, in stampa su Nucl. Phys. B
+
+- G. Mussardo e P. Simon
+``Modelli statistici con stati di vuoto instabile''
+Vedi hep-th/9903072, in stampa su Nucl. Phys. B 
+
+
+
+Pubblicazioni 1999 - Gruppo di Trieste
+--------------------------------------
+
+A. Leclair and G. Mussardo 
+``FINITE TEMPERATURE CORRELATION FUNCTIONS IN INTEGRABLE QFT''
+Nucl.Phys. B552, 624-642 (1999) 
+
+G. Mussardo 
+``FORM-FACTORS IN OFF CRITICAL SUPERCONFORMAL MODELS''
+Int.J.Mod.Phys. B13, 2961-2972 (1999) 
+
+
+
+
+
+
+
+

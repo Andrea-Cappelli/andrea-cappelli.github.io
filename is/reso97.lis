@@ -1,0 +1,1696 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+Caro Becchi,
+allego l'ulteriore richiesta finanziaria per FI11, necessaria per
+mantenere l'iniziativa a livello di sopravvivenza.
+Alcuni commenti sulla necessita' ed importanza di mantenere questa
+attivita' in ambito INFN. In alcuni casi i legami con la teoria
+dei campi sono strettissimi (vedi le ricerche di Cappelli e Colomo
+a Firenze, di Gonnella a Bari e di Serva a L'Aquila); in altri 
+sono comunque rilevanti, se si colloca l'area di ricerca che 
+rappresento nel contesto piu' generale della meccanica statistica, la quale 
+rientra tra i campi di ricerca teorica istituzionalmente finanziati dall'INFN.
+Anche ricerche cosi' apparentemente lontane come quelle sul ripiegamento delle
+proteine usano equazioni stocastiche mappabili su teorie di campo.
+(E questo e' solo un esempio dei molti che potrei fare).
+Vorrei inoltre sottolineare i recenti legami stabiliti in ambito
+INFN con ricercatori della Sezione di Catania, che riguardano lo studio
+del caos nei nuclei.
+Ti porgo cordiali saluti.
+Stefano Ruffo.
+********************************************************************
+INIZIATIVA SPECIFICA FI 11 (Meccanica statistica e sistemi dinamici)
+Coordinatore Nazionale: Stefano Ruffo, Prof. Ass., (Firenze), Inc. di ricerca
+INFN.
+
+Partecipanti:
+
+FI: F. Bagnoli, Tecn. Laur. Fac. Ingegneria, (Firenze), INFM Classe B.
+    L. Baroni, Dottoranda in Fisica (Firenze), INFM Classe B.
+    M. Barbi, Dottoranda in Fisica, (Firenze).
+    A. Cappelli, I Ric. INFN, (Firenze).
+    T. Carletti, Dottorando in Matematica (Firenze).     
+    F. Cecconi, Dottorando in Fisica, (Firenze).
+    F. Colomo, Ric. INFN, (Firenze).
+    R. Franzosi, Dottorando in Fisica, (Firenze).
+    R. Livi, Prof. Ass. (Firenze), INFM Classe B.
+    S. Marmi Ric. Univ., Dip. Matematica, (Firenze).
+    M. Pettini, Tecn. laur. Oss. Astr. Arcetri, (Firenze), INFM Classe B.
+    A. Politi, Primo Ric. INO, (Firenze).
+
+BA: G. Gonnella, Ricercatore Univ. , (Bari)
+    A. Lamura, Dottorando in Fisica, (Bari)
+
+RO1:M. Falcioni, Ricercatore Univ. Roma 1, associato INFN (Roma 1)
+    G. Boffetta, Ricercatore Univ. Torino, associato INFN (Torino)
+    A. Vulpiani, Prof. Associato Univ. Roma 1, associato INFN (Roma 1)
+    L. Biferale, Ricercatore Univ., Associato INFN (Roma2)
+
+TS: A. Maritan, Prof. Ord. (Trieste) associato INFN, INFM Classe B.
+
+PG: U. Marini Bettolo Marconi, Ricercatore Univ., (Perugia), INFM Classe B.
+    A. Petri, Ricercatore CNR Roma, Associato INFN (Perugia), INFM Classe C.
+
+AQ: M. Serva, Ricercatore Univ. L'Aquila, associato INFN, INFM Classe B.
+    R. Baviera, Dottorando, associato INFN, INFM Classe B.
+    
+    
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+ABSTRACT of PROPOSED RESEARCH for 98
+A)"Statistical mechanics"
+-Quantum Hall effect. We will continue the study of minimal W-infinity
+model, with the hope to propose an experiment which can confirm their
+predictions.
+-Frustrated systems and q-oscillators. Study of the solution of the XY
+model and the physics of frustrated systems and of the algebraic properties
+of q-deformed algebras.
+-Quantum diffusion in random media: what happens when there are long
+range interactions described by band matrices (either sparse or full)?
+We are willing to follow both perturbative approaches, extended numerical
+simulations and approximate analytical techniques.
+-We will continue our research on the scaling properties of  river networks
+using our recently proposed stochastic differential equations.
+We have already seen by numerical integration that the observed 
+scaling laws are reproduced in a spectacular way.
+A full analytical treatment is still lacking and we are working on it.
+We are studying genetic networks which obey an optimization principle,
+i.e. the minimun energy dissipation, and we are trying to show that under
+rather general conditions, spanning trees emerge as the optimal network.
+-Protein Folding and cooperative phenomena in heteropolymers. We have 
+proposed variuos methods to design new proteins and till now we have 
+checked their performance in comparison with previous proposed techniques 
+in lattice and off lattice models where it was possible a rigorous test.  
+Our methods seem to work rather nicely and a lot of work on real proteins 
+has started in the last months.
+-Spin glasses. We study this system with three different approaches, the 
+first consists in constrained annealed approximations, the second in 
+a Bethe-Peierls variational approach and the third in using
+the Onsager transfer matrix method to find the exact solution of 
+two-dimensional Ising models with strip disorder.
+-Characterization of complexity of noisy systems and stochastic models 
+in theoretical biology and theoretical finance.
+-Equilibrium  properties of spin and discrete models, and dynamical 
+properties of field models in non-equilibrium processes.
+In particular, in the last years, we have studied the phase diagram of
+three-dimensional spin models and discrete surface models by using 
+variational (Cluster Variation Method) and Monte Carlo methods. 
+This line of research may have interesting implications
+for the study of critical properties in field models.
+-Study of granular media by means of kinetic models.
+We want to clarify the relation between the non-gaussian
+velocity distribution and the clusterization, that we observe in the 
+presence of inelastic collisions. Moreover, we are interested in
+the appearence of very slow relaxation mechanism 
+towards equilibrium in such materials.        
+-Investigation of the glassy behavior in lattice models
+with p-spin interactions. Study of the approach to equilibrium by
+means of simulation and Ginzburg-Landau time dependent equation.
+-Study of models of microcracks in heterogeneous materials 
+by means of numerical simulation and mean field analysis.
+
+B)"Dynamical systems"
+- Analytical methods for the semiclassical regime of classically chaotic
+quantum maps.
+-Geometrization of Hamiltonian dynamics in the language of Riemannian 
+differential geometry.Interesting applications of this approach are 
+expected for disordered and frustrated systems as well as for lattice 
+gauge models.
+-Study of heat conduction in chains of nonlinear oscillators. The main aim
+is the search for an explanation of the divergence of the conductivity
+that we have recently found in numerical simulations. 
+-Further development of the ``chronotopic'' approach for the description of
+spatially extended chaotic systems. The next goal is the possibility to
+attribute a meaning to the ``imaginary'' part of the Lyapunov exponents.
+-Perturbation theory for classical nearly-integrable hamiltonian systems. 
+Perturbation series are sometimes convergent (KAM theory) but 
+often divergent (Nekhoroshev theorem and normal forms theory). 
+The problem of the origin of this different behaviour is far from 
+being understood. Recently new approaches, closer to standard diagrammatic 
+methods in perturbative quantum field theory, have been proposed. We are 
+presently active in exploiting the relation between the classical and 
+quantum perturbation theories for solving some open problems in the 
+theory of the transition to chaos in classical nonlinear 
+Hamiltonian systems. Summability methods (Borel transform) which have 
+since long been applied to perturbation theory in quantum mechanics 
+are systematically used. 
+-Geometrical approach to renormalisation. A numerical counterpart of 
+this study is the frequency analysis method for studying the transition to 
+chaotic behaviour in celestial mechanics and in particle accelerators.
+-Relaxation properties of proper thermodynamic observables 
+by inspection of their time correlation functions; transport properties
+in 2-d and 3-d anharmonic lattices; growth phenomena originating from
+confining potentials; phase transitions in non-equilibrium phenomena
+like front propagation and cell dynamics.
+-We will continue the study of localization of energy in nonlinear
+chains, which has led to the introduction of the concept of ``chaotic
+breather".
+-We will continue the classification of invariant manifolds in the
+Fermi-Pasta-Ulam Hamiltonian.
+-We will study the dynamics and the Lyapunov instability in systems
+with long-range interactions.
+-Predictability problem for systems with
+several characteristic times, in particular by introducing 
+the concept of predictability time for variables that are averaged 
+on temporal window or on finite space-regions. We shall also 
+investigate the possibility to use the FINITE SIZE LYAPUNOV EXPONENT
+(FSLE), that we recently introduced, for the analysis of experimental 
+data and for the study of predictability in presence of an 
+incertitude on the evolution laws.  
+We are now studying systems with many degrees of freedom, that are 
+composed of globally coupled maps under the influence of a common 
+internal field; we intend to characterize their possible macroscopically 
+chaotic behavior by means of the FSLE. With the locution  macroscopic  
+chaos we indicate the irregular behavior of some global variables 
+of the system, with typical times much longer than the characteristic 
+time of the microscopic dynamics, as may be given by the inverse of 
+the first Lyapunov exponent. 
+-In the study of the diffusion properties in velocity fields with 
+a space-time structure, we intend to generalize the multiscaling 
+method to the case of non delta-correlated noise. This kind of 
+problem is natural in astrophysics and in geophysics, when keeping 
+into account the small scales effects by means of a 
+markovian-gaussian process. We shall be faced with the problem of the
+anomalous diffusion and of the mechanisms of synchronization 
+(of a stochastic-resonance type) for the increasing of the diffusion 
+coefficient, in correspondence of some special values of the 
+parameters on which the field depends. When the diffusion coefficient 
+does not gives enough information, it is necessary to face the 
+problem by the methods of dynamical system theory (e.g. FSLE and 
+markovian approximations).  
+-It is our goal to develop a new class of simple models for turbulence, 
+starting from the wavelet decomposition of the Navier-Stokes equations 
+and then selecting those interactions that result to be important in the 
+determination of the statistical properties of the turbulent flow. In 
+this way it should be possible to check the generalized Kolmogorov 
+hypothesis and the small scales modelization techniques.
+We also address our investigations in the direct numerical simulations 
+of partial differential equations that, at variance with the 
+Navier-Stokes equations, present a direct energy cascade even in two
+dimensions. An interesting example are the equations for the 
+electro-magnetohydrodynamics turbulence, that displays a Kolmogorov
+like scaling also in two dimensions.
+-For the connection between the lagrangian and eulerian statistical 
+properties, to avoid the numerical difficulties in the generation
+of a velocity field with a wide inertial range, we shall face the 
+problem from the syntetic-turbulence point of view: it will be 
+required to quickly and efficiently generate multiaffine fields. 
+-Statistical mechanics of hydrodinamical systems with constraints, 
+in connection with the equivalence of the ensemble in non-equilibrium 
+statistical mechanics, as proposed by G. Gallavotti.
+
+PUBBLICAZIONI (97-98)
+
+FIRENZE
+
+-F. Bagnoli, P. Palmerini and R. Rechtman, \emph{Mapping Criticality
+into Self Organized Criticality}, Phys. Rev. E \textbf{55}, 3970 (1997) 
+(cond-mat/9605066).
+-F. Bagnoli and M. Bezzi, \emph{Speciation as Pattern Formation by 
+Competition in a Smooth Fitness Landscape}, Phys. Rev. Lett. 
+\textbf{79} (1997) 3302.
+-F. Bagnoli and M. Bezzi, \emph{Competition in a Fitness
+Landscape}, Fourth European Conference on Artificial Life, 
+P. Husbands and I. Harvey (eds.), The MIT Press (Cambridge, Massachussets, 
+1997) p. 101 and cond-mat/9702134 (1997).
+-A. Cappelli, atti della scuola, ``Sur le Symetries en Physique'',
+Dolomieu (Isere), marzo 1997, M. Kibler e altri, editori,
+Editions Frontieres (1998), Parigi.
+-A. Cappelli e F. Colomo, preprint DFF-289-9-97 hep-th/9710071, 14 pp, 
+J. Phys. A in stampa.
+- A. Cappelli, C. Mendez, J. M. Simonin e G. R. Zemba,
+``Numerical Study of Hierarchical Quantum Hall Edge States on the
+Disk Geometry'', preprint DFF 300/2/98, 30 pp;
+- A. Cappelli, C. A. Trugenberger e G. R. Zemba,
+``W-infinity Field Theories for the Edge Excitations in the Quantum Hall 
+Effect'', atti della Conf. Int. ``Low Dimensional Field Theory'',
+Telluride, CO, USA, July 1996, G.V.Dunne et al. eds., 
+Int.J.Mod.Phys. A12 (1997) 1101-1111.
+- A. Cappelli e G. R. Zemba,
+``Modular Invariant Partition Functions in the Quantum Hall Effect'',
+Nucl.Phys. B490 (1997) 595-632.  
+-F. COLOMO, "Frustrated Magnetic Systems and the q-Oscillator",
+Proceedings of the II POMI Workshop on Quantum Groups and
+Integrable Systems (St Petersbourg, May 1997), with A. CAPPELLI, in press.
+-F. COLOMO, "Exact Solution of the Frustrated Spherical Model", 
+Proceedings of the VI CHIA Workshop (Common Trends in Condensed
+Matter and High Energy Physics, Cagliari, August 1997), 
+with A. CAPPELLI, to appear.
+-Y. Cuche, R. Livi, A. Politi "Phase Transitions in 2-D Stable 
+Coupled Map Lattices", Physica D 103, 369 (1997).
+-M.A. Munoz, R. Dickman, G. Grinstein and R. Livi
+"Infinite Number of Absorbing States : Critical Behavior", 
+Physica D 103 , 221 (1997).
+-B. Giorgini, R. Livi, G. Rousseau
+"Dynamical Phases in a Cellular Automata Model for Epidemic
+Propagation", Physica D 103, 554 (1997).  
+-F. Bignone, R. Livi , M. Propato
+"Dynamical Stability after Perturbation in a Discontinous
+Coupled Map Lattice", Physica  D 108, 379 (1997). 
+-S. Lepri, R. Livi , A. Politi 
+"Heat Conduction in Chains of Nonlinear Oscillators",  
+Phys. Rev. Lett. 78, 1896 (1997).
+-R. Livi , M. Spicci, R.S. MacKay "Breathers on a Diatomic FPU Chain", 
+Nonlinearity {\bf 10}, 1421 (1997).
+-R. Kapral, R. Livi,  A. Politi "Critical Behavior of Complex Interfaces",
+Phys. Rev. Lett. 79, 2277 (1997).
+-A. Torcini, R. Livi, A. Politi, S. Ruffo
+Comment on ``Universal scaling law for the largest Lyapunov
+exponent in coupled map lattices'', Phys. Rev. Lett.
+78, 1391 (1997).
+-H. Hinrichsen, R. Livi, D. Mukamel, A. Politi
+"A model for Nonequilibrium Wetting Transitions in Two Dimensions",
+Phys. Rev. Lett. 79, 2710 (1997).
+-F. Bignone, R. Livi, M. Propato
+"Complex Evolution in Genetic Networks", Europhys. Lett. 40, 497 (1997).
+-S. Marmi, P. Moussa and J.-C. Yoccoz:
+``The Brjuno functions and their regularity properties''
+ Communications in Mathematical Physics 186 (1997) 265-293
+-A. Berretti, S. Marmi and D. Sauzin ``_Limit at resonances of linearizations of 
+some complex analytic dynamical systems'' preprint, gennaio 1998.
+-P. Moussa, A. Cassa e S. Marmi 
+``Continued Fractions and Brjuno Functions'' 
+in corso di pubblicazione su Journal of Computational and Applied 
+Mathematics (Preprint Service de Physique Theorique, CEA Saclay, T97/142
+-D. Sauzin e S. Marmi ``Charactere monogene uniforme et quasi-analytique des 
+solutions de l'equation cohomologique en dimension un'' preprint, 
+febbraio 1998
+-L. Casetti, M. Cerruti-Sola, M. Pettini, E.G.D. Cohen
+``The Fermi-Pasta-Ulam problem revisited: Stochasticity thresholds in
+nonlinear Hamiltonian systems''
+Phys. Rev. E55, 6566 (1997).
+-L. Caiani, L. Casetti, C. Clementi, M. Pettini
+``Geometry of dynamics, Lyapunov exponents and phase transitions''
+Phys. Rev. Lett. 79, 4361 (1997).
+-L. Caiani, L. Casetti, C. Clementi, G. Pettini, M. Pettini, R. Gatto
+``Geometry of dynamics and phase transitions in classical lattice \varphi^4
+theories'' Phys. Rev. E57, (1998) in press.
+-M. Cerruti-Sola, R. Franzosi, M. Pettini
+``Lyapunov exponents from geodesic spread in configuration space''
+Phys. Rev. E56, 4872 (1997).
+-R. Lima, M. Pettini M. ``Parametric resonant control of chaos''
+Int. J. Bifurcation \& Chaos, (1998) in press.
+-L. Caiani, L. Casetti, M. Pettini
+``Hamiltonian dynamics of the two-dimensional lattice $\varphi^4$ model''
+J.Phys. A: Math. Gen., (1998) in press.
+-R. Badii and A. Politi, Phys. Rev. Lett., 78, 444 (1997)
+-D. Casini, G. D'Alessandro, and A. Politi, Phys. Rev. A, 55, 751 (1997)
+-R. Bonaccini, A. Politi, Physica D 103, 362 (1997)
+-S. Lepri, A. Politi, A. Torcini, J. Stat. Phys., 88, 31 (1997)
+-F.M. Izrailev, T. Kottos, A. Politi, and G.P. Tsironis, 
+Phys. Rev. E, 55 4951 (1997)
+-A. Politi and R. Badii, J. Phys. A, 30, 627 (1997)
+-F. Christiansen and A. Politi, Physica D, 109, 32 (1997) 
+-F. Cecconi and A. Politi, Phys. Rev. E., 56, 4998, (1997)
+-S. Lepri, A. Politi, and A. Torcini, CHAOS, 7, 701 (1997) 
+-S. Lepri, R. Livi, and A. Politi, ``Energy transport in anharmonic 
+lattices close and far from equilibrium'' Physica D, accettato
+-G. Giacomelli and A. Politi, 
+``Multiple scale analysis of delayed dynamical systems''
+Physica D, accettato
+-F. Cecconi, R. Livi, and A. Politi,
+``Fuzzy phase transition in a 1D coupled stable-map lattice''
+Phys. Rev. E, accettato 
+-A. Pikovsky and A. Politi,
+``Dynamic localization of Lyapunov vectors in space-time chaos''
+Nonlinearity, sottomesso
+-S. Lepri, R. Livi, and A. Politi, 
+``On the anomalous thermal conductivity of one-dimensional lattices''
+Europhys. Lett. sottomesso
+-T. Kottos, A. Politi, and F. Izrailev, 
+{\it Finite-size corrections in Lyapunov spectra for band random matrices}
+J. Phys. Cond Matt., sottomesso.
+-P. Poggi and S. Ruffo: "Exact solutions in the FPU oscillator
+chain", Physica D , {\bf 103}, 251 (1997).
+- M. Bezzi, F. Celada, S. Ruffo and P. Seiden: "Transition between
+immune and disease states in a cellular automaton model of clonal immune
+response", Physica A, {\bf 245}, 145 (1997).
+-P. Li\`o and S. Ruffo: "Searching for genomic constraints",
+Il Nuovo Cimento D, in press (1997).
+-A. Bonelli and S. Ruffo: "Exchanges of quanta among distinguishable
+and indistinguishable objects", Int. J. Mod. Phys. B, {\bf 11}, 2281 (1997).
+-T. Dauxois, S. Ruffo and A. Torcini "Modulational estimate
+of the Lyapunov exponent for Fermi-Pasta-Ulam chains", Phys. Rev. E 
+Rapid. Comm., {\bf 56}, R6229 (1997).
+-T. Cretegny, T. Dauxois, S. Ruffo and A. Torcini: "Localization 
+and equipartition of energy in the $\beta$-FPU chain: chaotic breathers",
+submitted to Physica D, (1997).
+-X. Leoncini, A.D. Verga and S. Ruffo: "Hamiltonian dynamics and
+the phase transition of the XY model", Phys. Rev. E (1997), accepted.
+-V. Latora, A. Rapisarda and S. Ruffo: "Lyapunov instability and 
+finite size effects in a system with long-range forces",
+Phys. Rev. Lett. {\bf 80}, 692 (1998).
+-F. Izrailev, S. Ruffo and L. Tessieri: "Classical representation 
+of the 1D Anderson Model", submitted to J. Phys. A (1998).
+-S. Ruffo:"Lyapunov spectra in spatially estended systems", Fiesta
+96, V Escuela del Verano en Sistemas Complejos, December 9-13 (1996), Kluwer,
+to be published (1998).
+-S. Ruffo:"The Fermi-Pasta-Ulam-Tsingou numerical experiment: 
+time-scales for the relaxation to thermodynamical equilibrium", to be
+published in "Symmetry and perturbation theory", D. Bambusi and G. Gaeta
+(eds.), Quaderni GNFM (Firenze,1998).
+
+
+ROMA
+
+1 -  Predictability in the large: an extension of the concept of
+     Lyapunov exponent
+     E. Aurell, G. Boffetta, A. Crisanti, G. Paladin e A. Vulpiani,
+     Journal of Physics A, vol. 30, 1 (1997)
+
+2 -  Predictability in Two Dimensional Decaying Turbulence
+     G. Boffetta, A. Celani, A. Crisanti e A. Vulpiani,
+     Physics of Fluids A, vol. 9, 724 (1997)
+
+3 -  Characterization of a periodically driven chaotic 
+     dynamical system
+     A. Crisanti, M. Falcioni, G. Lacorata, R. Purini e A. Vulpiani,
+     Journal of Physics A, vol. 30, 371 (1997)
+
+4 -  Transient anomalous dispersion in random walkers
+     G. Boffetta, A. Celani and V. Rago,
+     Physics Letters A, vol. 235, 15 (1997)
+
+5 -  Intermittency in stochastically perturbed turbolent models
+     L. Biferale, M. Cencini, D. Pierotti e A. Vulpiani
+     Journal of Stat. Phys., vol. 88, 1117 (1997)
+
+6 -  Dispersion of passive tracers in closed basin: Beyond the 
+     diffusion coeffecient
+     V. Artale, G. Boffetta, A. Celani,  M. Cencini and A. Vulpiani, 
+     Physics of Fluids, vol. A9, 3162 (1997)
+
+7 -  Comment on "Linear response of Hamiltonian chaotic systems 
+     as function of the number of degrees of freedon " 
+     M. Falcioni  and A. Vulpiani, 
+     Phys. Rev. Lett., vol. 79, 1418 (1997)
+
+8 -  Spatial complex behavior in nonchaotic flow systems 
+     D. Vergni, M. Falcioni  and A. Vulpiani, 
+     Phys. Rev. E, vol.56, 6170 (1997)
+
+9 -  Irreversibilita': Caos o Caso ? 
+     A. Vulpiani,
+     in ' La Freccia del Tempo', pag 9 eds. AA VV (TESSERE-SISSA)
+     (CUEN srl,  Napoli, Bologna 1997)
+
+10-  Self-scaling properties of velocity circulation in shear-flows
+     R. Benzi, L. Biferale, M.V. Struglia and R. Tripiccione;
+     Phys. Rev. E , vol. 55, 3739 (1997) 
+
+11-  (1+1)-dimensional turbulence
+     R. Benzi, L. Biferale, R. Tripiccione and E. Trovatore
+     Phys. Fluids. vol. 9, 2355 (1997)
+
+12-  A minimal model for intermittency of passive scalars
+     L. Biferale and A. Wirth
+     Lecture Notes in Physics, vol. 491,  65 (1997)(Turbulence Modeling
+     and Vortex Dynamics, Boratav, Eden and Erszan eds., Springer-Verlag)
+
+13-  Generalized scaling in turbulent flows
+     R. Benzi, L. Biferale and M. Pasqui
+     Lecture Notes in Physics, vol. 491, 74 (1997)(Turbulence Modeling
+     and Vortex Dynamics, Boratav, Eden and Erszan eds., Springer-Verlag)
+
+14-  Analytic calculation of anomalous scaling in 
+     random shell models of passive scalars 
+     R. Benzi, L. Biferale and A. Wirth
+     Phys. Rev. Lett., vol. 78, 4926 (1997)
+
+15-  Ultrametric Structure of multiscale energy
+     correlations in turbulent models
+     R.Benzi, L. Biferale and E. Trovatore
+     Phys. Rev. Lett., vol. 79, 1670 (1997)
+
+TRIESTE
+
+1) SWIFT, MR et al. EUROPHYS. LETT. 1997,Vol. 38, 273-278.
+2) VERGELES M. et al. PHYS. REV.E  1997 Vol. 55, 1998-2000.
+3) COLAIORI, F et al.  PHYS. REV.E 1997  Vol. 55.
+4) SWIFT, MR et al. PHYS. REV. LETT., 1997 Vol.79,3278
+5) DE LOS RIOS et al. J. OF PHYS. A, 1997, Vol.30, No.18, L617.
+6) VERGELES M et al PHYS. REV. E, 1997, Vol.56, 2626
+7) BANAVAR et al. PHYS. REV. LETT., 1997, Vol.78, 4522
+8) CALDARELLI G et al. PHYS. REV. E, 1997, Vol.55, R4865
+9) VENDRUSCOLO et al. PHYS. REV. LETT., 1997 Vol.78, 3967
+10) SWIFT MR et al. EUROPHYSICS LETTERS, 1997, Vol.38, 273
+11) VERGELES M et al. PHYSICAL REVIEW E, 1997, Vol.55, 1998
+12) COLAIORI F et al PHYSICAL REVIEW E, 1997, Vol 55 1298
+
+BARI
+
+1.1  Emilio Cirillo, Giuseppe Gonnella and Alessandro Pelizzola:
+New critical behavior of the three-dimensional Ising model with
+nearest-neighbor, next-nearest-neighbor and plaquette interactions,
+Physical Review E Rapid Comm., vol.  55 p.17, 1997.
+
+1.2  Emilio Cirillo, Giuseppe Gonnella, Desmond Johnston
+and Alessandro Pelizzola:
+The phase diagram of the gonihedric 3d Ising model via CVM,
+Physics Letters A, vol. 226 p. 59, 1997.
+
+2.1  Giuseppe Gonnella, Enzo Orlandini, and Julia Yeomans:
+Spinodal decomposition to a lamellar phase: 
+effects of hydrodynamic flow,
+Physical Review Letters, vol.78 p.1695, 1997.
+
+2.2  Giuseppe Gonnella, Enzo Orlandini, and Julia Yeomans:
+Lattice Boltzmann study of spinodal decomposition 
+in structured fluids,
+Physica A (North Holl.), vol. 240 p.277-285,  1997.
+
+2.3  Giuseppe Gonnella, Enzo Orlandini, and Julia Yeomans:
+Lattice Boltzmann simulations of complex fluids,
+Internation Journal of Modern Physics C, vol. 8 p. 783,  1997.
+
+2.4  Emilio Cirillo, Giuseppe Gonnella and Sebino Stramaglia:
+Anisotropic dynamical scaling in a spin model with competing 
+interactions, Phys. Rev. E, vol. 56 p. 5065, 1997.
+
+2.5  Antonio Lamura e Giuseppe Nardulli:
+Replica Symmetry Breaking in neural networks with non-monotone 
+activation function
+Journal of Modern Physics C, Vol. 7, No. 1 (1996) 19-32
+
+2.6  Giuseppe Gonnella and Antonio Lamura:
+Dynamical effects in  models of scalar  field 
+coupled with an interface field,
+preprint Oxford University.
+        
+L'AQUILA
+
+1] M. Serva, G. Paladin e J. Raboanary, 
+{\it Mean field solution of the random Ising model
+on the dual lattice.}
+Physical Review E  {\bf 52}, (1996) R9-R12
+\bigkip
+
+2] G. Paladin e M. Serva, 
+{\it Bethe-Peierls approximation for the 2d random Ising model.}
+Journal of Physics A: Mathematical and General {\bf 29}, (1996) 1381-1395
+\bigskip
+
+3] G. Paladin e M. Serva, 
+{\it Beyond the mean field approximation for the spin glasses.}
+Physical Review {\bf E}  {\bf 54}, (1996) 4637-4643
+\bigskip
+
+4] M. Pasquini e M. Serva, 
+{\it Two-dimensional frustrated Ising model with four phases.}
+Physical Review E {\bf 56}, (1997), 2751-2756
+\bigskip
+
+5] M. Serva, 
+{\it Exact solution of a two-dimensional random Ising model.}
+Physical Review E{\bf 56}, (1997), R2339-R2342
+\bigskip
+
+6] R. Donato, L. Peliti e M. Serva, 
+{\it The selection of altruistic behavior.}
+Theory in Biosciences/Theorie in den Biowissenschaften 
+{\bf 116}, (1997), 309-320
+\bigskip
+
+7] V. Loreto, M. Serva e A. Vulpiani, 
+{\it On the concept of complexity of random dynamical
+systems.}
+International Journal of Modern Physics B (in pubblicazione)
+\bigskip
+
+8] M. Serva, 
+{\it 2d Ising model with layers of quenched spins.}
+Journal of Statistical Physics (in pubblicazione)
+\bigskip
+
+9] R. Baviera, M. Pasquini e M. Serva, 
+{\it Variational approach to Ising spin glasses in
+finite dimensions.}
+Journal of Physics A: Mathematical and General (sottoposto)
+\bigskip
+
+10] R. Baviera, M. Pasquini, M. Serva e A. Vulpiani, 
+{\it Optimal strategies for prudent investors.}
+Journal of Theoretical and Applied Finance (sottoposto).
+\bigskip
+
+PERUGIA
+
+Domain Growth on Self Similar structures.
+U. Marini Bettolo Marconi and A. Petri
+Physical Review E,  55 1311, (1997)
+
+Diffusion-Controlled Growth of a Cylindrical Germ: Instabilities
+and Pattern Formation studied with the Phase-field Model.
+M. Conti, F. Marinozzi and  U. Marini Bettolo Marconi,\\
+Physical Review E  55, 3087 (1997).
+
+Time dependent Ginzburg-Landau model in the absence of
+translational invariance.  Non Conserved Order Parameter 
+domain growth.
+U. Marini Bettolo Marconi and A. Petri,
+ Journal of Physics A   30, 1069 (1997).
+
+A soluble Phase field model.
+U.Marini Bettolo Marconi, A. Crisanti e Giulia Iori.\\
+Physical Review E  56 , 77 (1997)
+
+Domain Growth on Percolation Structures.
+Umberto Marini Bettolo Marconi and Alberto Petri \\
+Philosophical Magazine B { in stampa }
+
+Complex fluid behavior of strongly asymmetric 
+binary mixtures. Thermodynamic properties
+of a generalized  Lin-Taylor model.
+J. M. Romero Enrique, I. Rodriguez Ponce, L. F. Rull
+and Umberto Marini Bettolo Marconi,
+Molecular Physics
+
+Exact Results for the Lower Critical Solution
+in the asymmetric Model for an Interacting Binary Mixture
+J. M. Romero Enrique, I. Rodr\'{\i}guez Ponce, L. F. Rull
+and Umberto Marini Bettolo Marconi
+Comment, Physical Review Letters 79, 3543 (1997).
+
+Interface pinning and slow ordering kinetics on infinitely ramified
+fractal structures. U.Marini Bettolo Marconi.
+Physical Review E , February 1998
+
+O(n) vector model of growth on fractal lattices}\\
+U.Marini Bettolo Marconi and A. Petri. International Conference
+"Fractals 97", Denver (USA) 1997.
+
+Binary Mixtures with directional interactions.
+J. M. Romero Enrique, I. Rodr\'{\i}guez Ponce, L. F. Rull
+and Umberto Marini Bettolo Marconi
+Proceedings Conferenza Fisica Estadistica, Madrid 1997
+
+Voce Transizioni di fase di superficie. Dizionario 
+Treccani. U.Marini Bettolo Marconi  1997.
+
+'' Resistance statistics in one dimensional systems with correlated
+disorder'', M.J. de Oliveira and A. Petri, Phys. Rev. B (in corso
+di stampa)
+
+' Density of stsates and localization lengths in one dimensional 
+linear systems'', M.J. de Oliveira and A. Petri Int. Journ. Mod. 
+Phys. B (in corso di stampa)
+
+'' Microcrack correlation, acoustic emission and self 
+organization'', A. Petri, invited presentation at  Sixth 
+International Workshop on Disordered Systems, 
+March 1997, Andalo (Italy), Philos. Mag. B (in stampa)  
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+********************************************
+Gia' assegnati per il 98.
+FI11 - Ruffo - Meccanica statistica e sistemi dinamici - 
+BA: 1i + 2e, FI: 2i + 5e, PG: 1i + 2e, RM1: 1i + 
+2e, TS:  2e, tot. 18.
+
+
+Ulteriore richiesta finanziaria 1998 (in ML)
+
+Totale:
+           102060 (interno)   22
+           102061 (inviti)     2  
+           102070 (estero)    30
+  TOT                         54
+
+Disaggregata per sedi:
+Firenze:   102060 (interno)    6
+           102061 (inviti)     2 (Zemba)       
+           102070 (estero)    10
+  TOT                         18
+
+Bari:      102060 (interno)    1    
+           102070 (estero)     4  
+ TOT                           5
+ 
+Roma 1:    102060 (interno)    7
+           102070 (estero)     5
+ TOT                          12
+
+Trieste:   102060 (interno)    3
+           102070 (estero)     3
+ TOT                           6
+
+Perugia:   102060 (interno)    3
+           102070 (estero)     2
+ TOT                           5
+
+L' Aquila: 102060 (interno)    2
+           102070 (estero)     6
+ TOT                           8
+ 
+****************************************************************
+Programma per invito Zemba a Firenze:
+Si chiede un contributo di 2 ML per invitare Guillermo R. Zemba
+per un mese, nel luglio 98, presso la Sez. INFN di Firenze.
+G. R. Zemba sara' ospite dell'ICTP in giugno per cui non e' necessario
+finanziare il viaggio.
+Guillermo R. Zemba e' ricercatore del CNEA (Ente Atomico Argentino) 
+a Bariloche. Abbiamo una collaborazione dal `91 sulle teorie conformi 
+bidimensionali applicate all'effetto Hall quantistico. 
+Abbiamo analizzato la simmetria dinamica W-infinito in 
+questo problema; in particolare, nel '95 abbiamo proposto
+una nuova classe di teorie per descrivere i plateaux osservati,
+la cosiddetta gerarchia dell'effetto Hall quantistico.
+Recentemente abbiamo descritto queste nuove teorie in modo molto 
+esplicito per facilitarne il confronto con gli esperimenti;
+inoltre abbiamo confrontato la teoria con una simulazione numerica
+della dinamica microscopica degli elettroni.
+================================================================
+FONDI A DISPOSIZIONE da INFM o altro.
+-Firenze- Fondi INFM per il 98 26.6 ML per un gruppo di 12
+Ric. (compresi gli associati INFN Livi, Pettini,Bagnoli e Baroni).
+-Trieste- Fondi INFM + fondi della Scuola assegnati per il 98 
+al gruppo di meccanica statistica della SISSA, composto da 4 
+dottorandi 3 post-doc e Maritan: 15 mil. Questi fondi sono usati 
+esclusivamente per le missioni dei dottorandi e  post-doc e per 
+inviti di ospiti.
+-Perugia: U. Marini B. usufruisce di circa 6 Ml dai fondi INFM.
+-L'Aquila: M. Serva e R. Baviera (assieme a Daniela Pierotti non 
+partecipante a questa richiesta) hanno ottenuto fondi dall'INFM 
+per un totale 11 milioni nel 97. M. Serva ha ottenuto circa 1 
+milione nel 1997 su fondi del 40%.
+-Roma:A.Vulpiani, L.Biferale, G.Boffetta + 5 altri ricercatori 
+usufruiscono di 100 Ml dai fondi Progetti Guida di Ricerca 
+Avanzata INFM; A.Vulpiani + 5 altri ricercatori usufruiscono 
+di 100 Ml dai fondi MURST 40%; A.Vulpiani, G.Boffetta + 2 
+altri ricercatori usufruiscono di 10 Ml dai fondi CNR. 
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+Finanziamenti ricevuti dall'INFN nel 97
+(Tra parentesi quelli richiesti.)
+
+             I      E
+Fi           6(6)   12(12) +4 (102061)
+Aq           2(3)   4 (4)
+Ba           2(2.5) 3 (5)
+Bo           2(3)   5 (9)
+Pg           2(2.5) 2 (2.5)
+Rm1          5(5)   5 (5)
+Ts           2(3)   4 (5)
+
+TOT         21(25)  35(42.5) 4   TOTALE 60(67.5)
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+ALLEGATI
+
+SEZIONE DI FIRENZE
+
+Attivita 1997 e sviluppi previsti nel 98
+(Bagnoli)
+Durante il 1997 sono occupato di tre temi principali: (1) algoritmi
+per la simulazione di sistemi spazialmente estesi; 
+(2) Sincronizzazione di sistemi caotici spazialmente estesi e 
+(3) Formazione delle specie per mezzo della competizione. 
+-Si \`e sviluppato un sistema (simd on register)
+per sfruttare l'elaborazione parallela anche su macchine seriali, 
+tipo workstation general-purpose.
+L'idea e' quella di sfruttare le funzioni che agiscono in parallelo
+su tutti i bit di una parola; per fare ci\`o bisogna riscrivere
+l'algoritmo usando queste funzioni, cercando di minimizzare il numero
+totale di operazioni. In particolare ci siamo concentrati sul
+problema delle regole stocastiche, come usualmente avviene in teoria
+dei campi (elaborazioen Monte Carlo). 
+-\`E stato studiato il fenomeno della sincronizzazione in
+reticoli di mappe accoppiate. Un sistema (master) \`e lasciato
+evolvere liberamente mentre un altro sistema (slave) e' sottoposto
+alla procedura di sincronizzazione, che avviene, per ogni passo temporale, 
+scegliendo una frazione $p$ di siti e ponendo il loro stato uguale a 
+quello corrispondente del sistema master. In questa maniera 
+si mette in luce la caratteristica spaziale della caos. Si distinguono 
+due regimi: per caos forte la
+sincronizzazione ha il carattere della transizione di percolazione
+diretta, mentre per caos debole il numero di siti sincronizzati
+mostra una transizione ripida, tipo transizione del primo ordine. 
+Abbiamo introdotto un ecosistema idealizzato in modo da mettere 
+in evidenza il ruolocruciale svolto dalla competizione interspecifica 
+nella nascita delle specie e successiva differenziazione. Il meccanismo 
+che porta alla formazione delle specie \`e analogo ad un sistema di
+Turing.
+Nel 98 prevedo i seguenti sviluppi
+-Algoritmi per la simulazione di sistemi spazialmente estesi. 
+Si prevede di applicare la tecnica SIMD on Register (elaborazione
+parallela dei bit di una parola su un a macchina general purpose) a
+vari modelli di teoria dei campi, in particolare sistemi stocastici
+(elaborazione Monte Carlo).  
+-Sincronizzazione di sistemi caotici spazialmente estesi. Si
+prevede di estendere i risultati a sistemi non differenziabili o
+discreti, e a sistemi hamiltoniani o con accoppiamenti non diffusivi. 
+Formazione delle specie per mezzo della competizione] Si
+prevede di estendere la ricerca a sistemi pi\`u vicini alla realt\`a,
+studiando in particolare il problema della speciazione virale in
+pazienti affetti da HIV.
+
+(Cappelli)
+``Studio delle teorie conformi bidimensionali con simmetria W-infinito
+che descrivono l'effetto Hall Quantistico'' 
+Andrea Cappelli +
+(G.R.Zemba, Prof. Ass., Centro Atomico Bariloche, Argentina)
+(J.M.Simonin, Prof. Ord. Centro Atomico Bariloche, Argentina)
+(C. Mendez, post-doc, Univ. Catolica, Rio de Janeiro, Brasile)
+Abbiamo trovato una descrizione molto esplicita dei modelli minimali 
+W-infinito come teorie fermioniche con dei vincoli; questi modelli 
+descrivono la gerarchia dei plateaux dell'effetto Hall frazionario
+(vedi lavori precendenti '95-97).
+Abbiamo quindi fatto una simulazione numerica ab-initio degli
+elettroni in campo magnetico e abbiamo mostrato che questi modelli 
+minimali descrivono lo spettro dei livelli di energia piu' bassa.
+(I. Todorov, Prof. Ord. INRNE, Sofia)
+(L. Georgiev, Dottorando INRNE, Sofia)
+Abbiamo studiato le teorie conformi che descrivono dei particolari stati 
+Hall frazionari con statistica non-abeliana, come lo stato di Haldane-Rezayi.
+``Studio dei modelli frustrati tipo i reticoli di giunzioni Josephson
+nel limite di dimensione infinita''
+Andrea Cappelli +
+(F. Colomo, Ric INFN Firenze)
+Studio dei modelli frustrati tipo i reticoli di giunzioni Josephson
+nel limite di dimensione infinita.
+Abbiamo risolto esattamente l'analogo frustrato del modello sferico, che 
+era stato proposto da G. Parisi. Stiamo cercando di risolvere 
+l'analogo del modello XY. Interessante applicazione dell'algebra
+deformata dei q-oscillatori, nonche' una potenziale applicazione
+dei modelli di matrici, che sono il limite zero-dimensionale delle
+teorie di gauge non-abeliane come la QCD.
+Programma scientifico 1998
+Effetto Hall quantistico. Continuare lo studio delle conseguenza 
+fisiche dei modelli minimali W-infinito, forse c'e' la possibilita' di
+realizzare un esperimento che li conferma.
+Sistemi frustrati e q-oscillatori. Soluzione del modello XY e studio
+della fisica dei sistemi frustrati dalle proprieta' algebriche
+delle algebre q-deformate.
+(Colomo)
+Catena di Heisenberg (XX0) di spin quantistici in campo magnetico trasverso
+Abbiamo proseguito lo studio del modello,
+ottenendo per le funzioni di correlazione a 2 punti,
+dipendenti dal tempo, a temperatura finita, nel limite termodinamico,
+un'espressione in termini di determinanti di Freedholm di opportuni
+operatori. Questi determinanti risultano soddisfare certe equazioni
+differenziali integrabili alle differenze finite, dalle quali e`
+possibile estrarre il comportamento asintotico (cioe` per
+grandi separazioni spaziali e/o temporali) delle funzioni di correlazione.
+Sono stati inoltre calcolati  i correlatori trasversi  a 2N punti, sia a
+temperatura zero che a temperatura finita.
+I correlatori di cui sopra sono inoltre stati calcolati anche nel caso
+di reticolo finito. Sono stati calcolati i primi momenti della
+distribuzione di intensita` diffusa, nel caso in cui si usi il modello
+per descrivere sistemi di eccitoni di Frenkel, con interazione 
+elettromagnetica.
+-Sistemi magnetici frustrati e q-oscillatore
+E` stata approfondita la connessione recentemente proposta da 
+G. Parisi tra sviluppo di alta temperatura per l'energia
+libera di sistemi magnetici parzialmente frustrati ed algebra
+del q-oscillatore. Grazie ad una opportuna rappresentazione analitica
+siamo riusciti a risolvere esattamente il modello sferico
+parzialmente frustrato anche nella fase di bassa temperatura.
+Il metodo e` estendibile allo studio del modello planare XY classico.
+-Sistemi magnetici frustrati e q-oscillatore
+In collaborazione con A. CAPPELLI, prevediamo di estendere i risultati
+gia` ottenuti sfruttando la connessione tra sistemi magnetici frustrati e 
+q-oscillatore al caso del modello XY, interessante per la sua relazione
+con i reticoli di junzioni Josephson. 
+-Chaos quantistico
+In collaborazione con F. BONECHI, stiamo affrontando lo studio di metodi
+analitici per il limite semi-classico di modelli ottenuti
+dalla quantizzazione di mappe dinamiche con comportamento classico caotico.
+(Livi)
+-Si e' dimostrata  
+con metodi rigorosi l' esistenza di soluzioni localizzate di alta 
+frequenza (breathers) in catene non-lineari a masse alternate
+-Si e' studiato 
+il problema della conduzione del calore in catene di oscillatori 
+non-lineari, individuando le cause che producono nel limite termodinamico 
+una divergenza dei coefficienti di trasporto;   
+si e' contribuito a chiarire lo scaling del massimo esponente
+di Lyapunov nel limite di accoppiamento debole; 
+-Si e' analizzata l' esistenza di regimi dinamici transitori in modelli
+di dinamica cellulare realizzati tramite reticoli di reti neurali
+accoppiate diffusivamente;
+-Si e' studiata la dinamica di propagazione epidemica in un modello
+di automi cellulari con interazione anisotropa a quattro  
+vicini, individuando la presenza di transizioni di fase;
+-Si e 'proceduto allo studio con tecniche di gruppo di rinormalizzazione
+delle proprieta' critiche in processi di contatto, caratterizzandone
+la classe di universalita';
+-Si sono studiate le transizioni di fase tra stati di turbolenza debole
+e turbolenza forte in modelli bidimensionali di mappe accoppiate stabili 
+secondo Lyapunov, individuando comportamenti critici appartenenti ad una 
+nuova classe di universalita';
+-Si e' costruito un modello dinamico di membrana rugosa in grado di
+descrivere le proprieta' statistiche ricavate da simulazioni
+numeriche di un modello microscopico sul reticolo.
+-Si e' proposto e risolto esattamente, per opportuni valori dei
+parametri, un modello di transizione di "wetting"  di non
+equilibrio in due dimensioni.
+Preventivo scientifico per il 1998
+Si intende procedere lungo le seguenti linee di ricerca.
+- Sistemi dinamici:
+Meccanismi di rilassamento di osservabili termodinamiche microcanoniche
+e proprieta' di ergodicita';  
+proprieta' dinamiche di sistemi spazialmente estesi in presenza di rumore 
+e di disordine; relazione tra processi di "wetting" di nonequilibrio e  
+modelli  di crescita di interfacce in presenza di potenziali
+confinanti.
+- Fisica Statistica:
+Coefficienti di trasporto e proprieta' di non equilibrio in modelli
+hamiltoniani in contatto con bagni termici in 1-d e in 2-d;
+transizioni di fase di nonequilibrio in processi di crescita;
+proprieta' statistiche di modelli di propagazione epidemica.
+(Marmi)
+Consuntivo scientifico 1997 :
+1.  Tecniche diagrammatiche e combinatoriche per lo studio della teoria
+canonica delle perturbazioni per sistemi hamiltoniani classici quasi integrabili. 
+Espansioni multiscala e regolarizzazione delle divergenze. Sommabilita' di Borel 
+delle serie perturbative (in collaborazione con D. Sauzin, CNRS Parigi).
+L'uso delle espansioni multiscala dei diagrammi di Feynman in teoria dei campi
+si estende naturalmente allo studio delle serie perturbative classiche per sistemi 
+hamiltoniani quasi-integrabili fornendo un nuovo potente metodo di studio. 
+2. Analisi in frequenza dei sistemi hamiltoniani con pochi gradi di liberta' e 
+applicazioni alla distruzione delle curve invarianti e alla transizione 
+al caos (in 
+collaborazione con J. Laskar, BdL Parigi). Il metodo dell'analisi in frequenza 
+creato da Laskar per lo studio del caos nel sistema solare si e' rivelato anche utile 
+per lo studio dei problemi di instabilita' dei fasci negli acceleratori di particelle 
+(lavori di Laskar e Scott-Dumas). 
+3.  Teoria ergodica degli sviluppi in frazione continua: misure invarianti,
+entropia, operatore di Perron--Frobenius (in collaborazione con P. Moussa, CEA 
+Parigi). I sistemi studiati presentano delle transizioni di fase ancor prima di 
+giungere ad un comportamento intermittente. 
+4. Condizioni aritmetiche ottimali in problemi di stabilita' per sistemi dinamici 
+analitici hamiltoniani e non: si e' approfondito, in collaborazione con P. Moussa, 
+CEA Parigi e con J.-C. Yoccoz, College de France, Parigi, lo studio della condizione 
+di Brjuno e delle funzioni aritmetiche cui questa si collega. Nell'analisi si 
+sfruttano delle tecniche di rinormalizzazione estesa al campo comlplesso. 
+5. Rinormalizzazione perturbativa delle curve invarianti nelle mappe area-preserving: 
+risultati rigorosi di esistenza del limite di scala risonante per le 
+parametrizzazioni delle curve (in collaborazione con A. Berretti, Roma II e INFN
+e D. Sauzin, BdL Parigi).
+Programma scientifico per il 1998: 
+1. Condizioni aritmetiche ottimali in problemi di piccoli divisori: 
+Proseguendo la collaborazione con P. Moussa (CEA, Sacaly) e J.-C. Yoccoz 
+(College de France, Parigi) si iniziera' lo studio delle applicazioni ai sistemi 
+hamiltoniani con due gradi di liberta' dei metodi di rinormalizzazione complessa 
+che si sono sviluppati per lo studio della funzione di Brjuno. 
+In questo caso si presume di ottenere stime quantitative a priori sulla dipendenza 
+della soglia di rottura di tori KAM dalle frequenze dei moti quasiperiodici
+(la cosiddetta funzione critica di Greene, Percival, MacKay ecc).
+Le funzioni critiche sono importanti perche' indicano nello spazio delle frequenze 
+il confine tra un comportamento quasiperiodico e regolare delle orbite 
+e un comportamento caotico. 
+2. Analisi asintotica, sommabilita' di Borel ed equazione di Hamilton-Jacobi
+Quando le frequenze dei moti quasiperiodici tendono verso una risonanza, 
+le soluzioni dell'equazione di Hamilton-Jacobi divergono. Questa divergenza, 
+gia' nota a Poincare', puo' oggi essere studiata in dettaglio applicando la teoria 
+delle funzioni risorgenti sviluppata da Ecalle (Orsay). 
+La divergenza alle risonanze delle serie e' un analogo classico delle divergenze 
+della teoria perturbativa dei campi. 
+La toeira di Ecalle e'  
+un'estensione notevolissima delle tecniche di sommabilita' di Borel delle serie 
+perturbative ben note in fisica e applicate con successo ai problemi spettrali in 
+meccanica quantistica (non relativistica e relativistica) e ai problemi di limite 
+classico (vedi i lavori di M. Berry e collaboratori).  Insieme a D. Sauzin (CNRS, 
+Parigi), che ha considerato il 
+probelma dello spezzamento delle separatrici nei pendoli perturbati, completeremo lo 
+studio intrapreso per sistemi hamiltoniani con due gradi di liberta'.
+3. Studio del metodo di analisi in frequenza di J. Laskar e applicazioni
+T. Carletti in collaborazione con J. Laskar intraprendera' uno studio approfondito 
+del metodo dell'analisi in frequenza sviluppato dal Laskar stesso e applicato con 
+successo ai problemi di meccanica celeste e della dinamica degli acceleratori 
+adronici di particelle. In particolare si vuole raffinare l'uso di questa tecnica per 
+la determinazione delle soglie critiche di rottura delle curve KAM.
+4. Singolarita' degli sviluppi in serie di Lindsted e frequenze complesse
+Proseguira' la collaborazione con A. Berretti (Roma II e INFN). 
+Le singolarita' sono state calcolate analiticamente per l'applicazione standard di 
+Chirikov-Taylor in termini di certi 
+valori critici di funzioni theta di Jacobi. Vogliamo estendere questo risultato 
+a sistemi hamiltoniani con due gradi di liberta' e con perturbazioni piu' generali.
+(Pettini)
+- E' proseguito lo studio delle proprieta` dinamiche di sistemi Hamiltoniani
+nonlineari. La caoticita` intrinseca a questi sistemi e` stata studiata
+usando la geometria differenziale degli spazi di Riemann dove la dinamica
+newtoniana risulta descritta mediante flussi geodetici. Si e` potuto cosi'
+calcolare teoricamente l'esponente massimo di Lyapunov in vari modelli a molti
+corpi classici, anche in presenza di transizioni di fase (XY di Heisenberg a
+2 e 3 dimensioni spaziali).
+- E` stato svolto uno studio fenomenologico della dinamica microscopica di
+sistemi $\lambda\varphi^4$ su reticolo con simmetrie $O(1)$, $O(2)$ ed $O(4)$
+in 2 e 3 dimensioni spaziali. Oggetto di particolare interesse e` stato il
+cambiamento delle proprieta` di caoticita` in corrispondeza delle transizioni
+di fase ed in particolare della geometria soggiacente alla dinamica vista
+come flusso geodetico. Si e` avanzata l'ipotesi della presenza di 
+significativi cambiamenti topologici, delle varieta` ambiente, 
+in corrispondenza di una transizione di fase di seconda specie. In proposito
+e` stato intrapreso il calcolo di alcuni invarianti topologici mediante 
+l'applicazione di un teorema di Chern-Lashof allo studio delle superfici di 
+energia costante.
+- E` stato rivisitato il celebre paradosso di Fermi-Pasta-Ulam sull'assenza
+di rilassamento all'equilibrio di una catena di oscillatori accoppiati
+anarmonicamente, mostrando l'esistenza di soglie di stocasticita` anche per
+un numero elevato di gradi di liberta`. Queste soglie, tuttavia, 
+corrispondono a densita` di energia decrescenti come $1/N^2$ al crescere 
+del numero $N$ di gradi di liberta`, cosicche` a grandi $N$ il conflitto
+maggiore con la meccanica statistica sembra non sussistere.
+Si continuera` nel 98 lo studio dei sistemi Hamiltoniani classici a molti gradi
+di liberta` mediante metodi geometrici e topologici secondo le seguenti
+linee guida:
+- si cerchera` di concludere lo studio del legame intercorrente fra 
+  l'integrabilita' dei flussi geodetici associati ad Hamiltoniane fisiche 
+  e l'esistenza di campi tensoriali di Killing sulla varieta' delle 
+  configurazioni. Questo studio manca attualmente di una parte costruttiva
+  che si cerchera` di mettere a punto.
+- verra` approfondito lo studio del caos Hamiltoniano mediante la geometria
+  di Riemann, in particolare si cerchera` di generalizzare un metodo che
+  ha permesso il calcolo analitico dell'esponente massimo di Lyapunov. Questo
+  metodo funziona infatti con sorprendente precisione in vari modelli ma 
+  mostra alcuni problemi in taluni casi (modelli $\varphi^4$ classici su 
+  reticolo).
+- si continuera` nello studio delle proprieta` topologiche delle varieta` di 
+  energia costante di sistemi Hamiltoniani con transizioni di fase. Un'analisi
+  preliminare dei cambiamenti delle proprieta` geometriche delle varieta` le 
+  cui geodetiche sono i moti di sistemi Hamiltoniani con transizioni di fase 
+  di seconda specie ha infatti condotto ad ipotizzare l'esistenza di drastici 
+  cambiamenti di topologia in corrispondenza del punto di transizione. Questo 
+  studio verra` effettuato nell'ambito della teoria di Morse per sottovarieta` 
+  mediante il calcolo delle proprieta` spettrali medie della mappa di 
+  Weingarten delle superfici di energia costante, cio` permette di calcolare
+  degli invarianti topologici in base ad un teorema di Chern e Lashof.
+  I modelli che verranno studiati, sia rispetto alle proprieta` geometriche 
+  che topologiche, saranno inizialmente modelli di gauge abeliani su reticolo
+  [in collaborazione con il Prof. Raoul Gatto (Ginevra)], e modelli frustrati.
+
+(Politi)
+Attivita' svolta nel 1997
+a) Complessita'
+Automi cellulari e ``shift generalizzati'' sono stati studiati allo scopo
+di introdurre e testare nuovi indicatori di complessita'. Il nuovo
+metodo per definire la dinamica simbolica in sistemi Hamiltoniani e'
+stato ulteriormente sviluppato.
+b) Esponenti di Lyapunov 
+Lo studio di esponenti di Lyapunov in sistemi spazialmente estesi ha permesso
+di trovare il comportamento di scala nel limite di piccoli accoppiamenti.
+Inoltre e' stato esteso il metodo usuale per rendere conto anche
+dell'evoluzione spaziale di disturbi infinitesimi. Un approccio
+meccanico-statistico messo a punto per sistemi disordinati e' stato applicato
+alla stima approssimata del massimo esponente in catene di mappe accoppiate.
+Infine sono state studiate le proprieta' di convergenza dell'esponente
+massimo in una grande varieta' di modelli.
+c) Instabilita' nei laser
+E' stato completato lo studio di instabilita' longitudinali in laser a
+singolo modo trasverso derivando opportune equazioni di ampiezza.
+Il metodo per derivare equazioni di ampiezza e' stato esteso a sistemi
+con retroazione ritardata ed applicato al modello di un laser a
+semiconduttore.
+d) Caos stabile 
+Lo studio di proprieta' statistiche del caos stabile e' proceduto con
+la costruzion e discussione di un modello di oscillatori forzati ed
+accoppiati. E' proseguita la discussione dettagliata dei fenomeni
+di destabilizzazione di interfacce che accadono in reticoli bidimensionali
+di mappe. E' stato anche mostrato che fenomeni simili possono
+essere osservati in un opportuno modello stocastico.
+e) Conduzione del calore
+La conduzione del calore in catene di oscillatori e' stata studiata
+numericamente, trovando proprieta' anomale nei fenomeni di trasporto
+relativi 
+f) Localizzatione in sistemi quantistici disordinati
+La diffusione di pacchetti d'onda inizialmente localizzati e' stata
+studiata in sistemi unidimensionali con interazione a lungo raggio.
+Politi intende proseguire nel 98 con Livi lo studio della conduzione del calore in 
+cristalli anarmonici con lo scopo principale di trovare una spiegazione per 
+il comportamento anomalo della conducibilita' trovato recentemente.
+Prosegue lo sviluppo dell'approccio ``cronotopico'' per la descrizione
+di sistemi caotici spazialmente estesi. Il prossimo punto nodale da
+attaccare e capire e' la possibilita' di definire anche la parte immaginaria
+degli esponenti di Lyapunov seguendo un'idea di Ruelle. 
+Prosegue con Ruffo lo studio della diffusione di pacchetti d'onda in sistemi
+unidimensionali con interazioni a lungo raggio. Intende continuare la messa
+a punto di metodi perturbativi per riuscire a descrivere la fase diffusiva.
+
+(Ruffo)
+-Oscillatori non lineari
+Si e' terminato lo studio di una classe di soluzioni esatte (onde nonlineari) 
+del modello di Fermi-Pasta-Ulam-$\beta$.
+Si e' completato lo studio degli stati localizzati che nascono eccitando il modo 
+piu' alto (bordo di banda) nel modello di Fermi-Pasta-Ulam-$\beta$ nell'ambito
+dell'instabilita' modulazionale; tale ricerca ha condotto all'introduzione
+del nuovo concetto di ``chaotic breather''. I metodi di instabilita' modulazionale
+permettono anche stime dell'esponente massimo di Lyapunov.
+E' stato scritto un lavoro di rassegna sugli esponenti di Lyapunov in sistemi di
+alta dimensione, che e' stato prima presentato all' Erwin Schroedinger 
+Institute (Vienna), e poi alla Scuola Estiva di Santiago del Chile.
+Nel 98 si continuera' lo studio delle proprieta' di non equilibrio in 
+sistemi Hamiltoniani a molti gradi di liberta' con particolare riferimento 
+alle proprieta' di localizzazione ed equipartizione dell'energia 
+(``breathers").
+-Sistemi disordinati
+Si sono studiate le proprieta' dinamiche di localizzazione di un pacchetto 
+d'onda per l'equazione di Schroedinger in un potenziale aleatorio a banda.
+Si sono ottenuti importanti risultati sullo svilluppo di piccolo disordine
+del modello di Anderson in 1D.
+Nel 98 si continuera' lo studio della diffusione di pacchetti d'onda in sistemi
+aleatori quasi-1D.
+-Interazioni a lungo raggio
+Si e' studiata l'instabilita' di Lyapunov nel modello HMF (Hamiltonian
+Mean Field), che ha sollevato grande interesse in Fisica Nucleare.
+Si studiera' nel 98 lo spettro di Lyapunov di tale modello e di sue
+generalizzazioni.
+-Modellizzazione biologica
+Si \'e continuato lo studio dei motivi nelle sequenze di DNA 
+indotti dal funzionamento generale del genoma.
+Si \'e concluso un lavoro sull'implementazione della linea cellulare della
+risposta immunitaria nel modello di Celada-Seiden.
+Avendo introdotto un modello del moto stretch-twist del DNA, si continuera'
+nel 98 lo studio delle sue soluzioni.
+-Varie
+Si e' portato a termine un lavoro sul conteggio degli stati in 
+ensembles con statistiche intermedie tra Fermi-Dirac e Bose-Einstein.
+Si e' studiata la dinamica Hamiltoniana del modello XY in 2D, ottenendo
+un nuovo approccio alla comprensione della transizione di 
+Kosterlitz-Thouless.
+
+Consuntivo Finanziario inizio 97-98 (sommario)
+----------------------------------------------
+Visita di 15 gg. a G.R.Zemba, Bariloche, Argentina: spesa circa 4 Milioni.
+Soggiorno all'ICTP di una settimana: spesa circa 0.8 Milione.
+Due missioni a Parigi di S. Marmi per circa 2.800.000 lire (fine febbraio 1997 e 
+fine febbraio 1998)
+
+ASSEGNAZIONI 97
+capitolo 102060   6 
+capitolo 102061   4
+capitolo 102070  12
+
+SPESE
+--Missioni interno
+Ruffo     Padova      .078
+Livi      Modena      .062
+Tessieri  Frascati    .773
+Ruffo     Modena      .056
+Franzosi  Padova      .356
+Politi    Padova      .345
+Ruffo     Padova      .515
+Pettini   Padova      .362
+Politi    Fai         .343
+Ruffo     Genova      .295
+
+--Coll. Scient.
+Yakushevic   19-5/11-6      2. ml
+Bauer        Dic 97         2. ml
+
+--Missioni estero
+Cappelli  Argentina     4.665
+Marmi     Parigi        1.904
+Ruffo     Messico       1.355
+--------------------------------
+STORNI
+1ml da 102070 a 102060
+-------------------------------- 
+
+
+
+
+SEZIONE DI BARI
+
+Giuseppe Gonnella       ricercatore universitario collaboratore INFN
+Antonio Lamura          dottorando in fisica, bari XII ciclo
+
+AFFILIAZIONI con ALTRI ENTI (INFM): nessuna
+_____________________________________________________________________________
+CONSUNTIVO SCIENTIFICO 97:
+   
+   Ho lavorato  sulle seguenti tematiche:
+
+   MODELLI DI SPIN IN EQUILIBRIO 
+
+   Ho continuato lo studio di modelli statistici di superfici
+   su reticolo. In particolare ho studiato una generalizzazione
+   del modello di Ising su reticolo cubico tridimensionale, nota come 
+   modello goniedrico, che costituisce una rappresentazione discreta
+   di un modello di stringhe.
+   Di particolare interesse e' la possibile esistenza, 
+   nel diagramma di fase del modello  goniedrico, di un punto 
+   critico con esponenti diversi da quelli di Ising.
+   I risultati di questa ricerca sono stati presentati alla conferenza
+   "Lattice '97".
+
+   DINAMICA DI MODELLI DI CAMPO SCALARE 
+   
+   Ho studiato il ruolo degli effetti idrodinamici nel processo di
+   raggiungimento dell'equilibrio di alcuni modelli di campo  scalare.  
+   In particolare ho considerato il modello di Brazowskii dove, 
+   oltre alle usuali fasi ordinate del modello phi^4 di Landau, vi e' anche 
+   una fase ordinata modulata con una struttura a striscie.
+   Nell'articolo e' stato dimostrato che i modi idrodinamici
+   sono essenziali per il raggiungimento del corretto stato fondamentale
+   nel modello di Brazowskii. Senza di essi il sistema rimarrebbe
+   intrappolato in una configurazione metastabile. 
+   Nell' articolo e' stata verificata per la prima volta
+   in un caso esplicito la non-universalita' della funzione di scaling
+   della funzione di correlazione di coppia nel processo di separazione
+   di fase di un sistema raffreddato sotto la temperatura di transizione.
+   Il modello utilizzato e' il modello a 8-vertici bidimensionale.       
+
+
+CONSUNTIVO FINANZIARIO 97:
+
+                         assegnati           spesi
+
+Missioni nazionali:       2000000             784.000 (Trieste 3-7 febbraio)
+                                                 +
+                                            1.700.000 (Cagliari 20-24 maggio)
+                                                 +
+                                              616.000 (Messina 23-26 giugno) 
+
+Missioni all'estero       3000000           1.900.000 (Oxford 1-30 settembre)
+                                         -----------------
+                                      TOT.  5.000.000
+
+PROGRAMMA DI RICERCA PER IL 98:
+
+L'attivita' di ricerca proseguira' secondo le linee
+illustrate nel consuntivo 97. In particolare  sto cercando di utilizzare 
+la tecnica del Cluster Variation Method nel calcolo delle funzioni 
+di correlazione in alcuni modelli di spin tridimensionali.
+Nell'ambito dello studio delle proprieta' dinamiche di modelli di campo,
+una cosa che stiamo facendo e' l'estensione dell'algoritmo 
+di discretizzazione dell'equazione di Boltzmann
+"lattice Boltzmann method"
+al caso in cui sono presenti fluttuazioni termiche.
+Un altro studio che abbiamo intrapreso 
+riguarda l'ananlisi  del processo di ordinamento dell'usuale campo scalare
+phi^4 di Landau nel caso in cui un flusso di velocita' e' imposto dall'esterno
+al sistema. Il problema e' affrontato nell'ambito dell'approssimazione
+corrispondente ad un numero infinito di componenti del campo.
+
+
+ULTERIORI RICHIESTE FINANZIARIE PER IL 98:
+
+Il dottorando Antonio Lamura del XII ciclo 
+partecipa a tempo pieno alle attivita' del gruppo di Bari prima descritte e
+quindi  una quota di finanziamento per Lamura sarebbe benvenuta.
+Ricordo che e' in corso una collaborazione con la Dr. Yeomans
+del Dip. di Fisica di Oxford e con il Dr. Orlandini del Centro
+di Studi di Fisica Teorica di Saclay.
+Tenendo anche conto della partecipazione
+di uno dei membri del gruppo di Bari alla conferenza 
+"Statphys 98" a Parigi nel mese di luglio chiedo un ulteriore finanziamnto
+di
+
+- Missioni Interne KLit. 1000. 
+
+- Missioni all'estero KLit. 4000. 
+
+
+
+
+      INIZIATIVA SPECIFICA FI11   
+
+      Sezione di Roma 1
+                                        
+      (in collagamento con le sezioni FIRENZE, PADOVA, BARI,
+                                      PERUGIA, L'AQUILA; 
+       coordinatore  nazionale  prof. S. Ruffo Univ. Firenze)
+ 
+      Partecipanti:
+
+      L. BIFERALE, Ricercatore Univ. Roma2, 
+                   associato INFN (Roma2) e
+                   associato INFM (cat.B)
+
+      G. BOFFETTA, Ricercatore Univ. Torino, 
+                   associato INFN (Torino) e
+                   associato INFM (cat.B)
+
+      M. FALCIONI, Ricercatore Univ. Roma1, 
+                   associato INFN (Roma1)
+
+      A. VULPIANI, Prof. Associato Univ. Roma1,  
+                   associato INFN (Roma1) e
+                   associato INFM (cat.B)
+
+****** I)  ATTIVITA' scientifica svolta nel 1997
+         
+   E' stato condotto uno studio dettagliato del meccanismo di
+   trasferimento e crescita di una perturbazione sui vari gradi di 
+   liberta`, nel caso di perturbazioni piccole, ma non infinitesime;
+   caso in cui l'analisi in termini dell'esponente di Lyapunov 
+   efficace e del vettore tangente non fornisce, in molti aspetti di 
+   carattere applicativo, informazioni completamente adeguate.
+
+   E' stato studiato il comportamento di un sistema caotico sottoposto 
+   a un forzamento periodico: si e' messo in evidenza che, in questo caso, 
+   le usuali funzioni di correlazione e funzioni di risposta possono 
+   fornire indicazioni fuorvianti e debbono essere sostituite da 
+   analoghe funzioni di tipo locale rispetto al tempo.
+
+   E' stato introdotto un indice (una sorta di esponente di Lyapunov 
+   spaziale) per caratterizzare il comportamento complesso che si    
+   manifesta nei sistemi convettivamente instabili, come conseguenza 
+   della sensibile dipendenza dalle condizioni ai bordi. 
+
+   Si e' studiato il problema della diffusione browniana in un
+   sistema composto da random walker con diversi tempi di 
+   decorrelazione. Si e' mostrato numericamente che e' sufficiente
+   avere due classi di random walker con tempi di decorrelazione
+   molto diversi per ottenere delle leggi intermedie di diffusione
+   anomale. 
+
+   Si sono studiati sistemi dinamici stocastici come sistemi 
+   modello per la cascata turbolenta.
+
+   Si e' analizzato il comportamento di un fluido incomprimibile
+   nel limite di alti numeri di Reynolds (regime di Turbolenza 
+   Sviluppata), seguendo due approcci differenti:
+   a) Fenomenologia delle proprieta' di scala di fluidi turbolenti,	
+   b) Simulazioni di sistemi dinamici per il trasporto di energia
+   turbolento. 
+
+   Siamo riusciti a determinare un insieme di osservabili che posseggono
+   le stesse proprieta' universali di scala indipendentemente dalla
+   presenza di anisotropie su grande o piccola scala e indipendentemente
+   dall'influenza delle forze viscose nel fluido. 
+
+   Tramite le simulazioni di sistemi dinamici per la turbolenza sviluppata
+   abbiamo discusso l'importanza delle quantita' conservate dalla
+   dinamica non-viscosa  nel determinare la statistica del campo
+   di velocita' nel limite di alti numeri di Reynolds. 
+
+
+******  III)  PROGRAMMA di RICERCA per il 1998 
+
+1) Si intende studiare il problema della predicibilita', in particolare 
+   formalizzando il concetto di tempo di predicibilita' per variabili 
+   mediate in una finestra temporale o su  una regione spazialmente 
+   estesa, per sistemi con piu' tempi caratteristici.
+   Sara' anche investigata la possibilita' di utilizzare l'esponente 
+   di Lyapunov a scala finita (FSLE), da noi recentemente introdotto, 
+   nell'analisi dei dati sperimentali e nello studio della predicibilita' 
+   di secondo tipo (cioe' con una conoscenza imperfetta sulle leggi di 
+   evoluzione).
+
+   E' in  corso uno studio di sistemi a tanti gradi di liberta' costituiti
+   da mappe con accoppiamento globale (tipo campo medio) e la 
+   caratterizzazione, in termini delle FSLE, del loro eventuale 
+   comportamento macroscopicamente caotico. Con tale locuzione si intende, 
+   in analogia con il comportamento idrodinamico dei sistemi di tante 
+   particelle, che alcune variabili globali mostrano un'evoluzione 
+   irregolare ma con tempi caratteristici molto piu' lunghi di quelli 
+   "microscopici" (questi ultimi si possono stimare, ad esempio, 
+   dall'inverso del primo esponente di Lyapunov).
+
+
+2) Nello studio delle proprieta' di diffusione in campi di velocita' 
+   dotati di struttura spazio/temporale, si intende generalizzare 
+   il metodo multiscala al caso di rumori non delta correlati. 
+   Questo tipo di problema nasce in modo naturale nelle applicazioni 
+   astrofisiche e geofisiche in cui si tiene conto dell'effetto delle  
+   piccole scale attraverso  un processo markoviano-gaussiano.
+   Sara' anche affrontato lo studio della diffusione anomala e piu'
+   in generale l'analisi dei meccanismi di sincronizzazione (tipo 
+   risonanza  stocastica) per l'aumento dei coefficienti di diffusione 
+   in corrispondenza di particolari valori dei parametri di controllo che
+   caratterizzano i campi di velocita'. Nei casi in cui il coefficiente 
+   di diffusione non fornisce informazioni sufficienti e' necessario 
+   affrontare il problema da un punto di vista completamente diverso,  
+   utilizzando metodi della teoria dei sistemi  dinamici (esponente di 
+   Lyapunov a scala finita, approssimazioni markoviane e tempi di uscita).
+
+3) Si intende sviluppare una nuova classe di modelli semplificati a partire
+   da una decomposizione delle  equazioni di  Navier-Stokes.
+   L'idea consiste nell'isolare, da una decomposizione
+   in ondine (wavelets) dell'equazione di Navier-Stokes, quelle 
+   interazioni che giocano il ruolo principale nel determinare le  
+   proprieta' statistiche del flusso turbolento. La decomposizione in 
+   ondine dovrebbe riprodurre le proprieta' spaziali e temporali di 
+   flussi reali. Questo tipo di modello e' un candidato naturale per 
+   controllare in dettaglio  l'ipotesi di Kolmogorov generalizzata e 
+   tecniche di modellizzazione delle piccole scale.
+
+   Per quanto riguarda le simulazioni dirette si intendono studiare
+   classi di equazioni alle derivate parziali che, a differenza
+   delle equazioni di Navier-Stokes, presentano una cascata diretta
+   di energia anche in due dimensioni. Un esempio rilevante  e' la turbolenza 
+   elettro-magnetoidrodinamica che mostra delle leggi di scala tipo Kolmogorov 
+   anche in due dimensioni ed e' quindi un naturale candidato per un 
+   accurato studio numerico dell'intermittenza.
+
+   Per quanto riguarda la connessione tra le proprieta' statistiche 
+   lagrangiane  e le  proprieta' euleriane, per aggirare le  difficolta'
+   numeriche nella generazione di un  campo di velocita' con un ampio
+   range inerziale, intendiamo studiare il problema nell'ambito della
+   turbolenza sintetica. In pratica sara' necessario costruire un campo
+   di velocita' le cui proprieta' statistiche spazio-temporali siano
+   realistiche. Questo problema e' assolutamente non banale e richiede
+   l'utilizzo di tecniche per la generazione di campi multiaffini
+   in modo veloce ed efficiente.
+
+4) Studio della meccanica statistica di sistemi idrodinamici con vincoli.
+   Si intende studiare il problema in connessione con l'equivalenza degli
+   ensemble in meccanica statistica di non-equilibrio recentemente proposta
+   da G.Gallavotti.
+
+**************************************************************************
+
+******  IV)  RESOCONTO FINANZIARIO per il 1997 
+
+
+         1- Missioni in Italia 
+ 
+            Spesi L 4.388 mila
+
+            Boffetta (Roma)         687.099 
+            Vulpiani (Salerno)      510.900 
+            Boffetta (Roma)         396.750
+            Vulpiani (Aquila)        99.650 
+            Vulpiani (Trieste)       92.350 
+            Vulpiani (Padova)        84.150 
+            Vulpiani (Trieste)      107.800 
+            Vulpiani (Bologna)      795.550 
+            Vulpiani (Cagliari)     914.200 
+            Vulpiani (Torino)       954.000
+                                  ---------
+                 totale           4.642.449 
+
+         2- Missioni all'estero  
+         
+            Vulpiani (Maiorca)      467.024
+            Vulpiani (Copenhagen) 1.629.129 
+            Vulpiani (Copenhagen)   865.089 
+                                  ---------
+                 totale           2.961.242 
+
+                 TOTALE 1+2       7.603.691
+                   residuo        2.396.309 (bloccati dalla sezione)
+ 
+
+
+******  V) RICHIESTE per il 98: 15 milioni (ML)
+
+       -  8 ML missioni in Italia
+       -  7 ML missioni all'estero
+
+******  VI) altre fonti di finanziamento per il 1998: 
+          
+        A.Vulpiani, L.Biferale, G.Boffetta + 5 altri ricercatori 
+        usufruiscono di 100 Ml 
+	dai fondi Progetti Guida di Ricerca Avanzata INFM
+
+        A.Vulpiani + 5 altri ricercatori
+        usufruiscono di 100 Ml 
+        dai fondi MURST 40%       
+
+	A.Vulpiani, G.Boffetta + 2 altri ricercatori
+        usufruiscono di 10 Ml 
+	dai fondi CNR 
+
+        A.Vulpiani, M. Falcioni + 6 altri ricercatori 
+        usufruiscono di 45 Ml 
+	dai fondi MURST 60%       
+
+
+SEZIONE DI TRIESTE
+
+CONSUNTIVO SCIENTIFICO 1997
+
+Abbiamo studiato le proprieta' di scala di superfici in mezzi
+disordinati trovando  nuove classi di universalita'.
+Si e' continuato il lavoro su equazioni stocastiche accoppiate per 
+capire problemi di crescita in condizioni di effetti non locali
+quali "screening " e "shadowing". Abbiamo derivato equazioni di crescita
+in varie situazioni fisiche usando il principio della invarianza
+per riparametrizzazione.
+Abbiamo affrontato il problema del "protein folding" usando nuovi metodi
+di ottimizzazione ottenendo vari risultati interessanti sia da un punto
+di vista teorico che per le implicazioni nel protein design.
+Si e' formulato un nuovo metodo di come si deducono i potenziali
+effettivi tra aminoacidi in strutture proteiche dalla sola
+conoscenza di un insieme di sequenze proteiche e dal loro
+stato fondamentale.
+Usando tecniche di gruppo di rinormalizzazione dinamico abbiamo studiato
+la dinamica di una interfaccia in presenza di un flusso 
+obliquo di particelle incidenti e trovato una nuova classe di universalita'.
+Si sono ottenute  nuove proprieta'  di scala delle reti fluviali 
+con metodi della meccanica statistica ottenendo vari risultati di 
+interesse sperimentale.
+Si sono dedotte nuove leggi di scala per modelli di aggregazione-
+annichilazione.
+
+PROGRAMMA SCIENTIFICO '98.
+
+Si continueranno a studiare lungo le linee di ricerca precedenti
+fenomeni di crescita e di auto organizzazione critica con equazioni 
+differenziali stocastiche.
+Si studieranno sistemi di "diffusion-reaction" e le loro proprieta' di
+scala con metodi di gruppo di rinormalizzazione.
+Continueremo il nostro studio delle proprieta' di scala delle reti
+fluviali e in generale problemi di ottimizzazione  per reti di trasporto.
+Ci si dedichera' ulteriormente al problema fondamentale del "protein
+folding" e la deduzione dei potenziali efficaci necessari per
+lo studio di tale problema.
+In tale contesto si approfondira' lo studio di eteropolimeri casuali
+e la loro connessione con sistemi di vetri di spin.
+
+RILEVANZA DELLA RICERCA PROPOSTA NELL'AMBITO INFN
+
+I metodi che si usano comunemente negli studi summenzionati sono
+equazioni stocastiche che si possono "mappare" in teorie di campo d+1 
+dimensionali a cui si applicano tecniche di gruppo di rinormalizzazione.
+In particolare nello studio del "protein folding" e degli eteropolimeri 
+in generale, quello che si studia sono diagrammi di fase di teorie di campo
+in presenza di disordine (molto simile al caso dei vetri di spin).
+
+CONSUNTIVO FINANZIARIO '97 - Parziale (fino al 31/5/97)
+
+Missioni in Italia: assegnato 2 speso 1.4 mil.
+Missioni all'estero: assegnato 4 speso 5.5 mil.
+
+RICHIESTA FINANZIAMENTO '98.
+
+Missioni in Italia: 3 mil.
+Missioni all'estero : 5 mil.
+
+ASSEGNAZIONE PRECEDENTE 
+
+Missioni all'estero : 2 mil.
+
+AFFILIAZIONE INFM E ALTRI FONDI
+
+Affiliazione INFM Classe B.
+Fondi INFM + fondi della Scuola assegnati per il 98 
+al gruppo di meccanica statistica della SISSA,
+composto da 4 dottorandi 3 post doc e me stesso: 15 mil.
+Questi fondi sono usati esclusivamente per le missioni
+dei dottorandi e  post doc e per inviti di ospiti.
+
+
+      INIZIATIVA SPECIFICA FI11      Sezione di Perugia
+                                        
+      (in collegamento con le sezioni FIRENZE, PADOVA, BARI,
+                                      ROMA, L'AQUILA; 
+       coordinatore  nazionale  prof. S. Ruffo Univ. Firenze)
+ 
+      Partecipanti:
+
+      U. MARINI BETTOLO, RICERCATORE UNIV. di CAMERINO,  
+                   associato INFN (PG) e
+                   associato INFM (cat.B)
+
+
+      A. PETRI, Ricercatore CNR (ISTITUTO CORBINO, ROMA)
+                   associato INFN (PG)
+                   associato INFM (cat.C)
+
+
+
+
+****** I)  ATTIVITA' scientifica svolta nel 1997
+
+       - Abbiamo studiato fenomeni di rilassamento 
+         lento in modelli di tipo vettoriale 
+         descritti da Hamiltoniane Ginzburg-Landau.
+         Studio dell'effetto dell'accoppiamento
+         con modi diffusivi.
+
+       - Analisi delle proprieta' dinamiche di sistemi nei quali
+         l'invarianza di traslazione e' assente con particolare
+         attenzione alle transizioni di fase dinamiche in
+         spazi con caratteristiche frattali. Studio delle
+         correzioni alle leggi di scala e dell'effetto
+         del pinning delle domain walls.                 
+
+       - Abbiamo inoltre introdotto e studiato un modello di
+         sistema granulare partendo da una formulazione microscopica
+         in cui le particelle collidono tra loro anelasticamente.
+         I risultati trovati mostrano che questi sistemi si 
+         comportano in modo diverso da un liquido normale:
+         infatti, la distribuzione delle velocita' non
+         e' data dalla solita distribuzione di Maxwell. Questo e' un
+	 effetto della clusterizzazione.
+ 	 
+
+*****  2) PROGRAMMA DI RICERCA PER IL 98 :
+
+
+       - Studio di sistemi granulari mediante modelli cinetici; 
+	 a) studio delle deviazioni da comportamenti
+	 Maxwelliani: approccio alla Boltzmann-Fokker-Planck.
+	 b) studio di processi di rilassamento lento: modelli di 
+	 reazione-diffusione
+  
+       - Studio del comportamento vetroso con modelli 
+         su reticoli con interazioni a p-spin.
+         Analisi dei fenomeni di rilassamento in questi modelli
+         mediante simulazione e tecniche di rinormalizzazione.
+
+       - Soluzioni numeriche e di campo medio per modelli
+	 di microfratture in mezzi eterogenei .
+
+
+******  3)  RESOCONTO FINANZIARIO per il 1997 
+
+
+         1- Missioni in Italia 
+ 
+            Spesi L 400. mila
+
+            MARINI Bettolo         400.000            
+
+
+                   residuo        3.600.000 (bloccati dalla sezione)
+ 
+
+
+******  4) RICHIESTE per il 98: 8 milioni (ML)
+
+       -  4 ML missioni in Italia
+       -  4 ML missioni all'estero
+
+
+******  5) altre fonti di finanziamento per il 1998: 
+          
+
+	U. Marini B. usuifruisce di circa 6 Ml dai fondi INFM.
+
+
+
+SEZIONE COLLEGATA DE L'AQUILA
+
+---------------------------------------------------------------------
+CONSUNTIVO SCIENTIFICO DEL 96 E DEL 97 (PALADIN-SERVA)
+
+1) Abbiamo fatto  ricerche su sistemi disordinati di spin.
+Il primo approccio utilizzato e` quello
+delle approssimazioni annealed vincolate
+che e' stato applicato a sistemi di Ising disordinati mono e
+bidimensionali.
+Il secondo approccio utilizzato si basa su un'altra
+tecnica che che e` stata ottenuta adattando a questi modelli
+il metodo di Bethe-Peierls.
+In questo modo, pur restando nell'ambito delle teorie di campo medio
+si riesce a conservare una memoria della dimensionalita'.
+Il terzo approccio utilizzato 
+e` quello di adattare il metodo di soluzione di Onsager 
+a vetri di spin bindimensionali
+in cui il disordine e` a bande,
+osia in cui strisce di placchette tutte frustrate si succedono in modo 
+casuale a strisce di placchette tutte non frustrate.
+
+2) Abbiamo proposto e studiato un modello 
+per spiegare la selezione di comportamenti "altruistici"
+che sono apparentemente svantaggiosi dal punto di vista della sopravvivenza.
+Il modello puo` essere risolto analiticamente in una approssimazione gaussiana.
+
+3) Abbiamo caratterizzato la complessita` di sistemi
+dinamici con rumore.
+In particolare abbiamo fatto vedere che lo schema usuale
+in cui si calcola l'esponente di Lyapunov in corrispondenza di
+una singola realizzazionme del rumore
+e' insoddisfacente in caso di forte intermittenza.
+E' necessario in questo caso dare una definizione
+di complessita' legata alla quantita' di informazione
+necessaria per trasmettere il segnale.
+
+4) Abbiamo studiato e risolto un problema di ottimizzazione
+di un portfolio nello schema di Kelly.
+Il problema matematico consiste nel calcolare l'esponente
+di Lyapunov di un processo moltiplicativo con memoria.
+Questo esponente rappresenta il tasso di incremento di un capitale
+e va massimizzato cercando la migliore strategia di investimento.
+  
+----------------------------------------------------------------------
+CONSUNTIVO FINANZIARIO DEL 97 (PALADIN-SERVA)
+
+Sono state effettuate spese per missioni all'estero per un totale
+di 4 milioni nel 97.
+
+--------------------------------------------------------------------------
+PROGRAMMA SCIENTIFICO PER IL 98 (BAVIERA-SERVA)
+
+Partecipanti: 
+M. Serva (Ricercatore Confermato),  
+R. Baviera (Dottorando XI Ciclo). 
+
+
+Collaboratori: 
+M. Pasquini (Borsista INFM),
+
+1) Ci proponiamo di compiere delle ricerche su sistemi disordinati di spin 
+ossia sistemi caratterizzati da due tipi di variabili:
+le variabili calde che si organizzano in modo da minimizzare l'energia
+libera e le variabili fredde che hanno tempi di evoluzione 
+molto piu` lunghi.
+L'approccio che proponiamo si basa su una
+tecnica che che e` stata sviluppata
+insieme a Giovanni Paladin.
+Il proposito e` di andare oltre il 
+campo medio per i vetri di spin adattando a questi modelli
+il metodo di Bethe-Peierls.
+In questo modo, pur restando nell'ambito delle teorie di campo medio
+si riesce a conservare una memoria della dimensionalita`.
+Abbiamo ottenuto un primo risultato senza rottura della simmetria di replica
+ci proponiamo ora di estenderlo al caso in cui 
+c'e invece rottura di questa simmetria.
+
+2) Ci proponiamo di studiare modelli stocastici per problemi
+di biologia e di finanza.
+In particolare vorremmo studiare un modello
+per l'evoluzione biologica su grandi scale di tempi.
+I dati paleontologici sembrano indicare che le estinzioni 
+avvengano con distribuzione a potenza del numero delle specie scomparse
+con esponente stimato intorno a 2.3. Ci chiediamo se il nostro modello 
+possa riprodurre questi dati.
+Vorremmo poi approfondire lo studio
+di modelli stocastici con applicazioni in finanza
+teorica. Ci interessano sia problemi di ottimizzazione
+di un portfolio nello spirito di Kelly 
+sia problemi legati alla teoria delle opzioni.
+
+
+-----------------------------------------------------------------------------
+RICHIESTE FINANZIARE PER IL 98 (BAVIERA-SERVA)
+
+Nel 98 prevediamo collaborazioni con le Universita'
+di Stoccolma, di Antananarivo (Madagascar) e di Bielefeld (Germania)
+oltre a partecipazioni a convegni in Italia e all'estero
+attinenti alle nostre ricerche.
+La nostra richesta e' pertanto di 6 milioni
+per l'estero e 2 milioni per l'interno. 
+
+------------------------------------------------------------------------------
+AFFILIAZIONI ALL'INFM
+
+Sono associati all'INFM 
+M. Serva, Ricercatore Confermato (RC,B1,12mesi)  
+R. Baviera, Dottorando XI Ciclo (DR,B3,12mesi) 
+
+
+----------------------------------------------------------------------------
+FONDI PRESSO INFM E 40%
+
+M. Serva e R. Baviera assieme a Daniela Pierotti
+non partecipante a questa richiesta hanno ottenuto
+fondi dall'INFM per un totale 11 milioni nel 97. 
+
+M. Serva ha ottenuto circa 1 milione nel 1997
+su fondi del 40%.
+

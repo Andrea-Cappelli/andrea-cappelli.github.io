@@ -1,0 +1,590 @@
+
+                    Iniziativa Specifica Fi11
+             (Meccanica statistica e sistemi dinamici)
+        ----------------------------------------------------
+
+                   Consuntivo Scientifico 1998
+
+
+
+Coordinatore Nazionale: Stefano Ruffo (fino al giugno 98), 
+                        Andrea Cappelli (dal luglio 98)
+
+
+Partecipanti:
+
+FI: F. Bagnoli, Tecn. Laur. Fac. Ingegneria, (Firenze)
+    L. Baroni, Dottoranda in Fisica (Firenze)
+    M. Barbi, Dottoranda in Fisica, (Firenze)
+    A. Cappelli, Primo Ric. INFN, (Firenze)     
+    F. Cecconi, Dottorando in Fisica, (Firenze)
+    F. Colomo, Ric. INFN, (Firenze)
+    R. Franzosi, Dottorando in Fisica, (Firenze)
+    R. Livi, Prof. Ass. (Firenze)
+    S. Marmi, Prof. Ass., Dip. Matematica, (Firenze)
+    M. Pettini, Tecn. laur. Oss. Astr. Arcetri, (Firenze)
+    A. Politi, Primo Ric. Ist. Naz. Ottica, (Firenze)
+    L. Tessieri, Dottorando in Fisica, (Firenze)
+
+BA: G. Gonnella, Ric. Univ. (Bari)
+    A. Lamura, Dottorando in Fisica, (Bari)
+
+RO1:M. Falcioni, Ric. Univ. (Roma 1)
+    G. Boffetta, Ric. Univ. (Torino)
+    A. Vulpiani, Prof. Ass. (Roma 1)
+    L. Biferale, Ric. Univ. (Roma2)
+
+TS: A. Maritan, Prof. Ord. (Trieste)
+
+PG: U. Marini Bettolo Marconi, Ric. Univ. (Perugia)
+    A. Petri, Ric. CNR Roma (Perugia)
+
+AQ: M. Serva, Ric. Univ. (L'Aquila)
+    R. Baviera, Dottorando in Fisica (L'Aquila)
+    
+
+
+-------------------------------------------------------
+
+
+Finanziamenti ricevuti nel 1998
+--------------------------------
+
+         Int. - Inviti - Est.
+Fi           2-2-5
+Ba           1-0-2
+Rm1          1-0-2
+Ts           0-0-2
+Pg           1-0-2
+Aq           1-0-2
+
+TOT          6-2-15 = 23
+
+Nota: M. Pettini (Fi) non ha utilizzato fondi di questa
+IS nel 1998, ma ha usufruito di altri fondi INFN 
+assegnati alle collaborazioni con R. Gatto
+
+
+---------------------------------------------------
+---------------------------------------------------
+
+
+
+
+Resoconto Scientifico 1998 - Gruppo di Firenze
+----------------------------------------------
+
+
+- A. Cappelli, G.R.Zemba, J.M.Simonin, C. Mendez
+- A. Cappelli, I. Todorov, L. Georgiev
+``Studio delle teorie conformi bidimensionali che descrivono l'effetto 
+Hall Quantistico'' 
+Abbiamo trovato una descrizione molto esplicita dei modelli minimali 
+W-infinito come teorie fermioniche con vincoli; questi modelli 
+descrivono la gerarchia dei plateaux dell'effetto Hall frazionario.
+Mediante una simulazione numerica ab-initio degli elettroni in campo 
+magnetico abbiamo mostrato che lo spettro dei livelli di energia 
+piu' bassa e` effettivamente descritto da questi modelli minimali.
+Abbiamo inoltre studiato le teorie conformi per gli stati di Hall 
+contenenti due tipi di elettroni, come lo stato di Haldane-Rezayi e 
+lo stato del Pfaffiano. Abbiamo proposto una teoria unificata unitaria 
+per questi stati.
+
+- A. Cappelli, F. Colomo
+``Studio dei modelli di spin statistici con frustrazione deterministica''
+Abbiamo risolto esattamente l'analogo frustrato del modello sferico, che 
+era stato proposto da G. Parisi. Interessante applicazione dell'algebra
+deformata dei q-oscillatori, nonche' una potenziale applicazione
+dei modelli di matrici.
+
+- A. Cappelli, P.Valtancoli, L.Vergnano
+``Studio delle teorie di campo supersimmetriche in 4 dimensioni con
+dualita' elettrica-magnetica''
+Abbiamo approfondito alcune proprieta' della soluzione di
+Seiberg e Witten della QCD supersimmetrica N=2, nell'ottica
+dei sistemi integrabili. Abbiamo dimostrato l'isomonodromia
+della soluzione e abbiamo stabilito un parallelo con le teorie 
+conformi bidimensionali.
+
+- S. Marmi, P. Moussa e J-C. Yoccoz
+``Rinormalizzazione nel campo complesso e piccoli
+divisori. Complessificazione della funzione di Brjuno''
+
+- S. Marmi,D. Sauzin 
+``Sommabilita' di Borel delle serie perturbative in
+problemi di dinamica colomorfa e hamiltoniana (a poche dimensioni)''
+
+- S. Marmi, J. Laskar e Carletti 
+``Metodo dell'analisi in frequenza per
+lo studio della rottura delle curve KAM nell'applicazione standard''
+
+- S. Marmi, A. Berretti e D. Sauzin: 
+``Limiti di scala alle risonanze per serie perturbative hamiltoniane''
+
+- S. Ruffo, T. Cretegny, T. Dauxois, A. Torcini
+``Dinamica dei breather nelle catene di spin''
+Studi numerici ed esatti delle soluzioni di breather e della loro stabilita'
+
+- S. Ruffo, V. Latora, A. Rapisarda
+``Dinamica vicino alla transizionie di fase''
+Applicazioni alla fisica dei plasmi e alla frammentazione dei nuclei
+
+- S. Ruffo, F. Izrailev, L. Tessieri
+``Localizzazione di Anderson''
+Un approccio originale al problema e` stato applicato ad alcuni
+particolari modelli di matrice
+
+- F. Bagnoli, M. Bezzi, P. Palmerini and R. Rechtman
+``Automi cellulari e criticalita' auto-organizzata''
+Sincronizzazione dei sistemi caotici estesi. Automi cellulari e algoritmi
+per il calcolo parallelo.
+
+- F. Bagnoli, M. Bezzi
+``Studio dell'evoluzione di popolazioni in competizione e modelli
+per la formazione di specie''
+
+- R. Livi T. Cretegny, M. Spicci
+- R. Livi, A. Politi, S. Lepri
+``Studio della conducibilita' anomala e  dell' esistenza di soluzioni 
+localizzate caotiche (breathers caotici) in catene anarmoniche''.
+In particolare si e' potuto spiegare la divergenza della conducibilita'
+invocando l'analogia con il comportamento idrodinamico
+in fluidi semplici: la teoria mode-coupling autoconsistente
+ha permesso di predire il valore esatto del tasso di divergenza.
+Si e' studiata la dinamica di soluzioni a uno e a molti
+breathers in catene di oscillatori a masse alterne.
+
+- A. Politi e altri collaboratori
+E' stata studiata l'esistenza di transizioni di fase in una
+dimensione per un modello di mappe non-caotiche precedentemente studiato
+in due dimensioni trovando un comportamento ``fuzzy'' in una regione
+finita dei parametri. E' stato messo a punto un metodo per il calcolo
+degli esponenti di Lyapunov il cui funzionamento conferma l'esistenza
+ed attribuisce un significato alle ``parti immaginarie'' degli esponenti
+di Lyapunov in sisemi spazialmente estesi.
+E' stato infine applicato il metodo delle equazioni di ampiezza per
+mostrare come il comportamento di un laser a semiconduttore con retroazione
+ritardata sia assimilabile ad un sistema spazialmente esteso.
+
+- M. Pettini, R. Franzosi, L. Casetti, C. Clementi, 
+  G. Pettini, L. Spinelli, R. Gatto
+- M. Pettini ed altri autori
+``Transizioni di fase e cambiamenti della topologia dello spazio delle
+configurazioni''
+Nelle simulazioni numeriche della dinamica Hamiltoniana di sistemi
+con transizioni di fase, abbiamo osservato la sistematica apparizione
+di andamenti "singolari" in funzione della temperatura, sia 
+dell'esponente massimo di Lyapunov che di alcune quantita` geometriche ad 
+esso legate. Queste singolarita' si
+manifestano in corrispondenza della temperatura critica di una transizione
+di fase di seconda specie, e le quantita` geometriche menzionate descrivono
+delle proprieta` medie di curvatura di varieta` di Riemann le cui geodetiche
+coincidono con i moti Hamiltoniani.
+In un primo tempo si e` argomentato su base indiretta che questi comportamenti
+singolari alla temperatura critica sono da attribuire a dei cambiamenti 
+topologici delle sottovarieta` equipotenziali dello spazio delle configurazioni;
+successivamente questo e` stato dimostrato direttamente, 
+mediante il calcolo della caratteristica di Eulero.
+Abbiamo analizzato numericamente un modello su reticolo bidimensionale con 
+interazione phi^4. Tecnicamente il calcolo della caratteristica di Eulero 
+ha richiesto l'analisi spettrale della cosidetta mappa di Weingarten 
+(o "shape operator") delle ipersuperfici; a tal fine abbiamo escogitato vari 
+accorgimenti non banali per rendere il calcolo fattibile ed affidabile.
+
+
+
+
+
+Pubblicazioni - Gruppo di Firenze
+---------------------------------
+
+A. Cappelli, 
+atti della scuola, ``Sur le Symetries en Physique'',
+Dolomieu (Isere), marzo 1997, M. Kibler e altri, editori,
+Editions Frontieres (1998), Parigi.
+
+A. Cappelli, C. Mendez, J. M. Simonin, G. R. Zemba,
+``Numerical Study of Hierarchical Hall Edge States on the Disk Geometry'',
+Phys. Rev. B 58 (1998) 16291
+
+A. Cappelli, F. Colomo, 
+``Solving the Frustrated Spherical Model with q-Polynomials'',
+J.Phys. A31 (1998) 3141-3151
+
+A. Cappelli, F. Colomo, 
+``Frustrated Spin Models and the q-Calculus'',
+atti della conf. ``Disorder and Chaos'', in memoria di G. Paladin,
+Roma, Sett. 1997, A. Vulpiani et al. eds.,
+J. Phys. (France) 8 (1998) 87
+
+A. Cappelli, P. Valtancoli, L. Vergnano,
+``Isomonodromic Properties of the Seiberg-Witten Solution'',
+Nucl.Phys. B524 (1998) 469-501
+
+S. Marmi, P. Moussa, J.-C. Yoccoz
+``The Brjuno functions and their regularity properties''
+Commun. Math. Phys. 186 (1997) 265 
+
+V. Latora, S. Ruffo et al, 
+Phys. Rev. Lett. 80, 692 (1998).
+
+P. Li\`o, S. Ruffo, 
+Il Nuovo Cimento D 20, 113 (1998).
+
+T. Cretegny, S. Ruffo et al, 
+Physica D 121 , 109 (1998).
+
+X. Leoncini, S. Ruffo et al, 
+Phys. Rev. E 57 , 6377 (1998).
+
+F. Izrailev, S. Ruffo et al, 
+J. Phys. A 31 , 5263 (1998).
+
+T. Dauxois, S. Ruffo et al, 
+J. Phys. (France) 8, 147 (1998).
+
+H. Larralde, S. Ruffo et al, 
+Phys. Rev. E 58 , 4254 (1998).
+
+A. Bonelli, S. Ruffo, 
+Int. J. Mod. Phys. C 9, 987 (1998).
+
+S. Ruffo, 
+in "Fiesta 96", E. Goles et al eds., Kluwer (1998)
+
+S. Ruffo, 
+in "Symm. and pert. theory", D. Bambusi et al eds, GNFM (1998)
+
+F. Bagnoli, M. Bezzi, 
+``Species Formation in Simple Ecosystems'',
+Int. Journ. Mod. Phys. C 9 555 (1998).
+
+F. Bagnoli, M. Bezzi, 
+``Eigen's Error Threshold and Mutational Meltdown in a Quasispecies Model'',
+Int. J. Mod. Phys. C 9 (1998) 999
+
+T. Cretegny, R. Livi, M. Spicci
+``Breather Dynamics in diatomic FPU chains''
+Physica D 119, 88 (1998)
+
+S. Lepri, R. Livi, A. Politi, 
+Physica D 119,  140 (1998)
+
+G. Giacomelli, A. Politi, 
+Physica D 117, 26 (1998)
+
+F. Cecconi, R. Livi, A. Politi, 
+Phys. Rev. E 57, 2703, (1998)
+
+A. Pikovsky A. Politi, 
+Nonlinearity, 11, 1049 (1998)
+
+S. Lepri, R. Livi, A. Politi, 
+Europhys. Lett. 43, 271 (1998)
+
+T. Kottos, A. Politi, F. Izrailev,
+J. Phys. Cond. Mat. 10, 5965 (1998)
+
+A. Politi, S. Torcini, S. Lepri, 
+J. Phys. (France) 8, 263 (1998)
+
+R. Lima, M. Pettini
+``Parametric resonant control of chaos''
+Int. J. Bifurcation and Chaos 8, 1675 (1998).
+
+L. Caiani, L. Casetti, C. Clementi, G. Pettini, M. Pettini, R. Gatto, 
+``Geometry of dynamics and phase transitions in classical lattice 
+Phi^4 theories'',
+Phys. Rev. E57, 3886 (1998)
+
+L. Caiani, L. Casetti and M. Pettini, 
+``Hamiltonian dynamics of the two-dimensional lattice Phi^4 model'',
+J.Phys. A 31 (1998) 3357
+
+
+
+---------------------------------------------------
+---------------------------------------------------
+
+
+
+
+
+Resoconto Scientifico 1998 - Gruppo di Bari
+-------------------------------------------
+
+
+
+- G. Gonnella, A. Lamura
+- G. Gonnella e altri collaboratori
+``Studio di modelli statistici di superfici su reticolo''
+``Studio di modelli statistici lontani dall'equilibrio termodinamico''
+``Ruolo dell'idrodinamica e di campi di velocita' fissati nel processo di
+   raggiungimento dell'equilibrio di alcuni modelli di campo scalare''
+   
+
+
+
+Pubblicazioni - Gruppo di Bari
+---------------------------------
+
+E. Cirillo, G. Gonnella, A. Pelizzola,
+``Critical behaviour of the three-dimensional gonihedric Ising model''
+Nucl. Phys. B (Proc Suppl) 63 (1998) 622
+
+G. Gonnella, E. Orlandini,  J. Yeomans
+``Lattice Boltzmann simulations of lamellar and droplet phases''
+Phys. Rev. E 58 (1998) 480
+
+G. Gonnella, E. Orlandini, J. Yeomans
+``Dynamics of self-assembly in complex fluids''
+Il nuovo cimento 20  (1998)
+
+F. Corberi, G. Gonnella, A. Lamura
+``Spinodal Decomposition of a binary mixture in an uniform shear''
+Phys. Rev. Lett. 81 (1998) 3852
+
+E. Cirillo, G. Gonnella S. Stramaglia
+``Monte Carlo study of growth of striped domains''
+Il nuovo cimento 20  (1998) 
+
+
+
+---------------------------------------------------
+---------------------------------------------------
+
+
+
+Resoconto Scientifico 1998 - Gruppo di Roma1
+--------------------------------------------
+
+
+- A. Vulpiani
+E' stata  completata la scrittura di un libro (Cambridge University
+Press)  sull'approccio in termini di sistemi dinamici alla Turbolenza e
+sistemi spazialmente estesi.
+
+- A. Vulpiani, M. Falcioni, L. Biferale, G. Boffetta
+``Utilizzo del metodo degli esponenti di Lyapunov a scala finita
+per la predicibilita' di sistemi geofisici, ed estensione all'analisi
+dei dati sperimentali''.
+
+``Studio della congettura di Gallavotti/Cohen in equazioni modello
+time-reversible per la turbolenza sviluppata''.
+
+``Studio accurato dei coefficienti di diffusione
+in campi di velocita' con pochi modi spazio-temporali''
+Abbiamo utilizzato dei metodi analitici e numerici nell'ambito della 
+tecnica  multiscala.
+
+``Studio dei modelli di turbolenza magneto-idro-dinamica''.
+
+``Introduzione di un algoritmo sequenziale per la generazione di campi
+multiaffini''.
+
+``Utilizzo di tecniche della meccanica statistica per l'ottimizzazione
+delle strategie di investimento''.
+
+
+
+
+Pubblicazioni - Gruppo di Roma1
+-------------------------------
+   
+T.Bohr, M.H.Jensen, G.Paladin and A.Vulpiani,
+``Dynamical System Approach to Turbulence''
+Cambridge Univ. Press, Cambridge (1998)
+ 
+A.Vulpiani, M.Serva, G.Parisi, L.Peliti, L.Pietronero editori,
+``Disorder and Chaos''
+J. Phys (Paris) IV 1998
+
+L. Biferale, D. Pierotti, A. Vulpiani
+``Time-reversible dynamical systems for turbulence''
+J. Phys. A 31, 21 (1998)
+
+G. Boffetta, A. Crisanti, F. Paparella, A. Provenzale, A. Vulpiani
+``Slow and fast dynamics in coupled systems: a time series analysis view''
+Physica D 116, 301 (1998)
+
+L. Biferale, G. Boffetta,  A. Celani, A. Crisanti, A. Vulpiani
+``Mimicking a turbulent signal: sequential multiaffine processes''
+Phys. Rev. E  57, R6261 (1998)
+
+G. Boffetta, P. Giuliani, G. Paladin, A. Vulpiani
+``An extension of the Lyapunov analysis for the predictability problem''
+J. Atmos. Science 55, 3409 (1998)
+
+P. Castiglione, A. Crisanti, A. Mazzino, M. Vergassola, A. Vulpiani
+``Resonant enhanced diffusion in time dependent flow''
+J. Phys. A 31, 7197 (1998)
+
+M. Dzugutov, E. Aurell, A. Vulpiani
+``Universal relation between the Kolmogorov-Sinai  entropy
+and the thermodynamical entropy in simple liquids''
+Phys. Rev. Lett. 81, 1762 (1998)
+
+R. Baviera, M. Pasquini, M. Serva, A. Vulpiani
+``Optimal strategies for prudent investors''
+Int. J. Theor. Appl. Finance 1, 473 (1998)
+
+L. Biferale, D. Pierotti, A. Vulpiani
+``Time-reversible dynamical systems for turbulence''
+J. Phys. A,  31, 21 (1998)
+
+R. Benzi, L. Biferale, F. Toschi
+``Multiscale correlation functions in turbulence''
+Phys. Rev. Lett. 80, 3240 (1998).
+
+L. Biferale, D. Pierotti, F. Toschi
+``Helicity transfer in dynamical models for turbulence''
+Phys. Rev. E 57, R2515 (1998).
+
+A. Celani, R. Prandi, G. Boffetta,
+``Kolmogorov's law for two-dimensional electron-magnetohydrodynamic turbulence''
+Europhys Lett 41, 13 (1998)
+
+A. Celani, R. Prandi, G. Boffetta
+``Turbulence in Two-dimensional Forced Electron-magnetohydrodynamics''
+Physica Scripta T 75, 191 (1998)
+
+
+
+---------------------------------------------------
+---------------------------------------------------
+
+
+
+Resoconto Scientifico 1998 - Gruppo di Trieste
+----------------------------------------------
+
+Non pervenuto: il gruppo di Trieste ha lasciato questa 
+Iniziativa Specifica nel 1998
+
+
+
+---------------------------------------------------
+---------------------------------------------------
+
+
+
+Resoconto Scientifico 1998 - Gruppo di Perugia
+----------------------------------------------
+
+
+- U. Marini Bettolo Marconi, A. Petri e collaboratori
+``Studio di processi di coarsening in sistemi senza invarianza traslazionale''
+
+``Studio della dinamica di sfere dure in presenza di dissipazione e rumore''
+
+``Studio dei processi di reazione-diffusione su reticolo''
+Abbiamo effettuato delle simulazioni numeriche e lo sviluppo in
+serie dell'operatore di evoluzione temporale
+
+``Studio del comportamento critico dei processi di frattura di 
+mezzi disordinati''
+
+
+
+
+Pubblicazioni - Gruppo di Perugia
+---------------------------------
+
+F. A. Farrelly, A. Petri,
+"Numerically efficient computation of eigensolution spectrum in
+one-dimensional heterostructures" 
+Int. J. Mod. Phys. C 9, 927 (1998)
+
+C. Castellano, F. Corberi, U. Marini Bettolo Marconi, A. Petri,
+"Coarsening in diluted systems"
+in ``Disorder and Chaos: a Conference in Honour of Giovanni Paladin'',
+Rome Sept 1997, ed. A. Vulpiani, M. Serva, G. Parisi, L. Peliti, 
+L. Pietronero
+J. Phys. (Paris) IV, 93 (1998).
+
+A. Puglisi, V. Loreto, U. Marini Bettolo Marconi, A. Petri, A. Vulpiani,
+"Clustering and non-gaussian behavior in granular matter",
+Phys. Rev. Lett. 81, 3848 (1998).
+
+A. Petri, M.J de Oliveira,
+"Asymptotic moment growth for products of correlated random matrices",
+Physica A 257, 477 (1998).
+
+M. J. de Oliveira, A. Petri,
+"Granular compaction, random sequential adsorption and diffusional relaxation",
+J. Phys. A 31 L425 (1998).
+
+A. Petri,
+"Acoustic emission and microcrack correlation",
+Phil. Mag B 77, 265 (1998).
+
+F. Craciun, F.Farrelly, A. Petri, G. Shkerdin,
+"Subharmonic generation in acoustical resonators",
+in ``New perspectives on problems in classical and quantum physics:
+a Festschrift in Honor of H. Uberall'', 
+ed. P.P. Delsanto, A.W. Saenz, Gordon and Breach (1998)
+
+U. Marini Bettolo Marconi, A. Petri,
+"Domain growth on percolating clusters",
+Phil. Mag B 77 265 (1998).
+
+
+---------------------------------------------------
+---------------------------------------------------
+
+
+
+
+Resoconto Scientifico 1998 - Gruppo dell'Aquila
+-----------------------------------------------
+
+
+- M. Serva, Pasquini, R. Baviera e altri collaboratori
+``Sistemi disordinati di spin''
+Questi sistemi sono caratterizzati da due tipi di variabili:
+le variabili ``calde'' che si organizzano in modo da minimizzare 
+l'energia libera e le variabili ``fredde'' che hanno tempi di evoluzione 
+molto piu' lunghi. Il primo approccio utilizzato si propone di andare 
+oltre il campo medio per i vetri di spin adattando a questi modelli
+il metodo di Bethe-Peierls. Il secondo approccio e` un'applicazione 
+del metodo di soluzione di Onsager a vetri di spin bindimensionali 
+in cui il disordine e' a bande alterne, ossia in cui strisce di 
+placchette tutte frustrate si succedono in modo 
+casuale a strisce di placchette tutte non frustrate.
+
+Abbiamo fatto inoltre fatto ricerche su sistemi dinamici random
+e su problemi di finanza statistica.
+
+
+
+
+Pubblicazioni - Gruppo dell'Aquila
+----------------------------------
+
+R. Baviera, M. Pasquini, M. Serva, 
+``Variational approach to Ising spin glasses in finite dimensions.
+J. Phys. A 31 (1998) 4127
+
+M. Serva, 
+``2d Ising model with layers of quenched spins''
+J. Stat. Phys. 91 (1998) 31
+
+A. Aurell, R. Baviera, O. Hammarlid, M. Serva, A. Vulpiani,
+``Large bets, rare fluctuations and derivative pricing''
+In ``Off the wall'', rubrica mensile di Numerix (1998)
+
+V. Loreto, M. Serva, A. Vulpiani, 
+``On the concept of complexity of random dynamical systems''
+In ``Trends in complexity'', Yokohama 1996.
+Int J Mod Phys B 12 (1998) 225
+
+R. Baviera, M. Pasquini, M. Serva, 
+``Cluster approximation for Ising spin glasses'' 
+In ``Disorder and Chaos'', Conf. in memoria di G. Paladin,
+Roma, Sett. 1997, A. Vulpiani et al. eds.,
+J. Phys. (France) 8 (1998) 75
+
+
+ 
+
+

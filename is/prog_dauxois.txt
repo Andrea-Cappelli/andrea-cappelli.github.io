@@ -1,0 +1,49 @@
+1) Metastability and Non extensive statistical mechanics
+-----------------------------------------------------------------
+Collaborations: Stefano Ruffo, Julien Barre, Freddy Bouchet
+
+We have recently shown and explained the striking emergence of
+coherent structures in the HMF model. We think that this model is a
+good candidate, in its ferromagnetic or antiferromagnetic version, to
+study precisely not only anomalous diffusion, but also to test the
+generalized statistical Mechanics proposed by Tsallis and
+collaborators.
+
+
+2) Reduced model for the description of radiation matter
+-----------------------------------------------------------------
+Collaborations:  Stefano Ruffo, Julien Barre, Freddy Bouchet, Antonio
+Politi
+
+We would like to study a recently proposed model which describe light
+matter interaction and collision with an external buffer gaz. The
+model based on the CARL model include a self-consistent treament of the
+Bloch Maxwell equations and of the recoil due to the pump field. As
+dynamical quantities show striking similarities with the HMF model
+that we solved recently, we would like to apply similar techniques in
+the Hamiltonian limit of this model
+
+
+3) Clustering and ensembles inequivalence in mean-field hamiltonian models
+
+-----------------------------------------------------------------
+Collaborations: Stefano Ruffo,  Stefano Lepri
+
+We would like to investigate a model of globally coupled conservative
+oscillators. Two different algebraic potentials are considered that
+display either a first or second order phase transition in the
+canonical ensemble. The stability of highly clustered states is
+studied analytically. Numerical simulations show that ensemble
+equivalence breaks down for some class of initial data.
+
+
+--
+%---------------------------------------------------------------
+% Thierry DAUXOIS         | Phone : (33) 4 72 72 81 38
+% Laboratoire de Physique | Fax   : (33) 4 72 72 80 80
+% ENS-LYON                | e-mail: Thierry.Dauxois@ens-lyon.fr
+% 46, allee d'Italie      | http://www.ens-lyon.fr/~tdauxois
+% F-69007 LYON, FRANCE
+%---------------------------------------------------------------
+
+
