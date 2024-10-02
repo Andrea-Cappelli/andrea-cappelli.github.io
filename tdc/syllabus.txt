@@ -1,0 +1,81 @@
+Metodi funzionali e serie perturbativa. 
+Rinormalizzazione col path-integral delle teorie di gauge abeliane. 
+Gruppo di rinormalizzazione e costante d'accoppiamento mobile. 
+Anomalia chirale. Monopolo di Dirac e invarianti topologici.
+Introduzione alle teorie di gauge non-abeliane. 
+Modello Standard elettro-debole.
+Meccanismo di Higgs. Matrice CKM. Violazione di CP. Meccanismo GIM.
+Fenomenologia del Modello Standard: studio di alcuni processi.
+
+
+Functional methods and perturbative series.
+Path-integral renormalization of Abelian gauge theories.
+Renormalization group and running coupling constant.
+Chiral anomaly. Dirac monopole and topological invariants.
+Introduction to non-Abelian gauge theries.
+Standard Model for the electro-weak interactions.
+Higgs mechanism. CKM matrix. CP violation. GIM mechanism.
+Phenomenology of the Standard Model: study of some processes.
+
+-M.E. Peskin, D.V. Schoeder, "An introduction to Quantum Field Theory", Addison-Wesley, 1995 
+-P.Ramond, "Field Theory a modern primer", II edition, Westview Press, 2001
+-Ta-Pei Cheng, Ling-Fong Li, “Gauge theory of elementary particle physics”, Oxford Univ. Press., 1995
+- V. P. Nair, Quantum Field Theory. A Modern Perspective, Springer, 2005
+
+
+
+Capacità acquisite al termine del corso:
+Rinormalizzazione delle teorie di campo e suoi effetti fisici.
+Fisica del modello standard delle interazioni elettrodeboli
+
+
+Competence acquired at the end of the course:
+Renormalization of quantum field theories and its physical effects.
+Physics of the Standard Model of electroweak interactions
+
+Corsi vincolanti:
+-Fisica teorica
+-Teoria dei Campi I
+
+Corsi raccomandati:
+-Metodi matematici per la fisica teorica
+-Fisica Nucleare e Subnucleare 1 e 2
+
+Courses required:
+-Theoretical Physics
+-Quantum Field Theory I
+
+Courses recommended:
+-Mathematical methods for theoretical physics
+-Nuclear and Subnuclear physics 1, 2
+
+Orario di Ricevimento studenti A. Cappelli e S. De Curtis: Su appuntamento
+Sito web http://theory.fi.infn.it/cappelli/tdc/
+
+Meeting with students A. Cappelli and S. De Curtis: On appointment
+Website http://theory.fi.infn.it/cappelli/tdc/
+
+Esercizio scritto ed esame orale tradizionale
+
+Written exercise and traditional oral examination
+
+-Relazione tra teoria dei campi euclidea e meccanica statistica. Azione effettiva
+-Invarianza di gauge. Path-integral di QED.
+-Rinormalizzazione della QED a 1-loop. Effetti fisici della rinormalizzazione.
+-Gruppo di rinormalizzazione. Equazione di Callan-Symanzik e costante d'accoppiamento mobile
+- Anomalia chirale e conseguenze fisiche.
+- Teorie di gauge non-abeliane: quantizzazione col path-integral e rinormalizzazione a 1-loop. Liberta' asintotica in QCD.
+-Teorie di gauge spontaneamente rotte. Meccanismo di Higgs
+ -Modello standard elettro-debole: basi e studio di qualche processo
+ -Gauge rinormalizzabile e unitaria, Matrice CKM, violazione di CP, meccanismo GIM
+
+
+-Euclidean field theory and statistical mechanics. Effective action
+-Gauge invariance. Path integral in QED. 
+-1-loop renormalization of QED. Physical effects of renormalization
+-Renormalization group. Callan-Symanzik equation and running coupling constant
+- Chiral anomaly and its physical consequences
+-Non abelian gauge theories: path-integral quantization and 1-loop renormalization. Asymptotic freedom in QCD.
+-Spontaneously broken gauge theories. Higgs mechanism
+-The Standard Model for the electroweak interactions: basics and study of some processes
+ -Renormalizable and unitary  gauges, CKM matrix, CP violation, GIM mechanism
